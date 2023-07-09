@@ -1,23 +1,21 @@
 import TopBar from "@/features/TopBar"
-import HomeContainer from "@containers/home"
 import { fetchTranslations } from "@modules/translations/fetch"
 import type { NextPage } from "next"
 
-const Home: NextPage = () => {
+const Jobs: NextPage = () => {
   return (
     <>
       <TopBar />
-      <HomeContainer />
     </>
   )
 }
 
-export default Home
+export default Jobs
 
 export async function getStaticProps({ locale }: any) {
   return {
     props: {
-      ...(await fetchTranslations(locale, ["common", "home"])),
+      ...(await fetchTranslations(locale, ["common", "jobs"])),
     },
   }
 }

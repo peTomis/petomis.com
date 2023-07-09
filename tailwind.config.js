@@ -43,6 +43,14 @@ module.exports = {
         competitionTitle: {
           DEFAULT: "#5E5E5E",
         },
+        primary: {
+          DEFAULT: "#00719C",
+          100: "#00B8FF",
+          200: "#009BD6",
+          300: "#00719C",
+          400: "#00415A",
+          500: "#001F2B",
+        },
         mineScreen: {
           DEFAULT: "#CECECE",
         },

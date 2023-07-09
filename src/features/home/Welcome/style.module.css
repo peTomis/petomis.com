@@ -1,0 +1,31 @@
+.container {
+  @apply flex flex-col h-screen lg:flex-row justify-center items-center mx-auto;
+}
+
+.textContainer {
+  @apply flex flex-col justify-start items-start;
+}
+
+.imageContainer {
+  @apply relative;
+}
+
+.mainImage {
+  @apply absolute z-10 rounded-2xl shadow-xl overflow-hidden;
+}
+
+.firstImage {
+  @apply absolute rounded-xl shadow-lg overflow-hidden;
+}
+
+.secondImage {
+  @apply absolute bg-primary-500 rounded-xl shadow-lg overflow-hidden;
+}
+
+.thirdImage {
+  @apply absolute bg-primary-400 rounded-xl shadow-lg overflow-hidden;
+}
+
+.forthImage {
+  @apply absolute rounded-xl shadow-lg overflow-hidden;
+}

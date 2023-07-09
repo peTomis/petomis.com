@@ -3,13 +3,13 @@
 }
 
 .background {
-  @apply flex flex-col mx-auto font-cascadia  scale-75 md:max-w-[90vw] lg:max-h-[1000px] xl:max-w-[1152px] justify-center space-y-2 w-[90vw] max-w-[1000px];
+  @apply flex flex-col py-8 mx-auto font-cascadia md:max-w-[90vw] lg:max-h-[1000px] xl:max-w-[1152px] justify-center space-y-2 w-[90vw] max-w-[1000px];
 }
 
 .leftTitle {
-  @apply text-start text-slogan font-roboto font-bold w-[854px] bg-black mx-auto text-competitionTitle;
+  @apply text-start mx-auto text-slogan font-roboto font-bold w-[676px] bg-black text-competitionTitle;
 }
 
 .rightTitle {
-  @apply text-end text-slogan font-roboto font-bold w-[854px] mx-auto text-mineTitle;
+  @apply text-end mx-auto text-slogan font-roboto font-bold w-[676px] bg-black text-mineTitle;
 }

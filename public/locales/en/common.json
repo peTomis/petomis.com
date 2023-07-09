@@ -1,13 +1,13 @@
 {
   "topBar": {
-    "features": "Features",
-    "section2": "Settings",
-    "section3": "Logout"
+    "features": "Home",
+    "section2": "Jobs",
+    "section3": "Contact"
   },
 
   "monitorFrame": {
     "me": "Me",
-    "theCompetition": "The Competition"
+    "theCompetition": "Others"
   },
 
   "greeting": "Hello, {{name}}!"

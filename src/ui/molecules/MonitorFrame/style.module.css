@@ -3,11 +3,11 @@
 }
 
 .frame {
-  @apply p-4 rounded-[10px] w-[854px] mx-auto;
+  @apply p-4 rounded-[10px] w-[676px] mx-auto;
 }
 
 .glass {
-  @apply bg-vscodebg py-[2rem] pl-[2rem] h-[480px] text-[1.5rem];
+  @apply bg-vscodebg py-[2rem] pl-[2rem] h-[360px] w-[640px] text-[1rem];
 }
 
 .monitorStand {
