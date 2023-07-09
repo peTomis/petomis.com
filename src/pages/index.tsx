@@ -1,3 +1,4 @@
+import TopBar from "@/ui/organisms/TopBar"
 import HomeContainer from "@containers/home"
 import { fetchTranslations } from "@modules/translations/fetch"
 import type { NextPage } from "next"
@@ -5,6 +6,7 @@ import type { NextPage } from "next"
 const Home: NextPage = () => {
   return (
     <>
+      <TopBar />
       <HomeContainer />
     </>
   )

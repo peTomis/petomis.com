@@ -1,4 +1,8 @@
 {
-    "welcome": "Welcome to my website",
-    "greeting": "Hello, {{name}}!"
-  }
+  "topBar": {
+    "features": "Features",
+    "section2": "Settings",
+    "section3": "Logout"
+  },
+  "greeting": "Hello, {{name}}!"
+}
