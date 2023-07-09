@@ -4,5 +4,11 @@
     "section2": "Settings",
     "section3": "Logout"
   },
+
+  "monitorFrame": {
+    "me": "Me",
+    "theCompetition": "The Competition"
+  },
+
   "greeting": "Hello, {{name}}!"
 }

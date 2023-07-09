@@ -3,7 +3,7 @@
 }
 
 .frame {
-  @apply p-4 rounded-[10px];
+  @apply p-4 rounded-[10px] w-[854px] mx-auto;
 }
 
 .glass {

@@ -1,0 +1,15 @@
+.container {
+  @apply hidden font-cascadia lg:block mx-auto bg-black w-full;
+}
+
+.background {
+  @apply flex flex-col mb-8 mt-4 mx-auto font-cascadia text-[1.5vh] md:max-w-[90vw] lg:max-h-[1000px] xl:max-w-[1152px] justify-center space-y-2 w-[90vw] max-w-[1000px];
+}
+
+.leftTitle {
+  @apply text-start text-slogan font-roboto font-bold mx-36 text-competitionTitle;
+}
+
+.rightTitle {
+  @apply text-end text-slogan font-roboto font-bold mx-36 text-mineTitle;
+}
