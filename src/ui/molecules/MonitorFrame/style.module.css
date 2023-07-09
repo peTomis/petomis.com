@@ -7,7 +7,7 @@
 }
 
 .glass {
-  @apply bg-vscodebg py-16 pl-32 h-[480px];
+  @apply bg-vscodebg py-[2rem] pl-[2rem] h-[480px] text-[1.5rem];
 }
 
 .monitorStand {

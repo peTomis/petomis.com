@@ -6,9 +6,19 @@ interface Props {
 }
 
 const ScaleEffect = ({ children }: Props) => {
+  const [load, setLoad] = useState(false)
   const [delta, setDelta] = useState(0.5)
 
   useEffect(() => {
+    if (!load) {
+      const targetDiv = document.getElementById("targetDiv")
+      if (!targetDiv) return
+      const targetDivPosition = targetDiv.getBoundingClientRect()
+      const screenHeight = window.innerHeight
+      if (targetDivPosition.top <= screenHeight / 2 && delta != 1) setDelta(1)
+      setLoad(true)
+    }
+
     const handleScroll = () => {
       const targetDiv = document.getElementById("targetDiv")
       if (!targetDiv) return
@@ -28,8 +38,6 @@ const ScaleEffect = ({ children }: Props) => {
               0.5
           ).toFixed(2)
         )
-
-        console.log(`newDelta:`, delta)
         setDelta(newDelta)
       }
 
@@ -39,8 +47,6 @@ const ScaleEffect = ({ children }: Props) => {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  console.log(`delta:`, delta)
 
   return (
     <div
