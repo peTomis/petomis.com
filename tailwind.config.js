@@ -13,6 +13,15 @@ module.exports = {
       },
     },
     extend: {
+      animation: {
+        carousel: "carousel 40s linear infinite",
+      },
+      keyframes: {
+        carousel: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-250px * 8))" },
+        },
+      },
       colors: {
         competitionScreen: {
           DEFAULT: "#3E3E3E",

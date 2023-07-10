@@ -1,11 +1,11 @@
 .container {
-  @apply py-12 lg:py-24 flex flex-col bg-black px-8 space-y-4 lg:mx-auto lg:space-y-8 w-full justify-center items-center lg:items-center lg:justify-start;
+  @apply py-12 lg:py-24 flex flex-col bg-white bg-opacity-90 px-8 space-y-4 lg:mx-auto lg:space-y-8 w-full justify-center items-center lg:items-center lg:justify-start;
 }
 
 .title {
-  @apply w-full d:max-w-[500px] text-h2 font-bacasimeAntique font-bold text-primary-100  lg:max-w-[1200px];
+  @apply w-full d:max-w-[500px] text-h2 font-bacasimeAntique font-extrabold text-primary-300  lg:max-w-[1200px];
 }
 
 .text {
-  @apply font-roboto text-h5 d:max-w-[500px] font-normal tracking-wide leading-8 lg:leading-10 lg:max-w-[1200px];
+  @apply font-roboto text-h5 text-black d:max-w-[500px] font-normal tracking-wide leading-8 lg:leading-10 lg:max-w-[1200px];
 }
