@@ -53,22 +53,22 @@ const WelcomeText = ({ halfWidth }: Props) => {
 
   return (
     <div className={style.container}>
-      <div className=" text-h3 font-cascadia d:text-h1">{t("hello")}</div>
-      <div className="flex flex-col w-full d:space-x-4 d:flex-row">
-        <div className=" text-h3 font-roboto d:text-h1">{t("iAm")}</div>
-        <div className="font-bold text-h3 font-roboto text-primary-100 d:text-h1">
+      <div className="font-roboto text-h4 lg:mx-0 d:text-h1">{t("hello")}</div>
+      <div className="flex flex-col items-start w-full d:items-end d:space-x-4 d:flex-row">
+        <div className="text-h3 font-roboto d:text-h1 d:pb-2">{t("iAm")}</div>
+        <div className="font-bold text-h3 font-agdasima xxs:text-h1 text-primary-100 d:text-myName">
           {t("name")}
         </div>
       </div>
-      <div className="flex items-center justify-center pl-8 text-h5 font-bacasimeAntique text-primary-300 d:text-h2">
+      <div className="flex items-center justify-center pl-4 d:pl-8 text-h5 font-bacasimeAntique text-primary-300 xxs:text-h4 d:text-h2">
         <h1 className="relative text-3xl text-center">
           <span className={style.typewriter}>{currentWord}</span>
           <div className={style.cursor} />
         </h1>
       </div>
-      {/* <div className="px-4 text-h5 font-bacasimeAntique text-primary-300 d:text-h2">
-        {t("role")}
-      </div> */}
+      <div className={style.contactContainer}>
+        <div className={style.contact}>{t("contact")}</div>
+      </div>
     </div>
   )
 }

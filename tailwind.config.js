@@ -62,6 +62,7 @@ module.exports = {
       },
     },
     fontFamily: {
+      agdasima: ["Agdasima", "sans-serif"],
       bacasimeAntique: ["Bacasime Antique", "serif"],
       cascadia: ["Cascadia", "sans-serif"],
       "cascadia-bold": ["Cascadia-Bold", "sans-serif"],
@@ -73,11 +74,12 @@ module.exports = {
       h1: "48px",
       h2: "42px",
       h3: "36px",
-      h4: "32px",
+      h4: "30px",
       h5: "24px",
       base: "16px",
     },
     screens: {
+      xxs: "380px",
       d: "500px",
       sm: "640px",
       md: "768px",

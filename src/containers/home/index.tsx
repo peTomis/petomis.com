@@ -1,21 +1,17 @@
 import Welcome from "@/features/home/Welcome"
-import ScaleEffect from "@/ui/animations/ScaleEffect"
 import ButtonContact from "@/ui/molecules/ButtonContact"
-import CompareSlider from "@/ui/organisms/CompareSlider"
 import { useTranslations } from "@modules/translations/use"
 import style from "./style.module.css"
+import AboutMe from "@/features/home/AboutMe"
+import Quality from "@/features/home/Quality"
 
 const HomeContainer = () => {
-  const { t } = useTranslations("common")
+  const { t } = useTranslations("home")
   return (
     <div className={style.container}>
       <Welcome />
-      <div className="w-full bg-black">
-        <ScaleEffect>
-          <CompareSlider />
-        </ScaleEffect>
-      </div>
-      <div className={`h-[2000px]`} />
+      <AboutMe />
+      <Quality />
       <ButtonContact onClick={() => {}} />
     </div>
   )
