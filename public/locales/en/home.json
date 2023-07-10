@@ -2,5 +2,6 @@
   "hello": "Hi!",
   "iAm": "I am",
   "name": "Giuseppe Tomis",
-  "role": "> Software Engineer"
+  "roleA": "> Software Engineer",
+  "roleB": "> Fullstack Developer"
 }

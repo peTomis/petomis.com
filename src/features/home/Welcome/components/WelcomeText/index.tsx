@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import style from "./style.module.css"
 import { useTranslations } from "@/modules/translations/use"
 
@@ -6,25 +7,68 @@ interface Props {
 }
 
 const WelcomeText = ({ halfWidth }: Props) => {
-  const { t } = useTranslations("home")
-  const isXl = 2 * halfWidth > 1280
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentWord, setCurrentWord] = useState("")
 
-  const containerStyle = {
-    width: `${isXl ? 640 * 0.95 : halfWidth * 0.95}px`,
-  }
+  const { t } = useTranslations("home")
+  const words = [t("roleA"), t("roleB")]
+
+  useEffect(() => {
+    const wordIndex = currentIndex % words.length
+    const word = words[wordIndex]
+    let wordTimer: any
+
+    const typeWriter = (word: string, index: number, typingSpeed: number) => {
+      if (index < word.length) {
+        setCurrentWord((prevWord) => prevWord + word[index])
+        wordTimer = setTimeout(() => {
+          typeWriter(word, index + 1, typingSpeed)
+        }, typingSpeed)
+      } else {
+        setTimeout(() => {
+          deleteWord(word, word.length - 1, 50)
+        }, 2000) // Delay before starting the delete effect
+      }
+    }
+
+    const deleteWord = (word: string, index: number, deletingSpeed: number) => {
+      if (index >= 1) {
+        // Start deleting from position [1]
+        setCurrentWord((prevWord) => prevWord.slice(0, -1))
+        setTimeout(() => {
+          deleteWord(word, index - 1, deletingSpeed)
+        }, deletingSpeed)
+      } else {
+        setCurrentIndex((prevIndex) => prevIndex + 1)
+      }
+    }
+
+    setCurrentWord(word[0]) // Set initial letter at position [0]
+    typeWriter(word, 1, 150) // Typing speed: 150 milliseconds per character
+
+    return () => {
+      clearTimeout(wordTimer)
+    }
+  }, [currentIndex])
 
   return (
-    <div className={style.container} style={containerStyle}>
-      <div className="font-bold text-slogan font-cascadia">{t("hello")}</div>
-      <div className="flex flex-row space-x-4">
-        <div className="font-bold text-slogan font-roboto">{t("iAm")}</div>
-        <div className="font-bold text-slogan font-roboto text-primary-100">
+    <div className={style.container}>
+      <div className=" text-h3 font-cascadia d:text-h1">{t("hello")}</div>
+      <div className="flex flex-col w-full d:space-x-4 d:flex-row">
+        <div className=" text-h3 font-roboto d:text-h1">{t("iAm")}</div>
+        <div className="font-bold text-h3 font-roboto text-primary-100 d:text-h1">
           {t("name")}
         </div>
       </div>
-      <div className="text-slogan font-bacasimeAntique text-primary-300">
-        {t("role")}
+      <div className="flex items-center justify-center pl-8 text-h5 font-bacasimeAntique text-primary-300 d:text-h2">
+        <h1 className="relative text-3xl text-center">
+          <span className={style.typewriter}>{currentWord}</span>
+          <div className={style.cursor} />
+        </h1>
       </div>
+      {/* <div className="px-4 text-h5 font-bacasimeAntique text-primary-300 d:text-h2">
+        {t("role")}
+      </div> */}
     </div>
   )
 }
