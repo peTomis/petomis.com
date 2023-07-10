@@ -1,6 +1,5 @@
 import { useTranslations } from "@/modules/translations/use"
 import style from "./TopBar.module.css"
-import Typography from "@/ui/atoms/Typography"
 import LinkedinIcon from "@/ui/icons/Linkedin"
 import TwitterIcon from "@/ui/icons/Twitter"
 import GitHubIcon from "@/ui/icons/Github"
@@ -18,17 +17,17 @@ const TopBar = () => {
       <div className={style.pageList}>
         <Link href={{ pathname: "/" }}>
           <div id="section1" className={style.item}>
-            <Typography>{t("topBar.features")}</Typography>
+            {t("topBar.features")}
           </div>
         </Link>
         <Link href={{ pathname: "/jobs" }}>
           <div id="section2" className={style.item}>
-            <Typography>{t("topBar.section2")}</Typography>
+            {t("topBar.section2")}
           </div>
         </Link>
         <Link href={{ pathname: "/contact" }}>
           <div id="section3" className={style.item}>
-            <Typography>{t("topBar.section3")}</Typography>
+            {t("topBar.section3")}
           </div>
         </Link>
       </div>

@@ -19,6 +19,7 @@ module.exports = {
       xl: "1280px",
     },
     fontFamily: {
+      bacasimeAntique: ["Bacasime Antique", "serif"],
       cascadia: ["Cascadia", "sans-serif"],
       "cascadia-bold": ["Cascadia-Bold", "sans-serif"],
       roboto: ["Roboto", "sans-serif"],
