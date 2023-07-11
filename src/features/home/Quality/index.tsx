@@ -26,7 +26,7 @@ const Quality = () => {
           <CompareSlider />
         </ScaleEffect>
       </div>
-      <div className="hidden py-2 text-base tracking-wide lg:block font-agdasima">
+      <div className="hidden w-full py-2 text-base tracking-wide text-center bg-black lg:block font-agdasima">
         {t("note")}
       </div>
     </>

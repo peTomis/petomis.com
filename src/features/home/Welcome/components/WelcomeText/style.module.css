@@ -36,7 +36,7 @@
 .contact {
   @apply border-[1px] p-2 xxs:text-h5 rounded-md font-thin opacity-50 cursor-pointer;
   visibility: hidden;
-  animation: fadeIn 0s 3s forwards;
+  animation: fadeIn 0s 4s forwards;
 }
 
 @keyframes fadeIn {
