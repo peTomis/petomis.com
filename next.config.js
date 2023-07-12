@@ -7,6 +7,9 @@ const env = {
   TWITTER: "https://twitter.com/peTomis",
 }
 
-const nextConfig = { i18n, env }
+const nextConfig = {
+  i18n,
+  env,
+}
 
 module.exports = nextConfig

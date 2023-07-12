@@ -18,7 +18,7 @@ const Quality = () => {
         </div>
       </div>
       <div className="hidden w-full max-w-[1200px] pb-12 lg:flex items-start  font-roboto font-normal space-x-2 opacity-70">
-        <div className="text-h2">{t("examples")}</div>
+        <div className="pl-8 text-h2">{t("examples")}</div>
         <div className="text-base">(*)</div>
       </div>
       <div className="w-full bg-black">
