@@ -1,0 +1,46 @@
+.container {
+  @apply flex flex-col justify-start items-start font-roboto d:ml-auto  min-w-[267px];
+}
+
+.typewriter {
+  position: relative;
+}
+
+.cursor {
+  @apply absolute h-[18px] w-[2px] xxs:h-[24px] d:h-[30px];
+  top: 50%;
+  left: calc(
+    100% + 0.25rem
+  ); /* Adjust the distance between the cursor and the text */
+  transform: translate(-50%, -50%);
+  background-color: white;
+  animation: cursor-blink 0.8s infinite;
+}
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.contactContainer {
+  @apply my-4 xxs:my-8 ml-auto;
+}
+
+.contact {
+  @apply border-[1px] p-2 xxs:text-h5 rounded-md font-thin opacity-50 cursor-pointer;
+  visibility: hidden;
+  animation: fadeIn 0s 4s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    visibility: visible;
+  }
+}

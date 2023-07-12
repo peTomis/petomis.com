@@ -1,0 +1,19 @@
+.background {
+  @apply space-y-4;
+}
+
+.frame {
+  @apply p-4 rounded-[10px] w-[676px] mx-auto;
+}
+
+.glass {
+  @apply bg-vscodebg py-[2rem] pl-[2rem] h-[360px] w-[640px] text-[1rem];
+}
+
+.monitorStand {
+  @apply h-[40px] w-[100px] mx-auto;
+}
+
+.monitorBase {
+  @apply h-[40px] w-[400px] mx-auto;
+}

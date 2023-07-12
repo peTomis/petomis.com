@@ -1,4 +1,12 @@
 {
-    "welcome": "Welcome to my website",
-    "greeting": "Hello, {{name}}!"
+  "topBar": {
+    "home": "Home",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+
+  "monitorFrame": {
+    "me": "Me",
+    "theCompetition": "Others"
   }
+}

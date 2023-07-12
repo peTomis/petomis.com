@@ -1,0 +1,6 @@
+.container {
+  @apply flex flex-col justify-center items-center h-screen mx-auto lg:mx-8;
+}
+.contentContainer {
+  @apply pt-8 flex flex-1 flex-col space-y-2 justify-center items-center lg:flex-row lg:space-y-0 lg:space-x-4 xl:space-x-16;
+}

@@ -1,0 +1,79 @@
+.container {
+  @apply relative;
+}
+
+.mainImage {
+  @apply absolute z-10 rounded-2xl shadow-xl overflow-hidden bg-black;
+}
+
+.firstImage {
+  @apply absolute rounded-xl shadow-lg overflow-hidden;
+  animation-name: firstMove;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes firstMove {
+  0% {
+    top: 50%;
+    left: 50%;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+.secondImage {
+  @apply absolute bg-primary-500 rounded-xl shadow-lg overflow-hidden;
+  animation-name: secondMove;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes secondMove {
+  0% {
+    top: 30%;
+    right: 30%;
+  }
+  100% {
+    top: 5%;
+    right: 5%;
+  }
+}
+
+.thirdImage {
+  @apply absolute bg-primary-400 rounded-xl shadow-lg overflow-hidden;
+  animation-name: thirdMove;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes thirdMove {
+  0% {
+    bottom: 30%;
+    left: 30%;
+  }
+  100% {
+    bottom: 5%;
+    left: 5%;
+  }
+}
+
+.forthImage {
+  @apply absolute rounded-xl shadow-lg overflow-hidden;
+  animation-name: forthMove;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes forthMove {
+  0% {
+    bottom: 50%;
+    right: 50%;
+  }
+  100% {
+    bottom: 0;
+    right: 0;
+  }
+}
