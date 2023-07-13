@@ -76,6 +76,7 @@ module.exports = {
       cascadia: ["Cascadia", "sans-serif"],
       "cascadia-bold": ["Cascadia-Bold", "sans-serif"],
       roboto: ["Roboto", "sans-serif"],
+      satisfy: ["Satisfy", "cursive"],
     },
     fontSize: {
       myName: "66px",

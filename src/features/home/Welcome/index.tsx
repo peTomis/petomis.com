@@ -26,7 +26,7 @@ const Welcome = () => {
   return (
     <div className={style.container}>
       <div className={style.contentContainer}>
-        <WelcomeText halfWidth={halfWidth} />
+        <WelcomeText />
         <WelcomeImage halfWidth={halfWidth} />
       </div>
       <ScrollSuggest />

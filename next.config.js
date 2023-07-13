@@ -5,6 +5,7 @@ const env = {
   GITHUB: "https://github.com/peTomis",
   LINKEDIN: "https://www.linkedin.com/in/petomis",
   TWITTER: "https://twitter.com/peTomis",
+  ANUBI: "https://www.anubidigital.com",
 }
 
 const nextConfig = {
