@@ -2,16 +2,20 @@ import { useEffect, useState } from "react"
 import style from "./style.module.css"
 import { useTranslations } from "@/modules/translations/use"
 
-interface Props {
-  halfWidth: number
-}
-
-const WelcomeText = ({ halfWidth }: Props) => {
+const WelcomeText = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [currentWord, setCurrentWord] = useState("")
 
   const { t } = useTranslations("home")
   const words = [t("roleA"), t("roleB")]
+
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    })
+    return
+  }
 
   useEffect(() => {
     const wordIndex = currentIndex % words.length
@@ -67,7 +71,9 @@ const WelcomeText = ({ halfWidth }: Props) => {
         </h1>
       </div>
       <div className={style.contactContainer}>
-        <div className={style.contact}>{t("contact")}</div>
+        <div className={style.contact} onClick={scrollToBottom}>
+          {t("contact")}
+        </div>
       </div>
     </div>
   )

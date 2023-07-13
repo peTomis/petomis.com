@@ -2,7 +2,7 @@ import { useTranslations } from "@/modules/translations/use"
 import style from "./style.module.css"
 import FormInput from "@/ui/molecules/FormInput"
 import { useState } from "react"
-import { useForm, ValidationError } from "@formspree/react"
+import { useForm } from "@formspree/react"
 
 const Contact = () => {
   const [name, setName] = useState("")
@@ -23,8 +23,6 @@ const Contact = () => {
     submitEmail({ email, message })
   }
 
-  console.log(nameError)
-
   const isValidEmail = (value: string) => {
     const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
     return emailRegex.test(value) && value.length > 0
@@ -41,15 +39,15 @@ const Contact = () => {
 
   if (!!state.succeeded)
     return (
-      <div className={style.container}>
+      <div className={style.container} id="contactContainer">
         <div className={style.title}>{t("contactTitle")}</div>
         <div className={style.letterContainer}>
           <div className={style.wrapper}>
             <div className={style.lid} />
             <div className={style.envelope} />
             <div className={style.letter}>
-              <div className={style.thanks}>Thank you!</div>
-              <div className={style.brb}>Will reply soon</div>
+              <div className={style.thanks}>{t("thankMailTitle")}</div>
+              <div className={style.brb}>{t("thankMailText")}</div>
             </div>
           </div>
         </div>
@@ -57,7 +55,7 @@ const Contact = () => {
     )
 
   return (
-    <div className={style.container}>
+    <div className={style.container} id="contactContainer">
       <div className={style.title}>{t("contactTitle")}</div>
       <div className={style.form}>
         <div className={style.inputs}>

@@ -1,5 +1,5 @@
 .container {
-  @apply flex flex-col justify-start items-start font-roboto d:ml-auto  min-w-[267px];
+  @apply pl-8 d:pl-0 flex flex-col justify-start items-start font-roboto d:ml-auto  min-w-[350px];
 }
 
 .typewriter {
@@ -30,7 +30,7 @@
 }
 
 .contactContainer {
-  @apply my-4 xxs:my-8 ml-auto;
+  @apply my-4 xxs:my-8 ml-auto pr-8;
 }
 
 .contact {

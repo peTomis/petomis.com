@@ -31,5 +31,16 @@
   "contactEmail": "Email",
   "contactEmailPlaceholder": "Enter your email",
   "contactMessage": "Message",
-  "contactMessagePlaceholder": "Enter your message"
+  "contactMessagePlaceholder": "Enter your message",
+  "thankMailTitle": "Thank you!",
+  "thankMailText": "Will reply soon",
+  "experience": {
+    "title": "Experience",
+    "jobAName": "Fullstack Developer",
+    "jobADate": "2022-now",
+    "jobBName": "Mobile developer",
+    "jobBDate": "2019-2022",
+    "jobBCommitter": "Freelance",
+    "days": "days"
+  }
 }
