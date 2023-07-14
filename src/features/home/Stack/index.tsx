@@ -130,7 +130,7 @@ const Stack = () => {
           {loopedItems.map((item, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[250px] h-[100px] text-black"
+              className="flex-shrink-0 w-[150px] h-[100px] md:w-[250px] md:h-[100px] text-black"
             >
               {item}
             </div>
