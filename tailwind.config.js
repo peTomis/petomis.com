@@ -15,11 +15,16 @@ module.exports = {
     extend: {
       animation: {
         carousel: "carousel 40s linear infinite",
+        smallCarousel: "carousel 80s linear infinite",
       },
       keyframes: {
         carousel: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(calc(-250px * 8))" },
+        },
+        smallCarousel: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-180px * 8))" },
         },
       },
       colors: {

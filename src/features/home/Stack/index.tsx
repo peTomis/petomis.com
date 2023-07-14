@@ -126,11 +126,11 @@ const Stack = () => {
   return (
     <div className="flex items-center justify-center w-full bg-gray-200">
       <div className="relative w-full overflow-hidden bg-white shadow-lg">
-        <div className="flex items-center justify-center w-full animate-carousel">
+        <div className="flex items-center justify-center w-full animate-smallCarousel md:animate-carousel">
           {loopedItems.map((item, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[150px] h-[100px] md:w-[250px] md:h-[100px] text-black"
+              className="flex-shrink-0 w-[180px] h-[100px] md:w-[250px] md:h-[100px] text-black"
             >
               {item}
             </div>
