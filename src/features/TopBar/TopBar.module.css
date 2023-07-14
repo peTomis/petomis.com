@@ -6,8 +6,8 @@
   @apply flex flex-1 flex-row justify-start space-x-4 mr-auto;
 }
 
-.logo {
-  @apply hidden font-satisfy text-h3 md:block sm:mx-auto;
+.logoContainer {
+  @apply hidden font-satisfy text-h3 md:flex md:flex-row sm:mx-auto px-4;
 }
 
 .social {

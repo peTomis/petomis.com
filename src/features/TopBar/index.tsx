@@ -47,7 +47,10 @@ const TopBar = ({ onClick }: Props) => {
           {t("topBar.contact")}
         </div>
       </div>
-      <div className={style.logo}>petomis</div>
+      <div className={style.logoContainer}>
+        <div className="text-primary">pe</div>
+        <div className={"text-white"}>tomis</div>
+      </div>
       <div className={style.social}>
         <div className={style.item} onClick={openGitHub}>
           <GitHubIcon />

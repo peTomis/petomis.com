@@ -18,16 +18,19 @@ const ScrollSuggest = () => {
   }, [])
 
   return (
-    <div
-      className={`flex items-center justify-center flex-none py-4 animate-bounce`}
-      style={{ visibility: hidden ? "visible" : "hidden" }}
-    >
+    <>
       {!hidden && (
-        <div className={style.triangle} onClick={handleClick}>
-          <ArrowIcon width={60} height={60} />
+        <div
+          className={
+            "fixed flex justify-center items-center z-40 pb-[4px] bottom-[16px] md:bottom-[32px]  w-[64px] h-[64px] rounded-full cursor-pointer animate-bounce"
+          }
+        >
+          <div className={style.triangle} onClick={handleClick}>
+            <ArrowIcon width={60} height={60} />
+          </div>
         </div>
       )}
-    </div>
+    </>
   )
 }
 export default ScrollSuggest
