@@ -1,5 +1,5 @@
 .container {
-  @apply flex flex-col justify-center items-center h-screen mx-auto lg:mx-8;
+  @apply flex flex-col justify-center items-center h-screen d:min-h-[900px] mx-auto lg:mx-8;
 }
 .contentContainer {
   @apply pt-8 flex flex-1 flex-col space-y-2 justify-center items-center lg:flex-row lg:space-y-0 xl:space-x-16;

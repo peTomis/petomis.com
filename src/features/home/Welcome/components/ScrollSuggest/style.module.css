@@ -1,31 +1,7 @@
 .triangle {
-  @apply relative bg-white;
-  text-align: left;
-}
-.triangle:before,
-.triangle:after {
-  content: "";
-  position: absolute;
-  background-color: inherit;
-}
-.triangle,
-.triangle:before,
-.triangle:after {
-  @apply w-[32px] h-[32px] cursor-pointer;
+  @apply cursor-pointer -rotate-90;
   visibility: hidden;
   animation: fadeIn 0s 6s forwards;
-  border-top-right-radius: 30%;
-}
-
-.triangle {
-  transform: rotate(-240deg) skewX(-30deg) scale(1, 0.866);
-}
-.triangle:before {
-  transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707)
-    translate(0, -50%);
-}
-.triangle:after {
-  transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
 }
 
 @keyframes fadeIn {
