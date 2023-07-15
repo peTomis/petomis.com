@@ -43,7 +43,6 @@ const HomeContainer = () => {
     }
 
     window.addEventListener("scroll", handleScroll)
-    console.log(buttonVisible)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 

@@ -10,7 +10,7 @@ const WelcomeImage = ({ halfWidth }: Props) => {
     <div className={style.container}>
       <div className={style.mainImage}>
         <Image
-          src={"/images/Colorful.png"}
+          src={"/images/WordCloud.png"}
           alt="Main"
           width={400}
           height={400}
