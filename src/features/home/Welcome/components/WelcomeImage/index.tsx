@@ -9,7 +9,12 @@ const WelcomeImage = ({ halfWidth }: Props) => {
   return (
     <div className={style.container}>
       <div className={style.mainImage}>
-        <img src="/images/WordCloud.png" width="400" height="400" alt="Main" />
+        <img
+          src="/images/word-cloud.png"
+          width="400"
+          height="400"
+          alt="word-clpud"
+        />
         {/* <Image
           src={"/images/WordCloud.png"}
           alt="Main"
@@ -20,7 +25,7 @@ const WelcomeImage = ({ halfWidth }: Props) => {
       <div className={style.firstImage}>
         <Image
           src={"/images/Institutional.jpeg"}
-          alt="Social"
+          alt="social"
           width={200}
           height={200}
         />
@@ -30,7 +35,7 @@ const WelcomeImage = ({ halfWidth }: Props) => {
       <div className={style.forthImage}>
         <Image
           src={"/images/Social.jpg"}
-          alt="Institutional"
+          alt="institutional"
           width={250}
           height={250}
         />
