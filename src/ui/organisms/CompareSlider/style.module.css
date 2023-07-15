@@ -1,9 +1,9 @@
 .container {
-  @apply hidden font-cascadia lg:block mx-auto bg-black w-full;
+  @apply hidden font-roboto lg:block mx-auto bg-black w-full;
 }
 
 .background {
-  @apply flex flex-col py-8 mx-auto font-cascadia md:max-w-[90vw] lg:max-h-[1000px] xl:max-w-[1152px] justify-center space-y-2 w-[90vw] max-w-[1000px];
+  @apply flex flex-col py-8 mx-auto font-roboto md:max-w-[90vw] lg:max-h-[1000px] xl:max-w-[1152px] justify-center space-y-2 w-[90vw] max-w-[1000px];
 }
 
 .leftTitle {
