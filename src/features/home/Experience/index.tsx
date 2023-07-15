@@ -28,7 +28,7 @@ const Experience = ({ id }: Props) => {
   const { t } = useTranslations("home")
 
   const CarouselData = [
-    <ActivityCard key={0} bgColor="bg-[#c8d9e0]">
+    <ActivityCard key={0} bgColor="bg-[#ffffff]">
       <div className={style.experienceContainer}>
         <div className={style.experienceTitle}>{t("experience.jobAName")}</div>
         <div
