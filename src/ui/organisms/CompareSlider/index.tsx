@@ -15,7 +15,7 @@ const CompareSlider = () => {
           <MonitorFrame main={true}>
             <div className="flex flex-row space-x-4">
               <div className="text-vscodeblue">const</div>
-              <div className="text-vscodelightyellow">foo</div>
+              <div className="text-vscodelightyellow">isInRange</div>
               <div className="text-white">=</div>
               <div className="flex flex-row">
                 <div className="text-vscodepurple">{"("}</div>
@@ -110,7 +110,7 @@ const CompareSlider = () => {
           <MonitorFrame main={false}>
             <div className="flex flex-row space-x-4">
               <div className="text-vscodeblue">const</div>
-              <div className="text-vscodelightyellow">foo</div>
+              <div className="text-vscodelightyellow">isInRange</div>
               <div className="text-white">=</div>
               <div className="flex flex-row space-x-2">
                 <div className="text-vscodepurple">{"("}</div>
