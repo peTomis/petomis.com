@@ -9,18 +9,12 @@ const WelcomeImage = ({ halfWidth }: Props) => {
   return (
     <div className={style.container}>
       <div className={style.mainImage}>
-        <img
-          src="/images/word-cloud.png"
-          width="400"
-          height="400"
-          alt="word-clpud"
-        />
-        {/* <Image
-          src={"/images/WordCloud.png"}
+        <Image
+          src={"/images/word-cloud.png"}
           alt="Main"
           width={400}
           height={400}
-        /> */}
+        />
       </div>
       <div className={style.firstImage}>
         <Image
