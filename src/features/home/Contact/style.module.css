@@ -19,7 +19,7 @@
 }
 
 .wrapper {
-  @apply mt-[228px]  md:mt-[128px] lg:mt-[160px] mb-24 relative flex justify-center items-center h-[200px] w-[300px] bg-primary-500 z-0;
+  @apply mt-[228px]  md:mt-[128px] lg:mt-[160px] mb-24 relative flex justify-center items-center h-[200px] w-[300px] bg-primary-400 z-0;
 }
 
 .letter {
@@ -31,7 +31,7 @@
 }
 
 .lid {
-  @apply absolute left-0 top-[-100px] border-r-[150px] border-r-transparent border-b-[100px] border-b-primary-500 border-l-[150px] border-l-transparent z-10;
+  @apply absolute left-0 top-[-100px] border-r-[150px] border-r-transparent border-b-[100px] border-b-primary-400 border-l-[150px] border-l-transparent z-10;
 }
 
 .thanks {
