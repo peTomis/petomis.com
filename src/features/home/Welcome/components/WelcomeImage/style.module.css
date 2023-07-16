@@ -7,7 +7,7 @@
 }
 
 .firstImage {
-  @apply absolute rounded-xl shadow-lg overflow-hidden left-0 top-0 w-[100px] h-[100px] d:w-[150px] d:h-[150px] xl:w-[200px] xl:h-[200px];
+  @apply absolute bg-white rounded-xl shadow-lg overflow-hidden left-0 top-0 w-[100px] h-[100px] d:w-[150px] d:h-[150px] xl:w-[200px] xl:h-[200px];
   animation-name: firstMove;
   animation-duration: 2s;
   animation-fill-mode: forwards;
@@ -61,7 +61,7 @@
 }
 
 .forthImage {
-  @apply absolute rounded-xl shadow-lg overflow-hidden bottom-0 right-0 w-[105px] h-[105px] d:w-[154px] d:h-[154px] xl:w-[210px] xl:h-[210px];
+  @apply absolute bg-white rounded-xl shadow-lg overflow-hidden bottom-0 right-0 w-[105px] h-[105px] d:w-[154px] d:h-[154px] xl:w-[210px] xl:h-[210px];
   animation-name: forthMove;
   animation-duration: 2s;
   animation-fill-mode: forwards;

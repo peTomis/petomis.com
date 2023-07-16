@@ -1,25 +1,29 @@
 import Image from "next/image"
 import style from "./style.module.css"
+import socialImage from "@public/images/social.jpg"
+import wordCloudImage from "@public/images/word-cloud.png"
+import institutionalImage from "@public/images/institutional.jpeg"
 
-interface Props {
-  halfWidth: number
-}
-
-const WelcomeImage = ({ halfWidth }: Props) => {
+const WelcomeImage = () => {
   return (
     <div className={style.container}>
       <div className={style.mainImage}>
         <Image
-          src={"/images/word-cloud.png"}
-          alt="Main"
+          src={wordCloudImage}
+          alt="Main image"
+          placeholder="blur"
+          loading="eager"
+          priority={true}
           width={400}
           height={400}
         />
       </div>
       <div className={style.firstImage}>
         <Image
-          src={"/images/Institutional.jpeg"}
-          alt="social"
+          src={institutionalImage}
+          alt="Institutional image of the author"
+          placeholder="blur"
+          priority={true}
           width={200}
           height={200}
         />
@@ -28,8 +32,10 @@ const WelcomeImage = ({ halfWidth }: Props) => {
       <div className={style.thirdImage} />
       <div className={style.forthImage}>
         <Image
-          src={"/images/Social.jpg"}
-          alt="institutional"
+          src={socialImage}
+          alt="Social image of the author"
+          placeholder="blur"
+          priority={true}
           width={250}
           height={250}
         />

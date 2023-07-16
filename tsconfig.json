@@ -26,7 +26,8 @@
       "@modules/*": ["./src/modules/*"],
       "@ui/*": ["./src/ui/*"],
       "@styles/*": ["./styles/*"],
-      "@images/*": ["./public/images/*"]
+      "@images/*": ["./public/images/*"],
+      "@public/*": ["./public/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
