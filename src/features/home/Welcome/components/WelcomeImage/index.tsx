@@ -1,8 +1,8 @@
 import Image from "next/image"
 import style from "./style.module.css"
-import socialImage from "@public/images/social.jpg"
+import socialImage from "@public/images/social.png"
 import wordCloudImage from "@public/images/word-cloud.png"
-import institutionalImage from "@public/images/institutional.jpeg"
+import institutionalImage from "@public/images/institutional.png"
 
 const WelcomeImage = () => {
   return (

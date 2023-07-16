@@ -6,120 +6,57 @@ const Stack = () => {
     <Image
       key={0}
       src="/images/carousel/nextjs.png"
-      width="0"
-      height="0"
-      sizes="100vw"
-      style={{
-        width: "100%",
-        height: "100%",
-        objectFit: "contain",
-        padding: "1rem 0",
-        border: "none",
-      }}
+      width="250"
+      height="100"
       alt="Nextjs logo image"
     />,
     <Image
       key={1}
       src="/images/carousel/nestjs.png"
-      width="0"
-      height="0"
-      sizes="100vw"
-      style={{
-        width: "100%",
-        height: "100%",
-        padding: "1rem 0",
-        objectFit: "contain",
-        border: "none",
-      }}
+      width="250"
+      height="100"
       alt="Nestjs logo image"
     />,
     <Image
       key={2}
-      src="/images/carousel/postgre.webp"
-      width="0"
-      height="0"
-      sizes="100vw"
-      style={{
-        width: "100%",
-        height: "100%",
-        padding: "1rem 0",
-        objectFit: "contain",
-        border: "none",
-      }}
+      src="/images/carousel/postgre.png"
+      width="250"
+      height="100"
       alt="Postgre logo image"
     />,
     <Image
       key={3}
-      src="/images/carousel/docker.webp"
-      width="0"
-      height="0"
-      sizes="100vw"
-      style={{
-        width: "100%",
-        height: "100%",
-        padding: "0 2rem",
-        objectFit: "contain",
-        border: "none",
-      }}
+      src="/images/carousel/docker.png"
+      width="250"
+      height="100"
       alt="Docker logo image"
     />,
     <Image
       key={4}
       src="/images/carousel/kubernetes.png"
-      width="0"
-      height="0"
-      sizes="100vw"
-      style={{
-        width: "100%",
-        height: "100%",
-        objectFit: "contain",
-        padding: "1rem 0",
-        border: "none",
-      }}
+      width="250"
+      height="100"
       alt="Kubernetes logo image"
     />,
     <Image
       key={5}
       src="/images/carousel/aws.png"
-      width="0"
-      height="0"
-      sizes="100vw"
-      style={{
-        width: "100%",
-        height: "100%",
-
-        objectFit: "contain",
-        border: "none",
-      }}
+      width="250"
+      height="100"
       alt="AWS logo image"
     />,
     <Image
       key={6}
       src="/images/carousel/github.png"
-      width="0"
-      height="0"
-      sizes="100vw"
-      style={{
-        width: "100%",
-        height: "100%",
-        objectFit: "contain",
-        padding: "1rem 0",
-        border: "none",
-      }}
+      width="250"
+      height="100"
       alt="Github logo image"
     />,
     <Image
       key={7}
       src="/images/carousel/jira.png"
-      width="0"
-      height="0"
-      sizes="100vw"
-      style={{
-        width: "100%",
-        height: "100%",
-        objectFit: "contain",
-        border: "none",
-      }}
+      width="250"
+      height="100"
       alt="Jira logo image"
     />,
   ]
