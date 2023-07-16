@@ -56,21 +56,24 @@ const WelcomeText = () => {
     }
   }, [currentIndex])
 
+  const hello = () => <div className={style.hello}>{t("welcome.hello")}</div>
+  const iAm = () => <div className={style.iAm}>{t("welcome.iAm")}</div>
+  const name = () => <div className={style.name}>{t("welcome.name")}</div>
+
   return (
     <div className={style.container}>
-      <div className="font-roboto text-h4 lg:mx-0 d:text-h1">
-        {t("welcome.hello")}
+      <div className={style.smallTextRow}>
+        {hello()}
+        {iAm()}
       </div>
-      <div className="flex flex-col items-start w-full d:items-end d:space-x-4 d:flex-row">
-        <div className="text-h3 font-roboto d:text-h1 d:pb-2">
-          {t("welcome.iAm")}
-        </div>
-        <div className="font-bold text-h3 font-agdasima xxs:text-h1 text-primary-100 d:text-myName">
-          {t("welcome.name")}
-        </div>
+      <div className={style.smallTextRow}>{name()}</div>
+      <div className={style.largeTextRow}>{hello()}</div>
+      <div className={style.largeTextRow}>
+        {iAm()}
+        {name()}
       </div>
-      <div className="flex items-center justify-center pl-4 d:pl-8 text-h5 font-bacasimeAntique text-primary-300 xxs:text-h4 d:text-h2">
-        <h1 className="relative text-3xl text-center">
+      <div className={style.jobTypewriter}>
+        <h1 className={style.jobTypewriterText}>
           <span className={style.typewriter}>{currentWord}</span>
           <div className={style.cursor} />
         </h1>

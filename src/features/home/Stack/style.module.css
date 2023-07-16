@@ -1,0 +1,11 @@
+.container {
+  @apply flex items-center justify-center w-full;
+}
+
+.carouselContainer {
+  @apply relative w-full overflow-hidden bg-white shadow-lg;
+}
+
+.item {
+  @apply flex-shrink-0 w-[180px] h-[100px] md:w-[250px] md:h-[100px];
+}

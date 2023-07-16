@@ -2,7 +2,7 @@ import ExperienceDecor from "@/ui/atoms/ExperienceDecor"
 
 interface Props {
   children: React.ReactNode
-  bgColor?: string
+  bgColor?: "bg-white" | "bg-primary-400"
 }
 
 const ActivityCard = ({ bgColor, children }: Props) => {

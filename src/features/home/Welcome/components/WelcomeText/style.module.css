@@ -11,7 +11,7 @@
 }
 
 .name {
-  @apply w-full font-bold text-h3 font-agdasima text-primary-100 d:text-h1;
+  @apply font-bold font-agdasima text-h2 text-primary-100 d:text-myName;
 }
 
 .hello {

@@ -1,4 +1,5 @@
 import Image from "next/image"
+import style from "./style.module.css"
 
 const Stack = () => {
   const items = [
@@ -15,7 +16,7 @@ const Stack = () => {
         padding: "1rem 0",
         border: "none",
       }}
-      alt=""
+      alt="Nextjs logo image"
     />,
     <Image
       key={1}
@@ -30,7 +31,7 @@ const Stack = () => {
         objectFit: "contain",
         border: "none",
       }}
-      alt=""
+      alt="Nestjs logo image"
     />,
     <Image
       key={2}
@@ -45,7 +46,7 @@ const Stack = () => {
         objectFit: "contain",
         border: "none",
       }}
-      alt=""
+      alt="Postgre logo image"
     />,
     <Image
       key={3}
@@ -60,7 +61,7 @@ const Stack = () => {
         objectFit: "contain",
         border: "none",
       }}
-      alt=""
+      alt="Docker logo image"
     />,
     <Image
       key={4}
@@ -75,7 +76,7 @@ const Stack = () => {
         padding: "1rem 0",
         border: "none",
       }}
-      alt=""
+      alt="Kubernetes logo image"
     />,
     <Image
       key={5}
@@ -90,7 +91,7 @@ const Stack = () => {
         objectFit: "contain",
         border: "none",
       }}
-      alt=""
+      alt="AWS logo image"
     />,
     <Image
       key={6}
@@ -105,7 +106,7 @@ const Stack = () => {
         padding: "1rem 0",
         border: "none",
       }}
-      alt=""
+      alt="Github logo image"
     />,
     <Image
       key={7}
@@ -119,19 +120,16 @@ const Stack = () => {
         objectFit: "contain",
         border: "none",
       }}
-      alt=""
+      alt="Jira logo image"
     />,
   ]
   const loopedItems = [...items, ...items, ...items]
   return (
-    <div className="flex items-center justify-center w-full bg-gray-200">
-      <div className="relative w-full overflow-hidden bg-white shadow-lg">
+    <div className={style.container}>
+      <div className={style.carouselContainer}>
         <div className="flex items-center justify-center w-full animate-smallCarousel md:animate-carousel">
           {loopedItems.map((item, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-[180px] h-[100px] md:w-[250px] md:h-[100px] text-black"
-            >
+            <div key={index} className={style.item}>
               {item}
             </div>
           ))}
