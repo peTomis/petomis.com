@@ -1,6 +1,5 @@
 import { useTranslations } from "@/modules/translations/use"
 import style from "./style.module.css"
-import ExperienceDecor from "@/ui/atoms/ExperienceDecor"
 import { useEffect, useState } from "react"
 import RedirectIcon from "@/ui/icons/Redirect"
 import { Carousel } from "@/ui/organisms/Carousel"
