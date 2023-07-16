@@ -1,0 +1,11 @@
+.button {
+  @apply cursor-pointer  flex justify-center items-center w-[150px] h-[50px]  rounded-md;
+}
+
+.primary {
+  @apply bg-primary-300;
+}
+
+.secondary {
+  @apply border-[1px] font-thin opacity-50;
+}

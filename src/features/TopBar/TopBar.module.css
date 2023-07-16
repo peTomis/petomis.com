@@ -7,7 +7,7 @@
 }
 
 .logoContainer {
-  @apply hidden font-satisfy text-h3 md:flex md:flex-row sm:mx-auto px-4;
+  @apply hidden font-satisfy text-h3 md:flex md:flex-row sm:mx-auto px-4 select-none;
 }
 
 .social {

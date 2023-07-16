@@ -3,6 +3,7 @@ import style from "./style.module.css"
 import FormInput from "@/ui/molecules/FormInput"
 import { useState } from "react"
 import { useForm } from "@formspree/react"
+import Button from "@/ui/atoms/Button"
 
 const Contact = () => {
   const [name, setName] = useState("")
@@ -40,14 +41,14 @@ const Contact = () => {
   if (!!state.succeeded)
     return (
       <div className={style.container} id="contactContainer">
-        <div className={style.title}>{t("contactTitle")}</div>
+        <div className={style.title}>{t("contact.title")}</div>
         <div className={style.letterContainer}>
           <div className={style.wrapper}>
             <div className={style.lid} />
             <div className={style.envelope} />
             <div className={style.letter}>
-              <div className={style.thanks}>{t("thankMailTitle")}</div>
-              <div className={style.brb}>{t("thankMailText")}</div>
+              <div className={style.thanks}>{t("contact.thankMailTitle")}</div>
+              <div className={style.brb}>{t("contact.thankMailText")}</div>
             </div>
           </div>
         </div>
@@ -56,44 +57,42 @@ const Contact = () => {
 
   return (
     <div className={style.container} id="contactContainer">
-      <div className={style.title}>{t("contactTitle")}</div>
+      <div className={style.title}>{t("contact.title")}</div>
       <div className={style.form}>
         <div className={style.inputs}>
           <FormInput
             error={nameError}
-            label={t("contactName")}
+            label={t("contact.name")}
             onChange={(s) => {
               if (nameError) setNameError(false)
               setName(s)
             }}
-            placeholder={t("contactNamePlaceholder") as string}
+            placeholder={t("contact.namePlaceholder") as string}
           />
           <FormInput
             error={emailError}
-            label={t("contactEmail")}
+            label={t("contact.email")}
             onChange={(s) => {
               if (emailError) setEmailError(false)
               setEmail(s)
             }}
-            placeholder={t("contactEmailPlaceholder") as string}
+            placeholder={t("contact.emailPlaceholder") as string}
           />
         </div>
         <div className={"w-full"}>
           <FormInput
             error={messageError}
-            label={t("contactMessage")}
+            label={t("contact.message")}
             onChange={(s) => {
               if (messageError) setMessageError(false)
               setMessage(s)
             }}
-            placeholder={t("contactMessagePlaceholder") as string}
+            placeholder={t("contact.messagePlaceholder") as string}
             type="area"
           />
         </div>
         <div className={style.buttonContainer}>
-          <div className={style.buttonClickable} onClick={handleSubmit}>
-            Submit
-          </div>
+          <Button label={t("contact.submit")} onClick={handleSubmit} />
         </div>
       </div>
     </div>

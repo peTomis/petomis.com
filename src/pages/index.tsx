@@ -20,6 +20,7 @@ const Home: NextPage = () => {
           content="https://petomis.com/images/sample.jpg"
         />
       </Head>
+
       <HomeContainer />
     </div>
   )

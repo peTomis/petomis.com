@@ -9,7 +9,7 @@ interface Props {
 }
 
 const TopBar = ({ onClick }: Props) => {
-  const { t } = useTranslations("common")
+  const { t, i18n } = useTranslations("home")
 
   const openGitHub = () => window.open(process.env.GITHUB, "_blank")
   const openLinkedIn = () => window.open(process.env.LINKEDIN, "_blank")

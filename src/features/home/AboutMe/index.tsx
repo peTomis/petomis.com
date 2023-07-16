@@ -5,19 +5,19 @@ const AboutMe = () => {
   const { t } = useTranslations("home")
   return (
     <div className={style.container}>
-      <div className={style.title}>{t("aboutMeTitle")}</div>
+      <div className={style.title}>{t("aboutMe.title")}</div>
       <div className={style.text}>
-        {t("aboutMeText1")}
-        <span className={"text-primary-200"}>{t("aboutMeText2")}</span>
-        {t("aboutMeText3")}
-        <span className={"text-primary-200"}>{t("aboutMeText4")}</span>
-        {t("aboutMeText5")}
-        <span className={"text-primary-200"}>{t("aboutMeText6")}</span>
-        {t("aboutMeText7")}
+        {t("aboutMe.text1")}
+        <span className={"text-primary-200"}>{t("aboutMe.text2")}</span>
+        {t("aboutMe.text3")}
+        <span className={"text-primary-200"}>{t("aboutMe.text4")}</span>
+        {t("aboutMe.text5")}
+        <span className={"text-primary-200"}>{t("aboutMe.text6")}</span>
+        {t("aboutMe.text7")}
       </div>
-      <div className={style.text}>{t("aboutMeText8")}</div>
-      <div className={style.text}>{t("aboutMeText9")}</div>
-      <div className={style.text}>{t("aboutMeText10")}</div>
+      <div className={style.text}>{t("aboutMe.text8")}</div>
+      <div className={style.text}>{t("aboutMe.text9")}</div>
+      <div className={style.text}>{t("aboutMe.text10")}</div>
     </div>
   )
 }

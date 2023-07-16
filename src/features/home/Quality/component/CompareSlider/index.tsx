@@ -1,16 +1,16 @@
 import { ReactCompareSlider } from "react-compare-slider"
 import style from "./style.module.css"
-import MonitorFrame from "../../molecules/MonitorFrame"
+import MonitorFrame from "@ui/molecules/MonitorFrame"
 import { useTranslations } from "@/modules/translations/use"
 
 const CompareSlider = () => {
-  const { t } = useTranslations("common")
+  const { t } = useTranslations("home")
   return (
     <ReactCompareSlider
       itemOne={
         <div className={style.background}>
           <div className={style.leftTitle}>
-            {t("monitorFrame.theCompetition")}
+            {t("cleanCode.comparison.others")}
           </div>
           <MonitorFrame main={true}>
             <div className="flex flex-row space-x-4">
@@ -106,7 +106,7 @@ const CompareSlider = () => {
       }
       itemTwo={
         <div className={style.background}>
-          <div className={style.rightTitle}>{t("monitorFrame.me")}</div>
+          <div className={style.rightTitle}>{t("cleanCode.comparison.me")}</div>
           <MonitorFrame main={false}>
             <div className="flex flex-row space-x-4">
               <div className="text-vscodeblue">const</div>

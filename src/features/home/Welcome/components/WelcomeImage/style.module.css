@@ -7,7 +7,7 @@
 }
 
 .firstImage {
-  @apply absolute bg-white rounded-xl shadow-lg overflow-hidden left-0 top-0 w-[100px] h-[100px] d:w-[150px] d:h-[150px] xl:w-[200px] xl:h-[200px];
+  @apply absolute bg-white rounded-lg shadow-lg overflow-hidden left-0 top-0 w-[100px] h-[100px] d:w-[150px] d:h-[150px] xl:w-[200px] xl:h-[200px];
   animation-name: firstMove;
   animation-duration: 2s;
   animation-fill-mode: forwards;
@@ -25,7 +25,7 @@
 }
 
 .secondImage {
-  @apply absolute bg-primary-500 rounded-xl shadow-lg overflow-hidden right-[5px] top-[5px] w-[120px] h-[120px]  d:right-[10px] d:top-[10px] d:w-[176px] d:h-[176px] xl:right-[10px] xl:top-[10px] xl:w-[240px] xl:h-[240px];
+  @apply absolute bg-primary-500 rounded-lg shadow-lg overflow-hidden right-[5px] top-[5px] w-[120px] h-[120px]  d:right-[10px] d:top-[10px] d:w-[176px] d:h-[176px] xl:right-[10px] xl:top-[10px] xl:w-[240px] xl:h-[240px];
   animation-name: secondMove;
   animation-duration: 2s;
   animation-fill-mode: forwards;
@@ -43,7 +43,7 @@
 }
 
 .thirdImage {
-  @apply absolute bg-primary-400 rounded-xl shadow-lg overflow-hidden left-[25px] bottom-[25px] w-[105px] h-[105px] d:left-[36px] d:bottom-[36px] d:w-[154px] d:h-[154px] xl:left-[50px] xl:bottom-[50px] xl:w-[210px] xl:h-[210px];
+  @apply absolute bg-primary-400 rounded-lg shadow-lg overflow-hidden left-[25px] bottom-[25px] w-[105px] h-[105px] d:left-[36px] d:bottom-[36px] d:w-[154px] d:h-[154px] xl:left-[50px] xl:bottom-[50px] xl:w-[210px] xl:h-[210px];
   animation-name: thirdMove;
   animation-duration: 2s;
   animation-fill-mode: forwards;
@@ -61,7 +61,7 @@
 }
 
 .forthImage {
-  @apply absolute bg-white rounded-xl shadow-lg overflow-hidden bottom-0 right-0 w-[105px] h-[105px] d:w-[154px] d:h-[154px] xl:w-[210px] xl:h-[210px];
+  @apply absolute bg-white rounded-lg shadow-lg overflow-hidden bottom-0 right-0 w-[105px] h-[105px] d:w-[154px] d:h-[154px] xl:w-[210px] xl:h-[210px];
   animation-name: forthMove;
   animation-duration: 2s;
   animation-fill-mode: forwards;

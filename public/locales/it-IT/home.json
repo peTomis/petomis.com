@@ -1,0 +1,66 @@
+{
+  "title": "Giuseppe Tomis - Ingegnere del Software",
+  "description": "Sito personale di Giuseppe Tomis, Ingegnere del software e sviluppatore fullstack",
+  "aboutMe": {
+    "text1": "Welcome! I'm ",
+    "text2": "Giuseppe Tomis",
+    "text3": ", an accomplished ",
+    "text4": "Software Engineer",
+    "text5": " and a ",
+    "text6": "Fullstack Developer",
+    "text7": " specializing in blending aesthetics and functionality.",
+    "text8": "Having mastered multiple programming languages and tools such as JavaScript, Python, React, and Node.js, I bring a comprehensive perspective to software development, bridging the gap between front-end design and back-end operations.",
+    "text9": "With a knack for problem-solving, I am committed to delivering high-performing, scalable solutions that can drive your digital objectives.",
+    "text10": "Whether it's a creative collaboration you're seeking or a tech expert to bring your vision alive, I am eager to help shape your digital aspirations into successful realities.",
+    "title": "About Me"
+  },
+  "cleanCode": {
+    "comparison": {
+      "me": "Me",
+      "others": "Others"
+    },
+    "example": "Example:",
+    "note": "(*) The image is a lighthearted jest!  All developers are an inspiration to me, fueling my drive to consistently deliver the best and most efficient code possible. I assure you I strive for the extra mile, consistently pushing for the best code possible.",
+    "text1": "My approach to development centers on creating ",
+    "text2": "clean",
+    "text3": ", ",
+    "text4": "tested",
+    "text5": ", and highly ",
+    "text6": "efficient",
+    "text7": " code. With an acute attention to detail, I diligently identify and correct even the smallest issues, resulting in software that excels in performance and user experience. I blend precision with creativity to build robust, scalable solutions that exceed quality standards."
+  },
+  "contact": {
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "message": "Message",
+    "messagePlaceholder": "Enter your message",
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "submit": "Submit",
+    "thankMailTitle": "Thank you!",
+    "thankMailText": "Will reply soon",
+    "title": "Contact Me"
+  },
+  "experience": {
+    "title": "Experience",
+    "jobAName": "Fullstack Developer",
+    "jobADate": "2022-now",
+    "jobBName": "Mobile developer",
+    "jobBDate": "2019-2022",
+    "jobBCommitter": "Freelance",
+    "days": "days"
+  },
+  "topBar": {
+    "home": "Home",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "welcome": {
+    "contact": "Contattami",
+    "firstRole": "> Ingegnere del software",
+    "hello": "Ciao!",
+    "iAm": "Sono",
+    "name": "Giuseppe Tomis",
+    "secondRole": "> Sviluppatore fullstack"
+  }
+}
