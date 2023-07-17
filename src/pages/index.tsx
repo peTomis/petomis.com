@@ -19,6 +19,7 @@ const Home: NextPage = () => {
           property="og:image"
           content="https://petomis.com/images/sample.jpg"
         />
+        <link rel="canonical" href="https://www.petomis.com/"></link>
       </Head>
 
       <HomeContainer />
