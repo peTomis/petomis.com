@@ -2,64 +2,28 @@ import Image from "next/image"
 import style from "./style.module.css"
 
 const Stack = () => {
+  const imageItem = (src: string, alt: string, key: number) => (
+    <Image
+      key={key}
+      src={src}
+      width="250"
+      height="100"
+      alt={alt}
+      loading={"eager"}
+    />
+  )
+
   const items = [
-    <Image
-      key={0}
-      src="/images/carousel/nextjs.png"
-      width="250"
-      height="100"
-      alt="Nextjs logo image"
-    />,
-    <Image
-      key={1}
-      src="/images/carousel/nestjs.png"
-      width="250"
-      height="100"
-      alt="Nestjs logo image"
-    />,
-    <Image
-      key={2}
-      src="/images/carousel/postgre.png"
-      width="250"
-      height="100"
-      alt="Postgre logo image"
-    />,
-    <Image
-      key={3}
-      src="/images/carousel/docker.png"
-      width="250"
-      height="100"
-      alt="Docker logo image"
-    />,
-    <Image
-      key={4}
-      src="/images/carousel/kubernetes.png"
-      width="250"
-      height="100"
-      alt="Kubernetes logo image"
-    />,
-    <Image
-      key={5}
-      src="/images/carousel/aws.png"
-      width="250"
-      height="100"
-      alt="AWS logo image"
-    />,
-    <Image
-      key={6}
-      src="/images/carousel/github.png"
-      width="250"
-      height="100"
-      alt="Github logo image"
-    />,
-    <Image
-      key={7}
-      src="/images/carousel/jira.png"
-      width="250"
-      height="100"
-      alt="Jira logo image"
-    />,
+    imageItem("/images/carousel/nestjs.png", "Nestjs logo image", 0),
+    imageItem("/images/carousel/nextjs.png", "Nextjs logo image", 1),
+    imageItem("/images/carousel/postgre.png", "Postgre logo image", 2),
+    imageItem("/images/carousel/docker.png", "Docker logo image", 3),
+    imageItem("/images/carousel/kubernetes.png", "Kubernetes logo image", 4),
+    imageItem("/images/carousel/aws.png", "AWS logo image", 5),
+    imageItem("/images/carousel/github.png", "Github logo image", 6),
+    imageItem("/images/carousel/jira.png", "Jira logo image", 7),
   ]
+
   const loopedItems = [...items, ...items, ...items]
   return (
     <div className={style.container}>
