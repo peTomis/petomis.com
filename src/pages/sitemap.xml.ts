@@ -17,7 +17,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         <loc>${`https://petomis.com`}</loc>
         <lastmod>${new Date().toISOString()}</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <priority>0.9</priority>
       </url>`
 
   xml += `</urlset>`
