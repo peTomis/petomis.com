@@ -7,5 +7,5 @@
 }
 
 .item {
-  @apply flex-shrink-0 justify-center items-center w-[180px] h-[100px] md:w-[250px] md:h-[100px];
+  @apply flex-shrink-0 justify-center items-center w-[175px] h-[70px] md:w-[250px] md:h-[100px];
 }
