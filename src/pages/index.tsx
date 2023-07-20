@@ -20,6 +20,10 @@ const Home: NextPage = () => {
           content="https://petomis.com/images/sample.jpg"
         />
         <link rel="canonical" href="https://www.petomis.com/"></link>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="mask-icon" href="/favicon.svg" color="#5bbad5" />
       </Head>
 
       <HomeContainer />

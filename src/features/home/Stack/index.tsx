@@ -11,7 +11,13 @@ interface ImageItemProps {
 const ImageItem: React.FC<ImageItemProps> = ({ src, alt }) => (
   <div className={style.item}>
     <div className={style.imageContainer}>
-      <Image src={src} alt={alt} layout="fill" className={style.img} />
+      <Image
+        src={src}
+        alt={alt}
+        width={200}
+        height={80}
+        className={style.img}
+      />
     </div>
   </div>
 )
