@@ -7,23 +7,22 @@ import { useTranslations } from "@/modules/translations/use"
 const Home: NextPage = () => {
   const { t } = useTranslations("home")
   const title = t("title")
-  const description = t("content")
+  const description = t("description")
   return (
     <div>
       <Head>
+        <meta property="og:site_name" content={"Giuseppe Tomis"} />
         <title>{title}</title>
-        <meta name="description" content={description} key="desc" />
+        <meta name="description" content={description} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta
           property="og:image"
           content="https://petomis.com/images/sample.jpg"
         />
-        <link rel="canonical" href="https://www.petomis.com/"></link>
+        <link rel="canonical" href="https://www.petomis.com/" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="mask-icon" href="/favicon.svg" color="#5bbad5" />
+        <link rel="mask-icon" href="/favicon.svg" color="#00415A" />
       </Head>
 
       <HomeContainer />
