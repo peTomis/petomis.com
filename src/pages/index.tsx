@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         />
         <link rel="canonical" href="https://www.petomis.com/" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="mask-icon" href="/favicon.svg" color="#00415A" />
+        <link rel="mask-icon" href="/favicon.svg" color="#009BD6" />
       </Head>
 
       <HomeContainer />
