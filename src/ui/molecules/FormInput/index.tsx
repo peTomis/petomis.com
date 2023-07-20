@@ -9,33 +9,28 @@ interface Props {
 }
 
 const FormInput = ({ error, label, onChange, placeholder, type }: Props) => {
-  if (type === "area")
-    return (
-      <div className={style.container}>
-        <div className={style.label}>{label}</div>
-
-        <textarea
-          className={error ? style.areaError : style.area}
-          onChange={(e) => {
-            onChange(e.target.value)
-          }}
-          placeholder={placeholder}
-        />
-      </div>
-    )
+  const isArea = type === "area"
+  const inputClass = error ? style.inputError : style.input
+  const areaClass = error ? style.areaError : style.area
 
   return (
     <div className={style.container}>
       <div className={style.label}>{label}</div>
 
-      <input
-        className={error ? style.inputError : style.input}
-        type={type ?? "text"}
-        onChange={(e) => {
-          onChange(e.target.value)
-        }}
-        placeholder={placeholder}
-      />
+      {isArea ? (
+        <textarea
+          className={areaClass}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder={placeholder}
+        />
+      ) : (
+        <input
+          className={inputClass}
+          type={type ?? "text"}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder={placeholder}
+        />
+      )}
     </div>
   )
 }
