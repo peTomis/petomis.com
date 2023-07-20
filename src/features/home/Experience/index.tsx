@@ -10,13 +10,14 @@ interface Props {
   id: string
 }
 
+const startDate = new Date("2022-03-01")
+
 const Experience = ({ id }: Props) => {
   const [daysPassed, setDaysPassed] = useState(0)
 
   const openAnubiHomepage = () => window.open(process.env.ANUBI, "_blank")
 
   useEffect(() => {
-    const startDate = new Date("2022-03-01")
     const today = new Date()
     const timeDiff = Math.abs(today.getTime() - startDate.getTime())
     const days = Math.ceil(timeDiff / (1000 * 3600 * 24))

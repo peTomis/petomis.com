@@ -1,44 +1,79 @@
 import { useTranslations } from "@/modules/translations/use"
 import style from "./style.module.css"
 import FormInput from "@/ui/molecules/FormInput"
-import { useState } from "react"
+import { useReducer, useState } from "react"
 import { useForm } from "@formspree/react"
 import Button from "@/ui/atoms/Button"
 
+type State = {
+  name: string
+  email: string
+  message: string
+  errors: {
+    name: boolean
+    email: boolean
+    message: boolean
+  }
+}
+
+type Action =
+  | { type: "setName"; payload: string }
+  | { type: "setEmail"; payload: string }
+  | { type: "setMessage"; payload: string }
+  | {
+      type: "setErrors"
+      payload: { name: boolean; email: boolean; message: boolean }
+    }
+
+const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
+const nameRegex = /^[a-zA-Z\s]*$/
+
+const isValidEmail = (value: string) =>
+  emailRegex.test(value) && value.length > 0
+const isValidName = (value: string) => nameRegex.test(value) && value.length > 0
+const isValidMessage = (value: string) => value.length > 0
+
+const initialState = {
+  name: "",
+  email: "",
+  message: "",
+  errors: { name: false, email: false, message: false },
+}
+
+const reducer = (state: State, action: Action) => {
+  switch (action.type) {
+    case "setName":
+      return { ...state, name: action.payload }
+    case "setEmail":
+      return { ...state, email: action.payload }
+    case "setMessage":
+      return { ...state, message: action.payload }
+    case "setErrors":
+      return { ...state, errors: action.payload }
+    default:
+      return state
+  }
+}
+
 const Contact = () => {
-  const [name, setName] = useState("")
-  const [nameError, setNameError] = useState(false)
-  const [email, setEmail] = useState("")
-  const [emailError, setEmailError] = useState(false)
-  const [message, setMessage] = useState("")
-  const [messageError, setMessageError] = useState(false)
-  const [state, submitEmail] = useForm("mnqkqwja")
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const { name, email, message, errors } = state
   const { t } = useTranslations("home")
+  const [formState, submitEmail] = useForm("mnqkqwja")
 
   const handleSubmit = async () => {
-    if (!isValidName(name)) setNameError(true)
-    if (!isValidEmail(email)) setEmailError(true)
-    if (!isValidMessage(message)) setMessageError(true)
-    if (!isValidName(name) || !isValidEmail(email) || !isValidMessage(message))
-      return
-    submitEmail({ email, message })
+    const newErrors = {
+      name: !isValidName(name),
+      email: !isValidEmail(email),
+      message: !isValidMessage(message),
+    }
+    dispatch({ type: "setErrors", payload: newErrors })
+    if (!newErrors.name && !newErrors.email && !newErrors.message) {
+      submitEmail({ email, message })
+    }
   }
 
-  const isValidEmail = (value: string) => {
-    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
-    return emailRegex.test(value) && value.length > 0
-  }
-
-  const isValidMessage = (value: string) => {
-    return value.length > 0
-  }
-
-  const isValidName = (value: string) => {
-    const nameRegex = /^[a-zA-Z\s]*$/
-    return nameRegex.test(value) && value.length > 0
-  }
-
-  if (!!state.succeeded)
+  if (formState.succeeded)
     return (
       <div className={style.container} id="contactContainer">
         <div className={style.title}>{t("contact.title")}</div>
@@ -61,32 +96,23 @@ const Contact = () => {
       <div className={style.form}>
         <div className={style.inputs}>
           <FormInput
-            error={nameError}
+            error={errors.name}
             label={t("contact.name")}
-            onChange={(s) => {
-              if (nameError) setNameError(false)
-              setName(s)
-            }}
+            onChange={(s) => dispatch({ type: "setName", payload: s })}
             placeholder={t("contact.namePlaceholder") as string}
           />
           <FormInput
-            error={emailError}
+            error={errors.email}
             label={t("contact.email")}
-            onChange={(s) => {
-              if (emailError) setEmailError(false)
-              setEmail(s)
-            }}
+            onChange={(s) => dispatch({ type: "setEmail", payload: s })}
             placeholder={t("contact.emailPlaceholder") as string}
           />
         </div>
         <div className={"w-full"}>
           <FormInput
-            error={messageError}
+            error={errors.message}
             label={t("contact.message")}
-            onChange={(s) => {
-              if (messageError) setMessageError(false)
-              setMessage(s)
-            }}
+            onChange={(s) => dispatch({ type: "setMessage", payload: s })}
             placeholder={t("contact.messagePlaceholder") as string}
             type="area"
           />

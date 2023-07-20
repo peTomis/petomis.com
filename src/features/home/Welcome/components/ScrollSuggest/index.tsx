@@ -4,8 +4,10 @@ import ArrowIcon from "@/ui/icons/Arrow"
 
 const ScrollSuggest = () => {
   const [hidden, setHidden] = useState(false)
+
   const handleClick = () => {
     window.scrollBy({ top: window.innerHeight * 0.8, behavior: "smooth" })
+
     setHidden(true)
   }
 

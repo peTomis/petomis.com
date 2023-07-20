@@ -3,9 +3,17 @@
 }
 
 .carouselContainer {
-  @apply relative w-full overflow-hidden bg-white shadow-lg;
+  @apply w-full overflow-hidden bg-white shadow-lg;
 }
 
 .item {
-  @apply flex-shrink-0 justify-center items-center w-[175px] h-[70px] md:w-[250px] md:h-[100px];
+  @ally flex justify-center items-center;
+}
+
+.imageContainer {
+  @apply relative overflow-hidden w-[175px]  h-[70px] md:w-[250px] md:h-[100px];
+}
+
+.img {
+  @apply object-contain p-2;
 }
