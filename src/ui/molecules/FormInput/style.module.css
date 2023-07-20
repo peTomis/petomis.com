@@ -2,22 +2,31 @@
   @apply flex flex-col font-roboto font-normal w-full;
 }
 
+.baseInput {
+  @apply bg-opacity-50 m-2 py-2 px-4 rounded-md outline-none w-full;
+}
+
+.error {
+  @apply bg-red-900 text-white;
+  animation: shake 0.3s 1 0s;
+}
+
+.area,
+.input {
+  @apply baseInput bg-black text-white;
+}
+
 .area {
-  @apply resize-none bg-black text-white bg-opacity-50 m-2 py-2 px-4 rounded-md outline-none w-full min-h-[200px];
+  @apply resize-none min-h-[200px];
+}
+
+.inputError,
+.areaError {
+  @apply baseInput error;
 }
 
 .areaError {
-  @apply resize-none bg-red-900 text-white bg-opacity-50 m-2 py-2 px-4 rounded-md outline-none w-full min-h-[200px];
-  animation: shake 0.3s 1 0s;
-}
-
-.input {
-  @apply bg-black text-white bg-opacity-50 m-2 py-2 px-4 rounded-md outline-none w-full;
-}
-
-.inputError {
-  @apply bg-red-900 text-white bg-opacity-50 m-2 py-2 px-4 rounded-md outline-none w-full;
-  animation: shake 0.3s 1 0s;
+  @apply resize-none min-h-[200px];
 }
 
 .label {

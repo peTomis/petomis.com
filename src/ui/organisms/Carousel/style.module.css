@@ -8,12 +8,16 @@
   @apply flex flex-col relative justify-center items-center;
 }
 
+.opacifiedActiveItem {
+  @apply opacity-70 scale-90 -z-10;
+}
+
 .rightActiveItem {
-  @apply opacity-70 ml-[6rem] sm:ml-[8rem] md:ml-[18rem] lg:ml-[24rem] scale-90 -z-10;
+  @apply opacifiedActiveItem ml-[6rem] sm:ml-[8rem] md:ml-[18rem] lg:ml-[24rem];
 }
 
 .leftActiveItem {
-  @apply opacity-70 mr-[6rem] sm:mr-[8rem] md:mr-[18rem] lg:mr-[24rem] scale-90 -z-10;
+  @apply opacifiedActiveItem mr-[6rem] sm:mr-[8rem] md:mr-[18rem] lg:mr-[24rem];
 }
 
 .renderedItem {

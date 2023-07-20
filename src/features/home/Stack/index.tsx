@@ -1,27 +1,57 @@
 import Image from "next/image"
 import style from "./style.module.css"
+import React from "react"
+
+interface ImageItemProps {
+  src: string
+  alt: string
+  key: number
+}
+
+const ImageItem: React.FC<ImageItemProps> = ({ src, alt }) => (
+  <div className={style.item}>
+    <div className={style.imageContainer}>
+      <Image src={src} alt={alt} layout="fill" className={style.img} />
+    </div>
+  </div>
+)
+
+ImageItem.displayName = "ImageItem"
 
 const Stack = () => {
-  const imageItem = (src: string, alt: string, key: number) => (
-    <Image
-      key={key}
-      src={src}
-      width="250"
-      height="100"
-      alt={alt}
-      loading={"eager"}
-    />
-  )
-
   const items = [
-    imageItem("/images/carousel/nestjs.png", "Nestjs logo image", 0),
-    imageItem("/images/carousel/nextjs.png", "Nextjs logo image", 1),
-    imageItem("/images/carousel/postgre.png", "Postgre logo image", 2),
-    imageItem("/images/carousel/docker.png", "Docker logo image", 3),
-    imageItem("/images/carousel/kubernetes.png", "Kubernetes logo image", 4),
-    imageItem("/images/carousel/aws.png", "AWS logo image", 5),
-    imageItem("/images/carousel/github.png", "Github logo image", 6),
-    imageItem("/images/carousel/jira.png", "Jira logo image", 7),
+    <ImageItem
+      key={0}
+      src="/images/carousel/nestjs.png"
+      alt="Nestjs logo image"
+    />,
+    <ImageItem
+      key={1}
+      src="/images/carousel/nextjs.png"
+      alt="Nextjs logo image"
+    />,
+    <ImageItem
+      key={2}
+      src="/images/carousel/postgre.png"
+      alt="Postgre logo image"
+    />,
+    <ImageItem
+      key={3}
+      src="/images/carousel/docker.png"
+      alt="Docker logo image"
+    />,
+    <ImageItem
+      key={4}
+      src="/images/carousel/kubernetes.png"
+      alt="Kubernetes logo image"
+    />,
+    <ImageItem key={5} src="/images/carousel/aws.png" alt="AWS logo image" />,
+    <ImageItem
+      key={6}
+      src="/images/carousel/github.png"
+      alt="Github logo image"
+    />,
+    <ImageItem key={7} src="/images/carousel/jira.png" alt="Jira logo image" />,
   ]
 
   const loopedItems = [...items, ...items, ...items]
@@ -29,11 +59,7 @@ const Stack = () => {
     <div className={style.container}>
       <div className={style.carouselContainer}>
         <div className="flex items-center justify-center w-full animate-smallCarousel md:animate-carousel">
-          {loopedItems.map((item, index) => (
-            <div key={index} className={style.item}>
-              {item}
-            </div>
-          ))}
+          {loopedItems}
         </div>
       </div>
     </div>
