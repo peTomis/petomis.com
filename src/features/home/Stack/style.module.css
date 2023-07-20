@@ -15,5 +15,5 @@
 }
 
 .img {
-  @apply object-contain p-2;
+  @apply absolute md:top-[10px];
 }
