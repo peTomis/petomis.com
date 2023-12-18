@@ -28,6 +28,14 @@ module.exports = {
         },
       },
       colors: {
+        background: {
+          DEFAULT: "#F5F5F5",
+          dark: "#000000",
+        },
+        defaultTextColor: {
+          DEFAULT: "#000000",
+          dark: "#ffffff",
+        },
         competitionScreen: {
           DEFAULT: "#3E3E3E",
         },
@@ -82,7 +90,12 @@ module.exports = {
       satisfy: ["Satisfy", "cursive"],
     },
     fontSize: {
-      myName: "66px",
+      myNameSmall: "64px",
+      myNameMedium: "82px",
+      myNameExtraLarge: "128px",
+      jobSmall: "32px",
+      jobMedium: "48px",
+      jobExtraLarge: "64px",
       slogan: "56px",
       h1: "48px",
       h2: "42px",
@@ -98,7 +111,9 @@ module.exports = {
       md: "768px",
       lg: "1024px",
       xl: "1280px",
+      xxl: "1600px",
     },
   },
   plugins: [],
+  darkMode: "class",
 }

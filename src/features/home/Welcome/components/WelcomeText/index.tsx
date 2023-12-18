@@ -1,22 +1,14 @@
 import style from "./style.module.css"
 import { useTranslations } from "@/modules/translations/use"
-import Button from "@/ui/atoms/Button"
 import { useTypewriterEffect } from "@/ui/animations/TypewriterEffect"
-import { useCallback } from "react"
-
-const Hello = () => {
-  const { t } = useTranslations("home")
-  return <div className={style.hello}>{t("welcome.hello")}</div>
-}
-
-const IAm = () => {
-  const { t } = useTranslations("home")
-  return <div className={style.iAm}>{t("welcome.iAm")}</div>
-}
 
 const Name = () => {
   const { t } = useTranslations("home")
-  return <div className={style.name}>{t("welcome.name")}</div>
+  return (
+    <div className="font-bold text-center lg:text-start font-agdasima text-myNameSmall text-primary-100 d:text-myNameMedium lg:text-myNameMedium xxl:text-myNameExtraLarge">
+      {t("welcome.name")}
+    </div>
+  )
 }
 
 const WelcomeText = () => {
@@ -25,41 +17,19 @@ const WelcomeText = () => {
 
   const { currentWord } = useTypewriterEffect(words)
 
-  const scrollToBottom = useCallback(() => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    })
-  }, [])
-
   return (
-    <div className={style.container}>
-      <div className={style.smallTextRow}>
-        <Hello />
-        <IAm />
-      </div>
-      <div className={style.smallTextRow}>
-        <Name />
-      </div>
-      <div className={style.largeTextRow}>
-        <Hello />
-      </div>
-      <div className={style.largeTextRow}>
-        <IAm />
-        <Name />
-      </div>
-      <div className={style.jobTypewriter}>
-        <h1 className={style.jobTypewriterText}>
-          <span className={style.typewriter}>{currentWord}</span>
-          <div className={style.cursor} />
+    <div className="flex flex-col items-center justify-center px-4 lg:items-start lg:justify-start lg:text-start">
+      <Name />
+
+      <div className="flex pb-8 justify-start w-[80vw]  lg:ml-8 max-w-[600px] text-jobSmall font-bacasimeAntique text-defaultTextColor dark:text-defaultTextColor-dark sm:text-jobMedium xxl:text-jobExtraLarge">
+        <h1 className="relative text-center">
+          <span className="relative">{currentWord}</span>
+          <div
+            className={"bg-defaultTextColor dark:bg-defaultTextColor-dark ".concat(
+              style.cursor
+            )}
+          />
         </h1>
-      </div>
-      <div className={style.contactContainer}>
-        <Button
-          label={t("welcome.contact")}
-          primary={false}
-          onClick={scrollToBottom}
-        />
       </div>
     </div>
   )

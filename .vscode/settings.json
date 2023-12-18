@@ -15,5 +15,8 @@
   "prettier.singleQuote": false,
   "prettier.printWidth": 180,
   "typescript.preferences.quoteStyle": "double",
-  "javascript.preferences.quoteStyle": "double"
+  "javascript.preferences.quoteStyle": "double",
+  "[xml]": {
+    "editor.defaultFormatter": "mikeburgh.xml-format"
+  }
 }

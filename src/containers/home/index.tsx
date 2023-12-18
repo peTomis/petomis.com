@@ -1,6 +1,5 @@
 import Welcome from "@/features/home/Welcome"
 import ButtonContact from "@/ui/molecules/ButtonContact"
-import style from "./style.module.css"
 import AboutMe from "@/features/home/AboutMe"
 import Quality from "@/features/home/Quality"
 import Stack from "@/features/home/Stack"
@@ -47,24 +46,26 @@ const HomeContainer = () => {
   }, [])
 
   return (
-    <>
+    <div
+      className={
+        "flex relative flex-col items-center justify-center text-defaultTextColor dark:text-defaultTextColor-dark transition-colors duration-500"
+      }
+    >
       <TopBar onClick={scrollToSelectedDiv} />
-      <div className={style.container}>
-        <Welcome />
-        <AboutMe />
-        <Experience id="experience" />
-        <Stack />
-        <Quality />
-        <Contact />
-        {buttonVisible && (
-          <ButtonContact
-            onClick={() => {
-              scrollToSelectedDiv(`contact`)
-            }}
-          />
-        )}
-      </div>
-    </>
+      <Welcome />
+      {/* <AboutMe />
+      <Experience id="experience" />
+      <Stack />
+      <Quality />
+      <Contact />
+      {buttonVisible && (
+        <ButtonContact
+          onClick={() => {
+            scrollToSelectedDiv(`contact`)
+          }}
+        />
+      )} */}
+    </div>
   )
 }
 

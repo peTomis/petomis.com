@@ -58,8 +58,7 @@
   "welcome": {
     "contact": "Contact Me",
     "firstRole": "> Software Engineer",
-    "hello": "Hi,",
-    "iAm": "I am",
+    "hello": "Hi, I am",
     "name": "Giuseppe Tomis",
     "secondRole": "> Fullstack Developer"
   }

@@ -1,47 +1,10 @@
-.container {
-  @apply flex flex-col pl-8 d:pl-0 justify-start items-start min-w-[350px] d:min-w-[450px];
-}
-
-.smallTextRow {
-  @apply flex flex-row space-x-4 lg:hidden;
-}
-
-.largeTextRow {
-  @apply hidden  lg:flex flex-row items-end space-x-4;
-}
-
-.name {
-  @apply font-bold font-agdasima text-h2 text-primary-100 d:text-myName;
-}
-
-.hello {
-  @apply text-h4 font-roboto d:text-h1 font-extralight;
-}
-
-.iAm {
-  @apply text-h4 font-roboto d:text-h1 font-extralight d:pb-2;
-}
-
-.jobTypewriter {
-  @apply flex py-2  h-[52px] items-center justify-center pl-4 text-h5 font-bacasimeAntique text-primary-300 xxs:text-h4 d:pl-8 d:h-[79px] d:text-h2;
-}
-
-.jobTypewriterText {
-  @apply relative text-center;
-}
-
-.typewriter {
-  position: relative;
-}
-
 .cursor {
-  @apply absolute h-[18px] w-[2px] xxs:h-[24px] d:h-[30px];
+  @apply absolute h-[32px] w-[2px] lg:h-[48px] xl:h-[64px] xl:w-[4px];
   top: 50%;
   left: calc(
     100% + 0.25rem
   ); /* Adjust the distance between the cursor and the text */
   transform: translate(-50%, -50%);
-  background-color: white;
   animation: cursor-blink 0.8s infinite;
 }
 

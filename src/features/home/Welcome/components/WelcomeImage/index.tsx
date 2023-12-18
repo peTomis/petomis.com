@@ -1,43 +1,34 @@
 import Image from "next/image"
-import style from "./style.module.css"
-import socialImage from "@public/images/social.png"
-import wordCloudImage from "@public/images/word-cloud.png"
-import institutionalImage from "@public/images/institutional.png"
+import darkImage from "@public/images/me-dark.png"
+import lightImage from "@public/images/me-light.png"
 
 const WelcomeImage = () => {
   return (
-    <div className={style.container}>
-      <div className={style.mainImage}>
+    <div
+      className={
+        "flex justify-center max-w-[600px] items-center lg:w-[500px] lg:h-[500px] xxl:max-w-[760px] xxl:w-[760px] xxl:h-[760px]"
+      }
+    >
+      <div className="block dark:hidden">
         <Image
-          src={wordCloudImage}
+          src={lightImage}
           alt="Main image"
           placeholder="blur"
           loading="eager"
           priority={true}
-          width={400}
-          height={400}
+          width={1000}
+          height={1000}
         />
       </div>
-      <div className={style.firstImage}>
+      <div className="hidden dark:block">
         <Image
-          src={institutionalImage}
-          alt="Institutional image of the author"
+          src={darkImage}
+          alt="Main image"
           placeholder="blur"
+          loading="eager"
           priority={true}
-          width={200}
-          height={200}
-        />
-      </div>
-      <div className={style.secondImage} />
-      <div className={style.thirdImage} />
-      <div className={style.forthImage}>
-        <Image
-          src={socialImage}
-          alt="Social image of the author"
-          placeholder="blur"
-          priority={true}
-          width={250}
-          height={250}
+          width={1200}
+          height={1200}
         />
       </div>
     </div>
