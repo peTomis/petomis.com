@@ -6,10 +6,10 @@
 
 body {
   color: rgb(20, 20, 20);
-  background: rgb(255, 255, 255);
+  background: rgb(240, 240, 240);
 }
 
 .dark body {
   color: rgb(255, 254, 252);
-  background: rgb(20, 20, 20);
+  background: rgb(32, 32, 32);
 }

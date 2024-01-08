@@ -22,7 +22,6 @@ const DivWithBorder = ({
 
 const LanguageSelector = () => {
   const [language, setLanguage, toggle, setToggle] = useLanguage()
-  console.log(toggle)
   return (
     <div className="relative">
       <DivWithBorder
@@ -55,7 +54,7 @@ const LanguageSelector = () => {
               <ItalyFlag />
             </DivWithBorder>
           </div>
-          <div className="fixed top-0 left-0 w-screen h-screen bg-background dark:bg-background-dark -z-20 opacity-80 lg:hidden" />
+          <div className="fixed top-0 left-0 w-screen h-screen bg-[#ffffff] dark:bg-background-dark -z-20 opacity-80 lg:hidden" />
         </>
       )}
     </div>

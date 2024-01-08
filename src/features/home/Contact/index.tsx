@@ -4,6 +4,7 @@ import FormInput from "@/ui/molecules/FormInput"
 import { useReducer, useState } from "react"
 import { useForm } from "@formspree/react"
 import Button from "@/ui/atoms/Button"
+import FormSucceeded from "./components/FormSucceeded"
 
 type State = {
   name: string
@@ -73,28 +74,18 @@ const Contact = () => {
     }
   }
 
-  if (formState.succeeded)
-    return (
-      <div className={style.container} id="contactContainer">
-        <div className={style.title}>{t("contact.title")}</div>
-        <div className={style.letterContainer}>
-          <div className={style.wrapper}>
-            <div className={style.lid} />
-            <div className={style.envelope} />
-            <div className={style.letter}>
-              <div className={style.thanks}>{t("contact.thankMailTitle")}</div>
-              <div className={style.brb}>{t("contact.thankMailText")}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+  if (formState.succeeded) return <FormSucceeded />
 
   return (
-    <div className={style.container} id="contactContainer">
-      <div className={style.title}>{t("contact.title")}</div>
-      <div className={style.form}>
-        <div className={style.inputs}>
+    <div
+      className="flex flex-col items-center justify-center w-full py-8 bg-primary-500 text-defaultTextColor-dark"
+      id="contactContainer"
+    >
+      <div className="w-full d:max-w-[500px] py-4 text-h2 text-center font-bacasimeAntique font-extrabold text-primary-200  lg:max-w-[1200px]">
+        {t("contact.title")}
+      </div>
+      <div className="w-full xxl:max-w-[1000px] space-y-4">
+        <div className="flex flex-col w-full space-y-4 md:flex-row md:space-y-0 md:space-x-16">
           <FormInput
             error={errors.name}
             label={t("contact.name")}
@@ -117,7 +108,7 @@ const Contact = () => {
             type="area"
           />
         </div>
-        <div className={style.buttonContainer}>
+        <div className="flex items-center justify-center w-full my-4">
           <Button label={t("contact.submit")} onClick={handleSubmit} />
         </div>
       </div>

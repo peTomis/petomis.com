@@ -1,19 +1,15 @@
-.container {
-  @apply flex flex-col font-roboto font-normal w-full;
-}
-
 .baseInput {
-  @apply bg-opacity-50 m-2 py-2 px-4 rounded-md outline-none w-full;
+  @apply m-2 py-2 px-4 rounded-md outline-none;
 }
 
 .error {
-  @apply bg-red-900 text-white;
+  @apply bg-red-900;
   animation: shake 0.3s 1 0s;
 }
 
 .area,
 .input {
-  @apply baseInput bg-black text-white;
+  @apply baseInput;
 }
 
 .area {
@@ -27,10 +23,6 @@
 
 .areaError {
   @apply resize-none min-h-[200px];
-}
-
-.label {
-  @apply mx-4 font-light;
 }
 
 @keyframes shake {
