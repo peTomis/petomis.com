@@ -9,6 +9,7 @@ import RoundedButton from "@/ui/atoms/RoundedButton"
 import ExperienceIcon from "@/ui/icons/Experience"
 import WorkIcon from "@/ui/icons/Work"
 import ProjectIcon from "@/ui/icons/Project"
+import SocialButtons from "@/ui/organisms/SocialButtons"
 
 interface Props {
   setSidebarVisible: () => void
@@ -24,20 +25,17 @@ const TopBar = ({ setSidebarVisible }: Props) => {
     return 0
   }
 
-  const openGitHub = () => window.open(process.env.GITHUB, "_blank")
-  const openLinkedIn = () => window.open(process.env.LINKEDIN, "_blank")
-
   return (
     <TopBarContainer>
       <TopBarButtonContainer id="redirect-container">
         {isScrollingUp && getScrollY() > 700 && (
           <>
-            <IconContainer onClick={openGitHub}>
+            <IconContainer onClick={() => {}}>
               <RoundedButton>
                 <ExperienceIcon size={20} />
               </RoundedButton>
             </IconContainer>
-            <IconContainer onClick={openLinkedIn}>
+            <IconContainer onClick={() => {}}>
               <RoundedButton>
                 <WorkIcon size={20} />
               </RoundedButton>
@@ -51,18 +49,11 @@ const TopBar = ({ setSidebarVisible }: Props) => {
         )}
       </TopBarButtonContainer>
       <TopBarButtonContainer id="link-and-settings-container">
-        <IconContainer onClick={openGitHub}>
-          <GitHubIcon />
-        </IconContainer>
-        <IconContainer onClick={openLinkedIn}>
-          <LinkedinIcon />
-        </IconContainer>
+        <SocialButtons />
         <IconContainer onClick={setSidebarVisible}>
           <SidebarOpenIcon />
         </IconContainer>
       </TopBarButtonContainer>
-      {/* <LanguageSelector />
-      <DarkModeToggle />*/}
     </TopBarContainer>
   )
 }

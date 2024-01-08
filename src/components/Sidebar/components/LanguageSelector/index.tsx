@@ -1,5 +1,7 @@
 import { useLanguage } from "@/hooks/useLanguage"
 import RoundedButton from "@/ui/atoms/RoundedButton"
+import ArrowIcon from "@/ui/icons/Arrow"
+import USFlag from "@/ui/icons/USFlag"
 import LanguageSelectorItem from "@/ui/molecules/LanguageSelectorItem"
 import LanguageSelectorList from "@/ui/molecules/LanguageSelectorList"
 import { useState, useEffect } from "react"
@@ -21,33 +23,32 @@ const LanguageSelector = () => {
   }, [])
 
   return (
-    <div className="relative">
-      <RoundedButton
+    <div className="relative flex flex-col space-y-2">
+      <LanguageSelectorItem
+        flag={language.flag()}
+        label={language.name}
         onClick={() => {
+          console.log("ciao")
           setToggle(!toggle)
         }}
-      >
-        <div className={toggle ? " grayscale opacity-50" : ""}>
-          {language.flag()}
-        </div>
-      </RoundedButton>
+        main={true}
+      />
       {toggle && (
         <>
-          <LanguageSelectorList>
-            {languages.map((language, key) => {
-              return (
-                <LanguageSelectorItem
-                  key={key}
-                  flag={language.flag()}
-                  label={language.name}
-                  onClick={() => {
-                    setLanguage(language)
-                    setToggle(!toggle)
-                  }}
-                />
-              )
-            })}
-          </LanguageSelectorList>
+          {languages.map((language, key) => {
+            return (
+              <LanguageSelectorItem
+                key={key}
+                flag={language.flag()}
+                label={language.name}
+                main={false}
+                onClick={() => {
+                  setLanguage(language)
+                  setToggle(!toggle)
+                }}
+              />
+            )
+          })}
         </>
       )}
     </div>
