@@ -1,65 +1,93 @@
 import Image from "next/image"
 import AnubidigitalIcon from "@/ui/icons/Anubidigital"
 import mobileDeveloperImage from "@public/images/work/md.png"
+import ExperienceDescriptionContainer from "@/ui/molecules/ExperienceDescriptionContainer"
 
-const experiences = [
-  {
-    imageBackgroundColor: "black",
-    textBackgroundColor: "primary-300",
-    onClick: () => window.open(process.env.ANUBI, "_blank"),
-    textColor: "white",
-    image: () => (
-      <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
-        <AnubidigitalIcon />
-      </div>
-    ),
-    description: () => (
-      <div className="flex flex-col space-y-2 text-defaultTextColor-dark font-roboto">
-        <div className="text-h4">Fullstack Developer</div>
-        <div className="font-light text-h5">2022- today</div>
-        <div>
-          <div>Programming Languages</div>
-          <div className="font-extralight">Swift, Kotlin, Flutter</div>
-        </div>
+export interface Experience {
+  job: string
+  imageBackgroundColor: string
+  textBackgroundColor: string
+  textColor: string
+  date: string
+  programmingLanguages: string[]
+  tools: string[]
+  image: () => React.ReactNode
+  description: () => React.ReactNode
+  fullDescription: () => React.ReactNode
+}
 
-        <div>
-          <div>Tools</div>
-          <div className="font-extralight">XCode, Android Studio, IntelliJ</div>
-        </div>
-      </div>
-    ),
-  },
-  {
-    imageBackgroundColor: "[#d8f3ff]",
-    textBackgroundColor: "primary-400",
-    textColor: "white",
-    image: () => (
-      <Image
-        src={mobileDeveloperImage}
-        alt="Main image"
-        placeholder="blur"
-        loading="eager"
-        priority={true}
-        width={500}
-        height={500}
-      />
-    ),
-    description: () => (
-      <div className="flex flex-col space-y-2 text-defaultTextColor-dark font-roboto">
-        <div className="text-h4">Mobile Developer</div>
-        <div className="font-light text-h5">2020-2022</div>
-        <div>
-          <div>Programming Languages</div>
-          <div className="font-extralight">Swift, Kotlin, Flutter</div>
-        </div>
+const anubidigital: Experience = {
+  job: "Fullstack Developer",
+  date: "2022- today",
+  programmingLanguages: ["Swift", "Kotlin", "Flutter"],
+  tools: ["XCode", "Android Studio", "IntelliJ"],
+  imageBackgroundColor: "black",
+  textBackgroundColor: "primary-300",
+  textColor: "white",
+  image: () => (
+    <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
+      <AnubidigitalIcon />
+    </div>
+  ),
+  description: () => (
+    <ExperienceDescriptionContainer
+      detailed={false}
+      job={anubidigital.job}
+      date={anubidigital.date}
+      programmingLanguages={anubidigital.programmingLanguages}
+      tools={anubidigital.tools}
+    />
+  ),
+  fullDescription: () => (
+    <ExperienceDescriptionContainer
+      detailed={true}
+      job={anubidigital.job}
+      date={anubidigital.date}
+      programmingLanguages={anubidigital.programmingLanguages}
+      tools={anubidigital.tools}
+    />
+  ),
+}
 
-        <div>
-          <div>Tools</div>
-          <div className="font-extralight">XCode, Android Studio, IntelliJ</div>
-        </div>
-      </div>
-    ),
-  },
-]
+const freelanceMobileDeveloper: Experience = {
+  job: "Mobile Developer",
+  date: "2020 - 2022",
+  programmingLanguages: ["Swift", "Kotlin", "Flutter"],
+  tools: ["XCode", "Android Studio", "IntelliJ"],
+  imageBackgroundColor: "[#d8f3ff]",
+  textBackgroundColor: "primary-400",
+  textColor: "white",
+  image: () => (
+    <Image
+      src={mobileDeveloperImage}
+      alt="Main image"
+      placeholder="blur"
+      loading="eager"
+      priority={true}
+      width={500}
+      height={500}
+    />
+  ),
+  description: () => (
+    <ExperienceDescriptionContainer
+      detailed={false}
+      job={freelanceMobileDeveloper.job}
+      date={freelanceMobileDeveloper.date}
+      programmingLanguages={freelanceMobileDeveloper.programmingLanguages}
+      tools={freelanceMobileDeveloper.tools}
+    />
+  ),
+  fullDescription: () => (
+    <ExperienceDescriptionContainer
+      detailed={true}
+      job={freelanceMobileDeveloper.job}
+      date={freelanceMobileDeveloper.date}
+      programmingLanguages={freelanceMobileDeveloper.programmingLanguages}
+      tools={freelanceMobileDeveloper.tools}
+    />
+  ),
+}
+
+const experiences: Experience[] = [anubidigital, freelanceMobileDeveloper]
 
 export default experiences

@@ -6,7 +6,7 @@ const useIsMailShortcutVisible = () => {
   useEffect(() => {
     const handleScroll = () => {
       const firstDiv = document.getElementById("work")
-      const targetDiv = document.getElementById("contactContainer")
+      const targetDiv = document.getElementById("contact-container")
       if (!targetDiv) return
       const targetDivPosition = targetDiv.getBoundingClientRect()
       const screenHeight = window.innerHeight

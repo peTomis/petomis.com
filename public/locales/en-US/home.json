@@ -39,7 +39,11 @@
     "submit": "Submit",
     "thankMailTitle": "Thank you!",
     "thankMailText": "Will reply soon",
-    "title": "Contact Me"
+    "title": "GET IN TOUCH",
+    "description": {
+      "phrase1": "Fill the contact form below to get in touch with me.",
+      "phrase2": "I will reply as soon as possible."
+    }
   },
   "experience": {
     "title": "Experience",
@@ -49,11 +53,6 @@
     "jobBDate": "2019-2022",
     "jobBCommitter": "Freelance",
     "days": "days"
-  },
-  "topBar": {
-    "home": "Home",
-    "experience": "Experience",
-    "contact": "Contact"
   },
   "welcome": {
     "contact": "Contact Me",

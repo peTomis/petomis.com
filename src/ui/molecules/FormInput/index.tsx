@@ -18,17 +18,24 @@ const FormInput = ({ error, label, onChange, placeholder, type }: Props) => {
   )
 
   return (
-    <div className="flex flex-col w-full font-normal font-roboto">
-      <div className="mx-4 font-light ">{label}</div>
+    <div
+      id="form-input-container"
+      className="flex flex-col w-full font-normal font-roboto"
+    >
+      <div id="form-input-label" className="mx-4 font-light ">
+        {label}
+      </div>
 
       {isArea ? (
         <textarea
+          id="form-input-textarea"
           className={areaClass}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
         />
       ) : (
         <input
+          id="form-input-text"
           className={inputClass}
           type={type ?? "text"}
           onChange={(e) => onChange(e.target.value)}

@@ -3,7 +3,7 @@ import style from "./style.module.css"
 import { useEffect, useState } from "react"
 import RedirectIcon from "@/ui/icons/Redirect"
 import { Carousel } from "@/ui/organisms/Carousel"
-import ActivityCard from "@/ui/molecules/ActivityCard"
+import ActivityCard from "@/ui/organisms/ActivityCard"
 import AnubidigitalIcon from "@/ui/icons/Anubidigital"
 
 interface Props {

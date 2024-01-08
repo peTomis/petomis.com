@@ -12,8 +12,10 @@ const TopBarContainer = ({ children }: Props) => {
     <div
       id="topBar"
       className={`${
-        isScrollingUp ? "fixed" : "absolute"
-      } top-0 z-20 flex items-center justify-between w-full p-2 lg:pr-4 bg-background dark:bg-background-dark  backdrop-blur-sm bg-opacity-80 dark:bg-opacity-80`}
+        isScrollingUp
+          ? "fixed bg-background dark:bg-background-dark  backdrop-blur-sm bg-opacity-80 dark:bg-opacity-80"
+          : "absolute "
+      } top-0 z-20 flex items-center justify-between w-full p-2 lg:pr-4 `}
     >
       {children}
     </div>

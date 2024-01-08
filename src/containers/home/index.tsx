@@ -8,6 +8,9 @@ import TopBar from "@/components/Topbar"
 import Welcome from "@/components/home-sections/Welcome"
 import Contact from "@/components/home-sections/Contact"
 import Work from "@/components/home-sections/Work"
+import Stack from "@/components/home-sections/Stack"
+import AboutMe from "@/components/home-sections/AboutMe"
+import BottomBar from "@/components/home-sections/Bottombar"
 
 const HomeContainer = () => {
   const [sidebarVisible, setSidebarVisible] = React.useState(false)
@@ -31,11 +34,11 @@ const HomeContainer = () => {
       <TopBar setSidebarVisible={() => setSidebarVisible(!sidebarVisible)} />
       <Sidebar open={sidebarVisible} onClose={() => setSidebarVisible(false)} />
       <Welcome onRedirect={scrollToSelectedDiv} />
-      {/* <AboutMe />*/}
+      <AboutMe />
       <Work id="work" />
-      {/*  <Stack />
-      <Quality />*/}
+      <Stack />
       <Contact />
+      <BottomBar />
       {isMailShortcutVisible && (
         <MailShortcut
           onClick={() => {

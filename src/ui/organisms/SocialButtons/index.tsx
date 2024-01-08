@@ -2,16 +2,20 @@ import IconContainer from "@/ui/atoms/IconContainer"
 import GitHubIcon from "@/ui/icons/Github"
 import LinkedinIcon from "@/ui/icons/Linkedin"
 
-const SocialButtons = () => {
+interface Props {
+  dark?: boolean
+}
+
+const SocialButtons = ({ dark }: Props) => {
   const openGitHub = () => window.open(process.env.GITHUB, "_blank")
   const openLinkedIn = () => window.open(process.env.LINKEDIN, "_blank")
 
   return (
     <>
-      <IconContainer onClick={openGitHub}>
+      <IconContainer onClick={openGitHub} dark={dark}>
         <GitHubIcon />
       </IconContainer>
-      <IconContainer onClick={openLinkedIn}>
+      <IconContainer onClick={openLinkedIn} dark={dark}>
         <LinkedinIcon />
       </IconContainer>
     </>

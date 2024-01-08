@@ -13,6 +13,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
       animation: {
         carousel: "carousel 40s linear infinite",
         smallCarousel: "carousel 80s linear infinite",
