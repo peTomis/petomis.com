@@ -1,18 +1,36 @@
+import ItalyFlag from "@/ui/icons/ItalyFlag"
+import USFlag from "@/ui/icons/USFlag"
 import { Dispatch, SetStateAction, useState } from "react"
 
-export enum Language {
-  IT = "it",
-  EN = "en",
+enum Flag {
+  USFlag = "USFlag",
+  ItalyFlag = "ItalyFlag",
 }
 
-export function useLanguage(): [
-  Language,
-  Dispatch<SetStateAction<Language>>,
-  boolean,
-  Dispatch<SetStateAction<boolean>>
-] {
-  const [language, setLanguage] = useState<Language>(Language.EN)
-  const [toggle, setToggle] = useState<boolean>(false)
+type SupportedLanguage = {
+  code: string
+  name: string
+  flag: () => JSX.Element
+}
 
-  return [language, setLanguage, toggle, setToggle]
+const languages: SupportedLanguage[] = [
+  {
+    code: "en",
+    name: "English",
+    flag: USFlag,
+  },
+  {
+    code: "it",
+    name: "Italiano",
+    flag: ItalyFlag,
+  },
+]
+
+export function useLanguage(): [
+  SupportedLanguage,
+  Dispatch<SetStateAction<SupportedLanguage>>,
+  SupportedLanguage[]
+] {
+  const [language, setLanguage] = useState<SupportedLanguage>(languages[0])
+  return [language, setLanguage, languages]
 }

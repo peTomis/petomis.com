@@ -61,5 +61,9 @@
     "hello": "Hi, I am",
     "name": "Giuseppe Tomis",
     "secondRole": "> Fullstack Developer"
+  },
+  "work": {
+    "desktopClick": "Click to see details",
+    "mobileClick": "Tap to see details"
   }
 }

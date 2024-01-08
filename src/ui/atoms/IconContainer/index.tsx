@@ -6,7 +6,7 @@ interface Props {
 const IconContainer = ({ children, onClick }: Props) => {
   return (
     <div
-      className="cursor-pointer w-9 h-9 fill-defaultTextColor dark:fill-defaultTextColor-dark"
+      className="flex items-center justify-center cursor-pointer w-9 h-9 fill-defaultTextColor dark:fill-defaultTextColor-dark"
       onClick={onClick}
     >
       {children}

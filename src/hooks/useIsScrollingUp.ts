@@ -9,15 +9,19 @@ const useIsScrollingUp = () => {
       const currentScrollTop =
         window.scrollY || document.documentElement.scrollTop
 
+      // Check if the page is at the top
+      if (currentScrollTop === 0) {
+        setIsScrollingUp(false)
+      }
       // Check if scrolled more than 100px and is scrolling up
-      if (currentScrollTop < lastScrollTop) {
+      else if (currentScrollTop < lastScrollTop) {
         setIsScrollingUp(true)
       } else {
         setIsScrollingUp(false)
       }
 
       // Update the last scroll position
-      setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop) // For Mobile or negative scrolling
+      setLastScrollTop(currentScrollTop)
     }
 
     // Listen for scroll events on the window

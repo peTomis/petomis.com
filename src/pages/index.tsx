@@ -1,8 +1,8 @@
-import HomeContainer from "@containers/home"
 import { fetchTranslations } from "@modules/translations/fetch"
 import type { NextPage } from "next"
 import Head from "next/head"
 import { useTranslations } from "@/modules/translations/use"
+import HomeContainer from "@/containers/home"
 
 const Home: NextPage = () => {
   const { t } = useTranslations("home")

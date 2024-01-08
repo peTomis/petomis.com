@@ -1,17 +1,16 @@
-import Welcome from "@/features/home/Welcome"
 import MailShortcut from "@/ui/molecules/MailShortcut"
-import AboutMe from "@/features/home/AboutMe"
-import Quality from "@/features/home/Quality"
-import Stack from "@/features/home/Stack"
-import Experience from "@/features/home/Experience"
-import Contact from "@/features/home/Contact"
-import TopBar from "@/features/TopBar"
-import { useEffect, useState } from "react"
-import Work from "@/features/home/Work"
 import { WebsiteSection } from "@/utils/websiteSections"
 import useIsMailShortcutVisible from "@/hooks/useIsMailShortcutVisible"
+import HomePageContainer from "@/ui/molecules/HomePageContainer"
+import React from "react"
+import Sidebar from "@/components/Sidebar"
+import TopBar from "@/components/Topbar"
+import Welcome from "@/components/home-sections/Welcome"
+import Contact from "@/components/home-sections/Contact"
+import Work from "@/components/home-sections/Work"
 
 const HomeContainer = () => {
+  const [sidebarVisible, setSidebarVisible] = React.useState(false)
   const isMailShortcutVisible = useIsMailShortcutVisible()
 
   const scrollToSelectedDiv = (section: WebsiteSection) => {
@@ -28,12 +27,9 @@ const HomeContainer = () => {
   }
 
   return (
-    <div
-      className={
-        "flex overflow-x-hidden relative flex-col items-center justify-center text-defaultTextColor dark:text-defaultTextColor-dark transition-colors duration-500"
-      }
-    >
-      <TopBar />
+    <HomePageContainer>
+      <TopBar setSidebarVisible={() => setSidebarVisible(!sidebarVisible)} />
+      <Sidebar open={sidebarVisible} onClose={() => setSidebarVisible(false)} />
       <Welcome onRedirect={scrollToSelectedDiv} />
       {/* <AboutMe />*/}
       <Work id="work" />
@@ -47,7 +43,7 @@ const HomeContainer = () => {
           }}
         />
       )}
-    </div>
+    </HomePageContainer>
   )
 }
 
