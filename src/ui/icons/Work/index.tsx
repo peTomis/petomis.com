@@ -1,8 +1,4 @@
-interface Props {
-  size?: number
-}
-
-const WorkIcon = ({ size }: Props) => {
+const WorkIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

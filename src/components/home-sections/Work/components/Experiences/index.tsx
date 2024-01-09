@@ -54,9 +54,9 @@ const freelanceMobileDeveloper: Experience = {
   date: "2020 - 2022",
   programmingLanguages: ["Swift", "Kotlin", "Flutter"],
   tools: ["XCode", "Android Studio", "IntelliJ"],
-  imageBackgroundColor: "[#d8f3ff]",
+  imageBackgroundColor: "red-400",
   textBackgroundColor: "primary-400",
-  textColor: "white",
+  textColor: "red-400",
   image: () => (
     <Image
       src={mobileDeveloperImage}

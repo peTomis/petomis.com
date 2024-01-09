@@ -1,5 +1,3 @@
-import LinkedinIcon from "@/ui/icons/Linkedin"
-import GitHubIcon from "@/ui/icons/Github"
 import IconContainer from "@/ui/atoms/IconContainer"
 import TopBarContainer from "@/ui/molecules/TopbarContainer"
 import useIsScrollingUp from "@/hooks/useIsScrollingUp"
@@ -10,12 +8,14 @@ import ExperienceIcon from "@/ui/icons/Experience"
 import WorkIcon from "@/ui/icons/Work"
 import ProjectIcon from "@/ui/icons/Project"
 import SocialButtons from "@/ui/organisms/SocialButtons"
+import { WebsiteSection } from "@/utils/websiteSections"
 
 interface Props {
   setSidebarVisible: () => void
+  scrollToSelectedDiv: (section: WebsiteSection) => void
 }
 
-const TopBar = ({ setSidebarVisible }: Props) => {
+const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
   const isScrollingUp = useIsScrollingUp()
 
   const getScrollY = () => {
@@ -30,19 +30,31 @@ const TopBar = ({ setSidebarVisible }: Props) => {
       <TopBarButtonContainer id="redirect-container">
         {isScrollingUp && getScrollY() > 700 && (
           <>
-            <IconContainer onClick={() => {}}>
+            <IconContainer
+              onClick={() => {
+                scrollToSelectedDiv(WebsiteSection.EXPERIENCE)
+              }}
+            >
               <RoundedButton>
-                <ExperienceIcon size={20} />
+                <ExperienceIcon />
               </RoundedButton>
             </IconContainer>
-            <IconContainer onClick={() => {}}>
+            <IconContainer
+              onClick={() => {
+                scrollToSelectedDiv(WebsiteSection.WORK)
+              }}
+            >
               <RoundedButton>
-                <WorkIcon size={20} />
+                <WorkIcon />
               </RoundedButton>
             </IconContainer>
-            <IconContainer onClick={setSidebarVisible}>
+            <IconContainer
+              onClick={() => {
+                scrollToSelectedDiv(WebsiteSection.PROJECTS)
+              }}
+            >
               <RoundedButton>
-                <ProjectIcon size={20} />
+                <ProjectIcon />
               </RoundedButton>
             </IconContainer>
           </>

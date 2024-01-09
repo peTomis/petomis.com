@@ -20,6 +20,7 @@ const ActivityCard = ({
   image,
   onClick,
 }: Props) => {
+  console.log(textBackgroundColor)
   return (
     <ActivityCardContainer
       imageBackgroundColor={imageBackgroundColor}

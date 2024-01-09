@@ -9,6 +9,7 @@ const ActivityCardContainer = ({
   children,
   onClick,
 }: Props) => {
+  console.log(imageBackgroundColor)
   return (
     <div
       id="activity-card-container"

@@ -45,6 +45,9 @@ module.exports = {
         competitionTitle: {
           DEFAULT: "#5E5E5E",
         },
+        freelanceIcon: {
+          DEFAULT: "#d8f3ff",
+        },
         primary: {
           DEFAULT: "#00719C",
           100: "#00B8FF",

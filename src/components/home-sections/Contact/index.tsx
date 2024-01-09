@@ -85,14 +85,23 @@ const Contact = () => {
       id="contact-container"
       style={overlappingCirclesPatternStyle}
     >
-      <div className="w-full d:max-w-[500px] py-8 text-h2 text-center font-bacasimeAntique font-extrabold text-primary-100  lg:max-w-[1200px]">
+      <div
+        id="contact-title"
+        className="w-full d:max-w-[500px] py-8 text-h2 text-center font-bacasimeAntique font-extrabold text-primary-100  lg:max-w-[1200px]"
+      >
         {t("contact.title")}
       </div>
-      <div className="w-full flex flex-col d:max-w-[500px] pt-8 pb-16 text-h5 xl:text-h4 text-center font-roboto font-extralight text-textDefault  lg:max-w-[700px]">
+      <div
+        id="contact-description"
+        className="w-full flex flex-col d:max-w-[500px] pt-8 pb-16 text-h5 xl:text-h4 text-center font-roboto font-extralight text-textDefault  lg:max-w-[700px]"
+      >
         <div>{t("contact.description.phrase1")}</div>
         <div>{t("contact.description.phrase2")}</div>
       </div>
-      <div className="w-full lg:max-w-[800px] space-y-4 p-8 rounded-lg bg-primary-500">
+      <div
+        id="contact-form"
+        className="w-full lg:max-w-[800px] space-y-4 p-8 rounded-lg bg-primary-500"
+      >
         <FormInput
           error={errors.name}
           label={t("contact.name")}
