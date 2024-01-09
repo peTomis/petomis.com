@@ -5,11 +5,10 @@ import { WebsiteSection } from "@/utils/websiteSections"
 import SectionShortcut from "@/ui/molecules/SectionShortcut"
 
 interface Props {
-  desktop: boolean
   onRedirect: (section: WebsiteSection) => void
 }
 
-const PageRedirects = ({ desktop, onRedirect }: Props) => {
+const PageRedirects = ({ onRedirect }: Props) => {
   return (
     <div className="flex flex-row items-center justify-between w-full h-full overflow-x-hidden font-light">
       <SectionShortcut
@@ -17,21 +16,21 @@ const PageRedirects = ({ desktop, onRedirect }: Props) => {
         onClick={() => {
           onRedirect(WebsiteSection.EXPERIENCE)
         }}
-        icon={<ExperienceIcon size={desktop ? 90 : 48} />}
+        icon={<ExperienceIcon />}
       />
       <SectionShortcut
         label="Work"
         onClick={() => {
           onRedirect(WebsiteSection.WORK)
         }}
-        icon={<WorkIcon size={desktop ? 90 : 48} />}
+        icon={<WorkIcon />}
       />
       <SectionShortcut
         label="Projects"
         onClick={() => {
           onRedirect(WebsiteSection.PROJECTS)
         }}
-        icon={<ProjectIcon size={desktop ? 90 : 48} />}
+        icon={<ProjectIcon />}
       />
     </div>
   )

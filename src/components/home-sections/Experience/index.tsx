@@ -1,10 +1,6 @@
 import { useTranslations } from "@/modules/translations/use"
 import style from "./style.module.css"
 import { useEffect, useState } from "react"
-import RedirectIcon from "@/ui/icons/Redirect"
-import { Carousel } from "@/ui/organisms/Carousel"
-import ActivityCard from "@/ui/organisms/ActivityCard"
-import AnubidigitalIcon from "@/ui/icons/Anubidigital"
 
 interface Props {
   id: string
@@ -27,49 +23,13 @@ const Experience = ({ id }: Props) => {
 
   const { t } = useTranslations("home")
 
-  const CarouselData = [
-    <ActivityCard key={0} bgColor="bg-white">
-      <div className={style.experienceContainer}>
-        <div className={style.experienceTitle}>{t("experience.jobAName")}</div>
-        <div
-          className={style.experienceCommitterWithRedirect}
-          onClick={openAnubiHomepage}
-        >
-          <AnubidigitalIcon />
-          <RedirectIcon />
-        </div>
-        <div className={style.experienceDuration}>
-          {t("experience.jobADate")}
-        </div>
-        <div className={style.dayMark}>
-          <div className={style.innerDayMark}>
-            <div className="text-bold">{daysPassed}</div>
-            <div className="font-light text-h5 md:text-h2">
-              {t("experience.days")}
-            </div>
-          </div>
-        </div>
-      </div>
-    </ActivityCard>,
-    <ActivityCard key={1} bgColor="bg-primary-400">
-      <div className={style.experienceContainer}>
-        <div className={style.experienceTitle2}>{t("experience.jobBName")}</div>
-        <div className={style.experienceCommitter}>
-          {t("experience.jobBCommitter")}
-        </div>
-        <div className={style.experienceDuration}>
-          {t("experience.jobBDate")}
-        </div>
-      </div>
-    </ActivityCard>,
-  ]
-
   return (
-    <div className={style.container} id={id}>
+    <div
+      className="flex flex-col items-center justify-center w-full px-8 py-12 space-y-4 lg:py-24 bg-background dark:bg-background-dark bg-opacity-90 lg:mx-auto lg:space-y-8 lg:items-center lg:justify-start"
+      id={id}
+    >
       <div className={style.title}>{t("experience.title")}</div>
-      <div className={style.carouselContainer}>
-        <Carousel items={CarouselData} />
-      </div>
+      <div className={style.carouselContainer}></div>
     </div>
   )
 }

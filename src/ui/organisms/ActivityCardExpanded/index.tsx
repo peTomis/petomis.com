@@ -24,7 +24,7 @@ const ActivityCardExpanded = ({
     >
       <div
         id="activity-card-expanded-container"
-        className={`relative flex w-full m-4 xl:m-8 bg-${backgroundColor} rounded-2xl xl:rounded-[64px] overflow-x-hidden overflow-y-auto`}
+        className={`relative flex w-full m-4 xl:m-8 bg-${backgroundColor} rounded-2xl xl:rounded-3xl overflow-x-hidden overflow-y-auto`}
         onClick={(e) => {
           e.stopPropagation()
         }}

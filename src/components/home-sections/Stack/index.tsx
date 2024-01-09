@@ -1,5 +1,4 @@
 import Image from "next/image"
-import style from "./style.module.css"
 import React from "react"
 
 interface ImageItemProps {
@@ -9,14 +8,14 @@ interface ImageItemProps {
 }
 
 const ImageItem: React.FC<ImageItemProps> = ({ src, alt }) => (
-  <div className={style.item}>
-    <div className={style.imageContainer}>
+  <div className="flex items-center justify-center">
+    <div className="relative overflow-hidden w-[175px]  h-[70px] md:w-[250px] md:h-[100px]">
       <Image
         src={src}
         alt={alt}
         width={200}
         height={80}
-        className={style.img}
+        className="flex items-center justify-center"
       />
     </div>
   </div>
@@ -62,8 +61,11 @@ const Stack = () => {
 
   const loopedItems = [...items, ...items, ...items]
   return (
-    <div className={style.container}>
-      <div className={style.carouselContainer}>
+    <div
+      id="stack-container"
+      className="flex items-center justify-center w-full bg-opacity-30 bg-primary-300"
+    >
+      <div id="carousel-container" className="w-full overflow-hidden shadow-lg">
         <div className="flex items-center justify-center w-full animate-smallCarousel md:animate-carousel">
           {loopedItems}
         </div>

@@ -92,7 +92,7 @@ const Contact = () => {
         <div>{t("contact.description.phrase1")}</div>
         <div>{t("contact.description.phrase2")}</div>
       </div>
-      <div className="w-full xxl:max-w-[800px] space-y-4 p-8 rounded-lg bg-primary-500">
+      <div className="w-full lg:max-w-[800px] space-y-4 p-8 rounded-lg bg-primary-500">
         <FormInput
           error={errors.name}
           label={t("contact.name")}

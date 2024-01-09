@@ -1,1 +1,10 @@
-{}
+{
+  "bottomBar": {
+    "copyright": " © Giuseppe Tomis. All rights reserved.",
+    "description": "Fullstack Developer, Software Engineer",
+    "hashtag": "@peTomis",
+    "icons": "Icons credits:",
+    "name": "GIUSEPPE TOMIS",
+    "patterns": "Pattern credits: "
+  }
+}

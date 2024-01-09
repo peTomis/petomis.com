@@ -3,17 +3,24 @@ import experiences from "./components/Experiences"
 import ActivityCardExpanded from "@/ui/organisms/ActivityCardExpanded"
 import { useState } from "react"
 import ActivityCard from "@/ui/organisms/ActivityCard"
+import circuitBoardPatternStyle from "@/ui/patterns/circuit-board"
 
-interface Props {
-  id: string
-}
-
-const Work = ({ id }: Props) => {
+const Work = () => {
   const [experience, setExperience] = useState<any>(undefined)
   const { t } = useTranslations("home")
 
   return (
-    <div className="flex flex-col w-full py-8 mx-auto" id={id}>
+    <div
+      id="work-container"
+      className="flex flex-col w-full py-8 mx-auto "
+      style={circuitBoardPatternStyle}
+    >
+      <div className="w-full py-8 font-extrabold text-center text-h1 font-roboto text-defaultTextColor dark:text-defaultTextColor-dark">
+        {t("work.title").toUpperCase()}
+      </div>
+      <div className="flex flex-col w-full pt-8 pb-16 font-light text-center text-h5 xl:text-h4 font-roboto text-defaultTextColor dark:text-defaultTextColor-dark">
+        <div>{t("work.description")}</div>
+      </div>
       {experience && (
         <ActivityCardExpanded
           backgroundColor={experience.imageBackgroundColor}

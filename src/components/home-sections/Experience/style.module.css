@@ -1,7 +1,3 @@
-.container {
-  @apply py-12 lg:py-24 flex flex-col bg-white bg-opacity-90 px-8 space-y-4 lg:mx-auto lg:space-y-8 w-full justify-center items-center lg:items-center lg:justify-start;
-}
-
 .title {
   @apply w-full d:max-w-[500px] text-h2 font-bacasimeAntique font-extrabold text-primary-300  lg:max-w-[1200px];
 }

@@ -23,7 +23,7 @@ const WelcomeText = () => {
 
       <div className="flex pb-8 justify-start w-[80vw]  lg:ml-8 max-w-[600px] text-jobSmall font-bacasimeAntique text-defaultTextColor dark:text-defaultTextColor-dark sm:text-jobMedium xxl:text-jobExtraLarge">
         <h1 className="relative text-center">
-          <span className="relative">{currentWord}</span>
+          <span className="relative line-clamp-1 ">{currentWord}</span>
           <div
             className={"bg-defaultTextColor dark:bg-defaultTextColor-dark ".concat(
               style.cursor

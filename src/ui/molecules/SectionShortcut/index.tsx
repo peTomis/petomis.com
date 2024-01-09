@@ -10,8 +10,12 @@ const SectionShortcut = ({ icon, label, onClick }: Props) => {
       className="flex flex-col items-center flex-1 rounded-lg cursor-pointer select-none fill-defaultTextColor dark:fill-defaultTextColor-dark"
       onClick={onClick}
     >
-      <div className="w-[48px] h-[48px] xl:w-[92px] xl:h-[92px]">{icon}</div>
-      <div className="text-base font-roboto xl:text-h4">{label}</div>
+      <div className="w-[48px] h-[48px] lg:w-[64px] lg:h-[64px]  xxl:w-[92px] xxl:h-[92px]">
+        {icon}
+      </div>
+      <div className="text-base font-roboto md:text-h5 xxl:text-h4">
+        {label}
+      </div>
     </div>
   )
 }

@@ -13,7 +13,7 @@ const LanguageSelectorItem = ({ flag, label, onClick, main }: Props) => {
     <div className="relative flex flex-row items-center justify-end space-x-2 select-none">
       <div className={main ? "" : "opacity-0"}>Language:</div>
       <div
-        className="relative flex flex-row items-center justify-center pl-4 w-full xl:w-[200px] h-[42px] overflow-hidden bg-background-dark bg-opacity-20 dark:bg-background dark:bg-opacity-10 px-2 space-x-2 rounded-lg cursor-pointer"
+        className="relative flex flex-row items-center justify-center pl-4 w-full lg:w-[200px] h-[42px] overflow-hidden bg-background-dark bg-opacity-20 dark:bg-background dark:bg-opacity-10 px-2 space-x-2 rounded-lg cursor-pointer"
         onClick={onClick}
       >
         <div className="z-10">{label}</div>

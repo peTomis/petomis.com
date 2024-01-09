@@ -12,7 +12,7 @@ const Welcome = ({ onRedirect }: Props) => {
   return (
     <div
       id="welcome-container"
-      className="flex items-center justify-center lg:h-screen "
+      className="flex items-center justify-center mb-8 lg:h-screen md:mb-12 lg:mb-0"
     >
       <HomeWallpaperPattern>
         <div className="flex flex-col items-center justify-center w-screen pt-12 lg:flex-row-reverse lg:space-x-reverse lg:space-x-4 lg:h-screen">
@@ -23,12 +23,12 @@ const Welcome = ({ onRedirect }: Props) => {
           >
             <WelcomeText />
             <div className="hidden lg:flex lg:flex-1">
-              <PageRedirects onRedirect={onRedirect} desktop={true} />
+              <PageRedirects onRedirect={onRedirect} />
             </div>
           </div>
           <WelcomeImage />
           <div className="w-[80vw]  max-w-[600px]  lg:hidden">
-            <PageRedirects onRedirect={onRedirect} desktop={false} />
+            <PageRedirects onRedirect={onRedirect} />
           </div>
         </div>
       </HomeWallpaperPattern>
