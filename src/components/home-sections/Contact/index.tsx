@@ -1,13 +1,17 @@
 import { useTranslations } from "@/modules/translations/use"
-import style from "./style.module.css"
 import FormInput from "@/ui/molecules/FormInput"
 import { useReducer, useState } from "react"
 import { useForm } from "@formspree/react"
-import Button from "@/ui/atoms/Button"
 import FormSucceeded from "./components/FormSucceeded"
-import enginesPatternStyle from "@/ui/patterns/engines"
-import circuitBoardPatternStyle from "@/ui/patterns/circuit-board"
 import overlappingCirclesPatternStyle from "@/ui/patterns/overlapping-circles"
+import SectionTitle, {
+  SectionTitleColor,
+  SectionTitleFont,
+} from "@/ui/atoms/SectionTitle"
+import SectionDescription, {
+  SectionDescriptionFontSize,
+} from "@/ui/atoms/SectionDescription"
+import FormContainer from "@/ui/molecules/FormContainer"
 
 type State = {
   name: string
@@ -85,23 +89,20 @@ const Contact = () => {
       id="contact-container"
       style={overlappingCirclesPatternStyle}
     >
-      <div
+      <SectionTitle
         id="contact-title"
-        className="w-full d:max-w-[500px] py-8 text-h2 text-center font-bacasimeAntique font-extrabold text-primary-100  lg:max-w-[1200px]"
-      >
-        {t("contact.title")}
-      </div>
-      <div
-        id="contact-description"
-        className="w-full flex flex-col d:max-w-[500px] pt-8 pb-16 text-h5 xl:text-h4 text-center font-roboto font-extralight text-textDefault  lg:max-w-[700px]"
-      >
-        <div>{t("contact.description.phrase1")}</div>
-        <div>{t("contact.description.phrase2")}</div>
-      </div>
-      <div
-        id="contact-form"
-        className="w-full lg:max-w-[800px] space-y-4 p-8 rounded-lg bg-primary-500"
-      >
+        label={t("contact.title").toUpperCase()}
+        color={SectionTitleColor.PRIMARY100}
+        font={SectionTitleFont.BACASIME_ANTIQUE}
+      />
+      <SectionDescription
+        fontSize={SectionDescriptionFontSize.EXTRALIGHT}
+        rows={[
+          t("contact.description.phrase1"),
+          t("contact.description.phrase2"),
+        ]}
+      />
+      <FormContainer onSubmit={handleSubmit}>
         <FormInput
           error={errors.name}
           label={t("contact.name")}
@@ -122,11 +123,7 @@ const Contact = () => {
           placeholder={t("contact.messagePlaceholder") as string}
           type="area"
         />
-
-        <div className="flex items-center justify-center w-full my-4">
-          <Button label={t("contact.submit")} onClick={handleSubmit} />
-        </div>
-      </div>
+      </FormContainer>
     </div>
   )
 }

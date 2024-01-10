@@ -2,16 +2,20 @@
   "title": "Giuseppe Tomis - Software Engineer",
   "description": "Personal website of Giuseppe Tomis, Software Engineer and Fullstack Developer",
   "aboutMe": {
-    "text1": "Welcome! I'm ",
+    "text1": "Welcome! I'm Giuseppe Tomis",
     "text2": "Giuseppe Tomis",
     "text3": ", an accomplished ",
     "text4": "Software Engineer",
     "text5": " and a ",
     "text6": "Fullstack Developer",
     "text7": " specializing in blending aesthetics and functionality.",
-    "text8": "Having mastered multiple programming languages and tools such as JavaScript, Python, React, and Node.js, I bring a comprehensive perspective to software development, bridging the gap between front-end design and back-end operations.",
-    "text9": "With a knack for problem-solving, I am committed to delivering high-performing, scalable solutions that can drive your digital objectives.",
-    "text10": "Whether it's a creative collaboration you're seeking or a tech expert to bring your vision alive, I am eager to help shape your digital aspirations into successful realities.",
+    "text8": "My approach to development centers on creating ",
+    "text9": "clean",
+    "text10": ", ",
+    "text11": "tested",
+    "text12": ", and highly ",
+    "text13": "efficient",
+    "text14": " code. With an acute attention to detail, I diligently identify and correct even the smallest issues, resulting in software that excels in performance and user experience.",
     "title": "About Me"
   },
   "contact": {
@@ -50,6 +54,8 @@
     "title": "My Career",
     "description": "A brief overview of my career path",
     "desktopClick": "Click to see details",
-    "mobileClick": "Tap to see details"
+    "mobileClick": "Tap to see details",
+    "tools": "Tools",
+    "programmingLanguages": "Programming Languages"
   }
 }

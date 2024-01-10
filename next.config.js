@@ -6,6 +6,8 @@ const env = {
   LINKEDIN: "https://www.linkedin.com/in/petomis",
   TWITTER: "https://twitter.com/peTomis",
   ANUBI: "https://www.anubidigital.com",
+  HEROPATTERNS: "https://www.heropatterns.com",
+  HEROICONS: "https://www.heroicons.com",
 }
 
 const nextConfig = {

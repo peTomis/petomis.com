@@ -1,19 +1,23 @@
+enum ActivityCardContainerVariant {
+  darkAndBlue = `bg-black`,
+  lightAndBlue = `bg-freelanceIcon`,
+}
+
 interface Props {
-  imageBackgroundColor: string
+  variant?: "darkAndBlue" | "lightAndBlue"
   children: React.ReactNode
   onClick?: () => void
 }
 
-const ActivityCardContainer = ({
-  imageBackgroundColor,
-  children,
-  onClick,
-}: Props) => {
-  console.log(imageBackgroundColor)
+const ActivityCardContainer = ({ variant, children, onClick }: Props) => {
   return (
     <div
       id="activity-card-container"
-      className={`cursor-pointer relative mx-auto h-[500px] w-[300px] bg-${imageBackgroundColor} rounded-lg overflow-hidden select-none`}
+      className={`cursor-pointer relative mx-auto h-[500px] w-[300px] rounded-lg overflow-hidden select-none ${
+        variant
+          ? ActivityCardContainerVariant[variant]
+          : ActivityCardContainerVariant.darkAndBlue
+      }`}
       onClick={onClick}
     >
       {children}

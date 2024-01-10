@@ -4,37 +4,18 @@ import ActivityCardImage from "@/ui/atoms/ActivityCardImage"
 import ActivityCardContainer from "@/ui/molecules/ActivityCardContainer"
 
 interface Props {
-  imageBackgroundColor: string
-  textBackgroundColor: string
-  textColor: string
+  variant?: "darkAndBlue" | "lightAndBlue"
   image: React.ReactNode
   description: React.ReactNode
   onClick?: () => void
 }
 
-const ActivityCard = ({
-  imageBackgroundColor,
-  textBackgroundColor,
-  textColor,
-  description,
-  image,
-  onClick,
-}: Props) => {
-  console.log(textBackgroundColor)
+const ActivityCard = ({ description, image, onClick, variant }: Props) => {
   return (
-    <ActivityCardContainer
-      imageBackgroundColor={imageBackgroundColor}
-      onClick={onClick}
-    >
-      <ActivityCardHint
-        textBackgroundColor={textBackgroundColor}
-        textColor={textColor}
-      />
+    <ActivityCardContainer variant={variant} onClick={onClick}>
+      <ActivityCardHint variant={variant} />
       <ActivityCardImage image={image} />
-      <ActivityCardDescription
-        textBackgroundColor={textBackgroundColor}
-        description={description}
-      />
+      <ActivityCardDescription variant={variant} description={description} />
     </ActivityCardContainer>
   )
 }

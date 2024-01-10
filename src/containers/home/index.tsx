@@ -4,14 +4,15 @@ import useIsMailShortcutVisible from "@/hooks/useIsMailShortcutVisible"
 import HomePageContainer from "@/ui/molecules/HomePageContainer"
 import React from "react"
 import Sidebar from "@/components/Sidebar"
-import TopBar from "@/components/Topbar"
+import TopBar from "@/components/TopBar"
 import Welcome from "@/components/home-sections/Welcome"
 import Contact from "@/components/home-sections/Contact"
 import Work from "@/components/home-sections/Work"
 import Stack from "@/components/home-sections/Stack"
 import Experience from "@/components/home-sections/Experience"
-import BottomBar from "@/components/Bottombar"
+import BottomBar from "@/components/BottomBar"
 import Projects from "@/components/home-sections/Projects"
+import AboutMe from "@/components/home-sections/AboutMe"
 
 const HomeContainer = () => {
   const [sidebarVisible, setSidebarVisible] = React.useState(false)
@@ -40,6 +41,7 @@ const HomeContainer = () => {
       />
       <Sidebar open={sidebarVisible} onClose={() => setSidebarVisible(false)} />
       <Welcome onRedirect={scrollToSelectedDiv} />
+      <AboutMe />
       <Experience />
       <Stack />
       <Work />

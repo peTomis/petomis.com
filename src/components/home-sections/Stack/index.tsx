@@ -63,7 +63,7 @@ const Stack = () => {
   return (
     <div
       id="stack-container"
-      className="flex items-center justify-center w-full bg-opacity-30 bg-primary-300"
+      className="flex items-center justify-center w-full bg-opacity-5 bg-primary-300"
     >
       <div id="carousel-container" className="w-full overflow-hidden shadow-lg">
         <div className="flex items-center justify-center w-full animate-smallCarousel md:animate-carousel">

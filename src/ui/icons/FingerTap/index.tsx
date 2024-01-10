@@ -1,16 +1,14 @@
 interface Props {
   width?: number
   height?: number
-  fill?: string
 }
 
-const FingerTapIcon = ({ height, width, fill }: Props) => {
+const FingerTapIcon = ({ height, width }: Props) => {
   return (
     <svg
       version="1.1"
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
-      fill={fill ?? "#ffffff"}
       height={height ?? 24}
       width={width ?? 24}
       viewBox="0 0 89.78 122.88"

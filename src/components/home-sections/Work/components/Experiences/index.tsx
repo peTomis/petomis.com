@@ -5,9 +5,7 @@ import ExperienceDescriptionContainer from "@/ui/molecules/ExperienceDescription
 
 export interface Experience {
   job: string
-  imageBackgroundColor: string
-  textBackgroundColor: string
-  textColor: string
+  variant?: "darkAndBlue" | "lightAndBlue"
   date: string
   programmingLanguages: string[]
   tools: string[]
@@ -21,9 +19,7 @@ const anubidigital: Experience = {
   date: "2022- today",
   programmingLanguages: ["Swift", "Kotlin", "Flutter"],
   tools: ["XCode", "Android Studio", "IntelliJ"],
-  imageBackgroundColor: "black",
-  textBackgroundColor: "primary-300",
-  textColor: "white",
+  variant: "darkAndBlue",
   image: () => (
     <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
       <AnubidigitalIcon />
@@ -54,9 +50,7 @@ const freelanceMobileDeveloper: Experience = {
   date: "2020 - 2022",
   programmingLanguages: ["Swift", "Kotlin", "Flutter"],
   tools: ["XCode", "Android Studio", "IntelliJ"],
-  imageBackgroundColor: "red-400",
-  textBackgroundColor: "primary-400",
-  textColor: "red-400",
+  variant: "lightAndBlue",
   image: () => (
     <Image
       src={mobileDeveloperImage}

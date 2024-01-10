@@ -20,7 +20,7 @@ const ExperienceDescriptionContainer = ({
     return (
       <div
         id="experience-description-detailed-container"
-        className="flex flex-col space-y-2 text-defaultTextColor-dark font-roboto"
+        className="flex flex-col space-y-2 font-roboto"
       >
         <div id="experience-job" className="text-h4">
           {job}
@@ -50,7 +50,7 @@ const ExperienceDescriptionContainer = ({
   return (
     <div
       id="experience-description-container"
-      className="flex flex-col space-y-2 text-defaultTextColor-dark font-roboto"
+      className="flex flex-col space-y-2 k font-roboto"
     >
       <div id="experience-job" className="text-h4">
         {job}

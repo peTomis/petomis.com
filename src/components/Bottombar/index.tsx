@@ -1,9 +1,13 @@
 import { useTranslations } from "@/modules/translations/use"
 import SocialButtons from "@/ui/organisms/SocialButtons"
 
-const Bottombar = () => {
+const BottomBar = () => {
   const { t } = useTranslations("common")
   const currentYear = new Date().getFullYear()
+
+  const openHeroicons = () => window.open(process.env.HEROICONS, "_blank")
+  const openHeropatterns = () => window.open(process.env.HEROPATTERNS, "_blank")
+
   return (
     <div
       id="bottombar-container"
@@ -55,18 +59,15 @@ const Bottombar = () => {
             >
               <div className="flex space-x-2 cursor-pointer md:justify-end first-letter:w-full">
                 <div>{t("bottomBar.icons")}</div>
-                <a className="italic underline" href="http://www.heroicons.com">
+                <div className="italic underline" onClick={openHeroicons}>
                   Heroicons
-                </a>
+                </div>
               </div>
               <div className="flex space-x-2 cursor-pointer md:justify-end first-letter:w-full">
                 <div>{t("bottomBar.patterns")}</div>
-                <a
-                  className="italic underline"
-                  href="http://www.heropatterns.com"
-                >
+                <div className="italic underline" onClick={openHeropatterns}>
                   Heropatterns
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -90,4 +91,4 @@ const Bottombar = () => {
   )
 }
 
-export default Bottombar
+export default BottomBar
