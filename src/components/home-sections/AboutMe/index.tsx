@@ -1,4 +1,8 @@
 import { useTranslations } from "@/modules/translations/use"
+import SectionTitle, {
+  SectionTitleColor,
+  SectionTitleFont,
+} from "@/ui/atoms/SectionTitle"
 
 const AboutMe = () => {
   const { t } = useTranslations("home")
@@ -9,12 +13,12 @@ const AboutMe = () => {
         "py-12 lg:py-24 flex flex-col bg-primary-300 bg-opacity-20 px-8 space-y-4 lg:mx-auto lg:space-y-8 w-full justify-center items-center lg:items-center lg:justify-start"
       }
     >
-      <div
+      <SectionTitle
         id="about-me-title"
-        className=" w-full d:max-w-[500px] text-h2 font-bacasimeAntique font-extrabold text-primary-100  lg:max-w-[1200px]"
-      >
-        {t("aboutMe.title")}
-      </div>
+        label={t("aboutMe.title").toUpperCase()}
+        color={SectionTitleColor.PRIMARY100}
+        font={SectionTitleFont.BACASIME_ANTIQUE}
+      />
       <div className="font-roboto text-h5 d:max-w-[500px] font-normal tracking-wide leading-8 lg:leading-10 lg:max-w-[1200px]">
         {t("aboutMe.text1")}
         <span className={"text-primary-200"}>{t("aboutMe.text2")}</span>

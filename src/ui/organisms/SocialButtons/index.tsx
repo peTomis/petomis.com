@@ -1,6 +1,6 @@
 import IconContainer from "@/ui/atoms/IconContainer"
-import GitHubIcon from "@/ui/icons/Github"
-import LinkedinIcon from "@/ui/icons/Linkedin"
+import GitHubIcon from "@/ui/icons/programming/GitHubSmall"
+import LinkedinIcon from "@/ui/icons/companies/Linkedin"
 
 interface Props {
   dark?: boolean

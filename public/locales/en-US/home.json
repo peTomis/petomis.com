@@ -43,6 +43,10 @@
     "jobBCommitter": "Freelance",
     "days": "days"
   },
+  "projects": {
+    "title": "Projects",
+    "description": "Some of the projects I've worked on"
+  },
   "welcome": {
     "contact": "Contact Me",
     "firstRole": "> Software Engineer",

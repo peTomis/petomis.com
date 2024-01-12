@@ -23,7 +23,7 @@ const Work = () => {
       {experience && (
         <ActivityCardExpanded
           onClose={() => setExperience(undefined)}
-          content={experience.description()}
+          content={experience.fullDescription()}
           variant={experience.variant}
         />
       )}

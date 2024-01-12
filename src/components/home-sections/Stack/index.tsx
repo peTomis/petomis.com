@@ -1,5 +1,13 @@
+import GitHubIcon from "@/ui/icons/programming/GitHub"
+import AwsIcon from "@/ui/icons/programming/Aws"
+import DockerIcon from "@/ui/icons/programming/Docker"
+import KubernetesIcon from "@/ui/icons/programming/Kubernetes"
+import NestjsIcon from "@/ui/icons/programming/NestJs"
+import NextjsIcon from "@/ui/icons/programming/Nextjs"
+import PostgreSQLIcon from "@/ui/icons/programming/Postgre"
 import Image from "next/image"
 import React from "react"
+import JiraIcon from "@/ui/icons/programming/JiraIcon"
 
 interface ImageItemProps {
   src: string
@@ -7,66 +15,50 @@ interface ImageItemProps {
   key: number
 }
 
-const ImageItem: React.FC<ImageItemProps> = ({ src, alt }) => (
-  <div className="flex items-center justify-center">
-    <div className="relative overflow-hidden w-[175px]  h-[70px] md:w-[250px] md:h-[100px]">
-      <Image
-        src={src}
-        alt={alt}
-        width={200}
-        height={80}
-        className="flex items-center justify-center"
-      />
-    </div>
+const Item = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex items-center justify-center w-[300px] h-[100px]">
+    {children}
   </div>
 )
 
-ImageItem.displayName = "ImageItem"
+Item.displayName = "Item"
 
 const Stack = () => {
   const items = [
-    <ImageItem
-      key={0}
-      src="/images/carousel/nestjs.png"
-      alt="Nestjs logo image"
-    />,
-    <ImageItem
-      key={1}
-      src="/images/carousel/nextjs.png"
-      alt="Nextjs logo image"
-    />,
-    <ImageItem
-      key={2}
-      src="/images/carousel/postgre.png"
-      alt="Postgre logo image"
-    />,
-    <ImageItem
-      key={3}
-      src="/images/carousel/docker.png"
-      alt="Docker logo image"
-    />,
-    <ImageItem
-      key={4}
-      src="/images/carousel/kubernetes.png"
-      alt="Kubernetes logo image"
-    />,
-    <ImageItem key={5} src="/images/carousel/aws.png" alt="AWS logo image" />,
-    <ImageItem
-      key={6}
-      src="/images/carousel/github.png"
-      alt="Github logo image"
-    />,
-    <ImageItem key={7} src="/images/carousel/jira.png" alt="Jira logo image" />,
+    <Item key={0}>
+      <NestjsIcon />
+    </Item>,
+    <Item key={1}>
+      <NextjsIcon />
+    </Item>,
+    <Item key={2}>
+      <PostgreSQLIcon />
+    </Item>,
+    <Item key={3}>
+      <DockerIcon />
+    </Item>,
+    <Item key={4}>
+      <KubernetesIcon />
+    </Item>,
+    <Item key={5}>
+      <AwsIcon />
+    </Item>,
+    <Item key={6}>
+      <GitHubIcon />
+    </Item>,
+    <Item key={7}>
+      <JiraIcon />
+    </Item>,
   ]
 
-  const loopedItems = [...items, ...items, ...items]
+  const loopedItems = [...items, ...items]
   return (
     <div
       id="stack-container"
       className="flex items-center justify-center w-full bg-opacity-5 bg-primary-300"
     >
       <div id="carousel-container" className="w-full overflow-hidden shadow-lg">
-        <div className="flex items-center justify-center w-full animate-smallCarousel md:animate-carousel">
+        <div className="flex items-center justify-center animate-smallCarousel md:animate-carousel">
           {loopedItems}
         </div>
       </div>

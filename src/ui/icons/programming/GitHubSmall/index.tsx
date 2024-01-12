@@ -1,4 +1,4 @@
-const GitHubIcon = () => {
+const GitHubIconSmall = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,4 +11,4 @@ const GitHubIcon = () => {
   )
 }
 
-export default GitHubIcon
+export default GitHubIconSmall
