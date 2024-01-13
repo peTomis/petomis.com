@@ -7,6 +7,7 @@ import circuitBoardPatternStyle from "@/ui/patterns/circuit-board"
 import SectionTitle from "@/ui/atoms/SectionTitle"
 import SectionDescription from "@/ui/atoms/SectionDescription"
 import ActivityCardGrid from "@/ui/molecules/ActivityCardGrid"
+import useIsSectionVisible from "@/hooks/useIsSectionVisible"
 
 const Work = () => {
   const [experience, setExperience] = useState<any>(undefined)
@@ -30,6 +31,7 @@ const Work = () => {
       <ActivityCardGrid>
         {experiences.map((experience, key) => (
           <ActivityCard
+            id={experience.job}
             key={key}
             onClick={() => setExperience(experience)}
             image={experience.image()}

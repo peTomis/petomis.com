@@ -3,6 +3,7 @@ interface Props {
   hovered: boolean
   onMouseEnter: () => void
   color: string
+  swipingDirection?: "left" | "right" | undefined
 }
 
 const CarouselElementSkewed = ({
@@ -10,6 +11,7 @@ const CarouselElementSkewed = ({
   hovered,
   onMouseEnter,
   color,
+  swipingDirection,
 }: Props) => {
   return (
     <div className={`flex relative`} onMouseEnter={onMouseEnter}>
@@ -25,7 +27,11 @@ const CarouselElementSkewed = ({
           <div
             className={`absolute w-full h-full ${
               color ?? "bg-primary"
-            } -z-20 rotate-2`}
+            } -z-20 rotate-2 transform ${
+              swipingDirection === undefined && " translate-x-0"
+            }  ${swipingDirection === "left" && " translate-x-full"} ${
+              swipingDirection === "right" && "-translate-x-full"
+            } transition-transform duration-500 ease-in-out`}
           ></div>
         )}
         {children}

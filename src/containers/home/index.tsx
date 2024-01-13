@@ -43,7 +43,7 @@ const HomeContainer = () => {
       <Welcome onRedirect={scrollToSelectedDiv} />
       <AboutMe />
       <Experience />
-      <Stack />
+      {/* <Stack /> */}
       <Work />
       <Projects />
       <Contact />

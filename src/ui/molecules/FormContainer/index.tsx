@@ -12,7 +12,7 @@ const FormContainer = ({ children, onSubmit }: Props) => {
   return (
     <div
       id="contact-form"
-      className="w-full lg:max-w-[800px] space-y-4 p-8 rounded-lg bg-primary-500"
+      className="w-full lg:max-w-[800px] space-y-4 p-8 bg-primary-500"
     >
       {children}
       <div className="flex items-center justify-center w-full my-4">

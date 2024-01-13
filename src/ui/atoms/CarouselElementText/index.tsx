@@ -24,18 +24,16 @@ const CarouselElementText = ({
     <>
       {selected ? (
         <div
-          className={`flex flex-col flex-1 justify-center items-center md:p-8 space-y-8 bg-background-dark dark:bg-background bg-opacity-50 dark:bg-opacity-50 text-defaultTextColor-dark`}
+          className={`flex flex-col flex-1 justify-start items-center p-8 space-y-8 bg-background-dark dark:bg-background bg-opacity-50 dark:bg-opacity-50`}
         >
           <div className="text-h4">{title.toUpperCase()}</div>
-          <div className="text-base font-light max-w-[150px]">
-            {description}
-          </div>
+          <div className="text-base font-light">{description}</div>
         </div>
       ) : (
         <div
           className={`flex flex-col items-center justify-start flex-1 py-8 space-y-2 ${
             color ?? CarouselElementTextColor.RED
-          } px-auto backdrop-blur-sm bg-opacity-50 text-defaultTextColor-dark`}
+          } px-auto backdrop-blur-sm bg-opacity-50`}
         >
           {verticalTitle.map((letter, key) => {
             return (

@@ -1,7 +1,8 @@
+import useSwipeHandler from "@/hooks/useSwipeHandler"
 import useWheelHandler from "@/hooks/useWheelHandler"
 import CarouselButton from "@/ui/atoms/CarouselButton"
 import CarouselElementSkewed from "@/ui/molecules/CarouselElementSkewed"
-import React from "react"
+import React, { useEffect } from "react"
 
 interface Props {
   elements: React.JSX.Element[]
@@ -14,6 +15,10 @@ const Carousel = ({ elements }: Props) => {
     Math.floor(elements.length / 2)
   )
 
+  const [swipingDirection, setSwipingDirection] = React.useState<
+    "left" | "right" | undefined
+  >(undefined)
+
   useWheelHandler(
     carouselRef,
     setHovered,
@@ -23,6 +28,29 @@ const Carousel = ({ elements }: Props) => {
       ),
     () => setHovered((prevHovered) => Math.max(prevHovered - 1, 0))
   )
+
+  useSwipeHandler(
+    carouselRef,
+    setHovered,
+    () => {
+      if (hovered < elements.length - 1) {
+        setSwipingDirection("left")
+        setHovered((prevHovered) =>
+          Math.min(prevHovered + 1, elements.length - 1)
+        )
+      }
+    },
+    () => {
+      if (hovered > 0) {
+        setSwipingDirection("right")
+        setHovered((prevHovered) => Math.max(prevHovered - 1, 0))
+      }
+    }
+  )
+
+  useEffect(() => {
+    setSwipingDirection(undefined)
+  }, [hovered])
 
   const rendered = elements.map((Element, i) => {
     const ElementWithProps = React.cloneElement(Element, {
@@ -35,6 +63,7 @@ const Carousel = ({ elements }: Props) => {
         hovered={hovered === i}
         onMouseEnter={() => setHovered(i)}
         color={Element.props.color}
+        swipingDirection={swipingDirection}
       >
         {ElementWithProps}
       </CarouselElementSkewed>

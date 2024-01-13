@@ -7,16 +7,34 @@ interface Props {
   variant?: "darkAndBlue" | "lightAndBlue"
   children: React.ReactNode
   onClick?: () => void
+  visible?: boolean
+  id?: string
+  skipAnimation?: boolean
 }
 
-const ActivityCardContainer = ({ variant, children, onClick }: Props) => {
+const ActivityCardContainer = ({
+  variant,
+  children,
+  onClick,
+  visible,
+  id,
+  skipAnimation,
+}: Props) => {
   return (
     <div
-      id="activity-card-container"
-      className={`cursor-pointer relative mx-auto h-[500px] w-[300px] rounded-lg overflow-hidden select-none ${
+      id={id}
+      className={`cursor-pointer relative mx-auto h-[500px] w-[300px] overflow-hidden select-none ${
         variant
           ? ActivityCardContainerVariant[variant]
           : ActivityCardContainerVariant.darkAndBlue
+      }  ${
+        skipAnimation === true
+          ? ""
+          : visible != undefined
+          ? `transform ${
+              visible ? " translate-y-0" : "translate-y-full"
+            } transition-transform duration-500 ease-in-out`
+          : ""
       }`}
       onClick={onClick}
     >

@@ -8,8 +8,6 @@ export function useDarkMode(): [boolean, Dispatch<SetStateAction<boolean>>] {
   useEffect(() => {
     const element = document.documentElement
 
-    console.log("TOGGLED")
-
     darkMode
       ? element.classList.add(DARK_MODE_CLASS)
       : element.classList.remove(DARK_MODE_CLASS)
