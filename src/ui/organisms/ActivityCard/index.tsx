@@ -1,5 +1,4 @@
 import useIsSectionLoaded from "@/hooks/useIsSectionLoaded"
-import useIsSectionVisible from "@/hooks/useIsSectionVisible"
 import ActivityCardDescription from "@/ui/atoms/ActivityCardDescription/index"
 import ActivityCardHint from "@/ui/atoms/ActivityCardHint"
 import ActivityCardImage from "@/ui/atoms/ActivityCardImage"
@@ -15,7 +14,6 @@ interface Props {
 }
 
 const ActivityCard = ({ description, image, onClick, variant, id }: Props) => {
-  const isSectionVisible = useIsSectionVisible(id)
   const isSectionLoaded = useIsSectionLoaded(id)
 
   return (
@@ -23,8 +21,7 @@ const ActivityCard = ({ description, image, onClick, variant, id }: Props) => {
       id={id}
       variant={variant}
       onClick={onClick}
-      visible={isSectionVisible}
-      skipAnimation={isSectionLoaded}
+      visible={isSectionLoaded}
     >
       <ActivityCardHint variant={variant} />
       <ActivityCardImage image={image} />

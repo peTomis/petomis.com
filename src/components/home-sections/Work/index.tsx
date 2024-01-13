@@ -7,7 +7,6 @@ import circuitBoardPatternStyle from "@/ui/patterns/circuit-board"
 import SectionTitle from "@/ui/atoms/SectionTitle"
 import SectionDescription from "@/ui/atoms/SectionDescription"
 import ActivityCardGrid from "@/ui/molecules/ActivityCardGrid"
-import useIsSectionVisible from "@/hooks/useIsSectionVisible"
 
 const Work = () => {
   const [experience, setExperience] = useState<any>(undefined)
@@ -16,7 +15,7 @@ const Work = () => {
   return (
     <div
       id="work-container"
-      className="flex flex-col items-center justify-center w-full py-8 mx-auto"
+      className="flex flex-col items-center justify-center w-full py-8 mx-auto bg-opacity-50 bg-primary-200"
       style={circuitBoardPatternStyle}
     >
       <SectionTitle id="work-title" label={t("work.title").toUpperCase()} />

@@ -18,7 +18,7 @@ const WelcomeText = () => {
   const { currentWord } = useTypewriterEffect(words)
 
   return (
-    <div className="flex flex-col items-center justify-center flex-1 px-4 lg:items-start lg:justify-start lg:text-start">
+    <div className="flex flex-col items-center justify-center flex-1 px-4 select-none lg:items-start lg:justify-start lg:text-start">
       <Name />
 
       <div className="flex pb-8 justify-start w-[80vw]  lg:ml-8 max-w-[600px] text-jobSmall font-bacasimeAntique text-defaultTextColor dark:text-defaultTextColor-dark sm:text-jobMedium xxl:text-jobExtraLarge">

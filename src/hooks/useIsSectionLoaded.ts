@@ -1,7 +1,14 @@
-import { useEffect, useState } from "react"
+import React from "react"
+import { useEffect } from "react"
+import useIsSectionVisible from "./useIsSectionVisible"
 
-const useIsSectionLoaded = (id: string) => {
-  const [isSectionLoaded, setIsSectionLoaded] = useState(false)
+const useIsSectionLoaded = (id: string, delta?: number) => {
+  const [isSectionLoaded, setIsSectionLoaded] = React.useState(false)
+  const isSectionVisible = useIsSectionVisible(id)
+
+  useEffect(() => {
+    if (!isSectionLoaded && isSectionVisible) setIsSectionLoaded(true)
+  }, [isSectionVisible, isSectionLoaded])
 
   useEffect(() => {
     const targetDiv = document.getElementById(id)
@@ -9,9 +16,8 @@ const useIsSectionLoaded = (id: string) => {
     const targetDivPosition = targetDiv.getBoundingClientRect()
     const screenHeight = window.innerHeight
 
-    if (targetDivPosition.top <= screenHeight * 1.2) {
+    if (targetDivPosition.top <= screenHeight * (delta ?? 1.2)) {
       setIsSectionLoaded(true)
-      return
     }
   }, [])
 

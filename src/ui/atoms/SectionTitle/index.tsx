@@ -2,6 +2,8 @@ export enum SectionTitleColor {
   DEFAULT = "text-defaultTextColor dark:text-defaultTextColor-dark",
   PRIMARY100 = "text-primary-100",
   PRIMARY300 = "text-primary-300",
+  PRIMARY400 = "text-primary-400",
+  PRIMARY500 = "text-primary-500",
 }
 
 export enum SectionTitleFont {

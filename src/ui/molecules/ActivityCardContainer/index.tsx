@@ -18,7 +18,6 @@ const ActivityCardContainer = ({
   onClick,
   visible,
   id,
-  skipAnimation,
 }: Props) => {
   return (
     <div
@@ -28,9 +27,7 @@ const ActivityCardContainer = ({
           ? ActivityCardContainerVariant[variant]
           : ActivityCardContainerVariant.darkAndBlue
       }  ${
-        skipAnimation === true
-          ? ""
-          : visible != undefined
+        visible != undefined
           ? `transform ${
               visible ? " translate-y-0" : "translate-y-full"
             } transition-transform duration-500 ease-in-out`
