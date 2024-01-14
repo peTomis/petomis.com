@@ -16,6 +16,8 @@ const Experience = () => {
   const { t } = useTranslations("home")
   const jobs = ["fullstack", "mobile"]
   const filters = [
+    "fullstack",
+    "mobile",
     "backend",
     "frontend",
     "framework",

@@ -3,7 +3,7 @@ const FirebaseIcon = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="23 6 469 132"
-      className="w-[170px]"
+      className="w-[150px] md:w-[170px]"
     >
       <defs>
         <linearGradient id="a" x1="-3.49%" x2="100.83%" y1="17.02%" y2="92.9%">
