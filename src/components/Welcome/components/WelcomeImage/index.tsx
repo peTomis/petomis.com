@@ -9,7 +9,7 @@ const WelcomeImage = () => {
         "flex justify-center max-w-[600px] items-center lg:w-[500px] lg:h-[500px] xxl:max-w-[760px] xxl:w-[760px] xxl:h-[760px]"
       }
     >
-      <div className="block dark:hidden">
+      <div className="block overflow-hidden rounded-[200px] dark:hidden">
         <Image
           src={lightImage}
           alt="Main image"
@@ -20,7 +20,7 @@ const WelcomeImage = () => {
           height={1000}
         />
       </div>
-      <div className="hidden dark:block">
+      <div className="hidden overflow-hidden rounded-[200px] dark:block">
         <Image
           src={darkImage}
           alt="Main image"
