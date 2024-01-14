@@ -1,17 +1,6 @@
-interface Props {
-  width?: number
-  height?: number
-}
-
-const ArrowIcon = ({ height, width }: Props) => {
+const ArrowIcon = () => {
   return (
-    <svg
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      width={width || 18}
-      height={height || 18}
-      viewBox="0 0 330 330"
-    >
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 330">
       <path
         d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
 	c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213

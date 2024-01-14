@@ -5,8 +5,6 @@ interface Props {
 const CloseButtonIcon = ({ size }: Props) => {
   return (
     <svg
-      width={size ?? 42}
-      height={size ?? 42}
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       viewBox="0 0 1436 1054"

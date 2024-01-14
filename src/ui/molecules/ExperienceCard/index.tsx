@@ -29,13 +29,13 @@ const ExperienceCard = ({ name, icon, tags, duration, onClick }: Props) => {
         {tags.map((t, key) => (
           <div
             key={key}
-            className="flex-none p-1 text-center rounded-md shadow-md xl:p-2 bg-primary-100 bg-opacity-5"
+            className="truncate overflow-hidden text-center line rounded-md shadow-md p-2 bg-primary-100 max-w-[120px] bg-opacity-5"
           >
             {t}
           </div>
         ))}
       </div>
-      <div className="flex flex-row items-center justify-center w-full mx-auto space-x-1 text-center">
+      <div className="flex flex-row items-end justify-center flex-1 w-full mx-auto space-x-1 text-center">
         <div className="w-4 h-4 fill-defaultTextColor">
           <ClockIcon />
         </div>

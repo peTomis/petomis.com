@@ -7,7 +7,7 @@ import NextjsIcon from "@/ui/icons/programming/Nextjs"
 import PostgreSQLIcon from "@/ui/icons/programming/Postgre"
 import Image from "next/image"
 import React from "react"
-import JiraIcon from "@/ui/icons/programming/JiraIcon"
+import JiraIcon from "@/ui/icons/programming/Jira"
 
 interface ImageItemProps {
   src: string

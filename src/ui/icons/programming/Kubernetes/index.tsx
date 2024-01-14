@@ -5,7 +5,7 @@ const KubernetesIcon = () => {
       version="1.1"
       viewBox="-2.53590912 -2.53590912 505.68601824 89.60212224"
       id="svg10488"
-      className="w-[240px]"
+      className="w-[180px]"
     >
       <defs id="defs10490" />
       <path
