@@ -1,5 +1,6 @@
 import { useTranslations } from "@/hooks/useTranslations"
 import SocialButtons from "@/ui/organisms/SocialButtons"
+import Image from "next/image"
 
 const BottomBar = () => {
   const { t } = useTranslations("common")
@@ -25,12 +26,20 @@ const BottomBar = () => {
             id="bottombar-text-column"
             className="flex flex-col items-center justify-start flex-1 w-full space-y-4 "
           >
-            <div id="bottombar-info" className="flex flex-col w-full">
+            <div id="bottombar-info" className="flex flex-col w-full space-y-2">
               <div
                 id="bottombar-name"
-                className="w-full font-bold text-h5 d:text-h3"
+                className="flex items-center justify-start w-full h-8 space-x-4 font-bold flex-ro text-h5 d:text-h3"
               >
-                {t("bottomBar.name")}
+                <div className="flex items-center justify-center ">
+                  <Image
+                    src={"/favicon.svg"}
+                    alt={"alt"}
+                    width={40}
+                    height={40}
+                  />
+                </div>
+                <div>{t("bottomBar.name")}</div>
               </div>
               <div id="bottombar-hashtag" className="w-full italic d:text-h5">
                 {t("bottomBar.hashtag")}
