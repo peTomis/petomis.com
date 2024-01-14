@@ -1,8 +1,7 @@
-import Image from "next/image"
 import AnubidigitalIcon from "@/ui/icons/companies/Anubidigital"
-import mobileDeveloperImage from "@public/images/work/md.png"
 import ExperienceDescriptionContainer from "@/ui/molecules/ExperienceDescriptionContainer"
 import BorderedDiv from "@/ui/atoms/BorderedDiv"
+import MobileDeveloperIcon from "@/ui/icons/companies/MobileDeveloper"
 
 export interface Experience {
   job: string
@@ -81,15 +80,9 @@ const freelanceMobileDeveloper: Experience = {
   tools: ["XCode", "Android Studio", "IntelliJ"],
   variant: "lightAndBlue",
   image: () => (
-    <Image
-      src={mobileDeveloperImage}
-      alt="Main image"
-      placeholder="blur"
-      loading="eager"
-      priority={true}
-      width={500}
-      height={500}
-    />
+    <div className="h-[300px] items-center flex fill-defaultTextColor mx-auto w-full justify-center">
+      <MobileDeveloperIcon />
+    </div>
   ),
   description: () => (
     <ExperienceDescriptionContainer
