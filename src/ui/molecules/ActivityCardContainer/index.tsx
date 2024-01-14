@@ -1,3 +1,5 @@
+import { customTransitionAnimation } from "@/ui/animations/CustomTransitionAnimation"
+
 enum ActivityCardContainerVariant {
   darkAndBlue = `bg-black`,
   lightAndBlue = `bg-freelanceIcon`,
@@ -13,7 +15,7 @@ interface Props {
 }
 
 const ActivityCardContainer = ({
-  variant,
+  variant = "darkAndBlue",
   children,
   onClick,
   visible,
@@ -23,16 +25,8 @@ const ActivityCardContainer = ({
     <div
       id={id}
       className={`cursor-pointer relative mx-auto h-[500px] w-[300px] overflow-hidden select-none ${
-        variant
-          ? ActivityCardContainerVariant[variant]
-          : ActivityCardContainerVariant.darkAndBlue
-      }  ${
-        visible != undefined
-          ? `transform ${
-              visible ? " translate-y-0" : "translate-y-full"
-            } transition-transform duration-500 ease-in-out`
-          : ""
-      }`}
+        ActivityCardContainerVariant[variant]
+      }  ${customTransitionAnimation(visible)}`}
       onClick={onClick}
     >
       {children}

@@ -1,6 +1,6 @@
 import useIsSectionLoaded from "@/hooks/useIsSectionLoaded"
 import ActivityCardDescription from "@/ui/atoms/ActivityCardDescription/index"
-import ActivityCardHint from "@/ui/atoms/ActivityCardHint"
+import ActivityCardHint from "@/ui/molecules/ActivityCardHint"
 import ActivityCardImage from "@/ui/atoms/ActivityCardImage"
 import ActivityCardContainer from "@/ui/molecules/ActivityCardContainer"
 import React from "react"

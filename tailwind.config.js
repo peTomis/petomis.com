@@ -53,6 +53,7 @@ module.exports = {
         },
         primary: {
           DEFAULT: "#00719C",
+          50: "#8CE6FF",
           100: "#00B8FF",
           200: "#009BD6",
           300: "#00719C",

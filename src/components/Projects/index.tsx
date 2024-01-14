@@ -1,5 +1,5 @@
 import { useTranslations } from "@/modules/translations/use"
-import { CarouselElementTextColor } from "@/ui/atoms/CarouselElementText"
+import { CarouselElementColor } from "@/ui/atoms/CarouselElementText"
 import SectionDescription, {
   SectionDescriptionFontSize,
 } from "@/ui/atoms/SectionDescription"
@@ -11,6 +11,7 @@ import Carousel from "@/ui/organisms/Carousel"
 import { useEffect, useState } from "react"
 import image from "@public/images/me-light.png"
 import CarouselElement from "@/ui/molecules/CarouselElement"
+import { projects } from "./projects"
 
 const startDate = new Date("2022-03-01")
 
@@ -45,43 +46,15 @@ const Projects = () => {
         rows={[t("projects.description")]}
       />
       <Carousel
-        elements={[
+        elements={projects.map((project, key) => (
           <CarouselElement
-            key={0}
-            src={image}
-            title="Netlog"
-            description="I did facebook"
-            color={CarouselElementTextColor.BLACK}
-          />,
-          <CarouselElement
-            key={1}
-            src={image}
-            title="Facebook"
-            description="I also made twitter, a social network that allows me to write a very long text description in order to test the project section style result"
-            color={CarouselElementTextColor.PURPLE}
-          />,
-          <CarouselElement
-            key={2}
-            src={image}
-            title="Twitter"
-            description="I also made twitter, a social network that allows me to write a very long text description in order to test the project section style result"
-            color={CarouselElementTextColor.RED}
-          />,
-          <CarouselElement
-            key={1}
-            src={image}
-            title="Linkedin"
-            description="I also made twitter"
-            color={CarouselElementTextColor.BLUE}
-          />,
-          <CarouselElement
-            key={1}
-            src={image}
-            title="Tiktok"
-            description="I also made twitter"
-            color={CarouselElementTextColor.YELLOW}
-          />,
-        ]}
+            key={key}
+            src={project.src}
+            title={project.title}
+            description={project.description}
+            color={project.color}
+          />
+        ))}
       />
     </div>
   )

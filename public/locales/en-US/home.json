@@ -45,14 +45,16 @@
   },
   "projects": {
     "title": "Projects",
-    "description": "Some of the projects I've worked on"
+    "description": "Placeholder to host some of the projects I've worked on",
+    "elementNote": "click to open"
   },
   "welcome": {
     "contact": "Contact Me",
     "firstRole": "> Software Engineer",
     "hello": "Hi, I am",
     "name": "Giuseppe Tomis",
-    "secondRole": "> Fullstack Developer"
+    "secondRole": "> Fullstack Developer",
+    "thirdRole": "> Mobile Developer"
   },
   "work": {
     "title": "My Career",

@@ -19,16 +19,12 @@ interface Props {
 const ActivityCardExpandedContainer = ({
   children,
   onClose,
-  variant,
+  variant = "darkAndBlue",
 }: Props) => {
   return (
     <div
       id="activity-card-expanded-container"
-      className={`relative flex w-full m-4 xl:m-8 rounded-2xl xl:rounded-3xl overflow-x-hidden overflow-y-auto ${
-        variant
-          ? ActivityCardExpandedBgVariant[variant]
-          : ActivityCardExpandedBgVariant.darkAndBlue
-      }`}
+      className={`relative flex w-full m-2 xl:m-4 overflow-x-hidden overflow-y-auto ${ActivityCardExpandedBgVariant[variant]}`}
       onClick={(e) => {
         e.stopPropagation()
       }}
@@ -38,11 +34,7 @@ const ActivityCardExpandedContainer = ({
     >
       <div
         id="activity-card-expanded-close-button"
-        className={`absolute top-4 right-4 cursor-pointer ${
-          variant
-            ? ActivityCardExpandedFillVariant[variant]
-            : ActivityCardExpandedFillVariant.darkAndBlue
-        }`}
+        className={`absolute top-4 right-4 cursor-pointer ${ActivityCardExpandedFillVariant[variant]}`}
         onClick={onClose}
       >
         <CloseButtonIcon />

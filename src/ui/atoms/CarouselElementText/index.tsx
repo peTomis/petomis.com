@@ -1,11 +1,11 @@
 interface Props {
   title: string
   description: string
-  color?: CarouselElementTextColor
+  color?: CarouselElementColor
   selected?: boolean
 }
 
-export enum CarouselElementTextColor {
+export enum CarouselElementColor {
   RED = "bg-red-800",
   BLACK = "bg-black",
   BLUE = "bg-blue-800",
@@ -17,7 +17,7 @@ const CarouselElementText = ({
   title,
   description,
   selected,
-  color,
+  color = CarouselElementColor.RED,
 }: Props) => {
   const verticalTitle = title.split("")
   return (
@@ -31,9 +31,7 @@ const CarouselElementText = ({
         </div>
       ) : (
         <div
-          className={`flex flex-col items-center justify-start flex-1 py-8 space-y-2 ${
-            color ?? CarouselElementTextColor.RED
-          } px-auto backdrop-blur-sm bg-opacity-50`}
+          className={`flex flex-col items-center justify-start flex-1 py-8 space-y-2 ${color} px-auto backdrop-blur-sm bg-opacity-50`}
         >
           {verticalTitle.map((letter, key) => {
             return (

@@ -13,7 +13,11 @@ const Name = () => {
 
 const WelcomeText = () => {
   const { t } = useTranslations("home")
-  const words = [t("welcome.firstRole"), t("welcome.secondRole")]
+  const words = [
+    t("welcome.firstRole"),
+    t("welcome.secondRole"),
+    t("welcome.thirdRole"),
+  ]
 
   const { currentWord } = useTypewriterEffect(words)
 

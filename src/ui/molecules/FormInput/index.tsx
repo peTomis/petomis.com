@@ -10,10 +10,10 @@ interface Props {
 
 const FormInput = ({ error, label, onChange, placeholder, type }: Props) => {
   const isArea = type === "area"
-  const inputClass = "bg-background bg-opacity-10 dark:bg-opacity-5 ".concat(
+  const inputClass = "bg-primary-400 bg-opacity-20 ".concat(
     error ? style.inputError : style.input
   )
-  const areaClass = "bg-background bg-opacity-10 dark:bg-opacity-5 ".concat(
+  const areaClass = "bg-primary-400 bg-opacity-20 ".concat(
     error ? style.areaError : style.area
   )
 

@@ -19,22 +19,28 @@ const AboutMe = () => {
       <SectionTitle
         id="about-me-title"
         label={t("aboutMe.title").toUpperCase()}
-        color={SectionTitleColor.DEFAULT}
+        color={SectionTitleColor.PRIMARY300}
         font={SectionTitleFont.ROBOTO}
       />
       <div className="flex flex-col space-y-16">
         <PhraseContainer id={"about-me-1"}>
           <>
             {t("aboutMe.text1")}
-            <span className={"text-primary-400 dark:text-primary-100"}>
+            <span
+              className={"text-primary-300 font-bold dark:text-primary-100"}
+            >
               {t("aboutMe.text2")}
             </span>
             {t("aboutMe.text3")}
-            <span className={"text-primary-400 dark:text-primary-100"}>
+            <span
+              className={"text-primary-300 font-bold dark:text-primary-100"}
+            >
               {t("aboutMe.text4")}
             </span>
             {t("aboutMe.text5")}
-            <span className={"text-primary-400 dark:text-primary-100"}>
+            <span
+              className={"text-primary-300 font-bold dark:text-primary-100"}
+            >
               {t("aboutMe.text6")}
             </span>
             {t("aboutMe.text7")}
@@ -42,15 +48,15 @@ const AboutMe = () => {
         </PhraseContainer>
         <PhraseContainer id={"about-me-2"}>
           {t("aboutMe.text8")}
-          <span className={"text-primary-400 dark:text-primary-100"}>
+          <span className={"text-primary-300 font-bold dark:text-primary-100"}>
             {t("aboutMe.text9")}
           </span>
           {t("aboutMe.text10")}
-          <span className={"text-primary-400 dark:text-primary-100"}>
+          <span className={"text-primary-300 font-bold dark:text-primary-100"}>
             {t("aboutMe.text11")}
           </span>
           {t("aboutMe.text12")}
-          <span className={"text-primary-400 dark:text-primary-100"}>
+          <span className={"text-primary-300 font-bold dark:text-primary-100"}>
             {t("aboutMe.text13")}
           </span>
           {t("aboutMe.text14")}

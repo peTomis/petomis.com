@@ -17,7 +17,10 @@ const ActivityCardExpanded = ({ content, onClose, variant }: Props) => {
       onClick={onClose}
     >
       <ActivityCardExpandedContainer onClose={onClose} variant={variant}>
-        {content}
+        {/* {content} */}
+        <div className="flex items-center justify-center w-full h-full">
+          Work in progress
+        </div>
       </ActivityCardExpandedContainer>
     </div>
   )

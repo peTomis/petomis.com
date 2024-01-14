@@ -3,7 +3,7 @@
 }
 
 .error {
-  @apply bg-red-900;
+  @apply bg-red-900 bg-opacity-60;
   animation: shake 0.3s 1 0s;
 }
 
