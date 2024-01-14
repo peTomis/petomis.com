@@ -4,6 +4,7 @@ import SectionTitle, {
   SectionTitleColor,
   SectionTitleFont,
 } from "@/ui/atoms/SectionTitle"
+import Typography from "@/ui/atoms/Typography"
 import circuitBoardPatternStyle from "@/ui/patterns/circuit-board"
 
 const AboutMe = () => {
@@ -24,42 +25,52 @@ const AboutMe = () => {
       />
       <div className="flex flex-col space-y-16">
         <PhraseContainer id={"about-me-1"}>
-          <>
-            {t("aboutMe.text1")}
-            <span
-              className={"text-primary-300 font-bold dark:text-primary-100"}
-            >
-              {t("aboutMe.text2")}
-            </span>
-            {t("aboutMe.text3")}
-            <span
-              className={"text-primary-300 font-bold dark:text-primary-100"}
-            >
-              {t("aboutMe.text4")}
-            </span>
-            {t("aboutMe.text5")}
-            <span
-              className={"text-primary-300 font-bold dark:text-primary-100"}
-            >
-              {t("aboutMe.text6")}
-            </span>
-            {t("aboutMe.text7")}
-          </>
+          <Typography text={t("aboutMe.text1")} />
+          <Typography
+            text={t("aboutMe.text2")}
+            color={"primary-300"}
+            darkColor={"primary-100"}
+            bold={true}
+          />
+          <Typography text={t("aboutMe.text3")} />
+          <Typography
+            text={t("aboutMe.text4")}
+            color={"primary-300"}
+            darkColor={"primary-100"}
+            bold={true}
+          />
+          <Typography text={t("aboutMe.text5")} />
+          <Typography
+            text={t("aboutMe.text6")}
+            color={"primary-300"}
+            darkColor={"primary-100"}
+            bold={true}
+          />
+          <Typography text={t("aboutMe.text7")} />
         </PhraseContainer>
         <PhraseContainer id={"about-me-2"}>
-          {t("aboutMe.text8")}
-          <span className={"text-primary-300 font-bold dark:text-primary-100"}>
-            {t("aboutMe.text9")}
-          </span>
-          {t("aboutMe.text10")}
-          <span className={"text-primary-300 font-bold dark:text-primary-100"}>
-            {t("aboutMe.text11")}
-          </span>
-          {t("aboutMe.text12")}
-          <span className={"text-primary-300 font-bold dark:text-primary-100"}>
-            {t("aboutMe.text13")}
-          </span>
-          {t("aboutMe.text14")}
+          <Typography text={t("aboutMe.text8")} />
+          <Typography
+            text={t("aboutMe.text9")}
+            color={"primary-300"}
+            darkColor={"primary-100"}
+            bold={true}
+          />
+          <Typography text={t("aboutMe.text10")} />
+          <Typography
+            text={t("aboutMe.text11")}
+            color={"primary-300"}
+            darkColor={"primary-100"}
+            bold={true}
+          />
+          <Typography text={t("aboutMe.text12")} />
+          <Typography
+            text={t("aboutMe.text13")}
+            color={"primary-300"}
+            darkColor={"primary-100"}
+            bold={true}
+          />
+          <Typography text={t("aboutMe.text14")} />
         </PhraseContainer>
       </div>
     </div>

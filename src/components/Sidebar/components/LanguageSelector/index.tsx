@@ -1,9 +1,5 @@
 import { useLanguage } from "@/hooks/useLanguage"
-import RoundedButton from "@/ui/atoms/RoundedButton"
-import ArrowIcon from "@/ui/icons/Arrow"
-import USFlag from "@/ui/icons/USFlag"
 import LanguageSelectorItem from "@/ui/molecules/LanguageSelectorItem"
-import LanguageSelectorList from "@/ui/molecules/LanguageSelectorList"
 import { useState, useEffect } from "react"
 
 const LanguageSelector = () => {
