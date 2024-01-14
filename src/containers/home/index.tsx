@@ -9,7 +9,7 @@ import Welcome from "@/components/Welcome"
 import Contact from "@/components/Contact"
 import Work from "@/components/Work"
 import Experience from "@/components/Experience"
-import BottomBar from "@/components/BottomBar"
+import BottomBar from "@/components/BottomBarr"
 import Projects from "@/components/Projects"
 import AboutMe from "@/components/AboutMe"
 
