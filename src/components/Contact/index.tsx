@@ -77,11 +77,9 @@ const Contact = () => {
     }
     dispatch({ type: "setErrors", payload: newErrors })
     if (!newErrors.name && !newErrors.email && !newErrors.message) {
-      submitEmail({ email, message })
+      submitEmail({ email, message: "[" + name + "]" + message })
     }
   }
-
-  if (formState.succeeded) return <FormSucceeded />
 
   return (
     <div
@@ -102,28 +100,32 @@ const Contact = () => {
           t("contact.description.phrase2"),
         ]}
       />
-      <FormContainer onSubmit={handleSubmit}>
-        <FormInput
-          error={errors.name}
-          label={t("contact.name")}
-          onChange={(s) => dispatch({ type: "setName", payload: s })}
-          placeholder={t("contact.namePlaceholder") as string}
-        />
-        <FormInput
-          error={errors.email}
-          label={t("contact.email")}
-          onChange={(s) => dispatch({ type: "setEmail", payload: s })}
-          placeholder={t("contact.emailPlaceholder") as string}
-        />
+      {formState.succeeded ? (
+        <FormSucceeded />
+      ) : (
+        <FormContainer onSubmit={handleSubmit}>
+          <FormInput
+            error={errors.name}
+            label={t("contact.name")}
+            onChange={(s) => dispatch({ type: "setName", payload: s })}
+            placeholder={t("contact.namePlaceholder") as string}
+          />
+          <FormInput
+            error={errors.email}
+            label={t("contact.email")}
+            onChange={(s) => dispatch({ type: "setEmail", payload: s })}
+            placeholder={t("contact.emailPlaceholder") as string}
+          />
 
-        <FormInput
-          error={errors.message}
-          label={t("contact.message")}
-          onChange={(s) => dispatch({ type: "setMessage", payload: s })}
-          placeholder={t("contact.messagePlaceholder") as string}
-          type="area"
-        />
-      </FormContainer>
+          <FormInput
+            error={errors.message}
+            label={t("contact.message")}
+            onChange={(s) => dispatch({ type: "setMessage", payload: s })}
+            placeholder={t("contact.messagePlaceholder") as string}
+            type="area"
+          />
+        </FormContainer>
+      )}
     </div>
   )
 }

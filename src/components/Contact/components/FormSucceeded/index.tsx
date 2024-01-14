@@ -5,12 +5,9 @@ const FormSucceeded = () => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center w-full py-8 bg-primary-500 text-defaultTextColor-dark"
-      id="contact-container"
+      id="contact-form"
+      className="w-full lg:max-w-[800px] space-y-4 pt-16 pb-12 bg-primary-500"
     >
-      <div className="w-full py-4 d:max-w-[500px] text-h2 text-center font-bacasimeAntique font-extrabold text-primary-200  lg:max-w-[1200px]">
-        {t("contact.title")}
-      </div>
       <div
         id="letter-container"
         className={"flex justify-center items-center h-[350]"}
@@ -39,7 +36,7 @@ const FormSucceeded = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>{" "}
     </div>
   )
 }

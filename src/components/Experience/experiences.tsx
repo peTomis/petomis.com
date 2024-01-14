@@ -12,6 +12,7 @@ import KubernetesIcon from "@/ui/icons/programming/Kubernetes"
 import MongodbIcon from "@/ui/icons/programming/Mongodb"
 import NestjsIcon from "@/ui/icons/programming/NestJs"
 import NextjsIcon from "@/ui/icons/programming/Nextjs"
+import NodeJsIcon from "@/ui/icons/programming/Nodejs"
 import PostgreSQLIcon from "@/ui/icons/programming/Postgre"
 import SwiftIcon from "@/ui/icons/programming/Swift"
 import TypescriptIcon from "@/ui/icons/programming/Typescript"
@@ -111,6 +112,12 @@ const GetExperienceData = () => {
       name: "Nest.js",
       icon: <NestjsIcon />,
       tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.FRAMEWORK],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "Node.js",
+      icon: <NodeJsIcon />,
+      tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.OTHER],
       duration: `2 ${t("experience.years")}`,
     },
     {
