@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "type-check": "tsc --noEmit --skipLibCheck",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "ci": "yarn type-check && yarn lint"
   },
   "dependencies": {
     "@formspree/react": "^2.4.4",

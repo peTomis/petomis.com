@@ -8,7 +8,6 @@ import TopBar from "@/components/TopBar"
 import Welcome from "@/components/Welcome"
 import Contact from "@/components/Contact"
 import Work from "@/components/Work"
-import Stack from "@/components/Stack"
 import Experience from "@/components/Experience"
 import BottomBar from "@/components/BottomBar"
 import Projects from "@/components/Projects"
@@ -43,7 +42,6 @@ const HomeContainer = () => {
       <Welcome onRedirect={scrollToSelectedDiv} />
       <AboutMe />
       <Experience />
-      {/* <Stack /> */}
       <Work />
       <Projects />
       <Contact />

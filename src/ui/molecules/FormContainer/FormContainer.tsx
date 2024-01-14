@@ -1,5 +1,10 @@
+import { useTranslations } from "@/hooks/useTranslations"
 import Button from "@/ui/atoms/Button"
-import { Props } from "."
+
+interface Props {
+  children: React.ReactNode
+  onSubmit: () => void
+}
 
 export const FormContainer = ({ children, onSubmit }: Props) => {
   const { t } = useTranslations("contact")
