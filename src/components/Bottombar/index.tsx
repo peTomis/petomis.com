@@ -1,4 +1,4 @@
-import { useTranslations } from "@/modules/translations/use"
+import { useTranslations } from "@/hooks/useTranslations"
 import SocialButtons from "@/ui/organisms/SocialButtons"
 
 const BottomBar = () => {

@@ -1,4 +1,4 @@
-import { useTranslations } from "@/modules/translations/use"
+import { useTranslations } from "@/hooks/useTranslations"
 
 const FormSucceeded = () => {
   const { t } = useTranslations("home")

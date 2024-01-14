@@ -25,8 +25,8 @@ const ListFilterElements = ({
   const sortedFilters = useSortedFilters(filters, activeFilters)
 
   return (
-    <Flipper flipKey={sortedFilters.join("")}>
-      <div className="flex flex-wrap mx-auto">
+    <Flipper flipKey={sortedFilters.map((f) => f.value).join("")}>
+      <div className="flex flex-wrap w-full mx-auto">
         {sortedFilters.map((filter) => (
           <Flipped key={filter.value} flipId={filter.value}>
             <button

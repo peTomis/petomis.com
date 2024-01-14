@@ -1,4 +1,4 @@
-import { useTranslations } from "@/modules/translations/use"
+import { useTranslations } from "@/hooks/useTranslations"
 import FormInput from "@/ui/molecules/FormInput"
 import { useReducer, useState } from "react"
 import { useForm } from "@formspree/react"

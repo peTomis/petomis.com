@@ -1,5 +1,5 @@
 import style from "./style.module.css"
-import { useTranslations } from "@/modules/translations/use"
+import { useTranslations } from "@/hooks/useTranslations"
 import { useTypewriterEffect } from "@/ui/animations/TypewriterEffect"
 
 const Name = () => {

@@ -1,4 +1,4 @@
-import { useTranslations } from "@/modules/translations/use"
+import { useTranslations } from "@/hooks/useTranslations"
 import ExperienceCard from "@/ui/molecules/ExperienceCard"
 import ExperienceCardContainer from "@/ui/atoms/ExperienceCardContainer"
 import SectionTitle, {
@@ -67,7 +67,7 @@ const Experience = () => {
 
       <div
         id="experience-filter-container"
-        className="flex flex-col items-start justify-start w-full space-y-2 max-w-[800px]  xl:max-w-[900px]"
+        className="flex flex-col items-start justify-start w-full space-y-2 max-w-[600px] md:px-4 md:max-w-[800px]  xl:max-w-[900px]"
       >
         <ListFilter
           icon={<BriefcaseIcon />}

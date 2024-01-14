@@ -1,4 +1,4 @@
-import { useTranslations } from "@/modules/translations/use"
+import { useTranslations } from "@/hooks/useTranslations"
 import ItalyFlag from "@/ui/icons/ItalyFlag"
 import USFlag from "@/ui/icons/USFlag"
 import { Dispatch, SetStateAction, useEffect, useState } from "react"

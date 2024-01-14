@@ -1,4 +1,4 @@
-import { useTranslations } from "@/modules/translations/use"
+import { useTranslations } from "@/hooks/useTranslations"
 import ActivityCardHintContent from "@/ui/atoms/ActivityCardHintContent"
 import FingerTapIcon from "@/ui/icons/FingerTap"
 import PointerClickIcon from "@/ui/icons/PointerClick"

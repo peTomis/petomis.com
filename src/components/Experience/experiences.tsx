@@ -1,4 +1,4 @@
-import { useTranslations } from "@/modules/translations/use"
+import { useTranslations } from "@/hooks/useTranslations"
 import AndroidStudioIcon from "@/ui/icons/programming/AndroidStudio"
 import AwsIcon from "@/ui/icons/programming/Aws"
 import DockerIcon from "@/ui/icons/programming/Docker"

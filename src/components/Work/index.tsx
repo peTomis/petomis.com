@@ -1,4 +1,4 @@
-import { useTranslations } from "@/modules/translations/use"
+import { useTranslations } from "@/hooks/useTranslations"
 import experiences from "./components/Experiences"
 import ActivityCardExpanded from "@/ui/organisms/ActivityCardExpanded"
 import { useState } from "react"

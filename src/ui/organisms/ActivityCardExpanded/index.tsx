@@ -1,4 +1,4 @@
-import { useTranslations } from "@/modules/translations/use"
+import { useTranslations } from "@/hooks/useTranslations"
 import ActivityCardExpandedContainer from "@/ui/molecules/ActivityCardExpandedContainer"
 import useLockScroll from "@/utils/lockScroll"
 

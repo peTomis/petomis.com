@@ -3,7 +3,7 @@ import WorkIcon from "@/ui/icons/Work"
 import ProjectIcon from "@/ui/icons/Project"
 import { WebsiteSection } from "@/utils/websiteSections"
 import SectionShortcut from "@/ui/molecules/SectionShortcut"
-import { useTranslations } from "@/modules/translations/use"
+import { useTranslations } from "@/hooks/useTranslations"
 
 interface Props {
   onRedirect: (section: WebsiteSection) => void

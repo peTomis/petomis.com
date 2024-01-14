@@ -1,4 +1,4 @@
-import { useTranslations } from "@/modules/translations/use"
+import { useTranslations } from "@/hooks/useTranslations"
 import AnubidigitalIcon from "@/ui/icons/companies/Anubidigital"
 
 interface Props {
