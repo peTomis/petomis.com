@@ -19,7 +19,7 @@ const DarkModeSwitchButton = ({ darkMode, setDarkMode }: Props) => {
           className="sr-only"
           onChange={() => setDarkMode(!darkMode)}
         />
-        <div className="block w-16 rounded-full h-9 bg-background-dark bg-opacity-20 dark:bg-background dark:bg-opacity-10">
+        <div className="block w-16 rounded-full h-9 bg-background-dark bg-opacity-10 dark:bg-background dark:bg-opacity-10">
           <div className="flex items-center justify-between h-full px-1 fill-defaultTextColor dark:fill-defaultTextColor-dark">
             <SunIcon />
             <MoonIcon />

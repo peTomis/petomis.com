@@ -3,30 +3,32 @@ import WorkIcon from "@/ui/icons/Work"
 import ProjectIcon from "@/ui/icons/Project"
 import { WebsiteSection } from "@/utils/websiteSections"
 import SectionShortcut from "@/ui/molecules/SectionShortcut"
+import { useTranslations } from "@/modules/translations/use"
 
 interface Props {
   onRedirect: (section: WebsiteSection) => void
 }
 
 const PageRedirects = ({ onRedirect }: Props) => {
+  const { t } = useTranslations("home")
   return (
     <div className="flex flex-row items-center justify-between w-full h-full overflow-x-hidden font-light">
       <SectionShortcut
-        label="Experience"
+        label={t("redirects.experience")}
         onClick={() => {
           onRedirect(WebsiteSection.EXPERIENCE)
         }}
         icon={<ExperienceIcon />}
       />
       <SectionShortcut
-        label="Work"
+        label={t("redirects.work")}
         onClick={() => {
           onRedirect(WebsiteSection.WORK)
         }}
         icon={<WorkIcon />}
       />
       <SectionShortcut
-        label="Projects"
+        label={t("redirects.projects")}
         onClick={() => {
           onRedirect(WebsiteSection.PROJECTS)
         }}

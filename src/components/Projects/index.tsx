@@ -8,27 +8,27 @@ import SectionTitle, {
   SectionTitleFont,
 } from "@/ui/atoms/SectionTitle"
 import Carousel from "@/ui/organisms/Carousel"
-import { useEffect, useState } from "react"
 import image from "@public/images/me-light.png"
+
 import CarouselElement from "@/ui/molecules/CarouselElement"
-import { projects } from "./projects"
 
 const startDate = new Date("2022-03-01")
 
 const Projects = () => {
-  const [daysPassed, setDaysPassed] = useState(0)
-
   const openAnubiHomepage = () => window.open(process.env.ANUBI, "_blank")
 
-  useEffect(() => {
-    const today = new Date()
-    const timeDiff = Math.abs(today.getTime() - startDate.getTime())
-    const days = Math.ceil(timeDiff / (1000 * 3600 * 24))
-
-    setDaysPassed(days)
-  }, [])
-
   const { t } = useTranslations("home")
+
+  const projects = []
+
+  for (let i = 0; i < 5; i++) {
+    projects.push({
+      src: image,
+      title: t("projects.titlePlaceholder") + i,
+      description: t("projects.descriptionPlaceholder") + i,
+      color: CarouselElementColor.BLUE,
+    })
+  }
 
   return (
     <div

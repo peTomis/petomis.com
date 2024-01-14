@@ -7,7 +7,7 @@ interface Props {
   icon: JSX.Element
   label: string
   color?: ListFilterColor
-  filters: string[]
+  filters: { key: string; value: string }[]
   activeFilters: string[]
   onFilterChange: (filter: string) => void
 }

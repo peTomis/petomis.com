@@ -1,3 +1,4 @@
+import { useTranslations } from "@/modules/translations/use"
 import ActivityCardExpandedContainer from "@/ui/molecules/ActivityCardExpandedContainer"
 import useLockScroll from "@/utils/lockScroll"
 
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const ActivityCardExpanded = ({ content, onClose, variant }: Props) => {
+  const { t } = useTranslations("common")
   useLockScroll()
 
   return (
@@ -18,8 +20,16 @@ const ActivityCardExpanded = ({ content, onClose, variant }: Props) => {
     >
       <ActivityCardExpandedContainer onClose={onClose} variant={variant}>
         {/* {content} */}
-        <div className="flex items-center justify-center w-full h-full">
-          Work in progress
+        <div
+          className="flex flex-col items-center justify-center w-full h-full cursor-pointer"
+          onClick={onClose}
+        >
+          <div className="flex items-center justify-center w-full ">
+            {t("common.wip")}
+          </div>
+          <div className="flex items-center justify-center w-full ">
+            {t("common.clickToClose")}
+          </div>
         </div>
       </ActivityCardExpandedContainer>
     </div>

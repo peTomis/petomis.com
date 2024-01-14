@@ -1,10 +1,14 @@
 {
   "bottomBar": {
     "copyright": " © Giuseppe Tomis. Tutti i diritti riservati.",
-    "description": "Ingegnere del Software",
+    "description": "Ingegnere del software",
     "hashtag": "@peTomis",
-    "icons": "Icone fornite da:",
+    "icons": "Credito icone:",
     "name": "GIUSEPPE TOMIS",
-    "patterns": "Pattern forniti da: "
+    "patterns": "Credito pattern: "
+  },
+  "common": {
+    "wip": "Sezione in lavorazione",
+    "clickToClose": "Clicca per chiudere"
   }
 }

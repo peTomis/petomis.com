@@ -1,3 +1,4 @@
+import { useTranslations } from "@/modules/translations/use"
 import AndroidStudioIcon from "@/ui/icons/programming/AndroidStudio"
 import AwsIcon from "@/ui/icons/programming/Aws"
 import DockerIcon from "@/ui/icons/programming/Docker"
@@ -17,126 +18,168 @@ import TypescriptIcon from "@/ui/icons/programming/Typescript"
 import VsCodeIcon from "@/ui/icons/programming/VsCode"
 import XcodeIcon from "@/ui/icons/programming/Xcode"
 
-enum Tag {
-  FULLSTACK = "Fullstack",
-  MOBILE = "Mobile",
-  FRAMEWORK = "Framework",
-  FRONTEND = "Frontend",
-  BACKEND = "Backend",
-  DATABASE = "Database",
-  PROGRAMMING_LANGUAGE = "Programming Language",
-  IDE = "IDE",
-  OTHER = "Other",
+const GetExperienceData = () => {
+  const { t } = useTranslations("home")
+  const Tag = {
+    FULLSTACK: {
+      key: t("experience.tag.fullstack"),
+      value: "fullstack",
+    },
+    MOBILE: {
+      key: t("experience.tag.mobile"),
+      value: "mobile",
+    },
+    BACKEND: {
+      key: t("experience.tag.backend"),
+      value: "backend",
+    },
+    FRONTEND: {
+      key: t("experience.tag.frontend"),
+      value: "frontend",
+    },
+    FRAMEWORK: {
+      key: t("experience.tag.framework"),
+      value: "framework",
+    },
+    DATABASE: {
+      key: t("experience.tag.database"),
+      value: "database",
+    },
+    PROGRAMMING_LANGUAGE: {
+      key: t("experience.tag.programmingLanguage"),
+      value: "programmingLanguage",
+    },
+    IDE: {
+      key: t("experience.tag.ide"),
+      value: "ide",
+    },
+    OTHER: {
+      key: t("experience.tag.other"),
+      value: "other",
+    },
+  }
+
+  return [
+    {
+      name: "Java",
+      icon: <JavaIcon />,
+      tags: [Tag.MOBILE, Tag.PROGRAMMING_LANGUAGE],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "Javascript",
+      icon: <JavascriptIcon />,
+      tags: [
+        Tag.FULLSTACK,
+        Tag.FRONTEND,
+        Tag.BACKEND,
+        Tag.PROGRAMMING_LANGUAGE,
+      ],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "Kotlin",
+      icon: <KotlinIcon />,
+      tags: [Tag.MOBILE, Tag.PROGRAMMING_LANGUAGE],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "Swift",
+      icon: <SwiftIcon />,
+      tags: [Tag.MOBILE, Tag.PROGRAMMING_LANGUAGE],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "Typescript",
+      icon: <TypescriptIcon />,
+      tags: [
+        Tag.FULLSTACK,
+        Tag.FRONTEND,
+        Tag.BACKEND,
+        Tag.PROGRAMMING_LANGUAGE,
+      ],
+      duration: `2 ${t("experience.years")}`,
+    },
+
+    {
+      name: "Next.js",
+      icon: <NextjsIcon />,
+      tags: [Tag.FULLSTACK, Tag.FRONTEND, Tag.FRAMEWORK],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "Nest.js",
+      icon: <NestjsIcon />,
+      tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.FRAMEWORK],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "AWS",
+      icon: <AwsIcon />,
+      tags: [Tag.FULLSTACK, Tag.OTHER],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "Docker",
+      icon: <DockerIcon />,
+      tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.OTHER],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "Postgre SQL",
+      icon: <PostgreSQLIcon />,
+      tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.DATABASE],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "Android Studio",
+      icon: <AndroidStudioIcon />,
+      tags: [Tag.MOBILE, Tag.IDE],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "VS Code",
+      icon: <VsCodeIcon />,
+      tags: [Tag.FULLSTACK, Tag.FRONTEND, Tag.BACKEND, Tag.IDE],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "Xcode",
+      icon: <XcodeIcon />,
+      tags: [Tag.MOBILE, Tag.IDE],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "GitHub",
+      icon: <GitHubIcon />,
+      tags: [Tag.FULLSTACK, Tag.MOBILE, Tag.OTHER],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "Jira",
+      icon: <JiraIcon />,
+      tags: [Tag.FULLSTACK, Tag.MOBILE, Tag.OTHER],
+      duration: `2 ${t("experience.years")}`,
+    },
+    {
+      name: "MongoDB",
+      icon: <MongodbIcon />,
+      tags: [Tag.FULLSTACK, Tag.DATABASE],
+      duration: `1 ${t("experience.year")}`,
+    },
+    {
+      name: "Kubernetes",
+      icon: <KubernetesIcon />,
+      tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.OTHER],
+      duration: `1 ${t("experience.year")}`,
+    },
+    {
+      name: "Firebase",
+      icon: <FirebaseIcon />,
+      tags: [Tag.MOBILE, Tag.OTHER],
+      duration: `1 ${t("experience.year")}`,
+    },
+  ]
 }
 
-export const experiences = [
-  {
-    name: "Java",
-    icon: <JavaIcon />,
-    tags: [Tag.MOBILE, Tag.PROGRAMMING_LANGUAGE],
-    duration: "2 years",
-  },
-  {
-    name: "Javascript",
-    icon: <JavascriptIcon />,
-    tags: [Tag.FULLSTACK, Tag.FRONTEND, Tag.BACKEND, Tag.PROGRAMMING_LANGUAGE],
-    duration: "2 years",
-  },
-  {
-    name: "Kotlin",
-    icon: <KotlinIcon />,
-    tags: [Tag.MOBILE, Tag.PROGRAMMING_LANGUAGE],
-    duration: "2 years",
-  },
-  {
-    name: "Swift",
-    icon: <SwiftIcon />,
-    tags: [Tag.MOBILE, Tag.PROGRAMMING_LANGUAGE],
-    duration: "2 years",
-  },
-  {
-    name: "Typescript",
-    icon: <TypescriptIcon />,
-    tags: [Tag.FULLSTACK, Tag.FRONTEND, Tag.BACKEND, Tag.PROGRAMMING_LANGUAGE],
-    duration: "2 years",
-  },
-
-  {
-    name: "Next.js",
-    icon: <NextjsIcon />,
-    tags: [Tag.FULLSTACK, Tag.FRONTEND, Tag.FRAMEWORK],
-    duration: "2 years",
-  },
-  {
-    name: "Nest.js",
-    icon: <NestjsIcon />,
-    tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.FRAMEWORK],
-    duration: "2 years",
-  },
-  {
-    name: "AWS",
-    icon: <AwsIcon />,
-    tags: [Tag.FULLSTACK, Tag.OTHER],
-    duration: "2 years",
-  },
-  {
-    name: "Docker",
-    icon: <DockerIcon />,
-    tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.OTHER],
-    duration: "2 years",
-  },
-  {
-    name: "Postgre SQL",
-    icon: <PostgreSQLIcon />,
-    tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.DATABASE],
-    duration: "2 years",
-  },
-  {
-    name: "Android Studio",
-    icon: <AndroidStudioIcon />,
-    tags: [Tag.MOBILE, Tag.IDE],
-    duration: "2 years",
-  },
-  {
-    name: "VS Code",
-    icon: <VsCodeIcon />,
-    tags: [Tag.FULLSTACK, Tag.FRONTEND, Tag.BACKEND, Tag.IDE],
-    duration: "2 years",
-  },
-  {
-    name: "Xcode",
-    icon: <XcodeIcon />,
-    tags: [Tag.MOBILE, Tag.IDE],
-    duration: "2 years",
-  },
-  {
-    name: "GitHub",
-    icon: <GitHubIcon />,
-    tags: [Tag.FULLSTACK, Tag.MOBILE, Tag.OTHER],
-    duration: "2 years",
-  },
-  {
-    name: "Jira",
-    icon: <JiraIcon />,
-    tags: [Tag.FULLSTACK, Tag.MOBILE, Tag.OTHER],
-    duration: "2 years",
-  },
-  {
-    name: "MongoDB",
-    icon: <MongodbIcon />,
-    tags: [Tag.FULLSTACK, Tag.DATABASE],
-    duration: "1 year",
-  },
-  {
-    name: "Kubernetes",
-    icon: <KubernetesIcon />,
-    tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.OTHER],
-    duration: "1 years",
-  },
-  {
-    name: "Firebase",
-    icon: <FirebaseIcon />,
-    tags: [Tag.MOBILE, Tag.OTHER],
-    duration: "1 years",
-  },
-]
+export default GetExperienceData

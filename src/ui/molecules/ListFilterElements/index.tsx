@@ -9,7 +9,7 @@ export enum ListFilterColor {
 
 interface Props {
   color?: ListFilterColor
-  filters: string[]
+  filters: { key: string; value: string }[]
   activeFilters: string[]
   onFilterChange: (filter: string) => void
 }
@@ -28,17 +28,17 @@ const ListFilterElements = ({
     <Flipper flipKey={sortedFilters.join("")}>
       <div className="flex flex-wrap mx-auto">
         {sortedFilters.map((filter) => (
-          <Flipped key={filter} flipId={filter}>
+          <Flipped key={filter.value} flipId={filter.value}>
             <button
-              onClick={() => onFilterChange(filter)}
+              onClick={() => onFilterChange(filter.value)}
               className={`flex flex-row  justify-center m-[2px] items-center space-x-2 px-4 py-2 rounded ${
-                isActive(filter)
+                isActive(filter.value)
                   ? `${color} text-defaultTextColor-dark`
                   : "bg-gray-200"
               }`}
             >
-              <div> {filter}</div>
-              {isActive(filter) && (
+              <div> {filter.key}</div>
+              {isActive(filter.value) && (
                 <div className="hidden w-6 h-6 md:flex fill-defaultTextColor-dark">
                   <CloseButtonIcon />
                 </div>

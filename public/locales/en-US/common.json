@@ -6,5 +6,9 @@
     "icons": "Icons credits:",
     "name": "GIUSEPPE TOMIS",
     "patterns": "Pattern credits: "
+  },
+  "common": {
+    "wip": "Work in progress",
+    "clickToClose": "Click to close"
   }
 }

@@ -10,23 +10,26 @@ import { ListFilterColor } from "@/ui/molecules/ListFilterElements"
 import React from "react"
 import BriefcaseIcon from "@/ui/icons/Briefcase"
 import ListFilter from "@/ui/organisms/ListFilter"
-import { experiences } from "./experiences"
+import GetExperienceData from "./experiences"
 
 const Experience = () => {
-  const jobs = ["Fullstack Developer", "Mobile Developer"]
+  const { t } = useTranslations("home")
+  const jobs = ["fullstack", "mobile"]
   const filters = [
-    "Programming Language",
-    "Database",
-    "Framework",
-    "Other",
-    "IDE",
+    "backend",
+    "frontend",
+    "framework",
+    "database",
+    "programmingLanguage",
+    "ide",
+    "other",
   ]
+
+  const experiences = GetExperienceData()
 
   const [activeJobs, setActiveJobs] = React.useState<string[]>(jobs)
 
   const [activeFilters, setActiveFilters] = React.useState<string[]>(filters)
-
-  const { t } = useTranslations("home")
 
   const onJobChange = (filter: string) => {
     if (activeJobs.includes(filter)) {
@@ -46,10 +49,8 @@ const Experience = () => {
 
   const filteredExperiences = experiences.filter(
     (experience) =>
-      experience.tags.some((tag) => activeFilters.includes(tag)) &&
-      experience.tags.some((tag) =>
-        activeJobs.includes(tag.concat(" Developer"))
-      )
+      experience.tags.some((tag) => activeFilters.includes(tag.value)) &&
+      experience.tags.some((tag) => activeJobs.includes(tag.value))
   )
 
   return (
@@ -66,21 +67,59 @@ const Experience = () => {
 
       <div
         id="experience-filter-container"
-        className="flex flex-col items-start justify-start w-full space-y-2  max-w-[900px]"
+        className="flex flex-col items-start justify-start w-full space-y-2 max-w-[800px]  xl:max-w-[900px]"
       >
         <ListFilter
           icon={<BriefcaseIcon />}
-          label="Jobs"
+          label={t("experience.jobs")}
           activeFilters={activeJobs}
-          filters={jobs}
+          filters={[
+            {
+              key: t("experience.tag.fullstack"),
+              value: "fullstack",
+            },
+            {
+              key: t("experience.tag.mobile"),
+              value: "mobile",
+            },
+          ]}
           onFilterChange={onJobChange}
           color={ListFilterColor.PRIMARY300}
         />
         <ListFilter
           icon={<FunnelIcon />}
-          label="Filters"
+          label={t("experience.filters")}
           activeFilters={activeFilters}
-          filters={filters}
+          filters={[
+            {
+              key: t("experience.tag.backend"),
+              value: "backend",
+            },
+            {
+              key: t("experience.tag.frontend"),
+              value: "frontend",
+            },
+            {
+              key: t("experience.tag.framework"),
+              value: "framework",
+            },
+            {
+              key: t("experience.tag.database"),
+              value: "database",
+            },
+            {
+              key: t("experience.tag.programmingLanguage"),
+              value: "programmingLanguage",
+            },
+            {
+              key: t("experience.tag.ide"),
+              value: "ide",
+            },
+            {
+              key: t("experience.tag.other"),
+              value: "other",
+            },
+          ]}
           onFilterChange={onFilterChange}
           color={ListFilterColor.PRIMARY200}
         />
@@ -92,7 +131,7 @@ const Experience = () => {
             key={key}
             name={experience.name}
             icon={experience.icon}
-            tags={experience.tags}
+            tags={experience.tags.map((t) => t.key)}
             duration={experience.duration}
           />
         ))}

@@ -1,6 +1,6 @@
 {
   "title": "Giuseppe Tomis - Software Engineer",
-  "description": "Personal website of Giuseppe Tomis, Software Engineer and Fullstack Developer",
+  "description": "Personal website of Giuseppe Tomis, Software Engineer",
   "aboutMe": {
     "text1": "Welcome! I'm ",
     "text2": "Giuseppe Tomis",
@@ -35,23 +35,37 @@
     }
   },
   "experience": {
+    "tag": {
+      "fullstack": "Fullstack",
+      "mobile": "Mobile",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "framework": "Framework",
+      "database": "Database",
+      "programmingLanguage": "Programming Language",
+      "ide": "IDE",
+      "other": "Other"
+    },
     "title": "Experience",
-    "jobAName": "Fullstack Developer",
-    "jobADate": "2022-now",
-    "jobBName": "Mobile developer",
-    "jobBDate": "2019-2022",
-    "jobBCommitter": "Freelance",
-    "days": "days"
+    "jobs": "Jobs",
+    "filters": "Filters",
+    "years": "years",
+    "year": "year"
   },
   "projects": {
     "title": "Projects",
     "description": "Placeholder to host some of the projects I've worked on",
-    "elementNote": "click to open"
+    "elementNote": "click to open",
+    "titlePlaceholder": "PROJECT ",
+    "descriptionPlaceholder": "Placeholder for a project named Project "
+  },
+  "redirects": {
+    "experience": "Experience",
+    "projects": "Projects",
+    "work": "Work"
   },
   "welcome": {
-    "contact": "Contact Me",
     "firstRole": "> Software Engineer",
-    "hello": "Hi, I am",
     "name": "Giuseppe Tomis",
     "secondRole": "> Fullstack Developer",
     "thirdRole": "> Mobile Developer"

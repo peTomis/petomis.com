@@ -1,66 +1,81 @@
 {
-  "title": "Giuseppe Tomis - Software Engineer",
-  "description": "Personal website of Giuseppe Tomis, Software Engineer and Fullstack Developer",
+  "title": "Giuseppe Tomis - Ingegnere del software",
+  "description": "Sito personale di Giuseppe Tomis, Ingegnere del Software",
   "aboutMe": {
-    "text1": "Welcome! I'm ",
+    "text1": "Ciao, mi presento! sono ",
     "text2": "Giuseppe Tomis",
-    "text3": ", an accomplished ",
-    "text4": "Software Engineer",
-    "text5": " and a ",
-    "text6": "Fullstack Developer",
-    "text7": " specializing in blending aesthetics and functionality.",
-    "text8": "My approach to development centers on creating ",
-    "text9": "clean",
+    "text3": ", ",
+    "text4": "Ingegnere del Software",
+    "text5": " e, attualmente, ",
+    "text6": "Sviluppatore Fullstack",
+    "text7": ".",
+    "text8": "In quanto ingegnere del software è per me fondamentale sviluppare un codice ",
+    "text9": "chiaro",
     "text10": ", ",
-    "text11": "tested",
-    "text12": ", and highly ",
-    "text13": "efficient",
-    "text14": " code. With an acute attention to detail, I diligently identify and correct even the smallest issues, resulting in software that excels in performance and user experience.",
-    "title": "About Me"
+    "text11": "testato",
+    "text12": " ed estremamente ",
+    "text13": "efficiente",
+    "text14": ". Non manca, inoltre, un'estrema attenzione ai dettagli, che mi porta ad identificare e correggere ogni piccola sbavatura all`interno dei miei progetti.",
+    "title": "Chi sono"
   },
   "contact": {
     "email": "Email",
-    "emailPlaceholder": "Enter your email",
-    "message": "Message",
-    "messagePlaceholder": "Enter your message",
-    "name": "Name",
-    "namePlaceholder": "Enter your name",
-    "submit": "Submit",
-    "thankMailTitle": "Thank you!",
-    "thankMailText": "Will reply soon",
-    "title": "GET IN TOUCH",
+    "emailPlaceholder": "Inserisci la tua email",
+    "message": "Messaggio",
+    "messagePlaceholder": "Scrivi il tuo messaggio",
+    "name": "Nome",
+    "namePlaceholder": "Inserisci il tuo nome",
+    "submit": "Conferma",
+    "thankMailTitle": "Grazie!",
+    "thankMailText": "Risponderò al più presto.",
+    "title": "CONTATTAMI",
     "description": {
-      "phrase1": "Fill the contact form below to get in touch with me.",
-      "phrase2": "I will reply as soon as possible."
+      "phrase1": "Se vuoi contattarmi, puoi farlo tramite il form sottostante.",
+      "phrase2": "Ti risponderò il prima possibile."
     }
   },
   "experience": {
-    "title": "Experience",
-    "jobAName": "Fullstack Developer",
-    "jobADate": "2022-now",
-    "jobBName": "Mobile developer",
-    "jobBDate": "2019-2022",
-    "jobBCommitter": "Freelance",
-    "days": "days"
+    "tag": {
+      "fullstack": "Fullstack",
+      "mobile": "Mobile",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "framework": "Framework",
+      "database": "Database",
+      "programmingLanguage": "Linguaggio",
+      "ide": "IDE",
+      "other": "Altro"
+    },
+    "title": "Esperienza",
+    "jobs": "Mansione",
+    "filters": "Filtri",
+    "years": "anni",
+    "year": "anno"
   },
   "projects": {
-    "title": "Projects",
-    "description": "Placeholder to host some of the projects I've worked on",
-    "elementNote": "click to open"
+    "title": "Progetti",
+    "description": "Placeholder che dovrà contenere i progetti più interessanti che ho realizzato.",
+    "elementNote": "apri",
+    "titlePlaceholder": "PROGETTO ",
+    "descriptionPlaceholder": "Placeholder per un progetto di nome Progetto "
+  },
+  "redirects": {
+    "experience": "Esperienza",
+    "projects": "Progetti",
+    "work": "Carriera"
   },
   "welcome": {
-    "contact": "Contact Me",
-    "firstRole": "> Software Engineer",
-    "hello": "Hi, I am",
+    "firstRole": "> Ingegnere del Software",
     "name": "Giuseppe Tomis",
-    "secondRole": "> Fullstack Developer"
+    "secondRole": "> Sviluppatore Fullstack",
+    "thirdRole": "> Sviluppatore Mobile"
   },
   "work": {
-    "title": "My Career",
-    "description": "A brief overview of my career path",
-    "desktopClick": "Click to see details",
-    "mobileClick": "Tap to see details",
+    "title": "Carriera",
+    "description": "Un breve riassunto della mia carriera lavorativa.",
+    "desktopClick": "Clicca per i dettagli",
+    "mobileClick": "Premi per i dettagli",
     "tools": "Tools",
-    "programmingLanguages": "Programming Languages"
+    "programmingLanguages": "Linguaggi"
   }
 }

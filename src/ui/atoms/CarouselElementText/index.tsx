@@ -8,7 +8,7 @@ interface Props {
 export enum CarouselElementColor {
   RED = "bg-red-800",
   BLACK = "bg-black",
-  BLUE = "bg-blue-800",
+  BLUE = "bg-primary-300",
   PURPLE = "bg-purple-800",
   YELLOW = "bg-yellow-800",
 }
@@ -17,7 +17,7 @@ const CarouselElementText = ({
   title,
   description,
   selected,
-  color = CarouselElementColor.RED,
+  color = CarouselElementColor.BLUE,
 }: Props) => {
   const verticalTitle = title.split("")
   return (
