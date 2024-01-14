@@ -1,4 +1,5 @@
 import { useTranslations } from "@/hooks/useTranslations"
+import Typography from "@/ui/atoms/Typography"
 import SocialButtons from "@/ui/organisms/SocialButtons"
 import Image from "next/image"
 
@@ -16,7 +17,7 @@ const BottomBar = () => {
     >
       <div
         id="bottombar-background"
-        className="flex flex-col w-full my-4 text-background md:max-w-[1000px] font-roboto"
+        className="flex flex-col w-full my-4 md:max-w-[1000px] font-roboto"
       >
         <div
           id="bottombar-text-container"
@@ -26,10 +27,10 @@ const BottomBar = () => {
             id="bottombar-text-column"
             className="flex flex-col items-center justify-start flex-1 w-full space-y-4 "
           >
-            <div id="bottombar-info" className="flex flex-col w-full space-y-2">
+            <div id="bottombar-info" className="flex flex-col w-full space-y-4">
               <div
                 id="bottombar-name"
-                className="flex items-center justify-start w-full h-8 space-x-4 font-bold flex-ro text-h5 d:text-h3"
+                className="flex flex-row items-center justify-start w-full h-8 space-x-4 font-bold"
               >
                 <div className="flex items-center justify-center ">
                   <Image
@@ -39,17 +40,31 @@ const BottomBar = () => {
                     height={40}
                   />
                 </div>
-                <div>{t("bottomBar.name")}</div>
+                <Typography
+                  text={t("bottomBar.name")}
+                  color="defaultTextColor-dark"
+                  size="h5"
+                />
               </div>
-              <div id="bottombar-hashtag" className="w-full italic d:text-h5">
-                {t("bottomBar.hashtag")}
+              <div id="bottombar-hashtag" className="w-full">
+                <Typography
+                  text={t("bottomBar.hashtag")}
+                  color="defaultTextColor-dark"
+                  italic={true}
+                  size="h5"
+                />
               </div>
             </div>
             <div
               id="bottombar-description"
-              className="w-full text-base font-light font-bacasimeAntique d:text-h5"
+              className="w-full font-light font-bacasimeAntique"
             >
-              {t("bottomBar.description")}
+              <Typography
+                text={t("bottomBar.description")}
+                font={"bacasimeAntique"}
+                color="defaultTextColor-dark"
+                size={"h5"}
+              />
             </div>
           </div>
           <div
@@ -66,17 +81,37 @@ const BottomBar = () => {
               id="bottombar-references"
               className="flex flex-col w-full space-y-4 md:justify-end d:text-end"
             >
-              <div className="flex space-x-2 cursor-pointer md:justify-end first-letter:w-full">
-                <div>{t("bottomBar.icons")}</div>
-                <div className="italic underline" onClick={openHeroicons}>
-                  Heroicons
-                </div>
+              <div className="flex space-x-2 cursor-pointer md:justify-end">
+                <Typography
+                  text={t("bottomBar.icons")}
+                  color="defaultTextColor-dark"
+                  clickable={true}
+                  onClick={openHeroicons}
+                />
+                <Typography
+                  italic={true}
+                  underline={true}
+                  text={"Heroicons"}
+                  clickable={true}
+                  onClick={openHeroicons}
+                  color="defaultTextColor-dark"
+                />
               </div>
-              <div className="flex space-x-2 cursor-pointer md:justify-end first-letter:w-full">
-                <div>{t("bottomBar.patterns")}</div>
-                <div className="italic underline" onClick={openHeropatterns}>
-                  Heropatterns
-                </div>
+              <div className="flex space-x-2 cursor-pointer md:justify-end">
+                <Typography
+                  text={t("bottomBar.patterns")}
+                  color="defaultTextColor-dark"
+                  clickable={true}
+                  onClick={openHeropatterns}
+                />
+                <Typography
+                  italic={true}
+                  underline={true}
+                  text={"Heropatterns"}
+                  clickable={true}
+                  onClick={openHeropatterns}
+                  color="defaultTextColor-dark"
+                />
               </div>
             </div>
           </div>
@@ -91,8 +126,13 @@ const BottomBar = () => {
           id="bottombar-copyright"
           className="flex items-center justify-center w-full pt-4"
         >
-          <div id="bottombar-copyright-text" className="text-base">
-            {currentYear} {t("bottomBar.copyright")}
+          <div id="bottombar-copyright-text">
+            <Typography
+              text={currentYear + t("bottomBar.copyright")}
+              color="defaultTextColor-dark"
+              clickable={true}
+              onClick={openHeropatterns}
+            />
           </div>
         </div>
       </div>

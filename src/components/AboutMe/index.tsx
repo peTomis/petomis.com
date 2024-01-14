@@ -25,52 +25,58 @@ const AboutMe = () => {
       />
       <div className="flex flex-col space-y-16">
         <PhraseContainer id={"about-me-1"}>
-          <Typography text={t("aboutMe.text1")} />
+          <Typography text={t("aboutMe.text1")} size="h5" />
           <Typography
             text={t("aboutMe.text2")}
             color={"primary-300"}
             darkColor={"primary-100"}
+            size="h5"
             bold={true}
           />
-          <Typography text={t("aboutMe.text3")} />
+          <Typography text={t("aboutMe.text3")} size="h5" />
           <Typography
             text={t("aboutMe.text4")}
             color={"primary-300"}
             darkColor={"primary-100"}
+            size="h5"
             bold={true}
           />
-          <Typography text={t("aboutMe.text5")} />
+          <Typography text={t("aboutMe.text5")} size="h5" />
           <Typography
             text={t("aboutMe.text6")}
             color={"primary-300"}
             darkColor={"primary-100"}
+            size="h5"
             bold={true}
           />
-          <Typography text={t("aboutMe.text7")} />
+          <Typography text={t("aboutMe.text7")} size="h5" />
         </PhraseContainer>
         <PhraseContainer id={"about-me-2"}>
-          <Typography text={t("aboutMe.text8")} />
+          <Typography text={t("aboutMe.text8")} size="h5" />
           <Typography
             text={t("aboutMe.text9")}
             color={"primary-300"}
             darkColor={"primary-100"}
             bold={true}
+            size="h5"
           />
-          <Typography text={t("aboutMe.text10")} />
+          <Typography text={t("aboutMe.text10")} size="h5" />
           <Typography
             text={t("aboutMe.text11")}
             color={"primary-300"}
             darkColor={"primary-100"}
             bold={true}
+            size="h5"
           />
-          <Typography text={t("aboutMe.text12")} />
+          <Typography text={t("aboutMe.text12")} size="h5" />
           <Typography
             text={t("aboutMe.text13")}
             color={"primary-300"}
             darkColor={"primary-100"}
             bold={true}
+            size="h5"
           />
-          <Typography text={t("aboutMe.text14")} />
+          <Typography text={t("aboutMe.text14")} size="h5" />
         </PhraseContainer>
       </div>
     </div>
