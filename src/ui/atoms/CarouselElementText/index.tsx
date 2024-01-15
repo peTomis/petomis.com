@@ -1,3 +1,5 @@
+import Typography from "../Typography"
+
 interface Props {
   title: string
   description: string
@@ -26,8 +28,16 @@ const CarouselElementText = ({
         <div
           className={`flex flex-col flex-1 justify-start items-center p-8 space-y-8 bg-background-dark dark:bg-background bg-opacity-50 dark:bg-opacity-50`}
         >
-          <div className="text-h4">{title.toUpperCase()}</div>
-          <div className="text-base font-light">{description}</div>
+          <Typography
+            text={title.toUpperCase()}
+            size="h4"
+            color="defaultTextColor-dark"
+          />
+          <Typography
+            text={description}
+            light={true}
+            color="defaultTextColor-dark"
+          />
         </div>
       ) : (
         <div

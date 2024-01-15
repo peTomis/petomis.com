@@ -17,7 +17,7 @@ const BottomBar = () => {
     >
       <div
         id="bottombar-background"
-        className="flex flex-col w-full my-4 md:max-w-[1000px] font-roboto"
+        className="flex flex-col w-full my-4 md:max-w-[1000px]"
       >
         <div
           id="bottombar-text-container"
@@ -30,7 +30,7 @@ const BottomBar = () => {
             <div id="bottombar-info" className="flex flex-col w-full space-y-4">
               <div
                 id="bottombar-name"
-                className="flex flex-row items-center justify-start w-full h-8 space-x-4 font-bold"
+                className="flex flex-row items-center justify-start w-full h-8 space-x-4"
               >
                 <div className="flex items-center justify-center ">
                   <Image
@@ -42,6 +42,7 @@ const BottomBar = () => {
                 </div>
                 <Typography
                   text={t("bottomBar.name")}
+                  bold={true}
                   color="defaultTextColor-dark"
                   size="h5"
                 />
@@ -55,10 +56,7 @@ const BottomBar = () => {
                 />
               </div>
             </div>
-            <div
-              id="bottombar-description"
-              className="w-full font-light font-bacasimeAntique"
-            >
+            <div id="bottombar-description" className="w-full">
               <Typography
                 text={t("bottomBar.description")}
                 font={"bacasimeAntique"}

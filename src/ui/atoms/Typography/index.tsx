@@ -54,6 +54,7 @@ interface Props {
   italic?: boolean
   light?: boolean
   size?: TextSize
+  thin?: boolean
   underline?: boolean
   d?: TextSize
   md?: TextSize
@@ -74,6 +75,7 @@ const Typography = ({
   italic = false,
   light = false,
   size = "base",
+  thin = false,
   underline = false,
   d,
   md,
@@ -89,6 +91,7 @@ const Typography = ({
   const getItalic = () => (italic ? "italic" : "")
   const getLight = () => (light ? "font-light" : "")
   const getExtralight = () => (extralight ? "font-extralight" : "")
+  const getThin = () => (thin ? "font-thin" : "")
   const getUnderline = () => (underline ? "underline" : "")
   const getClickable = () => (clickable ? "cursor-pointer" : "")
   const getSize = () => TypographySizeEnum[size]
@@ -99,7 +102,7 @@ const Typography = ({
 
   return (
     <span
-      className={`${getSize()} ${getFont()} ${getTextColor()} ${getDarkTextColor()} ${getBold()} ${getExtrabold()} ${getLight()} ${getExtralight()} ${getUnderline()} ${getItalic()} ${getDSize()} ${getMDSize()} ${getXLSize()} ${getXXLSize()} ${getClickable()}`}
+      className={`${getSize()} ${getFont()} ${getTextColor()} ${getDarkTextColor()} ${getBold()} ${getExtrabold()} ${getLight()} ${getExtralight()} ${getUnderline()} ${getItalic()}  ${getThin()} ${getDSize()} ${getMDSize()} ${getXLSize()} ${getXXLSize()} ${getClickable()}`}
       onClick={onClick}
     >
       {text}

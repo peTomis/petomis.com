@@ -1,3 +1,4 @@
+import Typography from "@/ui/atoms/Typography"
 import style from "./style.module.css"
 
 interface Props {
@@ -18,12 +19,9 @@ const FormInput = ({ error, label, onChange, placeholder, type }: Props) => {
   )
 
   return (
-    <div
-      id="form-input-container"
-      className="flex flex-col w-full font-normal font-roboto"
-    >
-      <div id="form-input-label" className="mx-4 font-light ">
-        {label}
+    <div id="form-input-container" className="flex flex-col w-full">
+      <div id="form-input-label" className="mx-4">
+        <Typography text={label} light={true} color="defaultTextColor-dark" />
       </div>
 
       {isArea ? (
