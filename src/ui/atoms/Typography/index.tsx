@@ -34,6 +34,7 @@ interface Props {
   color?: TypographyColor
   darkColor?: TypographyColor
   bold?: boolean
+  extrabold?: boolean
   italic?: boolean
   light?: boolean
   underline?: boolean
@@ -50,6 +51,7 @@ const Typography = ({
   darkColor = "defaultTextColor-dark",
   font = "roboto",
   bold = false,
+  extrabold = false,
   italic = false,
   light = false,
   underline = false,
@@ -62,6 +64,7 @@ const Typography = ({
   const getTextColor = () => TypographyColorEnum[color]
   const getDarkTextColor = () => "dark:" + TypographyColorEnum[darkColor]
   const getBold = () => (bold ? "font-bold" : "")
+  const getExtrabold = () => (extrabold ? "font-extrabold" : "")
   const getItalic = () => (italic ? "italic" : "")
   const getLight = () => (light ? "font-light" : "")
   const getUnderline = () => (underline ? "underline" : "")
@@ -71,7 +74,7 @@ const Typography = ({
 
   return (
     <span
-      className={`${getSize()} ${getFont()} ${getTextColor()} ${getDarkTextColor()} ${getBold()} ${getLight()} ${getUnderline()} ${getItalic()} ${getDSize()} ${getClickable()}`}
+      className={`${getSize()} ${getFont()} ${getTextColor()} ${getDarkTextColor()} ${getBold()} ${getExtrabold()} ${getLight()} ${getUnderline()} ${getItalic()} ${getDSize()} ${getClickable()}`}
       onClick={onClick}
     >
       {text}

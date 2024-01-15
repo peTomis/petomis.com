@@ -1,9 +1,6 @@
 import { useTranslations } from "@/hooks/useTranslations"
 import PhraseContainer from "@/ui/atoms/PhraseContainer"
-import SectionTitle, {
-  SectionTitleColor,
-  SectionTitleFont,
-} from "@/ui/atoms/SectionTitle"
+import SectionTitle from "@/ui/atoms/SectionTitle"
 import Typography from "@/ui/atoms/Typography"
 import circuitBoardPatternStyle from "@/ui/patterns/circuit-board"
 
@@ -20,8 +17,8 @@ const AboutMe = () => {
       <SectionTitle
         id="about-me-title"
         label={t("aboutMe.title").toUpperCase()}
-        color={SectionTitleColor.PRIMARY300}
-        font={SectionTitleFont.ROBOTO}
+        color={"primary-300"}
+        font={"roboto"}
       />
       <div className="flex flex-col space-y-16">
         <PhraseContainer id={"about-me-1"}>

@@ -3,10 +3,7 @@ import { CarouselElementColor } from "@/ui/atoms/CarouselElementText"
 import SectionDescription, {
   SectionDescriptionFontSize,
 } from "@/ui/atoms/SectionDescription"
-import SectionTitle, {
-  SectionTitleColor,
-  SectionTitleFont,
-} from "@/ui/atoms/SectionTitle"
+import SectionTitle from "@/ui/atoms/SectionTitle"
 import Carousel from "@/ui/organisms/Carousel"
 import image from "@public/images/me-light.png"
 
@@ -38,8 +35,8 @@ const Projects = () => {
       <SectionTitle
         id="contact-title"
         label={t("projects.title").toUpperCase()}
-        color={SectionTitleColor.PRIMARY300}
-        font={SectionTitleFont.BACASIME_ANTIQUE}
+        color={"primary-300"}
+        font={"bacasimeAntique"}
       />
       <SectionDescription
         fontSize={SectionDescriptionFontSize.EXTRALIGHT}

@@ -1,10 +1,7 @@
 import { useTranslations } from "@/hooks/useTranslations"
 import ExperienceCard from "@/ui/molecules/ExperienceCard"
 import ExperienceCardContainer from "@/ui/atoms/ExperienceCardContainer"
-import SectionTitle, {
-  SectionTitleColor,
-  SectionTitleFont,
-} from "@/ui/atoms/SectionTitle"
+import SectionTitle from "@/ui/atoms/SectionTitle"
 import FunnelIcon from "@/ui/icons/Funnel"
 import { ListFilterColor } from "@/ui/molecules/ListFilterElements"
 import React from "react"
@@ -63,8 +60,8 @@ const Experience = () => {
       <SectionTitle
         id="experience-title"
         label={t("experience.title").toUpperCase()}
-        color={SectionTitleColor.PRIMARY300}
-        font={SectionTitleFont.BACASIME_ANTIQUE}
+        color={"primary-300"}
+        font={"bacasimeAntique"}
       />
 
       <div

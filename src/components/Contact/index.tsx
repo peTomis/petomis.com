@@ -4,10 +4,7 @@ import { useReducer, useState } from "react"
 import { useForm } from "@formspree/react"
 import FormSucceeded from "./components/FormSucceeded"
 import overlappingCirclesPatternStyle from "@/ui/patterns/overlapping-circles"
-import SectionTitle, {
-  SectionTitleColor,
-  SectionTitleFont,
-} from "@/ui/atoms/SectionTitle"
+import SectionTitle from "@/ui/atoms/SectionTitle"
 import SectionDescription, {
   SectionDescriptionFontSize,
 } from "@/ui/atoms/SectionDescription"
@@ -90,8 +87,8 @@ const Contact = () => {
       <SectionTitle
         id="contact-title"
         label={t("contact.title").toUpperCase()}
-        color={SectionTitleColor.PRIMARY100}
-        font={SectionTitleFont.BACASIME_ANTIQUE}
+        color={"primary-100"}
+        font={"bacasimeAntique"}
       />
       <SectionDescription
         fontSize={SectionDescriptionFontSize.EXTRALIGHT}
