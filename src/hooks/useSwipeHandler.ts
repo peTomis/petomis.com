@@ -24,7 +24,6 @@ const useSwipeHandler = (
 
       if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
         if (deltaX > 0) {
-          console.log(deltaX)
           e.preventDefault()
           onSwipeRight()
           e.stopPropagation()

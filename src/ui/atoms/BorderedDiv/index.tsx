@@ -17,7 +17,6 @@ interface Props {
 }
 
 const BorderedDiv = ({ label, children, variant }: Props) => {
-  console.log(variant)
   return (
     <div
       id="task-container"

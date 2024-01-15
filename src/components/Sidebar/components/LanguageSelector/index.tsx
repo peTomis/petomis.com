@@ -24,7 +24,6 @@ const LanguageSelector = () => {
         flag={language.flag()}
         label={language.name}
         onClick={() => {
-          console.log("ciao")
           setToggle(!toggle)
         }}
         main={true}

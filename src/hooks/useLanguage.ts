@@ -41,8 +41,6 @@ export function useLanguage(): [
     languages[0]
   }
 
-  console.log(l)
-
   const [language, setLanguage] = useState<SupportedLanguage>(l ?? languages[0])
 
   const { i18n } = useTranslations("common")
