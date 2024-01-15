@@ -3,7 +3,7 @@ import { CarouselElementColor } from "@/ui/atoms/CarouselElementText"
 import SectionDescription from "@/ui/atoms/SectionDescription"
 import SectionTitle from "@/ui/atoms/SectionTitle"
 import Carousel from "@/ui/organisms/Carousel"
-import image from "@public/images/me-light.png"
+import image from "@public/images/me.png"
 
 import CarouselElement from "@/ui/molecules/CarouselElement"
 
