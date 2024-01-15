@@ -21,13 +21,13 @@ const ActivityCardExpanded = ({ content, onClose, variant }: Props) => {
       <ActivityCardExpandedContainer onClose={onClose} variant={variant}>
         {/* {content} */}
         <div
-          className="flex flex-col items-center justify-center w-full h-full cursor-pointer"
+          className="flex flex-col items-center justify-center w-full h-screen cursor-pointer"
           onClick={onClose}
         >
-          <div className="flex items-center justify-center w-full ">
+          <div className="flex items-end justify-center w-full h-full ">
             {t("common.wip")}
           </div>
-          <div className="flex items-center justify-center w-full ">
+          <div className="flex items-start justify-center w-full h-full ">
             {t("common.clickToClose")}
           </div>
         </div>

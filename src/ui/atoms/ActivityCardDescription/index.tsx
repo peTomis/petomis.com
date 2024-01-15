@@ -1,6 +1,6 @@
 enum ActivityCardDescriptionVariant {
-  darkAndBlue = `bg-primary-300 text-defaultTextColor-dark`,
-  lightAndBlue = `bg-primary-300 text-defaultTextColor`,
+  darkAndBlue = `bg-primary-300`,
+  lightAndBlue = `bg-primary-300`,
 }
 
 interface Props {

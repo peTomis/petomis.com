@@ -23,7 +23,7 @@ const Work = () => {
       {experience && (
         <ActivityCardExpanded
           onClose={() => setExperience(undefined)}
-          content={experience.fullDescription()}
+          content={<div>TODO</div>}
           variant={experience.variant}
         />
       )}
@@ -36,6 +36,7 @@ const Work = () => {
             image={experience.image()}
             description={experience.description()}
             variant={experience.variant}
+            color={experience.color}
           />
         ))}
       </ActivityCardGrid>

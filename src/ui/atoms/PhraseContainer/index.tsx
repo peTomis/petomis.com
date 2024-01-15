@@ -12,7 +12,7 @@ const PhraseContainer = ({ children, id }: Props) => {
   return (
     <div
       id={id}
-      className={`relative bg-background dark:bg-primary-300 rounded-bl-3xl rounded-r-3xl text-h5 p-12 xl:py-24 xl:px-16 max-w-[700px] transform ${
+      className={`relative bg-background dark:bg-primary-300 leading-loose rounded-bl-3xl rounded-r-3xl p-12 xl:py-24 xl:px-16 max-w-[700px] transform ${
         isSectionLoaded ? " translate-y-0" : "translate-y-full"
       } transition-transform duration-500 ease-in-out
 

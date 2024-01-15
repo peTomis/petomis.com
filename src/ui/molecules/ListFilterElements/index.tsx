@@ -1,4 +1,5 @@
 import useSortedFilters from "@/hooks/useSortedFilters"
+import Typography from "@/ui/atoms/Typography"
 import CloseButtonIcon from "@/ui/icons/CloseButton"
 import { Flipper, Flipped } from "react-flip-toolkit"
 

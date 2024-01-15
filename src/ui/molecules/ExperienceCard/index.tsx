@@ -1,5 +1,6 @@
 import useIsSectionLoaded from "@/hooks/useIsSectionLoaded"
 import { customTransitionAnimation } from "@/ui/animations/CustomTransitionAnimation"
+import Typography from "@/ui/atoms/Typography"
 import ClockIcon from "@/ui/icons/Clock"
 
 interface Props {
@@ -21,7 +22,9 @@ const ExperienceCard = ({ name, icon, tags, duration, onClick }: Props) => {
       )}`}
       onClick={onClick}
     >
-      <div className="flex items-center justify-center w-full">{name}</div>
+      <div className="flex items-center justify-center w-full">
+        <Typography text={name} />
+      </div>
       <div className="flex items-center justify-center w-full h-[90px]">
         <div>{icon}</div>
       </div>
@@ -36,10 +39,10 @@ const ExperienceCard = ({ name, icon, tags, duration, onClick }: Props) => {
         ))}
       </div>
       <div className="flex flex-row items-end justify-center flex-1 w-full mx-auto space-x-1 text-center">
-        <div className="w-4 h-4 fill-defaultTextColor">
+        <div className="w-6 h-6 fill-defaultTextColor">
           <ClockIcon />
         </div>
-        <div> {duration}</div>
+        <Typography text={duration} />
       </div>
     </div>
   )

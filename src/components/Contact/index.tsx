@@ -78,7 +78,7 @@ const Contact = () => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center w-full px-4 py-16 bg-primary-400 text-defaultTextColor-dark"
+      className="flex flex-col items-center justify-center w-full px-4 py-16 bg-primary-400"
       id="contact-container"
       style={overlappingCirclesPatternStyle}
     >

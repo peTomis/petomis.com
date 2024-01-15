@@ -1,5 +1,6 @@
 import { useTranslations } from "@/hooks/useTranslations"
 import ActivityCardHintContent from "@/ui/atoms/ActivityCardHintContent"
+import { TypographyColor } from "@/ui/atoms/Typography"
 import FingerTapIcon from "@/ui/icons/FingerTap"
 import PointerClickIcon from "@/ui/icons/PointerClick"
 
@@ -8,16 +9,12 @@ enum ActivityCardVariant {
   lightAndBlue = "lightAndBlue",
 }
 
-const variantClasses = {
-  darkAndBlue: "text-defaultTextColor-dark fill-defaultTextColor-dark",
-  lightAndBlue: "text-defaultTextColor fill-defaultTextColor",
-}
-
 interface Props {
   variant?: keyof typeof ActivityCardVariant
+  color?: TypographyColor
 }
 
-const ActivityCardHint = ({ variant }: Props) => {
+const ActivityCardHint = ({ variant, color }: Props) => {
   const { t } = useTranslations("home")
 
   return (
@@ -28,6 +25,7 @@ const ActivityCardHint = ({ variant }: Props) => {
         text={t("work.mobileClick")}
         visibility="md:hidden"
         variant={variant}
+        color={color}
       />
       <ActivityCardHintContent
         idSuffix="desktop"
@@ -35,6 +33,7 @@ const ActivityCardHint = ({ variant }: Props) => {
         text={t("work.desktopClick")}
         visibility="hidden md:flex"
         variant={variant}
+        color={color}
       />
     </>
   )

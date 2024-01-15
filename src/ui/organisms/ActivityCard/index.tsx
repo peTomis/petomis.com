@@ -4,6 +4,7 @@ import ActivityCardHint from "@/ui/molecules/ActivityCardHint"
 import ActivityCardImage from "@/ui/atoms/ActivityCardImage"
 import ActivityCardContainer from "@/ui/molecules/ActivityCardContainer"
 import React from "react"
+import { TypographyColor } from "@/ui/atoms/Typography"
 
 interface Props {
   variant?: "darkAndBlue" | "lightAndBlue"
@@ -11,11 +12,18 @@ interface Props {
   description: React.ReactNode
   onClick?: () => void
   id: string
+  color?: TypographyColor
 }
 
-const ActivityCard = ({ description, image, onClick, variant, id }: Props) => {
+const ActivityCard = ({
+  description,
+  image,
+  onClick,
+  variant,
+  id,
+  color,
+}: Props) => {
   const isSectionLoaded = useIsSectionLoaded(id)
-
   return (
     <ActivityCardContainer
       id={id}
@@ -23,7 +31,7 @@ const ActivityCard = ({ description, image, onClick, variant, id }: Props) => {
       onClick={onClick}
       visible={isSectionLoaded}
     >
-      <ActivityCardHint variant={variant} />
+      <ActivityCardHint variant={variant} color={color} />
       <ActivityCardImage image={image} />
       <ActivityCardDescription variant={variant} description={description} />
     </ActivityCardContainer>
