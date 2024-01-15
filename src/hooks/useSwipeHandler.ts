@@ -3,7 +3,8 @@ import React from "react"
 const useSwipeHandler = (
   ref: React.RefObject<HTMLDivElement>,
   onSwipeLeft: () => void,
-  onSwipeRight: () => void
+  onSwipeRight: () => void,
+  stopProppagation?: boolean
 ) => {
   React.useEffect(() => {
     let startX = 0
@@ -32,6 +33,11 @@ const useSwipeHandler = (
           onSwipeLeft()
           e.stopPropagation()
         }
+      }
+
+      if (stopProppagation) {
+        e.preventDefault()
+        e.stopPropagation()
       }
     }
 

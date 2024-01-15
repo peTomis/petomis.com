@@ -15,7 +15,8 @@ const SidebarContainer = ({ children, open, onClose }: Props) => {
     () => {},
     () => {
       onClose()
-    }
+    },
+    true
   )
 
   return (
