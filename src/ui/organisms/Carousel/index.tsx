@@ -86,11 +86,11 @@ const Carousel = ({ elements }: Props) => {
       <div
         id="carousel-container"
         ref={carouselRef}
-        className="flex flex-col items-center justify-center w-full space-y-8 max-w-[1200px]"
+        className="flex flex-col items-center justify-center space-y-8 max-w-[1200px]"
       >
         <div
           id="carousel-descriptions-desktop-container"
-          className="flex-row items-center justify-center hidden w-full space-x-4 overflow-visible sm:flex"
+          className="flex-row items-center justify-center hidden space-x-4 overflow-visible sm:flex"
         >
           {rendered}
         </div>
