@@ -1,8 +1,6 @@
 import { useTranslations } from "@/hooks/useTranslations"
 import { CarouselElementColor } from "@/ui/atoms/CarouselElementText"
-import SectionDescription, {
-  SectionDescriptionFontSize,
-} from "@/ui/atoms/SectionDescription"
+import SectionDescription from "@/ui/atoms/SectionDescription"
 import SectionTitle from "@/ui/atoms/SectionTitle"
 import Carousel from "@/ui/organisms/Carousel"
 import image from "@public/images/me-light.png"
@@ -39,7 +37,7 @@ const Projects = () => {
         font={"bacasimeAntique"}
       />
       <SectionDescription
-        fontSize={SectionDescriptionFontSize.EXTRALIGHT}
+        extralight={true}
         rows={[t("projects.description")]}
       />
       <Carousel

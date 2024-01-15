@@ -11,14 +11,24 @@ enum TypographyColorEnum {
   "primary-300" = "text-primary-300",
 }
 
-export type TypographyFont = "roboto" | "bacasimeAntique"
+export type TypographyFont = "roboto" | "bacasimeAntique" | "agdasima"
 
 enum TypographyFontEnum {
+  "agdasima" = "font-agdasima",
   "roboto" = "font-roboto",
   "bacasimeAntique" = "font-bacasimeAntique",
 }
 
-export type TextSize = "h1" | "h2" | "h3" | "h4" | "h5" | "base"
+export type TextSize =
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "base"
+  | "myNameSmall"
+  | "myNameMedium"
+  | "myNameExtraLarge"
 
 enum TypographySizeEnum {
   "h1" = "text-h1",
@@ -27,37 +37,48 @@ enum TypographySizeEnum {
   "h4" = "text-h4",
   "h5" = "text-h5",
   "base" = "text-base",
+  "myNameSmall" = "text-myNameSmall",
+  "myNameMedium" = "text-myNameMedium",
+  "myNameExtraLarge" = "text-myNameExtraLarge",
 }
 
 interface Props {
   text: string
+  bold?: boolean
+  clickable?: boolean
   color?: TypographyColor
   darkColor?: TypographyColor
-  bold?: boolean
   extrabold?: boolean
+  extralight?: boolean
+  font?: TypographyFont
   italic?: boolean
   light?: boolean
-  underline?: boolean
-  font?: TypographyFont
   size?: TextSize
+  underline?: boolean
   d?: TextSize
-  clickable?: boolean
+  md?: TextSize
+  xl?: TextSize
+  xxl?: TextSize
   onClick?: () => void
 }
 
 const Typography = ({
   text,
+  bold = false,
   color = "defaultTextColor",
+  clickable = false,
   darkColor = "defaultTextColor-dark",
   font = "roboto",
-  bold = false,
   extrabold = false,
+  extralight = false,
   italic = false,
   light = false,
-  underline = false,
   size = "base",
+  underline = false,
   d,
-  clickable = false,
+  md,
+  xl,
+  xxl,
   onClick,
 }: Props) => {
   const getFont = () => TypographyFontEnum[font]
@@ -67,14 +88,18 @@ const Typography = ({
   const getExtrabold = () => (extrabold ? "font-extrabold" : "")
   const getItalic = () => (italic ? "italic" : "")
   const getLight = () => (light ? "font-light" : "")
+  const getExtralight = () => (extralight ? "font-extralight" : "")
   const getUnderline = () => (underline ? "underline" : "")
   const getClickable = () => (clickable ? "cursor-pointer" : "")
   const getSize = () => TypographySizeEnum[size]
   const getDSize = () => (d ? "d:" + TypographySizeEnum[d] : "")
+  const getMDSize = () => (md ? "md:" + TypographySizeEnum[md] : "")
+  const getXLSize = () => (xl ? "xl:" + TypographySizeEnum[xl] : "")
+  const getXXLSize = () => (xxl ? "xxl:" + TypographySizeEnum[xxl] : "")
 
   return (
     <span
-      className={`${getSize()} ${getFont()} ${getTextColor()} ${getDarkTextColor()} ${getBold()} ${getExtrabold()} ${getLight()} ${getUnderline()} ${getItalic()} ${getDSize()} ${getClickable()}`}
+      className={`${getSize()} ${getFont()} ${getTextColor()} ${getDarkTextColor()} ${getBold()} ${getExtrabold()} ${getLight()} ${getExtralight()} ${getUnderline()} ${getItalic()} ${getDSize()} ${getMDSize()} ${getXLSize()} ${getXXLSize()} ${getClickable()}`}
       onClick={onClick}
     >
       {text}

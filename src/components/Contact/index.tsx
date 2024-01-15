@@ -5,9 +5,7 @@ import { useForm } from "@formspree/react"
 import FormSucceeded from "./components/FormSucceeded"
 import overlappingCirclesPatternStyle from "@/ui/patterns/overlapping-circles"
 import SectionTitle from "@/ui/atoms/SectionTitle"
-import SectionDescription, {
-  SectionDescriptionFontSize,
-} from "@/ui/atoms/SectionDescription"
+import SectionDescription from "@/ui/atoms/SectionDescription"
 import FormContainer from "@/ui/molecules/FormContainer"
 
 type State = {
@@ -91,7 +89,8 @@ const Contact = () => {
         font={"bacasimeAntique"}
       />
       <SectionDescription
-        fontSize={SectionDescriptionFontSize.EXTRALIGHT}
+        color="defaultTextColor-dark"
+        extralight={true}
         rows={[
           t("contact.description.phrase1"),
           t("contact.description.phrase2"),

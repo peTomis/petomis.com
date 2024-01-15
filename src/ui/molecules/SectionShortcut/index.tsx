@@ -1,3 +1,5 @@
+import Typography from "@/ui/atoms/Typography"
+
 interface Props {
   icon: React.ReactNode
   label: string
@@ -13,9 +15,8 @@ const SectionShortcut = ({ icon, label, onClick }: Props) => {
       <div className="w-[48px] h-[48px] lg:w-[64px] lg:h-[64px]  xxl:w-[92px] xxl:h-[92px]">
         {icon}
       </div>
-      <div className="text-base font-roboto md:text-h5 xxl:text-h4">
-        {label}
-      </div>
+
+      <Typography text={label} light={true} md="h5" xxl="h4" />
     </div>
   )
 }

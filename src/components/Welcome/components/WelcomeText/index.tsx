@@ -1,12 +1,20 @@
 import style from "./style.module.css"
 import { useTranslations } from "@/hooks/useTranslations"
 import { useTypewriterEffect } from "@/ui/animations/TypewriterEffect"
+import Typography from "@/ui/atoms/Typography"
 
 const Name = () => {
   const { t } = useTranslations("home")
   return (
-    <div className="font-bold text-center lg:text-start font-agdasima text-myNameSmall text-primary-100 d:text-myNameMedium lg:text-myNameMedium xxl:text-myNameExtraLarge">
-      {t("welcome.name")}
+    <div className="font-bold text-center lg:text-start">
+      <Typography
+        color="primary-100"
+        text={t("welcome.name")}
+        font="agdasima"
+        size="myNameSmall"
+        d="myNameMedium"
+        xxl="myNameExtraLarge"
+      />
     </div>
   )
 }
