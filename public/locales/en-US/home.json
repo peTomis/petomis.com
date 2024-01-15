@@ -46,7 +46,7 @@
       "ide": "IDE",
       "other": "Other"
     },
-    "title": "Experience",
+    "title": "Skills",
     "jobs": "Jobs",
     "filters": "Filters",
     "years": "years",
@@ -60,7 +60,7 @@
     "descriptionPlaceholder": "Placeholder for a project named Project "
   },
   "redirects": {
-    "experience": "Experience",
+    "experience": "Skills",
     "projects": "Projects",
     "work": "Work"
   },

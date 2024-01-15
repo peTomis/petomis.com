@@ -25,6 +25,7 @@ export type TextSize =
   | "h3"
   | "h4"
   | "h5"
+  | "h6"
   | "base"
   | "myNameSmall"
   | "myNameMedium"
@@ -36,6 +37,7 @@ enum TypographySizeEnum {
   "h3" = "text-h3",
   "h4" = "text-h4",
   "h5" = "text-h5",
+  "h6" = "text-h6",
   "base" = "text-base",
   "myNameSmall" = "text-myNameSmall",
   "myNameMedium" = "text-myNameMedium",

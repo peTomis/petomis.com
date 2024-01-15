@@ -46,7 +46,7 @@
       "ide": "IDE",
       "other": "Altro"
     },
-    "title": "Esperienza",
+    "title": "Competenze",
     "jobs": "Mansione",
     "filters": "Filtri",
     "years": "anni",
@@ -60,7 +60,7 @@
     "descriptionPlaceholder": "Placeholder per un progetto di nome Progetto "
   },
   "redirects": {
-    "experience": "Esperienza",
+    "experience": "Competenze",
     "projects": "Progetti",
     "work": "Carriera"
   },
