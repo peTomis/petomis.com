@@ -1,6 +1,5 @@
 import IconContainer from "@/ui/atoms/IconContainer"
 import TopBarContainer from "@/ui/molecules/TopbarContainer"
-import useIsScrollingUp from "@/hooks/useIsScrollingUp"
 import TopBarButtonContainer from "@/ui/molecules/TopbarButtonContainer"
 import SidebarOpenIcon from "@/ui/icons/SidebarOpen"
 import RoundedButton from "@/ui/atoms/RoundedButton"
@@ -9,6 +8,7 @@ import WorkIcon from "@/ui/icons/Work"
 import ProjectIcon from "@/ui/icons/Project"
 import SocialButtons from "@/ui/organisms/SocialButtons"
 import { WebsiteSection } from "@/utils/websiteSections"
+import useScrolledPastVH from "@/hooks/useScrolledPastVH"
 
 interface Props {
   setSidebarVisible: () => void
@@ -16,7 +16,7 @@ interface Props {
 }
 
 const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
-  const isScrollingUp = useIsScrollingUp()
+  const hasScrolled = useScrolledPastVH(0.01)
 
   const getScrollY = () => {
     if (typeof window !== "undefined") {
@@ -28,7 +28,7 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
   return (
     <TopBarContainer>
       <TopBarButtonContainer id="redirect-container">
-        {isScrollingUp && getScrollY() > 700 && (
+        {hasScrolled && (
           <>
             <IconContainer
               onClick={() => {
