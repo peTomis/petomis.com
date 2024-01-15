@@ -132,6 +132,7 @@ const Experience = () => {
             icon={experience.icon}
             tags={experience.tags.map((t) => t.key)}
             duration={experience.duration}
+            onClick={() => window.open(experience.url, "_blank")}
           />
         ))}
       </ExperienceCardContainer>
