@@ -2,7 +2,6 @@ import { fetchTranslations } from "@modules/translations/fetch"
 import type { NextPage } from "next"
 import Head from "next/head"
 import { useTranslations } from "@/hooks/useTranslations"
-import HomeContainer from "@/containers/home"
 import dynamic from "next/dynamic"
 
 const ClientSideHome = dynamic(

@@ -17,7 +17,7 @@ const ExperienceCard = ({ name, icon, tags, duration, onClick }: Props) => {
   return (
     <div
       id={id}
-      className={`relative flex flex-col px-2 py-4 space-y-4 shadow-md cursor-pointer select-none xl:px-4 bg-primary-100 bg-opacity-5  ${customTransitionAnimation(
+      className={`relative flex flex-col px-2 py-4 space-y-4 shadow-md cursor-pointer select-none xl:px-4 bg-primary-100 bg-opacity-5 ${customTransitionAnimation(
         isSectionLoaded
       )}`}
       onClick={onClick}

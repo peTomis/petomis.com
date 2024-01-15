@@ -31,7 +31,7 @@ const Projects = () => {
       id="projects-container"
     >
       <SectionTitle
-        id="contact-title"
+        id="projects-title"
         label={t("projects.title").toUpperCase()}
         color={"primary-300"}
         font={"bacasimeAntique"}

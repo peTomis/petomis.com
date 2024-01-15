@@ -11,6 +11,13 @@ enum TypographyColorEnum {
   "primary-300" = "text-primary-300",
 }
 
+enum TypographyDarkColorEnum {
+  "defaultTextColor" = "dark:text-defaultTextColor",
+  "defaultTextColor-dark" = "dark:text-defaultTextColor-dark",
+  "primary-100" = "dark:text-primary-100",
+  "primary-300" = "dark:text-primary-300",
+}
+
 export type TypographyFont = "roboto" | "bacasimeAntique" | "agdasima"
 
 enum TypographyFontEnum {
@@ -87,7 +94,7 @@ const Typography = ({
 }: Props) => {
   const getFont = () => TypographyFontEnum[font]
   const getTextColor = () => TypographyColorEnum[color]
-  const getDarkTextColor = () => "dark:" + TypographyColorEnum[darkColor]
+  const getDarkTextColor = () => TypographyDarkColorEnum[darkColor]
   const getBold = () => (bold ? "font-bold" : "")
   const getExtrabold = () => (extrabold ? "font-extrabold" : "")
   const getItalic = () => (italic ? "italic" : "")
