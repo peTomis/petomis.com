@@ -31,7 +31,6 @@ const Carousel = ({ elements }: Props) => {
 
   useSwipeHandler(
     carouselRef,
-    setHovered,
     () => {
       if (hovered < elements.length - 1) {
         setSwipingDirection("left")

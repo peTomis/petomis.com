@@ -4,14 +4,9 @@ import SectionDescription from "@/ui/atoms/SectionDescription"
 import SectionTitle from "@/ui/atoms/SectionTitle"
 import Carousel from "@/ui/organisms/Carousel"
 import image from "@public/images/me.png"
-
 import CarouselElement from "@/ui/molecules/CarouselElement"
 
-const startDate = new Date("2022-03-01")
-
 const Projects = () => {
-  const openAnubiHomepage = () => window.open(process.env.ANUBI, "_blank")
-
   const { t } = useTranslations("home")
 
   const projects = []

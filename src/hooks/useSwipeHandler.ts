@@ -1,8 +1,7 @@
 import React from "react"
 
 const useSwipeHandler = (
-  carouselRef: React.RefObject<HTMLDivElement>,
-  setHovered: React.Dispatch<React.SetStateAction<number>>,
+  ref: React.RefObject<HTMLDivElement>,
   onSwipeLeft: () => void,
   onSwipeRight: () => void
 ) => {
@@ -17,18 +16,15 @@ const useSwipeHandler = (
     }
 
     const handleTouchMove = (e: TouchEvent) => {
-      if (
-        !carouselRef.current ||
-        !carouselRef.current.contains(e.target as Node)
-      )
-        return
+      if (!ref.current || !ref.current.contains(e.target as Node)) return
 
       const touch = e.touches[0]
       const deltaX = touch.clientX - startX
       const deltaY = touch.clientY - startY
 
-      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
         if (deltaX > 0) {
+          console.log(deltaX)
           e.preventDefault()
           onSwipeRight()
           e.stopPropagation()
@@ -45,24 +41,24 @@ const useSwipeHandler = (
       startY = 0
     }
 
-    if (carouselRef.current) {
-      carouselRef.current.addEventListener("touchstart", handleTouchStart, {
+    if (ref.current) {
+      ref.current.addEventListener("touchstart", handleTouchStart, {
         passive: false,
       })
-      carouselRef.current.addEventListener("touchmove", handleTouchMove, {
+      ref.current.addEventListener("touchmove", handleTouchMove, {
         passive: false,
       })
-      carouselRef.current.addEventListener("touchend", handleTouchEnd)
+      ref.current.addEventListener("touchend", handleTouchEnd)
     }
 
     return () => {
-      if (carouselRef.current) {
-        carouselRef.current.removeEventListener("touchstart", handleTouchStart)
-        carouselRef.current.removeEventListener("touchmove", handleTouchMove)
-        carouselRef.current.removeEventListener("touchend", handleTouchEnd)
+      if (ref.current) {
+        ref.current.removeEventListener("touchstart", handleTouchStart)
+        ref.current.removeEventListener("touchmove", handleTouchMove)
+        ref.current.removeEventListener("touchend", handleTouchEnd)
       }
     }
-  }, [carouselRef, setHovered, onSwipeLeft, onSwipeRight])
+  }, [ref, onSwipeLeft, onSwipeRight])
 }
 
 export default useSwipeHandler

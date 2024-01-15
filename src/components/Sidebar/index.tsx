@@ -4,6 +4,8 @@ import DarkModeToggle from "./components/DarkModeToggle"
 import SocialButtons from "@/ui/organisms/SocialButtons"
 import LanguageSelector from "./components/LanguageSelector"
 import SidebarItem from "@/ui/molecules/SidebarItem"
+import React from "react"
+import useSwipeHandler from "@/hooks/useSwipeHandler"
 
 interface Props {
   onClose: () => void
@@ -12,7 +14,7 @@ interface Props {
 
 const Sidebar = ({ onClose, open }: Props) => {
   return (
-    <SidebarContainer open={open}>
+    <SidebarContainer open={open} onClose={onClose}>
       <SidebarCloseButtonFrame onClose={onClose}>
         <div
           id="sidebar-content-container"

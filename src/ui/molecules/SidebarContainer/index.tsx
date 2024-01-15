@@ -1,12 +1,27 @@
+import useSwipeHandler from "@/hooks/useSwipeHandler"
+import React from "react"
+
 interface Props {
   children: React.ReactNode
   open: boolean
+  onClose: () => void
 }
 
-const SidebarContainer = ({ children, open }: Props) => {
+const SidebarContainer = ({ children, open, onClose }: Props) => {
+  const ref = React.useRef<HTMLDivElement>(null)
+
+  useSwipeHandler(
+    ref,
+    () => {},
+    () => {
+      onClose()
+    }
+  )
+
   return (
     <div
       id="sidebar-container"
+      ref={ref}
       className={`fixed z-40 h-screen w-[80vw] lg:w-[40vw] xl:w-[20vw] top-0 right-0 transform ${
         open
           ? "bg-primary-100 dark:bg-primary-400 translate-x-0"
