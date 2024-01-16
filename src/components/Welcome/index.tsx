@@ -27,7 +27,7 @@ const Welcome = ({ onRedirect }: Props) => {
             </div>
           </div>
           <WelcomeImage />
-          <div className="w-[80vw]  max-w-[600px]  lg:hidden">
+          <div className="w-[80vw]  max-w-[600px] pb-8 lg:hidden">
             <PageRedirects onRedirect={onRedirect} />
           </div>
         </div>
