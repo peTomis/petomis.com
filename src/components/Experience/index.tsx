@@ -15,8 +15,6 @@ const Experience = () => {
   const filters = [
     "fullstack",
     "mobile",
-    "backend",
-    "frontend",
     "framework",
     "database",
     "programmingLanguage",
@@ -92,14 +90,6 @@ const Experience = () => {
           label={t("experience.filters")}
           activeFilters={activeFilters}
           filters={[
-            {
-              key: t("experience.tag.backend"),
-              value: "backend",
-            },
-            {
-              key: t("experience.tag.frontend"),
-              value: "frontend",
-            },
             {
               key: t("experience.tag.framework"),
               value: "framework",

@@ -31,14 +31,6 @@ const GetExperienceData = () => {
       key: t("experience.tag.mobile"),
       value: "mobile",
     },
-    BACKEND: {
-      key: t("experience.tag.backend"),
-      value: "backend",
-    },
-    FRONTEND: {
-      key: t("experience.tag.frontend"),
-      value: "frontend",
-    },
     FRAMEWORK: {
       key: t("experience.tag.framework"),
       value: "framework",
@@ -72,12 +64,7 @@ const GetExperienceData = () => {
     {
       name: "Javascript",
       icon: <JavascriptIcon />,
-      tags: [
-        Tag.FULLSTACK,
-        Tag.FRONTEND,
-        Tag.BACKEND,
-        Tag.PROGRAMMING_LANGUAGE,
-      ],
+      tags: [Tag.FULLSTACK, Tag.PROGRAMMING_LANGUAGE],
       duration: `2 ${t("experience.years")}`,
       url: "https://www.javascript.com/",
     },
@@ -98,12 +85,7 @@ const GetExperienceData = () => {
     {
       name: "Typescript",
       icon: <TypescriptIcon />,
-      tags: [
-        Tag.FULLSTACK,
-        Tag.FRONTEND,
-        Tag.BACKEND,
-        Tag.PROGRAMMING_LANGUAGE,
-      ],
+      tags: [Tag.FULLSTACK, Tag.PROGRAMMING_LANGUAGE],
       duration: `2 ${t("experience.years")}`,
       url: "https://www.typescriptlang.org/",
     },
@@ -111,21 +93,21 @@ const GetExperienceData = () => {
     {
       name: "Next.js",
       icon: <NextjsIcon />,
-      tags: [Tag.FULLSTACK, Tag.FRONTEND, Tag.FRAMEWORK],
+      tags: [Tag.FULLSTACK, Tag.FRAMEWORK],
       duration: `2 ${t("experience.years")}`,
       url: "https://nextjs.org/",
     },
     {
       name: "Nest.js",
       icon: <NestjsIcon />,
-      tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.FRAMEWORK],
+      tags: [Tag.FULLSTACK, Tag.FRAMEWORK],
       duration: `2 ${t("experience.years")}`,
       url: "https://nestjs.com/",
     },
     {
       name: "Node.js",
       icon: <NodeJsIcon />,
-      tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.OTHER],
+      tags: [Tag.FULLSTACK, Tag.OTHER],
       duration: `2 ${t("experience.years")}`,
       url: "https://nodejs.org/en/",
     },
@@ -139,21 +121,21 @@ const GetExperienceData = () => {
     {
       name: "Docker",
       icon: <DockerIcon />,
-      tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.OTHER],
+      tags: [Tag.FULLSTACK, Tag.OTHER],
       duration: `2 ${t("experience.years")}`,
       url: "https://www.docker.com/",
     },
     {
       name: "Postgre SQL",
       icon: <PostgreSQLIcon />,
-      tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.DATABASE],
+      tags: [Tag.FULLSTACK, Tag.DATABASE],
       duration: `2 ${t("experience.years")}`,
       url: "https://www.postgresql.org/",
     },
     {
       name: "Jest",
       icon: <JestIcon />,
-      tags: [Tag.FULLSTACK, Tag.FRONTEND, Tag.BACKEND, Tag.FRAMEWORK],
+      tags: [Tag.FULLSTACK, Tag.FRAMEWORK],
       duration: `2 ${t("experience.years")}`,
       url: "https://jestjs.io/",
     },
@@ -167,7 +149,7 @@ const GetExperienceData = () => {
     {
       name: "VS Code",
       icon: <VsCodeIcon />,
-      tags: [Tag.FULLSTACK, Tag.FRONTEND, Tag.BACKEND, Tag.IDE],
+      tags: [Tag.FULLSTACK, Tag.IDE],
       duration: `2 ${t("experience.years")}`,
       url: "https://code.visualstudio.com/",
     },
@@ -202,7 +184,7 @@ const GetExperienceData = () => {
     {
       name: "Kubernetes",
       icon: <KubernetesIcon />,
-      tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.OTHER],
+      tags: [Tag.FULLSTACK, Tag.OTHER],
       duration: `1 ${t("experience.year")}`,
       url: "https://kubernetes.io/",
     },
