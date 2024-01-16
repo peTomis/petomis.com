@@ -7,7 +7,7 @@ const AwsIcon = () => {
       x="0px"
       y="0px"
       viewBox="0 0 304 182"
-      className="h-[50px]"
+      className="h-[25px]"
     >
       <g>
         <path

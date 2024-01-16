@@ -5,7 +5,7 @@ const SwiftIcon = () => {
       id="artwork"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 191.1856 59.3911"
-      className="h-[50px]"
+      className="h-[25px]"
     >
       <g>
         <g>

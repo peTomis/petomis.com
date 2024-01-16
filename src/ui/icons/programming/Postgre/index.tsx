@@ -10,7 +10,7 @@ const PostgreSQLIcon = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="10 6 300 46"
-      className="w-[160px] md:w-[180px]"
+      className="w-[90px]"
     >
       <path
         className="dark:fill-[#fff]"

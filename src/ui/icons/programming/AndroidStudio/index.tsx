@@ -5,7 +5,7 @@ const AndroidStudioIcon = () => {
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 409.24 496.55"
-      className="w-[70px]"
+      className="w-[35px]"
     >
       <path
         className="fill-[#073042]"

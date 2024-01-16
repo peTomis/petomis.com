@@ -5,7 +5,7 @@ const NextjsIcon = () => {
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
-      className="h-[50px] xl:h-[70px]"
+      className="h-[35px]"
     >
       <g>
         <path

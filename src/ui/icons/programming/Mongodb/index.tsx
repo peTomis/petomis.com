@@ -11,7 +11,7 @@ const MongodbIcon = () => {
       viewBox="0 -183 512 512"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-[170px]"
+      className="w-[80px]"
     >
       <defs></defs>
       <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">

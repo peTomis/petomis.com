@@ -6,6 +6,7 @@ import FirebaseIcon from "@/ui/icons/programming/Firebase"
 import GitHubIcon from "@/ui/icons/programming/GitHub"
 import JavaIcon from "@/ui/icons/programming/Java"
 import JavascriptIcon from "@/ui/icons/programming/Javascript"
+import JestIcon from "@/ui/icons/programming/Jest"
 import JiraIcon from "@/ui/icons/programming/Jira"
 import KotlinIcon from "@/ui/icons/programming/Kotlin"
 import KubernetesIcon from "@/ui/icons/programming/Kubernetes"
@@ -148,6 +149,13 @@ const GetExperienceData = () => {
       tags: [Tag.FULLSTACK, Tag.BACKEND, Tag.DATABASE],
       duration: `2 ${t("experience.years")}`,
       url: "https://www.postgresql.org/",
+    },
+    {
+      name: "Jest",
+      icon: <JestIcon />,
+      tags: [Tag.FULLSTACK, Tag.FRONTEND, Tag.BACKEND, Tag.FRAMEWORK],
+      duration: `2 ${t("experience.years")}`,
+      url: "https://jestjs.io/",
     },
     {
       name: "Android Studio",

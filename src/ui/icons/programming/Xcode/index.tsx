@@ -4,7 +4,7 @@ const XcodeIcon = () => {
       viewBox="0 0 256 262"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-[70px]"
+      className="w-[35px]"
       preserveAspectRatio="xMidYMid"
     >
       <title>Xcode</title>

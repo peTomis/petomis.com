@@ -6,7 +6,7 @@ const DockerIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1200 309"
       fill="#1D63ED"
-      className="w-[160px] md:w-[200px]"
+      className="w-[80px]"
     >
       <path
         d="M379.6,111.7c-2.3-16.7-11.5-31.2-28.1-44.3l-9.6-6.5l-6.4,9.7c-8.2,12.5-12.3,29.9-11,46.6

@@ -3,7 +3,7 @@ const KotlinIcon = () => {
     <svg
       viewBox="0 0 486 108"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-[160px]"
+      className="w-[80px]"
     >
       <g fill="#231F20">
         <path

@@ -17,7 +17,7 @@ const ExperienceCard = ({ name, icon, tags, duration, onClick }: Props) => {
   return (
     <div
       id={id}
-      className={`relative flex flex-col px-2 py-4 space-y-4 shadow-md cursor-pointer select-none xl:px-4 bg-primary-100 bg-opacity-5 ${customTransitionAnimation(
+      className={`relative flex flex-col px-2 py-4 shadow-md cursor-pointer select-none xl:px-4 bg-primary-100 bg-opacity-5 ${customTransitionAnimation(
         isSectionLoaded
       )}`}
       onClick={onClick}
@@ -27,16 +27,6 @@ const ExperienceCard = ({ name, icon, tags, duration, onClick }: Props) => {
       </div>
       <div className="flex items-center justify-center w-full h-[90px]">
         <div>{icon}</div>
-      </div>
-      <div className="grid grid-cols-2 gap-2">
-        {tags.map((t, key) => (
-          <div
-            key={key}
-            className="truncate overflow-hidden text-center line rounded-md shadow-md p-2 bg-primary-100 max-w-[120px] bg-opacity-5"
-          >
-            {t}
-          </div>
-        ))}
       </div>
       <div className="flex flex-row items-end justify-center flex-1 w-full mx-auto space-x-1 text-center">
         <div className="w-6 h-6 fill-defaultTextColor">

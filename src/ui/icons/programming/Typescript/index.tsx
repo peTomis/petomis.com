@@ -5,7 +5,7 @@ const TypescriptIcon = () => {
       viewBox="0 0 512 512"
       width="512"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-[70px]"
+      className="w-[35px]"
     >
       <rect fill="#3178c6" height="512" rx="50" width="512" />
       <rect fill="#3178c6" height="512" rx="50" width="512" />

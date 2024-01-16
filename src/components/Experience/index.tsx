@@ -48,7 +48,9 @@ const Experience = () => {
 
   const filteredExperiences = experiences.filter(
     (experience) =>
-      experience.tags.some((tag) => activeFilters.includes(tag.value)) &&
+      experience.tags
+        .filter((tag) => tag.value !== "fullstack" && tag.value !== "mobile")
+        .every((tag) => activeFilters.includes(tag.value)) &&
       experience.tags.some((tag) => activeJobs.includes(tag.value))
   )
 

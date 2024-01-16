@@ -5,7 +5,7 @@ const GitHubIcon = () => {
       id="layer"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="20 246 602 149"
-      className="h-[40px]"
+      className="h-[18px]"
     >
       <path
         className="fill-[#24292E]  dark:fill-[#fff]"

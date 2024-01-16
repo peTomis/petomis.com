@@ -4,7 +4,7 @@ const JiraIcon = () => {
       viewBox="0 3 76 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="h-[40px]"
+      className="h-[20px]"
     >
       <g id="logo-gradient-blue-jira">
         <g id="Jira">

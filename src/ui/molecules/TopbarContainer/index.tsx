@@ -1,4 +1,3 @@
-import useIsScrollingUp from "@/hooks/useIsScrollingUp"
 import useScrolledPastVH from "@/hooks/useScrolledPastVH"
 import React from "react"
 
