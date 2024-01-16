@@ -1,8 +1,6 @@
 "use client"
 
 import { useTranslations } from "@/hooks/useTranslations"
-import ItalyFlag from "@/ui/icons/ItalyFlag"
-import USFlag from "@/ui/icons/USFlag"
 import { Dispatch, SetStateAction, useEffect, useState } from "react"
 import { useLocalStorage } from "./useLocalStorage"
 import { useRouter } from "next/router"
@@ -10,19 +8,16 @@ import { useRouter } from "next/router"
 type SupportedLanguage = {
   code: string
   name: string
-  flag: () => JSX.Element
 }
 
 const languages: SupportedLanguage[] = [
   {
     code: "en-US",
     name: "English",
-    flag: USFlag,
   },
   {
     code: "it-IT",
     name: "Italiano",
-    flag: ItalyFlag,
   },
 ]
 

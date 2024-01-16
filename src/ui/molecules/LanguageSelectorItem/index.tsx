@@ -3,13 +3,12 @@ import Typography from "@/ui/atoms/Typography"
 import ArrowIcon from "@/ui/icons/Arrow"
 
 interface Props {
-  flag: React.ReactNode
   label: string
   onClick: () => void
   main: boolean
 }
 
-const LanguageSelectorItem = ({ flag, label, onClick, main }: Props) => {
+const LanguageSelectorItem = ({ label, onClick, main }: Props) => {
   const { t } = useTranslations("common")
   return (
     <div className="relative flex flex-row items-center justify-end space-x-2 select-none">
@@ -23,7 +22,6 @@ const LanguageSelectorItem = ({ flag, label, onClick, main }: Props) => {
         <div className="z-10">
           <Typography text={label} />
         </div>
-        <div className="absolute w-[70px] left-[-15px] opacity-80">{flag}</div>
 
         {main && (
           <div className="absolute flex items-center justify-center rotate-90 opacity-50 right-4 fill-defaultTextColor dark:fill-defaultTextColor-dark">

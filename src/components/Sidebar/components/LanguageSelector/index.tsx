@@ -21,7 +21,6 @@ const LanguageSelector = () => {
   return (
     <div className="relative flex flex-col space-y-2">
       <LanguageSelectorItem
-        flag={language.flag()}
         label={language.name}
         onClick={() => {
           setToggle(!toggle)
@@ -34,7 +33,6 @@ const LanguageSelector = () => {
             return (
               <LanguageSelectorItem
                 key={key}
-                flag={language.flag()}
                 label={language.name}
                 main={false}
                 onClick={() => {
