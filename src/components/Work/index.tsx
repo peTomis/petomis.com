@@ -1,15 +1,28 @@
-import { useTranslations } from "@/hooks/useTranslations"
+// External libraries
+import React from "react"
+
+// Experience Components
 import experiences from "./components/Experiences"
+
+// Hooks
+import { useTranslations } from "@/hooks/useTranslations"
+
+// Organisms
 import ActivityCardExpanded from "@/ui/organisms/ActivityCardExpanded"
-import { useState } from "react"
 import ActivityCard from "@/ui/organisms/ActivityCard"
-import circuitBoardPatternStyle from "@/ui/patterns/circuit-board"
-import SectionTitle from "@/ui/atoms/SectionTitle"
-import SectionDescription from "@/ui/atoms/SectionDescription"
+
+// Molecules
 import ActivityCardGrid from "@/ui/molecules/ActivityCardGrid"
 
+// Atoms
+import SectionTitle from "@/ui/atoms/SectionTitle"
+import SectionDescription from "@/ui/atoms/SectionDescription"
+
+// Patterns
+import circuitBoardPatternStyle from "@/ui/patterns/circuit-board"
+
 const Work = () => {
-  const [experience, setExperience] = useState<any>(undefined)
+  const [experience, setExperience] = React.useState<any>(undefined)
   const { t } = useTranslations("home")
 
   return (

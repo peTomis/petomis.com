@@ -1,5 +1,8 @@
-import useSwipeHandler from "@/hooks/useSwipeHandler"
+// External libraries
 import React from "react"
+
+// Hooks
+import useSwipeHandler from "@/hooks/useSwipeHandler"
 
 interface Props {
   children: React.ReactNode

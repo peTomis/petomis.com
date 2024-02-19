@@ -1,9 +1,14 @@
-import AnubidigitalIcon from "@/ui/icons/companies/Anubidigital"
+// Molecules
 import ExperienceDescriptionContainer from "@/ui/molecules/ExperienceDescriptionContainer"
-import MobileDeveloperIcon from "@/ui/icons/companies/MobileDeveloper"
+
+// Atoms
 import { TypographyColor } from "@/ui/atoms/Typography"
 
-export interface Experience {
+// Icons
+import AnubidigitalIcon from "@/ui/icons/companies/Anubidigital"
+import MobileDeveloperIcon from "@/ui/icons/companies/MobileDeveloper"
+
+export interface WorkExperience {
   job: string
   variant?: "darkAndBlue" | "lightAndBlue"
   date: string
@@ -14,7 +19,7 @@ export interface Experience {
   color?: TypographyColor
 }
 
-const anubidigital: Experience = {
+const anubidigital: WorkExperience = {
   job: "Fullstack Developer",
   date: "2022- today",
   programmingLanguages: ["Swift", "Kotlin", "Flutter"],
@@ -37,7 +42,7 @@ const anubidigital: Experience = {
   ),
 }
 
-const freelanceMobileDeveloper: Experience = {
+const freelanceMobileDeveloper: WorkExperience = {
   job: "Mobile Developer",
   date: "2020 - 2022",
   programmingLanguages: ["Swift", "Kotlin", "Flutter"],
@@ -58,6 +63,6 @@ const freelanceMobileDeveloper: Experience = {
   ),
 }
 
-const experiences: Experience[] = [anubidigital, freelanceMobileDeveloper]
+const experiences: WorkExperience[] = [anubidigital, freelanceMobileDeveloper]
 
 export default experiences

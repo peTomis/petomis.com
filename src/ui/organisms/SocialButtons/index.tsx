@@ -1,4 +1,7 @@
+// Atoms
 import IconContainer from "@/ui/atoms/IconContainer"
+
+// Icons
 import GitHubIcon from "@/ui/icons/programming/GitHubSmall"
 import LinkedinIcon from "@/ui/icons/companies/Linkedin"
 

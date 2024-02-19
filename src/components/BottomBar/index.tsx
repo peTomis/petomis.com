@@ -1,7 +1,14 @@
-import { useTranslations } from "@/hooks/useTranslations"
-import Typography from "@/ui/atoms/Typography"
-import SocialButtons from "@/ui/organisms/SocialButtons"
+// External libraries
 import Image from "next/image"
+
+// Hooks
+import { useTranslations } from "@/hooks/useTranslations"
+
+// Organisms
+import SocialButtons from "@/ui/organisms/SocialButtons"
+
+// Atoms
+import Typography from "@/ui/atoms/Typography"
 
 const BottomBar = () => {
   const { t } = useTranslations("common")
@@ -11,7 +18,7 @@ const BottomBar = () => {
   const openHeropatterns = () => window.open(process.env.HEROPATTERNS, "_blank")
 
   return (
-    <div
+    <footer
       id="bottombar-container"
       className="flex items-center justify-center w-full p-8 bg-black"
     >
@@ -134,7 +141,7 @@ const BottomBar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
 

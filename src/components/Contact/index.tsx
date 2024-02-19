@@ -1,12 +1,23 @@
-import { useTranslations } from "@/hooks/useTranslations"
-import FormInput from "@/ui/molecules/FormInput"
-import { useReducer, useState } from "react"
+// External libraries
+import React from "react"
 import { useForm } from "@formspree/react"
+
+// Contact components
 import FormSucceeded from "./components/FormSucceeded"
-import overlappingCirclesPatternStyle from "@/ui/patterns/overlapping-circles"
+
+// Hooks
+import { useTranslations } from "@/hooks/useTranslations"
+
+// Molecules
+import FormInput from "@/ui/molecules/FormInput"
+import FormContainer from "@/ui/molecules/FormContainer"
+
+// Atoms
 import SectionTitle from "@/ui/atoms/SectionTitle"
 import SectionDescription from "@/ui/atoms/SectionDescription"
-import FormContainer from "@/ui/molecules/FormContainer"
+
+// Patterns
+import overlappingCirclesPatternStyle from "@/ui/patterns/overlapping-circles"
 
 type State = {
   name: string
@@ -59,7 +70,7 @@ const reducer = (state: State, action: Action) => {
 }
 
 const Contact = () => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = React.useReducer(reducer, initialState)
   const { name, email, message, errors } = state
   const { t } = useTranslations("home")
   const [formState, submitEmail] = useForm("mnqkqwja")

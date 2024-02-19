@@ -1,4 +1,7 @@
+// External libraries
 import Image from "next/image"
+
+// Image
 import image from "@public/images/me.png"
 
 const WelcomeImage = () => {

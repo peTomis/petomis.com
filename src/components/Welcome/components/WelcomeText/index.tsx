@@ -1,6 +1,12 @@
+// Styles
 import style from "./style.module.css"
+
+// Hooks
 import { useTranslations } from "@/hooks/useTranslations"
+
+// Animations
 import { useTypewriterEffect } from "@/ui/animations/TypewriterEffect"
+
 const Name = () => {
   const { t } = useTranslations("home")
   return (

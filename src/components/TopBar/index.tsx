@@ -1,14 +1,25 @@
-import IconContainer from "@/ui/atoms/IconContainer"
+// Hooks
+import useScrolledPastVH from "@/hooks/useScrolledPastVH"
+
+// Utilities
+import { WebsiteSection } from "@/utils/websiteSections"
+
+// Organisms
+import SocialButtons from "@/ui/organisms/SocialButtons"
+
+// Molecules
 import TopBarContainer from "@/ui/molecules/TopbarContainer"
 import TopBarButtonContainer from "@/ui/molecules/TopbarButtonContainer"
-import SidebarOpenIcon from "@/ui/icons/SidebarOpen"
-import RoundedButton from "@/ui/atoms/RoundedButton"
+
+// Atoms
+import IconContainer from "@/ui/atoms/IconContainer"
+
+// Icons
 import ExperienceIcon from "@/ui/icons/Experience"
-import WorkIcon from "@/ui/icons/Work"
 import ProjectIcon from "@/ui/icons/Project"
-import SocialButtons from "@/ui/organisms/SocialButtons"
-import { WebsiteSection } from "@/utils/websiteSections"
-import useScrolledPastVH from "@/hooks/useScrolledPastVH"
+import SidebarOpenIcon from "@/ui/icons/SidebarOpen"
+import WorkIcon from "@/ui/icons/Work"
+import TopBarIcon from "@/ui/molecules/TopbarIcon"
 
 interface Props {
   setSidebarVisible: () => void
@@ -18,49 +29,36 @@ interface Props {
 const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
   const hasScrolled = useScrolledPastVH(0.01)
 
-  const getScrollY = () => {
-    if (typeof window !== "undefined") {
-      return window.scrollY
-    }
-    return 0
-  }
-
   return (
     <TopBarContainer>
       <TopBarButtonContainer id="redirect-container">
         {hasScrolled && (
           <>
-            <IconContainer
+            <TopBarIcon
+              IconComponent={ExperienceIcon}
               onClick={() => {
                 scrollToSelectedDiv(WebsiteSection.EXPERIENCE)
               }}
-            >
-              <RoundedButton>
-                <ExperienceIcon />
-              </RoundedButton>
-            </IconContainer>
-            <IconContainer
+            />
+            <TopBarIcon
+              IconComponent={WorkIcon}
               onClick={() => {
                 scrollToSelectedDiv(WebsiteSection.WORK)
               }}
-            >
-              <RoundedButton>
-                <WorkIcon />
-              </RoundedButton>
-            </IconContainer>
-            <IconContainer
+            />
+            <TopBarIcon
+              IconComponent={ProjectIcon}
               onClick={() => {
                 scrollToSelectedDiv(WebsiteSection.PROJECTS)
               }}
-            >
-              <RoundedButton>
-                <ProjectIcon />
-              </RoundedButton>
-            </IconContainer>
+            />
           </>
         )}
       </TopBarButtonContainer>
-      <TopBarButtonContainer id="link-and-settings-container">
+      <TopBarButtonContainer
+        id="link-and-settings-container"
+        aria-label="Open Sidebar"
+      >
         <SocialButtons />
         <IconContainer onClick={setSidebarVisible}>
           <SidebarOpenIcon />

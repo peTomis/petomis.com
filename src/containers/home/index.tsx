@@ -1,8 +1,15 @@
-import MailShortcut from "@/ui/molecules/MailShortcut"
-import { WebsiteSection } from "@/utils/websiteSections"
-import useIsMailShortcutVisible from "@/hooks/useIsMailShortcutVisible"
-import HomePageContainer from "@/ui/molecules/HomePageContainer"
+// External libraries
 import React from "react"
+
+// Hooks
+import useIsMailShortcutVisible from "@/hooks/useIsMailShortcutVisible"
+import useSidebarVisibility from "@/hooks/useSidebarVisibility"
+import scrollToSection from "@/hooks/useScrollToSection"
+
+// Utilities
+import { WebsiteSection } from "@/utils/websiteSections"
+
+// Components
 import Sidebar from "@/components/Sidebar"
 import TopBar from "@/components/TopBar"
 import Welcome from "@/components/Welcome"
@@ -13,33 +20,23 @@ import BottomBar from "@/components/BottomBar"
 import Projects from "@/components/Projects"
 import AboutMe from "@/components/AboutMe"
 
+// Molecules
+import HomePageContainer from "@/ui/molecules/HomePageContainer"
+import MailShortcut from "@/ui/molecules/MailShortcut"
+
 const HomeContainer = () => {
-  const [sidebarVisible, setSidebarVisible] = React.useState(false)
+  const { sidebarVisible, toggleSidebar, closeSidebar } = useSidebarVisibility()
   const isMailShortcutVisible = useIsMailShortcutVisible()
-
-  const scrollToSelectedDiv = (section: WebsiteSection) => {
-    const selectedDiv = document.getElementById(section)
-    if (selectedDiv) {
-      // Get the top position of the selected div relative to the document
-      const topPosition =
-        selectedDiv.getBoundingClientRect().top + window.pageYOffset
-
-      // Scroll to 300px above the selected div
-      window.scrollTo({
-        top: topPosition - 50,
-        behavior: "smooth",
-      })
-    }
-  }
+  const handleMailShortcutClick = () => scrollToSection(WebsiteSection.CONTACT)
 
   return (
     <HomePageContainer>
       <TopBar
-        setSidebarVisible={() => setSidebarVisible(!sidebarVisible)}
-        scrollToSelectedDiv={scrollToSelectedDiv}
+        setSidebarVisible={toggleSidebar}
+        scrollToSelectedDiv={scrollToSection}
       />
-      <Sidebar open={sidebarVisible} onClose={() => setSidebarVisible(false)} />
-      <Welcome onRedirect={scrollToSelectedDiv} />
+      <Sidebar open={sidebarVisible} onClose={closeSidebar} />
+      <Welcome onRedirect={scrollToSection} />
       <AboutMe />
       <Experience />
       <Work />
@@ -47,11 +44,7 @@ const HomeContainer = () => {
       <Contact />
       <BottomBar />
       {isMailShortcutVisible && (
-        <MailShortcut
-          onClick={() => {
-            scrollToSelectedDiv(WebsiteSection.CONTACT)
-          }}
-        />
+        <MailShortcut onClick={handleMailShortcutClick} />
       )}
     </HomePageContainer>
   )

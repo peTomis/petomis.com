@@ -1,7 +1,12 @@
+// Hooks
 import { useTranslations } from "@/hooks/useTranslations"
+
+// Atoms
 import PhraseContainer from "@/ui/atoms/PhraseContainer"
 import SectionTitle from "@/ui/atoms/SectionTitle"
 import Typography from "@/ui/atoms/Typography"
+
+// Patterns
 import circuitBoardPatternStyle from "@/ui/patterns/circuit-board"
 
 const AboutMe = () => {
