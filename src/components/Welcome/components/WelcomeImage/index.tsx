@@ -14,7 +14,6 @@ const WelcomeImage = () => {
       <Image
         src={image}
         alt="Main image"
-        placeholder="blur"
         loading="eager"
         priority={true}
         width={1000}

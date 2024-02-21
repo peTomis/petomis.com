@@ -38,12 +38,7 @@ const ListFilterElements = ({
                   : "bg-gray-200 dark:bg-gray-200 dark:bg-opacity-30"
               }`}
             >
-              <div> {filter.key}</div>
-              {isActive(filter.value) && (
-                <div className="hidden w-6 h-6 md:flex fill-defaultTextColor-dark">
-                  <CloseButtonIcon />
-                </div>
-              )}
+              {filter.key}
             </button>
           </Flipped>
         ))}

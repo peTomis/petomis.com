@@ -74,7 +74,9 @@
     "title": "My Career",
     "description": "A brief overview of my career path",
     "desktopClick": "Click to see details",
+    "desktopClose": "Click here to close",
     "mobileClick": "Tap to see details",
+    "mobileClose": "Tap here to close",
     "tools": "Tools",
     "programmingLanguages": "Programming Languages"
   }

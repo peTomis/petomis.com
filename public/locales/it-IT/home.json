@@ -74,7 +74,9 @@
     "title": "Carriera",
     "description": "Un breve riassunto della mia carriera lavorativa.",
     "desktopClick": "Clicca per i dettagli",
+    "desktopClose": "Clicca qui per chiudere",
     "mobileClick": "Premi per i dettagli",
+    "mobileClose": "Premi qui per chiudere",
     "tools": "Tools",
     "programmingLanguages": "Linguaggi"
   }

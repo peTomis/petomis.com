@@ -22,6 +22,7 @@ module.exports = {
       animation: {
         carousel: "carousel 40s linear infinite",
         smallCarousel: "carousel 80s linear infinite",
+        scaleUp: "scale-up 300ms ease-out forwards",
       },
       keyframes: {
         carousel: {
@@ -31,6 +32,10 @@ module.exports = {
         smallCarousel: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(calc(-180px * 8))" },
+        },
+        "scale-up": {
+          "0%": { transform: "scale(0)" },
+          "100%": { transform: "scale(1)" },
         },
       },
       colors: {
