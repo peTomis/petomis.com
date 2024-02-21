@@ -1,9 +1,16 @@
+// Hooks
+import { useTranslations } from "@/hooks/useTranslations"
+
+// Utils
+import { WebsiteSection } from "@/utils/websiteSections"
+
+// Molecules
+import SectionShortcut from "@/ui/molecules/SectionShortcut"
+
+// Icons
 import ExperienceIcon from "@/ui/icons/Experience"
 import WorkIcon from "@/ui/icons/Work"
 import ProjectIcon from "@/ui/icons/Project"
-import { WebsiteSection } from "@/utils/websiteSections"
-import SectionShortcut from "@/ui/molecules/SectionShortcut"
-import { useTranslations } from "@/hooks/useTranslations"
 
 interface Props {
   onRedirect: (section: WebsiteSection) => void

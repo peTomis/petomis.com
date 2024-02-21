@@ -1,13 +1,10 @@
-interface Props {
-  size?: number
-}
-
-const CloseButtonIcon = ({ size }: Props) => {
+const CloseButtonIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       viewBox="0 0 1436 1054"
+      className="w-12 h-12"
     >
       <path
         d="M718.5,453.8l224-224.3c20.4-20.4,53.3-20.4,73.6,0c20.4,20.4,20.4,53.3,0,73.6l-224,224.6l224,224

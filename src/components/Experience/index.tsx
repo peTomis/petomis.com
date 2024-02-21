@@ -1,17 +1,32 @@
+// External libraries
+import React from "react"
+
+// External data
+import GetExperienceData from "./experiences"
+
+// Hooks
 import { useTranslations } from "@/hooks/useTranslations"
+
+// Organisms
+import ListFilter from "@/ui/organisms/ListFilter"
+
+// Molecules
 import ExperienceCard from "@/ui/molecules/ExperienceCard"
+
+// Atoms
 import ExperienceCardContainer from "@/ui/atoms/ExperienceCardContainer"
 import SectionTitle from "@/ui/atoms/SectionTitle"
-import FunnelIcon from "@/ui/icons/Funnel"
 import { ListFilterColor } from "@/ui/molecules/ListFilterElements"
-import React from "react"
+
+// Icons
+import FunnelIcon from "@/ui/icons/Funnel"
 import BriefcaseIcon from "@/ui/icons/Briefcase"
-import ListFilter from "@/ui/organisms/ListFilter"
-import GetExperienceData from "./experiences"
 
 const Experience = () => {
   const { t } = useTranslations("home")
+
   const jobs = ["fullstack", "mobile"]
+
   const filters = [
     "fullstack",
     "mobile",

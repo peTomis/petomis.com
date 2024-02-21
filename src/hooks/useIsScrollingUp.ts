@@ -1,38 +1,56 @@
-import { useEffect, useState } from "react"
+// External libraries
+import React from "react"
 
+/**
+ * A custom React hook that determines if the user is scrolling upwards on the webpage.
+ *
+ * It listens to the window's scroll events to calculate the direction of the scroll.
+ * If the current scroll position is less than the last scroll position, it is considered
+ * that the user is scrolling up. The hook updates the `isScrollingUp` state accordingly.
+ * This state can be used to implement dynamic UI behaviors based on the scroll direction,
+ * such as showing or hiding elements when the user scrolls up.
+ *
+ * @returns {boolean} A boolean state indicating whether the user is currently scrolling up.
+ */
 const useIsScrollingUp = () => {
-  const [isScrollingUp, setIsScrollingUp] = useState(false)
-  const [lastScrollTop, setLastScrollTop] = useState(0)
+  // State to track if the user is scrolling up
+  const [isScrollingUp, setIsScrollingUp] = React.useState(false)
+  // State to keep track of the last scroll position
+  const [lastScrollTop, setLastScrollTop] = React.useState(0)
 
-  useEffect(() => {
+  React.useEffect(() => {
+    // Function to handle scroll events
     const handleScroll = () => {
+      // Get the current scroll position from the window object or the document element
       const currentScrollTop =
         window.scrollY || document.documentElement.scrollTop
 
-      // Check if the page is at the top
+      // If the current scroll position is at the top of the page, set isScrollingUp to false
       if (currentScrollTop === 0) {
         setIsScrollingUp(false)
       }
-      // Check if scrolled more than 100px and is scrolling up
+      // If the current scroll position is less than the last recorded scroll position, the user is scrolling up
       else if (currentScrollTop < lastScrollTop) {
         setIsScrollingUp(true)
       } else {
+        // Otherwise, the user is not scrolling up
         setIsScrollingUp(false)
       }
 
-      // Update the last scroll position
+      // Update the last recorded scroll position to the current scroll position
       setLastScrollTop(currentScrollTop)
     }
 
-    // Listen for scroll events on the window
+    // Add the handleScroll function as an event listener to window scroll events
     window.addEventListener("scroll", handleScroll)
 
-    // Clean up the event listener when the component is unmounted
+    // Return a cleanup function that removes the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [lastScrollTop])
+  }, [lastScrollTop]) // The effect depends on the lastScrollTop state
 
+  // Return the isScrollingUp state to indicate if the user is scrolling up
   return isScrollingUp
 }
 

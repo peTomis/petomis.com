@@ -1,5 +1,10 @@
+// Hooks
 import { useTranslations } from "@/hooks/useTranslations"
+
+// Atoms
 import Typography from "@/ui/atoms/Typography"
+
+// Icons
 import ArrowIcon from "@/ui/icons/Arrow"
 
 interface Props {

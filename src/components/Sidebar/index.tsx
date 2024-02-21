@@ -1,11 +1,17 @@
+// External libraries
+import React from "react"
+
+// Sidebar Components
+import DarkModeToggle from "./components/DarkModeToggle"
+import LanguageSelector from "./components/LanguageSelector"
+
+// Organisms
+import SocialButtons from "@/ui/organisms/SocialButtons"
+
+// Molecules
+import SidebarItem from "@/ui/molecules/SidebarItem"
 import SidebarCloseButtonFrame from "@/ui/molecules/SidebarCloseButtonFrame"
 import SidebarContainer from "@/ui/molecules/SidebarContainer"
-import DarkModeToggle from "./components/DarkModeToggle"
-import SocialButtons from "@/ui/organisms/SocialButtons"
-import LanguageSelector from "./components/LanguageSelector"
-import SidebarItem from "@/ui/molecules/SidebarItem"
-import React from "react"
-import useSwipeHandler from "@/hooks/useSwipeHandler"
 
 interface Props {
   onClose: () => void

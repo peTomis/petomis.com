@@ -12,9 +12,10 @@ enum ActivityCardVariant {
 interface Props {
   variant?: keyof typeof ActivityCardVariant
   color?: TypographyColor
+  action?: "open" | "close"
 }
 
-const ActivityCardHint = ({ variant, color }: Props) => {
+const ActivityCardHint = ({ variant, color, action = "open" }: Props) => {
   const { t } = useTranslations("home")
 
   return (
@@ -22,7 +23,7 @@ const ActivityCardHint = ({ variant, color }: Props) => {
       <ActivityCardHintContent
         idSuffix="mobile"
         icon={<FingerTapIcon />}
-        text={t("work.mobileClick")}
+        text={action === "open" ? t("work.mobileClick") : t("work.mobileClose")}
         visibility="md:hidden"
         variant={variant}
         color={color}
@@ -30,7 +31,9 @@ const ActivityCardHint = ({ variant, color }: Props) => {
       <ActivityCardHintContent
         idSuffix="desktop"
         icon={<PointerClickIcon />}
-        text={t("work.desktopClick")}
+        text={
+          action === "open" ? t("work.desktopClick") : t("work.desktopClose")
+        }
         visibility="hidden md:flex"
         variant={variant}
         color={color}

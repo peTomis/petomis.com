@@ -1,7 +1,12 @@
+// Welcome components
 import PageRedirects from "./components/PageRedirects"
 import WelcomeImage from "./components/WelcomeImage"
 import WelcomeText from "./components/WelcomeText"
+
+// Utils
 import { WebsiteSection } from "@/utils/websiteSections"
+
+// Atoms
 import HomeWallpaperPattern from "@/ui/atoms/HomeWallpaperPattern"
 
 interface Props {

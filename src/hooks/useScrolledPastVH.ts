@@ -1,30 +1,39 @@
-import { useState, useEffect } from "react"
+// External libraries
+import React from "react"
 
+/**
+ * Custom hook that checks if the user has scrolled past a certain percentage of the viewport height.
+ *
+ * @param {number} vh - The percentage of the viewport height to check against.
+ * @returns {boolean} - True if the user has scrolled past the specified percentage of the viewport height, false otherwise.
+ */
 const useScrolledPastVH = (vh: number): boolean => {
-  const [hasScrolledPast80VH, setHasScrolledPast80VH] = useState(false)
+  // State to track whether the user has scrolled past the specified VH percentage
+  const [hasScrolledPastVH, setHasScrolledPastVH] = React.useState(false)
 
-  useEffect(() => {
+  React.useEffect(() => {
+    // Function to handle scroll events
     const handleScroll = () => {
-      const viewportHeight = window.innerHeight
-      const scrolledHeight = window.scrollY
-      const threshold = viewportHeight * vh * 0.01
-
-      if (scrolledHeight > threshold) {
-        setHasScrolledPast80VH(true)
+      // Calculate the threshold in pixels based on the viewport height and the specified percentage
+      const threshold = window.innerHeight * vh * 0.01
+      // Check if the current scroll position is greater than the threshold
+      if (window.scrollY > threshold) {
+        setHasScrolledPastVH(true)
       } else {
-        setHasScrolledPast80VH(false)
+        setHasScrolledPastVH(false)
       }
     }
 
+    // Add the scroll event listener to the window
     window.addEventListener("scroll", handleScroll)
 
-    // Cleanup
+    // Cleanup function to remove the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [])
+  }, [vh]) // Effect depends on the vh prop to recalculate if vh changes
 
-  return hasScrolledPast80VH
+  return hasScrolledPastVH
 }
 
 export default useScrolledPastVH

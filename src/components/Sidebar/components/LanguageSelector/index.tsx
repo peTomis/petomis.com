@@ -1,12 +1,17 @@
+// External libraries
+import React from "react"
+
+// Hooks
 import { useLanguage } from "@/hooks/useLanguage"
+
+// Molecules
 import LanguageSelectorItem from "@/ui/molecules/LanguageSelectorItem"
-import { useState, useEffect } from "react"
 
 const LanguageSelector = () => {
   const [language, setLanguage, languages] = useLanguage()
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = React.useState(false)
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleScroll = () => {
       setToggle(false)
     }

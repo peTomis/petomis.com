@@ -2,15 +2,11 @@ interface Props {
   children?: React.ReactNode
 }
 
-const HomePageContainer = ({ children }: Props) => {
+const HomePageContainer: React.FC<Props> = ({ children }) => {
   return (
-    <div
-      className={
-        "flex overflow-x-hidden relative flex-col items-center justify-center text-defaultTextColor dark:text-defaultTextColor-dark transition-colors duration-500"
-      }
-    >
+    <main className="relative flex flex-col items-center justify-center overflow-x-hidden transition-colors duration-500 text-defaultTextColor dark:text-defaultTextColor-dark">
       {children}
-    </div>
+    </main>
   )
 }
 

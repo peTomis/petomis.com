@@ -1,4 +1,7 @@
+// External libraries
 import Image from "next/image"
+
+// Image
 import image from "@public/images/me.png"
 
 const WelcomeImage = () => {
@@ -11,7 +14,6 @@ const WelcomeImage = () => {
       <Image
         src={image}
         alt="Main image"
-        placeholder="blur"
         loading="eager"
         priority={true}
         width={1000}

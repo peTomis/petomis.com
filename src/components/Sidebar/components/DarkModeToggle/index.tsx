@@ -1,4 +1,7 @@
+// Hooks
 import { useDarkMode } from "@/hooks/useDarkMode"
+
+// Molecules
 import DarkModeSwitchButton from "@/ui/molecules/DarkModeSwitchButton"
 
 const DarkModeToggle = () => {

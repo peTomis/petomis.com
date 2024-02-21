@@ -1,4 +1,6 @@
 import CloseButtonIcon from "@/ui/icons/CloseButton"
+import ActivityCardHint from "../ActivityCardHint"
+import { TypographyColor } from "@/ui/atoms/Typography"
 
 export enum ActivityCardExpandedFillVariant {
   darkAndBlue = `fill-freelanceIcon`,
@@ -12,6 +14,7 @@ enum ActivityCardExpandedBgVariant {
 
 interface Props {
   variant?: "darkAndBlue" | "lightAndBlue"
+  color?: TypographyColor
   children: React.ReactNode
   onClose: () => void
 }
@@ -20,11 +23,12 @@ const ActivityCardExpandedContainer = ({
   children,
   onClose,
   variant = "darkAndBlue",
+  color,
 }: Props) => {
   return (
     <div
       id="activity-card-expanded-container"
-      className={`relative flex w-full m-2 xl:m-4 overflow-x-hidden overflow-y-auto ${ActivityCardExpandedBgVariant[variant]}`}
+      className={`relative flex w-full m-2 xl:m-4 overflow-x-hidden overflow-y-auto transition  animate-scaleUp ${ActivityCardExpandedBgVariant[variant]}`}
       onClick={(e) => {
         e.stopPropagation()
       }}
@@ -32,12 +36,8 @@ const ActivityCardExpandedContainer = ({
         height: "-webkit-fill-available",
       }}
     >
-      <div
-        id="activity-card-expanded-close-button"
-        className={`absolute top-4 right-4 cursor-pointer ${ActivityCardExpandedFillVariant[variant]}`}
-        onClick={onClose}
-      >
-        <CloseButtonIcon />
+      <div className="cursor-pointer" onClick={onClose}>
+        <ActivityCardHint variant={variant} color={color} action="close" />
       </div>
       {children}
     </div>

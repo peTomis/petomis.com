@@ -1,3 +1,4 @@
+// Atoms
 import SidebarDivider from "@/ui/atoms/SidebarDivider"
 
 interface Props {
