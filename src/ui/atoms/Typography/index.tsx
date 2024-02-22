@@ -1,21 +1,30 @@
 export type TypographyColor =
   | "defaultTextColor"
   | "defaultTextColor-dark"
+  | "primary-50"
   | "primary-100"
   | "primary-300"
+  | "primary-400"
+  | "white"
 
 enum TypographyColorEnum {
   "defaultTextColor" = "text-defaultTextColor",
   "defaultTextColor-dark" = "text-defaultTextColor-dark",
+  "primary-50" = "text-primary-50",
   "primary-100" = "text-primary-100",
   "primary-300" = "text-primary-300",
+  "primary-400" = "text-primary-400",
+  "white" = "text-white",
 }
 
 enum TypographyDarkColorEnum {
   "defaultTextColor" = "dark:text-defaultTextColor",
   "defaultTextColor-dark" = "dark:text-defaultTextColor-dark",
+  "primary-50" = "dark:text-primary-50",
   "primary-100" = "dark:text-primary-100",
   "primary-300" = "dark:text-primary-300",
+  "primary-400" = "dark:text-primary-400",
+  "white" = "dark:text-white",
 }
 
 export type TypographyFont = "roboto" | "bacasimeAntique" | "agdasima"

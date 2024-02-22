@@ -1,6 +1,3 @@
-// Hooks
-import { useTranslations } from "@/hooks/useTranslations"
-
 // Utils
 import useLockScroll from "@/utils/lockScroll"
 
@@ -14,7 +11,6 @@ interface Props {
 }
 
 const ActivityCardExpanded = ({ content, onClose, variant }: Props) => {
-  const { t } = useTranslations("common")
   useLockScroll()
 
   return (
@@ -24,14 +20,7 @@ const ActivityCardExpanded = ({ content, onClose, variant }: Props) => {
       onClick={onClose}
     >
       <ActivityCardExpandedContainer onClose={onClose} variant={variant}>
-        <div className="flex flex-col items-center justify-center w-full cursor-default md:flex-row">
-          <div className="flex items-center justify-center w-full">
-            {t("common.wip")}
-          </div>
-          <div className="flex items-center justify-center w-full">
-            {t("common.wip")}
-          </div>
-        </div>
+        {content}
       </ActivityCardExpandedContainer>
     </div>
   )

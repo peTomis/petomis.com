@@ -24,31 +24,47 @@ const ExperienceDescriptionContainer = ({
       className="flex flex-col space-y-2"
     >
       <div id="experience-job" className="text-h4">
-        <Typography text={job} color={color} size="h4" />
+        <Typography text={job} color={color} size="h4" darkColor={color} />
       </div>
 
       <div id="experience-date">
-        <Typography light={true} text={date} color={color} size="h5" />
+        <Typography
+          light={true}
+          text={date}
+          color={color}
+          size="h5"
+          darkColor={color}
+        />
       </div>
 
       <div id="experience-languages">
         <div>
-          <Typography text={t("work.programmingLanguages")} color={color} />
+          <Typography
+            text={t("work.programmingLanguages")}
+            color={color}
+            darkColor={color}
+          />
         </div>
 
         <Typography
           extralight={true}
           text={programmingLanguages.join(", ")}
           color={color}
+          darkColor={color}
         />
       </div>
 
       <div id="experience-tools">
         <div>
-          <Typography text={t("work.tools")} color={color} />
+          <Typography text={t("work.tools")} color={color} darkColor={color} />
         </div>
 
-        <Typography extralight={true} text={tools.join(", ")} color={color} />
+        <Typography
+          extralight={true}
+          text={tools.join(", ")}
+          color={color}
+          darkColor={color}
+        />
       </div>
     </div>
   )

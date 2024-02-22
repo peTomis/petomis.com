@@ -1,13 +1,13 @@
 import React from "react"
 
 enum ContainerVariant {
-  darkAndBlue = `border-freelanceIcon`,
+  darkAndBlue = `border-primary-50`,
   lightAndBlue = `border-defaultTextColor`,
 }
 
 enum LabelVariant {
   darkAndBlue = `bg-black`,
-  lightAndBlue = `bg-freelanceIcon`,
+  lightAndBlue = `bg-primary-50`,
 }
 
 interface Props {

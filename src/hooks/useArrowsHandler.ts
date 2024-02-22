@@ -13,7 +13,7 @@ import React from "react"
  * @param {() => void} onScrollUp - Callback function to execute when scrolling up.
  * @param {() => void} onScrollDown - Callback function to execute when scrolling down.
  */
-const useWheelHandler = (
+const useArrowsHandler = (
   carouselRef: React.RefObject<HTMLDivElement>,
   setHovered: React.Dispatch<React.SetStateAction<number>>,
   onScrollUp: () => void,
@@ -21,20 +21,18 @@ const useWheelHandler = (
 ): void => {
   React.useEffect(() => {
     // Defines a global event handler for wheel events.
-    const handleWheelGlobal = (e: WheelEvent): void => {
-      console.log(e.target)
+    const handleKeydown = (e: KeyboardEvent): void => {
       // Checks if the wheel event occurred within the carousel component.
-      if (
-        carouselRef.current &&
-        carouselRef.current.contains(e.target as Node)
-      ) {
+      if (carouselRef.current) {
         // Prevents the default wheel scroll behavior to allow custom handling.
         e.preventDefault()
 
         // Determines the direction of the scroll and invokes the corresponding callback.
-        if (e.deltaY > 0) {
+        if (e.code === "ArrowRight") {
           onScrollUp()
-        } else {
+        }
+
+        if (e.code === "ArrowLeft") {
           onScrollDown()
         }
 
@@ -44,14 +42,14 @@ const useWheelHandler = (
     }
 
     // Adds the wheel event listener to the window object.
-    window.addEventListener("wheel", handleWheelGlobal, { passive: false })
+    window.addEventListener("keydown", handleKeydown)
 
     // Cleanup function to remove the event listener when the component unmounts or dependencies change.
     return () => {
-      window.removeEventListener("wheel", handleWheelGlobal)
+      window.removeEventListener("keydown", handleKeydown)
     }
     // Includes all external variables used in the effect as dependencies.
   }, [carouselRef, setHovered, onScrollUp, onScrollDown])
 }
 
-export default useWheelHandler
+export default useArrowsHandler
