@@ -1,5 +1,6 @@
 import useSwipeHandler from "@/hooks/useSwipeHandler"
 import useWheelHandler from "@/hooks/useWheelHandler"
+import useArrowsHandler from "@/hooks/useArrowsHandler"
 import CarouselButton from "@/ui/atoms/CarouselButton"
 import CarouselElementSkewed from "@/ui/molecules/CarouselElementSkewed"
 import React, { useEffect } from "react"
@@ -47,9 +48,46 @@ const Carousel = ({ elements }: Props) => {
     }
   )
 
+  useArrowsHandler(
+    carouselRef,
+    setHovered,
+    () =>
+      setHovered((prevHovered) =>
+        Math.min(prevHovered + 1, elements.length - 1)
+      ),
+    () => setHovered((prevHovered) => Math.max(prevHovered - 1, 0))
+  )
+
   useEffect(() => {
     setSwipingDirection(undefined)
   }, [hovered])
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      console.log(event.key)
+      switch (event.key) {
+        case "ArrowRight":
+          if (hovered < elements.length - 1) {
+            setHovered(hovered + 1)
+          }
+          break
+        case "ArrowLeft":
+          if (hovered > 0) {
+            setHovered(hovered - 1)
+          }
+          break
+        default:
+          break
+      }
+    }
+
+    const currentRef = carouselRef.current
+    currentRef?.addEventListener("keydown", handleKeyDown)
+
+    return () => {
+      currentRef?.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [hovered, elements.length])
 
   const rendered = elements.map((Element, i) => {
     const ElementWithProps = React.cloneElement(Element, {
