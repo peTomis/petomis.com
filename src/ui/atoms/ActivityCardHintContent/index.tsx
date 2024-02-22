@@ -7,7 +7,7 @@ enum ActivityCardVariant {
 
 const variantClasses = {
   darkAndBlue: " fill-defaultTextColor-dark",
-  lightAndBlue: " fill-defaultTextColor dark:fill-defaultTextColor-dark",
+  lightAndBlue: " fill-defaultTextColor",
 }
 
 interface Props {
@@ -33,7 +33,7 @@ const ActivityCardHintContent = ({
       className={`${visibility} absolute flex flex-row justify-center items-center space-x-2 top-0 right-0 z-10 py-2 w-[200px] bg-opacity-50 backdrop-blur-sm rounded-bl-3xl  bg-primary-300 text-center ${variantClasses[variant]}`}
     >
       {icon}
-      <Typography text={text} color={color} />
+      <Typography text={text} color={color} darkColor={color} />
     </div>
   )
 }

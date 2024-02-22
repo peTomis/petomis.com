@@ -1,9 +1,6 @@
 // External libraries
 import React from "react"
 
-// Experience Components
-import experiences from "./components/Experiences"
-
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 
@@ -20,9 +17,11 @@ import SectionDescription from "@/ui/atoms/SectionDescription"
 
 // Patterns
 import circuitBoardPatternStyle from "@/ui/patterns/circuit-board"
+import { useJobExperiences } from "@/hooks/useJobExperiences"
 
 const Work = () => {
   const [experience, setExperience] = React.useState<any>(undefined)
+  const experiences = useJobExperiences()
   const { t } = useTranslations("home")
 
   return (
@@ -36,7 +35,7 @@ const Work = () => {
       {experience && (
         <ActivityCardExpanded
           onClose={() => setExperience(undefined)}
-          content={<div>TODO</div>}
+          content={experience.details()}
           variant={experience.variant}
         />
       )}

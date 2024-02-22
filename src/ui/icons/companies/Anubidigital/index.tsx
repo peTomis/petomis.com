@@ -1,9 +1,15 @@
-const AnubidigitalIcon = () => {
+interface Props {
+  height?: number
+  fill?: string
+}
+
+const AnubidigitalIcon = ({ fill = "white", height = 44 }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1973.87 500.65"
-      height={44}
+      height={height}
+      className={`fill-${fill}`}
     >
       <g>
         <path

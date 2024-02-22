@@ -34,7 +34,7 @@ const WelcomeText = () => {
         <h1 className="relative text-center">
           <span className="relative line-clamp-1 ">{currentWord}</span>
           <div
-            className={"bg-defaultTextColor dark:bg-defaultTextColor-dark ".concat(
+            className={"bg-primary-100 dark:bg-primary-100 ".concat(
               style.cursor
             )}
           />

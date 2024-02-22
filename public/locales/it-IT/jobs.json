@@ -1,0 +1,82 @@
+{
+  "tools": "STRUMENTI",
+  "anubidigital": {
+    "tasks": {
+      "project": {
+        "title": "Progettazione e realizzazione dell`architettura web",
+        "description": "Ideazione dell'architettura web interna e per i clienti, inclusi backoffice e processi di onboarding"
+      },
+      "onboarding": {
+        "title": "Onboarding",
+        "description": "Sviluppo del processo di onboarding per i clienti, con particolare attenzione alla sicurezza e alla compliance"
+      },
+      "datawarehouse": {
+        "title": "Datawarehouse",
+        "description": "Realizzazione di un datawarehouse per la gestione di dati sensibili, secondo le normative vigenti nel settore"
+      },
+      "backoffice": {
+        "title": "Backoffice",
+        "description": "Sviluppo di un backoffice per la gestione dei clienti"
+      },
+      "rnd": {
+        "title": "R&D",
+        "description": "Partecipazione al team di ricerca e sviluppo, con focus su progetti su digital asset e fintech"
+      }
+    },
+    "sentences": {
+      "first": "Anubidigital è tra i pionieri italiani del settore web3. Nasce come custodia istituzionale di digital asset per poi specializzarsi nella produzione di software B2B per il settore fintech e digital asset.",
+      "second": "In questa realtà ho avuto un ruolo fondamentale nello sviluppo iniziale dell'infrastruttura IT per la custodia, gestendo in autonomia molte aree di progetto. Una volta completato lo sviluppo della piattaforma mi sono unito al team di ricerca e sviluppo, fornendo il mio contributo da ingegnere del software alla realizzazione di idee e progetti che hanno successivamente portato l`azienda in un modello di business B2B."
+    },
+    "tools": {
+      "other": {
+        "list": "Typescript, Javascript, Jest, AWS, Gitlab, Jira"
+      },
+      "backend": {
+        "title": "Backend",
+        "list": "Node.js, PostgreSQL, MongoDB, Docker, Ether.js, Python, pandas"
+      },
+      "frontend": {
+        "title": "Frontend",
+        "list": "React, Next.js, TailwindCSS, Redux Toolkit"
+      }
+    }
+  },
+  "mobile": {
+    "title": "Mobile Developer",
+    "tasks": {
+      "management": {
+        "title": "Gestione",
+        "description": "Gestione completa del ciclo di sviluppo di applicazioni mobili, inclusa l'interfaccia cliente e l'analisi dei requisiti"
+      },
+      "design": {
+        "title": "Progettazione",
+        "description": "Progettazione autonoma dell'architettura e delle interfacce delle app, applicando design patterns e aderendo a standard UX/UI e Material Design"
+      },
+      "integration": {
+        "title": "Integrazione",
+        "description": "Integrazione di funzionalità avanzate: mappature, pubblicità, supporto Firebase e persistenza dati"
+      },
+      "implementation": {
+        "title": "Implementazione",
+        "description": "Implementazione dell'accesso alle funzioni hardware dei dispositivi (fotocamera, bluetooth, giroscopio)"
+      }
+    },
+    "sentences": {
+      "first": "Come freelance mobile developer, ho orchestrato l'intero ciclo di vita delle applicazioni, dalla concezione alla consegna, garantendo soluzioni intuitive ed efficienti.",
+      "second": "La gestione autonoma di ogni progetto mi ha permesso di affinare una comprensione olistica del processo di sviluppo, assicurando applicazioni che brillano per usabilità e soddisfazione dell'utente."
+    },
+    "tools": {
+      "cross": {
+        "list": "Flutter, Github, Kira, Firebase, Material Design, Design Patterns"
+      },
+      "android": {
+        "title": "Android",
+        "list": "Kotlin, Android Studio"
+      },
+      "ios": {
+        "title": "iOS",
+        "list": "Swift, Xcode"
+      }
+    }
+  }
+}

@@ -1,20 +1,23 @@
-import CloseButtonIcon from "@/ui/icons/CloseButton"
 import ActivityCardHint from "../ActivityCardHint"
 import { TypographyColor } from "@/ui/atoms/Typography"
 
 export enum ActivityCardExpandedFillVariant {
-  darkAndBlue = `fill-freelanceIcon`,
+  darkAndBlue = `fill-primary-50`,
   lightAndBlue = `fill-defaultTextColor`,
 }
 
 enum ActivityCardExpandedBgVariant {
-  darkAndBlue = `bg-black  text-freelanceIcon`,
-  lightAndBlue = `bg-freelanceIcon text-defaultTextColor`,
+  darkAndBlue = `bg-black  text-primary-50`,
+  lightAndBlue = `bg-primary-50 text-defaultTextColor`,
+}
+
+enum Color {
+  darkAndBlue = "defaultTextColor-dark",
+  lightAndBlue = "defaultTextColor",
 }
 
 interface Props {
   variant?: "darkAndBlue" | "lightAndBlue"
-  color?: TypographyColor
   children: React.ReactNode
   onClose: () => void
 }
@@ -23,7 +26,6 @@ const ActivityCardExpandedContainer = ({
   children,
   onClose,
   variant = "darkAndBlue",
-  color,
 }: Props) => {
   return (
     <div
@@ -36,10 +38,28 @@ const ActivityCardExpandedContainer = ({
         height: "-webkit-fill-available",
       }}
     >
-      <div className="cursor-pointer" onClick={onClose}>
-        <ActivityCardHint variant={variant} color={color} action="close" />
+      <div
+        id="activity-card-expanded-container"
+        className={`flex w-full overflow-x-hidden overflow-y-auto transition`}
+        onClick={(e) => {
+          e.stopPropagation()
+        }}
+        style={{
+          height: "-webkit-fill-available",
+        }}
+      >
+        <div
+          className="absolute top-0 right-0 z-30 cursor-pointer"
+          onClick={onClose}
+        >
+          <ActivityCardHint
+            variant={variant}
+            color={Color[variant]}
+            action="close"
+          />
+        </div>
+        {children}
       </div>
-      {children}
     </div>
   )
 }

@@ -23,7 +23,7 @@ const ActivityCard = ({
   id,
   color,
 }: Props) => {
-  const isSectionLoaded = useIsSectionLoaded(id)
+  const isSectionLoaded = useIsSectionLoaded(id, 3)
   return (
     <ActivityCardContainer
       id={id}

@@ -1,5 +1,5 @@
 .cursor {
-  @apply absolute h-[32px] w-[2px] lg:h-[48px] xl:h-[64px] xl:w-[4px];
+  @apply absolute h-[32px] w-[2px] lg:h-[48px] xl:h-[58px] xl:w-[4px];
   top: 50%;
   left: calc(
     100% + 0.25rem

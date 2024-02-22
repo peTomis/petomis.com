@@ -40,7 +40,7 @@ export default Home
 export async function getStaticProps({ locale }: any) {
   return {
     props: {
-      ...(await fetchTranslations(locale, ["common", "home"])),
+      ...(await fetchTranslations(locale, ["common", "home", "jobs"])),
     },
   }
 }

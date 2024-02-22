@@ -2,7 +2,7 @@ import { customTransitionAnimation } from "@/ui/animations/CustomTransitionAnima
 
 enum ActivityCardContainerVariant {
   darkAndBlue = `bg-black`,
-  lightAndBlue = `bg-freelanceIcon`,
+  lightAndBlue = `bg-primary-50`,
 }
 
 interface Props {
