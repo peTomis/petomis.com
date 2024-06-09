@@ -12,7 +12,7 @@ import { WebsiteSection } from "@/utils/websiteSections"
 // Components
 import Sidebar from "@/components/Sidebar"
 import TopBar from "@/components/TopBar"
-import Welcome from "@/components/Welcome"
+import Hero from "@/components/Hero"
 import Contact from "@/components/Contact"
 import Work from "@/components/Work"
 import Experience from "@/components/Experience"
@@ -36,7 +36,7 @@ const HomeContainer = () => {
         scrollToSelectedDiv={scrollToSection}
       />
       <Sidebar open={sidebarVisible} onClose={closeSidebar} />
-      <Welcome onRedirect={scrollToSection} />
+      <Hero onRedirect={scrollToSection} />
       <AboutMe />
       <Experience />
       <Work />

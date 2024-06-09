@@ -30,12 +30,12 @@ const Sidebar = ({ onClose, open }: Props) => {
             <LanguageSelector />
           </SidebarItem>
           <DarkModeToggle />
-          <div
-            id="sidebar-social-links"
-            className="absolute bottom-0 right-0 flex flex-row space-x-4 "
-          >
-            <SocialButtons />
-          </div>
+        </div>
+        <div
+          id="sidebar-social-links"
+          className="absolute flex flex-row space-x-4 bottom-5 right-5 "
+        >
+          <SocialButtons />
         </div>
       </SidebarCloseButtonFrame>
     </SidebarContainer>

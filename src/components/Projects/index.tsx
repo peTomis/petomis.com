@@ -1,7 +1,7 @@
 import { useTranslations } from "@/hooks/useTranslations"
 import { CarouselElementColor } from "@/ui/atoms/CarouselElementText"
-import SectionDescription from "@/ui/atoms/SectionDescription"
-import SectionTitle from "@/ui/atoms/SectionTitle"
+import splash from "@public/images/splash-left.png"
+import darkSplash from "@public/images/splash-left-dark.png"
 import Carousel from "@/ui/organisms/Carousel"
 import image from "@public/images/me.png"
 import CarouselElement from "@/ui/molecules/CarouselElement"
@@ -27,6 +27,9 @@ const Projects = () => {
       title={t("projects.title").toUpperCase()}
       description={[t("projects.description")]}
       titleColor="primary-300"
+      splashImage={splash}
+      splashDarkImage={darkSplash}
+      splashAlign="left"
     >
       <Carousel
         elements={projects.map((project, key) => (

@@ -15,7 +15,9 @@ interface SectionTopSplashProps {
   titleColor?: TypographyColor
   titleFont?: TypographyFont
   descriptionColor?: TypographyColor
+  splashAlign?: "left" | "right"
   splashImage?: StaticImageData
+  splashDarkImage?: StaticImageData
   style?: CSSProperties
 }
 
@@ -24,12 +26,14 @@ const SectionContainer = ({
   description,
   id,
   title,
-  bgColor = "bg-white",
+  bgColor = "bg-background dark:bg-background-dark",
   bgOpacity = "bg-opacity-100",
   titleColor = "black",
   titleFont = "roboto",
   descriptionColor = "black",
+  splashAlign = "right",
   splashImage,
+  splashDarkImage,
   style,
 }: SectionTopSplashProps) => {
   return (
@@ -38,7 +42,13 @@ const SectionContainer = ({
       className={`relative flex flex-col items-center justify-center w-full pt-16 pb-32 mx-auto ${bgOpacity} ${bgColor} space-y-16`}
       style={style}
     >
-      {splashImage && <SectionTopSplash src={splashImage} />}
+      {splashImage && (
+        <SectionTopSplash
+          darkSrc={splashDarkImage ?? splashImage}
+          src={splashImage}
+          align={splashAlign}
+        />
+      )}
       <SectionTitle
         id="work-title"
         label={title}

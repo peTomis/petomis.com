@@ -41,7 +41,7 @@ module.exports = {
       colors: {
         background: {
           DEFAULT: "#f0f0f0",
-          dark: "#202020",
+          dark: "#1f1f1f",
         },
         defaultTextColor: {
           DEFAULT: "#000000",

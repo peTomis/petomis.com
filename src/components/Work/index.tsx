@@ -1,6 +1,7 @@
 // External libraries
 import React from "react"
-import leftSplash from "@public/images/top-light-blue.png"
+import splash from "@public/images/splash-right.png"
+import darkSplash from "@public/images/splash-right-dark.png"
 
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
@@ -24,7 +25,8 @@ const Work = () => {
   return (
     <SectionContainer
       id="work-container"
-      splashImage={leftSplash}
+      splashImage={splash}
+      splashDarkImage={darkSplash}
       title={t("work.title").toUpperCase()}
       description={[t("work.description")]}
       bgColor="bg-primary-200"
