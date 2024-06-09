@@ -1,4 +1,5 @@
 export type TypographyColor =
+  | "black"
   | "defaultTextColor"
   | "defaultTextColor-dark"
   | "primary-50"
@@ -8,6 +9,7 @@ export type TypographyColor =
   | "white"
 
 enum TypographyColorEnum {
+  "black" = "text-black",
   "defaultTextColor" = "text-defaultTextColor",
   "defaultTextColor-dark" = "text-defaultTextColor-dark",
   "primary-50" = "text-primary-50",
@@ -18,6 +20,7 @@ enum TypographyColorEnum {
 }
 
 enum TypographyDarkColorEnum {
+  "black" = "dark:text-black",
   "defaultTextColor" = "dark:text-defaultTextColor",
   "defaultTextColor-dark" = "dark:text-defaultTextColor-dark",
   "primary-50" = "dark:text-primary-50",

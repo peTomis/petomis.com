@@ -70,7 +70,7 @@ const Experience = () => {
   return (
     <div
       id="experience-container"
-      className="flex flex-col items-center justify-center w-full py-16 space-y-16"
+      className="relative flex flex-col items-center justify-center w-full pt-16 pb-32 space-y-16"
     >
       <SectionTitle
         id="experience-title"

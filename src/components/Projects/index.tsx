@@ -5,6 +5,7 @@ import SectionTitle from "@/ui/atoms/SectionTitle"
 import Carousel from "@/ui/organisms/Carousel"
 import image from "@public/images/me.png"
 import CarouselElement from "@/ui/molecules/CarouselElement"
+import SectionContainer from "@/ui/atoms/SectionContainer"
 
 const Projects = () => {
   const { t } = useTranslations("home")
@@ -21,20 +22,12 @@ const Projects = () => {
   }
 
   return (
-    <div
-      className="flex flex-col items-center justify-center w-full px-4 py-16 text-defaultTextColor dark:text-defaultTextColor-dark"
+    <SectionContainer
       id="projects-container"
+      title={t("projects.title").toUpperCase()}
+      description={[t("projects.description")]}
+      titleColor="primary-300"
     >
-      <SectionTitle
-        id="projects-title"
-        label={t("projects.title").toUpperCase()}
-        color={"primary-300"}
-        font={"bacasimeAntique"}
-      />
-      <SectionDescription
-        extralight={true}
-        rows={[t("projects.description")]}
-      />
       <Carousel
         elements={projects.map((project, key) => (
           <CarouselElement
@@ -46,7 +39,7 @@ const Projects = () => {
           />
         ))}
       />
-    </div>
+    </SectionContainer>
   )
 }
 

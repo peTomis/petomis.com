@@ -18,6 +18,7 @@ import SectionDescription from "@/ui/atoms/SectionDescription"
 
 // Patterns
 import overlappingCirclesPatternStyle from "@/ui/patterns/overlapping-circles"
+import SectionContainer from "@/ui/atoms/SectionContainer"
 
 type State = {
   name: string
@@ -88,25 +89,19 @@ const Contact = () => {
   }
 
   return (
-    <div
-      className="flex flex-col items-center justify-center w-full px-4 py-16 bg-primary-400"
+    <SectionContainer
       id="contact-container"
+      title={t("contact.title").toUpperCase()}
+      description={[
+        t("contact.description.phrase1"),
+        t("contact.description.phrase2"),
+      ]}
+      bgColor="bg-primary-400"
+      titleColor="primary-100"
+      titleFont="bacasimeAntique"
+      descriptionColor="defaultTextColor-dark"
       style={overlappingCirclesPatternStyle}
     >
-      <SectionTitle
-        id="contact-title"
-        label={t("contact.title").toUpperCase()}
-        color={"primary-100"}
-        font={"bacasimeAntique"}
-      />
-      <SectionDescription
-        color="defaultTextColor-dark"
-        extralight={true}
-        rows={[
-          t("contact.description.phrase1"),
-          t("contact.description.phrase2"),
-        ]}
-      />
       {formState.succeeded ? (
         <FormSucceeded />
       ) : (
@@ -133,7 +128,7 @@ const Contact = () => {
           />
         </FormContainer>
       )}
-    </div>
+    </SectionContainer>
   )
 }
 
