@@ -14,7 +14,7 @@ const SectionTopSplash = ({
   const alignClass = align === "left" ? "left-0" : "right-0"
   return (
     <>
-      <div className="absolute w-full overflow-visible -top-[140px] d:-top-30">
+      <div className="absolute w-full overflow-visible -top-[140px] d:-top-30 select-none">
         <div className="relative w-full overflow-visible">
           <div
             className={`absolute visible dark:invisible top-0 ${alignClass} overflow-visible fixed-size`}

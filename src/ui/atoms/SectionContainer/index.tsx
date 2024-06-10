@@ -13,6 +13,7 @@ interface SectionTopSplashProps {
   bgColor?: string
   bgOpacity?: string
   titleColor?: TypographyColor
+  titleDarkColor?: TypographyColor
   titleFont?: TypographyFont
   descriptionColor?: TypographyColor
   splashAlign?: "left" | "right"
@@ -29,6 +30,7 @@ const SectionContainer = ({
   bgColor = "bg-background dark:bg-background-dark",
   bgOpacity = "bg-opacity-100",
   titleColor = "black",
+  titleDarkColor = "white",
   titleFont = "roboto",
   descriptionColor = "black",
   splashAlign = "right",
@@ -53,6 +55,7 @@ const SectionContainer = ({
         id="work-title"
         label={title}
         color={titleColor}
+        darkColor={titleDarkColor}
         font={titleFont}
       />
       {description.length > 0 && (

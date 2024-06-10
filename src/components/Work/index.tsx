@@ -1,7 +1,7 @@
 // External libraries
 import React from "react"
-import splash from "@public/images/splash-right.png"
-import darkSplash from "@public/images/splash-right-dark.png"
+import splash from "@public/images/splash-left.png"
+import darkSplash from "@public/images/splash-left-dark.png"
 
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
@@ -27,10 +27,11 @@ const Work = () => {
       id="work-container"
       splashImage={splash}
       splashDarkImage={darkSplash}
+      titleColor="primary-100"
+      titleDarkColor="primary-100"
       title={t("work.title").toUpperCase()}
       description={[t("work.description")]}
-      bgColor="bg-primary-200"
-      bgOpacity="bg-opacity-50"
+      splashAlign="left"
     >
       {experience && (
         <ActivityCardExpanded

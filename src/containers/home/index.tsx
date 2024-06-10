@@ -39,8 +39,8 @@ const HomeContainer = () => {
       <Hero onRedirect={scrollToSection} />
       <AboutMe />
       <Experience />
-      <Work />
       <Projects />
+      <Work />
       <Contact />
       <BottomBar />
       {isMailShortcutVisible && (

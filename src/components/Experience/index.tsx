@@ -75,12 +75,14 @@ const Experience = () => {
       splashImage={splash}
       splashDarkImage={darkSplash}
       title={t("experience.title").toUpperCase()}
+      titleColor="primary-300"
+      titleDarkColor="primary-300"
       description={[]}
       splashAlign="left"
     >
       <div
         id="experience-filter-container"
-        className="flex flex-col items-start justify-start w-full space-y-2 max-w-[600px] md:px-4 md:max-w-[800px]  xl:max-w-[900px]"
+        className="flex flex-col items-start z-10 justify-start w-full space-y-2 max-w-[600px] md:px-4 md:max-w-[800px]  xl:max-w-[900px]"
       >
         <ListFilter
           icon={<BriefcaseIcon />}

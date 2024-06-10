@@ -1,43 +1,45 @@
 import Typography from "../Typography"
 
 interface Props {
-  title: string
+  title: React.ReactNode
   description: string
+  name: string
   color?: CarouselElementColor
   selected?: boolean
 }
 
 export enum CarouselElementColor {
-  RED = "bg-red-800",
+  RED = "bg-[#f10000]",
   BLACK = "bg-black",
   BLUE = "bg-primary-300",
   PURPLE = "bg-purple-800",
   YELLOW = "bg-yellow-800",
+  GREEN = "bg-green-800",
 }
 
 const CarouselElementText = ({
   title,
+  name,
   description,
   selected,
   color = CarouselElementColor.BLUE,
 }: Props) => {
-  const verticalTitle = title.split("")
+  const verticalTitle = name.split("")
   return (
     <>
       {selected ? (
         <div
-          className={`flex flex-col flex-1 justify-start items-center p-8 space-y-8 bg-background-dark dark:bg-background bg-opacity-50 dark:bg-opacity-50`}
+          className={`flex flex-col flex-1 justify-start items-center px-8 py-8 lg:py-16 bg-background-dark bg-opacity-50`}
         >
-          <Typography
-            text={title.toUpperCase()}
-            size="h4"
-            color="defaultTextColor-dark"
-          />
-          <Typography
-            text={description}
-            light={true}
-            color="defaultTextColor-dark"
-          />
+          <div className="flex flex-none">{title}</div>
+          <div className="flex flex-col items-center justify-center flex-1 w-full space-y-4 text-center">
+            <Typography
+              text={description}
+              light={true}
+              color="defaultTextColor-dark"
+              size="h6"
+            />
+          </div>
         </div>
       ) : (
         <div
