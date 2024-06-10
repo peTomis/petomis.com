@@ -30,22 +30,15 @@ export function useJobExperiences(): WorkExperience[] {
   const { t } = useTranslations("jobs")
 
   const next: WorkExperience = {
-    job: "Fullstack Developer",
+    job: "Software Developer",
     date: "2024 - today",
-    programmingLanguages: ["Typescript", "Node,js", "React"],
-    tools: ["VSCode", "AWS"],
-    variant: "anubidigital",
+    programmingLanguages: ["Node,js", "Angular", "Swift", "Flutter"],
+    tools: ["VSCode", "XCode", "AWS"],
+    variant: "darkAndBlue",
     color: "defaultTextColor-dark",
-    mainColor: "anubidigital",
+    mainColor: "primary-100",
     image: () => (
       <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
-        {/* <Image
-          src={anubiLogo}
-          className="object-cover -z-10"
-          alt=""
-          width={200}
-          height={300}
-        /> */}
         SOON
       </div>
     ),
@@ -67,8 +60,8 @@ export function useJobExperiences(): WorkExperience[] {
             className="h-[260px] items-center flex mx-auto w-full justify-center cursor-pointer"
             onClick={() => window.open(process.env.NEXT, "_blank")}
           >
-            <div className="flex lg:hidden">NEXT</div>
-            <div className="hidden lg:flex">NEXT</div>
+            <div className="flex lg:hidden">SOON</div>
+            <div className="hidden lg:flex">SOON</div>
           </div>
         }
         tasks={[
@@ -124,7 +117,7 @@ export function useJobExperiences(): WorkExperience[] {
   const anubidigital: WorkExperience = {
     job: "Fullstack Developer",
     date: "2022 - 2024",
-    programmingLanguages: ["Typescript", "Node,js", "React"],
+    programmingLanguages: ["Node,js", "React"],
     tools: ["VSCode", "AWS"],
     variant: "anubidigital",
     color: "defaultTextColor-dark",
