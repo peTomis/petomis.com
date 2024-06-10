@@ -68,30 +68,8 @@ module.exports = {
         mineTitle: {
           DEFAULT: "#FFFFFF",
         },
-        vscodebg: {
-          DEFAULT: "#1E1E1E",
-        },
-        vscodeblue: {
-          DEFAULT: "#569CD6",
-        },
-        vscodegreen: {
-          DEFAULT: "#4EC9B0",
-        },
-        vscodelightgreen: {
-          DEFAULT: "#B5CEA8",
-        },
-        vscodelightblue: {
-          DEFAULT: "#9CDCFE",
-        },
-        vscodepurple: {
-          DEFAULT: "#C586C0",
-        },
-
-        vscodelightyellow: {
-          DEFAULT: "#DCDCAA",
-        },
-        vscodeyellow: {
-          DEFAULT: "#FFD700",
+        anubidigital: {
+          DEFAULT: "#B02727",
         },
       },
     },

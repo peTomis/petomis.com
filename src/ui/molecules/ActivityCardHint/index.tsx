@@ -7,6 +7,7 @@ import PointerClickIcon from "@/ui/icons/PointerClick"
 enum ActivityCardVariant {
   darkAndBlue = "darkAndBlue",
   lightAndBlue = "lightAndBlue",
+  anubidigital = "anubidigital",
 }
 
 interface Props {

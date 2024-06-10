@@ -4,20 +4,23 @@ import { TypographyColor } from "@/ui/atoms/Typography"
 export enum ActivityCardExpandedFillVariant {
   darkAndBlue = `fill-primary-50`,
   lightAndBlue = `fill-defaultTextColor`,
+  anubidigital = `fill-anubidigital`,
 }
 
 enum ActivityCardExpandedBgVariant {
   darkAndBlue = `bg-black  text-primary-50`,
   lightAndBlue = `bg-primary-50 text-defaultTextColor`,
+  anubidigital = `bg-black text-anubidigital`,
 }
 
 enum Color {
   darkAndBlue = "defaultTextColor-dark",
   lightAndBlue = "defaultTextColor",
+  anubidigital = "defaultTextColor-dark",
 }
 
 interface Props {
-  variant?: "darkAndBlue" | "lightAndBlue"
+  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital"
   children: React.ReactNode
   onClose: () => void
 }

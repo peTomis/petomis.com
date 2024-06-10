@@ -1,6 +1,7 @@
 // Hooks
 import { useTranslations } from "./useTranslations"
-
+import Image from "next/image"
+import anubiLogo from "@public/images/anubidigital-logo.svg"
 // Molecules
 import ExperienceDescriptionContainer from "@/ui/molecules/ExperienceDescriptionContainer"
 
@@ -14,7 +15,7 @@ import WorkExperience from "@/ui/organisms/WorkExperience"
 
 export interface WorkExperience {
   job: string
-  variant?: "darkAndBlue" | "lightAndBlue"
+  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital"
   date: string
   programmingLanguages: string[]
   tools: string[]
@@ -33,12 +34,18 @@ export function useJobExperiences(): WorkExperience[] {
     date: "2022- today",
     programmingLanguages: ["Swift", "Kotlin", "Flutter"],
     tools: ["XCode", "Android Studio", "IntelliJ"],
-    variant: "darkAndBlue",
+    variant: "anubidigital",
     color: "defaultTextColor-dark",
-    mainColor: "primary-100",
+    mainColor: "anubidigital",
     image: () => (
       <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
-        <AnubidigitalIcon />
+        <Image
+          src={anubiLogo}
+          className="object-cover -z-10"
+          alt=""
+          width={200}
+          height={300}
+        />
       </div>
     ),
     description: () => (
