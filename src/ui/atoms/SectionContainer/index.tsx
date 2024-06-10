@@ -41,7 +41,7 @@ const SectionContainer = ({
   return (
     <div
       id={id}
-      className={`relative flex flex-col items-center justify-center w-full pt-16 pb-32 mx-auto ${bgOpacity} ${bgColor} space-y-16`}
+      className={`relative flex flex-col items-center justify-center w-full pt-8 pb-32 mx-auto ${bgOpacity} ${bgColor} space-y-8`}
       style={style}
     >
       {splashImage && (

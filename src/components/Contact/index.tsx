@@ -98,6 +98,7 @@ const Contact = () => {
       ]}
       bgColor="bg-primary-400"
       titleColor="primary-100"
+      titleDarkColor="primary-100"
       titleFont="bacasimeAntique"
       descriptionColor="defaultTextColor-dark"
       style={overlappingCirclesPatternStyle}

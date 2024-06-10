@@ -19,7 +19,7 @@ const CarouselElementSkewed = ({
         className={`flex overflow-hidden z-10 ${
           hovered
             ? ""
-            : "w-[40px] sm:w-[60px] xxl:w-[100px]  skew-y-6 opacity-60"
+            : "w-[40px] sm:w-[60px] sm:max-w-[100px] lg:w-[100px]  skew-y-6 opacity-60"
         }`}
         onMouseEnter={onMouseEnter}
       >

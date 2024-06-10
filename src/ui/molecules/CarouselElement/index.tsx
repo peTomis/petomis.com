@@ -26,7 +26,7 @@ const CarouselElement = ({
 }: Props) => {
   return (
     <div
-      className="relative cursor-pointer text-defaultTextColor-dark w-[90vw] flex flex-col h-[400px] sm:w-[300px] sm:h-[400px] lg:w-[600px] lg:h-[400px] xxl:w-[800px] xxl:h-[500px]"
+      className="relative cursor-pointer text-defaultTextColor-dark w-[90vw] max-w-[400px] flex flex-col h-[400px] sm:w-full sm:max-w-[600px] xl:w-[800px] lg:max-w-[800px] lg:h-[500px]"
       onClick={selected ? onClick : undefined}
     >
       {selected && <CarouselElementImage src={src} />}

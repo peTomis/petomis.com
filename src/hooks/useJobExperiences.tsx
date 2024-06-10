@@ -29,11 +29,103 @@ export interface WorkExperience {
 export function useJobExperiences(): WorkExperience[] {
   const { t } = useTranslations("jobs")
 
+  const next: WorkExperience = {
+    job: "Fullstack Developer",
+    date: "2024 - today",
+    programmingLanguages: ["Typescript", "Node,js", "React"],
+    tools: ["VSCode", "AWS"],
+    variant: "anubidigital",
+    color: "defaultTextColor-dark",
+    mainColor: "anubidigital",
+    image: () => (
+      <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
+        {/* <Image
+          src={anubiLogo}
+          className="object-cover -z-10"
+          alt=""
+          width={200}
+          height={300}
+        /> */}
+        SOON
+      </div>
+    ),
+    description: () => (
+      <ExperienceDescriptionContainer
+        job={next.job}
+        date={next.date}
+        programmingLanguages={next.programmingLanguages}
+        tools={next.tools}
+        color={next.color}
+      />
+    ),
+    details: () => (
+      <WorkExperience
+        mainColor={next.mainColor}
+        color={next.color}
+        title={
+          <div
+            className="h-[260px] items-center flex mx-auto w-full justify-center cursor-pointer"
+            onClick={() => window.open(process.env.NEXT, "_blank")}
+          >
+            <div className="flex lg:hidden">NEXT</div>
+            <div className="hidden lg:flex">NEXT</div>
+          </div>
+        }
+        tasks={[
+          {
+            title: t("next.tasks.project.title"),
+            description: t("next.tasks.project.description"),
+            titleColor: next.mainColor,
+            textColor: next.color,
+          },
+          {
+            title: t("next.tasks.onboarding.title"),
+            description: t("next.tasks.onboarding.description"),
+            titleColor: next.mainColor,
+            textColor: next.color,
+          },
+          {
+            title: t("next.tasks.datawarehouse.title"),
+            description: t("next.tasks.datawarehouse.description"),
+            titleColor: next.mainColor,
+            textColor: next.color,
+          },
+          {
+            title: t("next.tasks.backoffice.title"),
+            description: t("next.tasks.backoffice.description"),
+            titleColor: next.mainColor,
+            textColor: next.color,
+          },
+          {
+            title: t("next.tasks.rnd.title"),
+            description: t("next.tasks.rnd.description"),
+            titleColor: next.mainColor,
+            textColor: next.color,
+          },
+        ]}
+        sentences={[t("next.sentences.first"), t("next.sentences.second")]}
+        tools={[
+          {
+            list: t("next.tools.other.list"),
+          },
+          {
+            category: t("next.tools.backend.title") ?? "",
+            list: t("next.tools.backend.list"),
+          },
+          {
+            category: t("next.tools.frontend.title") ?? "",
+            list: t("next.tools.frontend.list"),
+          },
+        ]}
+      />
+    ),
+  }
+
   const anubidigital: WorkExperience = {
     job: "Fullstack Developer",
-    date: "2022- today",
-    programmingLanguages: ["Swift", "Kotlin", "Flutter"],
-    tools: ["XCode", "Android Studio", "IntelliJ"],
+    date: "2022 - 2024",
+    programmingLanguages: ["Typescript", "Node,js", "React"],
+    tools: ["VSCode", "AWS"],
     variant: "anubidigital",
     color: "defaultTextColor-dark",
     mainColor: "anubidigital",
@@ -212,5 +304,5 @@ export function useJobExperiences(): WorkExperience[] {
     ),
   }
 
-  return [anubidigital, freelanceMobileDeveloper]
+  return [next, anubidigital, freelanceMobileDeveloper]
 }
