@@ -119,7 +119,7 @@ const Carousel = ({ elements }: Props) => {
   return (
     <div
       id="carousel-container-background"
-      className="flex flex-col items-center justify-center w-full"
+      className="flex flex-col items-center justify-center w-full sm:px-2"
     >
       <div
         id="carousel-container"

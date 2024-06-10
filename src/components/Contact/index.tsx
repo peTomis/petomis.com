@@ -18,6 +18,7 @@ import SectionDescription from "@/ui/atoms/SectionDescription"
 
 // Patterns
 import overlappingCirclesPatternStyle from "@/ui/patterns/overlapping-circles"
+import SectionContainer from "@/ui/atoms/SectionContainer"
 
 type State = {
   name: string
@@ -88,52 +89,49 @@ const Contact = () => {
   }
 
   return (
-    <div
-      className="flex flex-col items-center justify-center w-full px-4 py-16 bg-primary-400"
+    <SectionContainer
       id="contact-container"
+      title={t("contact.title").toUpperCase()}
+      description={[
+        t("contact.description.phrase1"),
+        t("contact.description.phrase2"),
+      ]}
+      bgColor="bg-primary-400"
+      titleColor="primary-100"
+      titleDarkColor="primary-100"
+      titleFont="bacasimeAntique"
+      descriptionColor="defaultTextColor-dark"
       style={overlappingCirclesPatternStyle}
     >
-      <SectionTitle
-        id="contact-title"
-        label={t("contact.title").toUpperCase()}
-        color={"primary-100"}
-        font={"bacasimeAntique"}
-      />
-      <SectionDescription
-        color="defaultTextColor-dark"
-        extralight={true}
-        rows={[
-          t("contact.description.phrase1"),
-          t("contact.description.phrase2"),
-        ]}
-      />
-      {formState.succeeded ? (
-        <FormSucceeded />
-      ) : (
-        <FormContainer onSubmit={handleSubmit}>
-          <FormInput
-            error={errors.name}
-            label={t("contact.name")}
-            onChange={(s) => dispatch({ type: "setName", payload: s })}
-            placeholder={t("contact.namePlaceholder") as string}
-          />
-          <FormInput
-            error={errors.email}
-            label={t("contact.email")}
-            onChange={(s) => dispatch({ type: "setEmail", payload: s })}
-            placeholder={t("contact.emailPlaceholder") as string}
-          />
+      <div className="flex items-center justify-center w-full p-2">
+        {formState.succeeded ? (
+          <FormSucceeded />
+        ) : (
+          <FormContainer onSubmit={handleSubmit}>
+            <FormInput
+              error={errors.name}
+              label={t("contact.name")}
+              onChange={(s) => dispatch({ type: "setName", payload: s })}
+              placeholder={t("contact.namePlaceholder") as string}
+            />
+            <FormInput
+              error={errors.email}
+              label={t("contact.email")}
+              onChange={(s) => dispatch({ type: "setEmail", payload: s })}
+              placeholder={t("contact.emailPlaceholder") as string}
+            />
 
-          <FormInput
-            error={errors.message}
-            label={t("contact.message")}
-            onChange={(s) => dispatch({ type: "setMessage", payload: s })}
-            placeholder={t("contact.messagePlaceholder") as string}
-            type="area"
-          />
-        </FormContainer>
-      )}
-    </div>
+            <FormInput
+              error={errors.message}
+              label={t("contact.message")}
+              onChange={(s) => dispatch({ type: "setMessage", payload: s })}
+              placeholder={t("contact.messagePlaceholder") as string}
+              type="area"
+            />
+          </FormContainer>
+        )}
+      </div>
+    </SectionContainer>
   )
 }
 

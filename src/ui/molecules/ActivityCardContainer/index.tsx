@@ -3,10 +3,11 @@ import { customTransitionAnimation } from "@/ui/animations/CustomTransitionAnima
 enum ActivityCardContainerVariant {
   darkAndBlue = `bg-black`,
   lightAndBlue = `bg-primary-50`,
+  anubidigital = `bg-black`,
 }
 
 interface Props {
-  variant?: "darkAndBlue" | "lightAndBlue"
+  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital"
   children: React.ReactNode
   onClick?: () => void
   visible?: boolean

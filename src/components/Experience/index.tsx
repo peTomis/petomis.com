@@ -1,5 +1,7 @@
 // External libraries
 import React from "react"
+import splash from "@public/images/splash-left.png"
+import darkSplash from "@public/images/splash-left-dark.png"
 
 // External data
 import GetExperienceData from "./experiences"
@@ -15,12 +17,12 @@ import ExperienceCard from "@/ui/molecules/ExperienceCard"
 
 // Atoms
 import ExperienceCardContainer from "@/ui/atoms/ExperienceCardContainer"
-import SectionTitle from "@/ui/atoms/SectionTitle"
 import { ListFilterColor } from "@/ui/molecules/ListFilterElements"
 
 // Icons
 import FunnelIcon from "@/ui/icons/Funnel"
 import BriefcaseIcon from "@/ui/icons/Briefcase"
+import SectionContainer from "@/ui/atoms/SectionContainer"
 
 const Experience = () => {
   const { t } = useTranslations("home")
@@ -68,20 +70,19 @@ const Experience = () => {
   )
 
   return (
-    <div
+    <SectionContainer
       id="experience-container"
-      className="flex flex-col items-center justify-center w-full py-16 space-y-16"
+      splashImage={splash}
+      splashDarkImage={darkSplash}
+      title={t("experience.title").toUpperCase()}
+      titleColor="primary-300"
+      titleDarkColor="primary-300"
+      description={[]}
+      splashAlign="left"
     >
-      <SectionTitle
-        id="experience-title"
-        label={t("experience.title").toUpperCase()}
-        color={"primary-300"}
-        font={"bacasimeAntique"}
-      />
-
       <div
         id="experience-filter-container"
-        className="flex flex-col items-start justify-start w-full space-y-2 max-w-[600px] md:px-4 md:max-w-[800px]  xl:max-w-[900px]"
+        className="flex flex-col items-start z-10 justify-start w-full space-y-2 max-w-[600px] md:px-4 md:max-w-[800px]  xl:max-w-[900px]"
       >
         <ListFilter
           icon={<BriefcaseIcon />}
@@ -143,7 +144,7 @@ const Experience = () => {
           />
         ))}
       </ExperienceCardContainer>
-    </div>
+    </SectionContainer>
   )
 }
 

@@ -8,6 +8,7 @@ const env = {
   ANUBI: "https://www.anubidigital.com",
   HEROPATTERNS: "https://www.heropatterns.com",
   HEROICONS: "https://www.heroicons.com",
+  METCH_GG: "https://app.metch.gg",
 }
 
 const nextConfig = {

@@ -1,52 +1,60 @@
 import { useTranslations } from "@/hooks/useTranslations"
-import { CarouselElementColor } from "@/ui/atoms/CarouselElementText"
-import SectionDescription from "@/ui/atoms/SectionDescription"
-import SectionTitle from "@/ui/atoms/SectionTitle"
+import splash from "@public/images/splash-right.png"
+import darkSplash from "@public/images/splash-right-dark.png"
 import Carousel from "@/ui/organisms/Carousel"
-import image from "@public/images/me.png"
 import CarouselElement from "@/ui/molecules/CarouselElement"
+import SectionContainer from "@/ui/atoms/SectionContainer"
+import image from "@public/images/me.png"
+import metchImage from "@public/images/metch-bg.png"
+import Typography from "@/ui/atoms/Typography"
+import { CarouselElementColor } from "@/ui/atoms/CarouselElementText"
+import MetchLogo from "@/ui/icons/MetchLogo"
 
 const Projects = () => {
   const { t } = useTranslations("home")
 
-  const projects = []
-
-  for (let i = 0; i < 5; i++) {
-    projects.push({
-      src: image,
-      title: t("projects.titlePlaceholder") + i,
-      description: t("projects.descriptionPlaceholder") + i,
-      color: CarouselElementColor.BLUE,
-    })
+  const metch = {
+    src: metchImage,
+    name: "Metch",
+    title: (
+      <div className="w-[200px] lg:w-[300px]">
+        <MetchLogo />
+      </div>
+    ),
+    description:
+      "The game Changer! Match is a platform that aims to make the process of finding talents and teams in the gaming sector simple and efficient.",
+    color: CarouselElementColor.RED,
+    website: process.env.METCH_GG,
   }
 
+  const projects = [metch]
+
   return (
-    <div
-      className="flex flex-col items-center justify-center w-full px-4 py-16 text-defaultTextColor dark:text-defaultTextColor-dark"
+    <SectionContainer
       id="projects-container"
+      title={t("projects.title").toUpperCase()}
+      description={[t("projects.description")]}
+      bgColor="bg-primary-200"
+      bgOpacity="bg-opacity-50"
+      splashImage={splash}
+      splashDarkImage={darkSplash}
     >
-      <SectionTitle
-        id="projects-title"
-        label={t("projects.title").toUpperCase()}
-        color={"primary-300"}
-        font={"bacasimeAntique"}
-      />
-      <SectionDescription
-        extralight={true}
-        rows={[t("projects.description")]}
-      />
-      <Carousel
-        elements={projects.map((project, key) => (
-          <CarouselElement
-            key={key}
-            src={project.src}
-            title={project.title}
-            description={project.description}
-            color={project.color}
-          />
-        ))}
-      />
-    </div>
+      <div className="pt-8">
+        <Carousel
+          elements={projects.map((project, key) => (
+            <CarouselElement
+              key={key}
+              src={project.src}
+              name={project.name}
+              title={project.title}
+              description={project.description}
+              color={project.color}
+              onClick={() => window.open(project.website, "_blank")}
+            />
+          ))}
+        />
+      </div>
+    </SectionContainer>
   )
 }
 
