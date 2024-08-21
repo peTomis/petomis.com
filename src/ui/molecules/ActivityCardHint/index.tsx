@@ -8,6 +8,7 @@ enum ActivityCardVariant {
   darkAndBlue = "darkAndBlue",
   lightAndBlue = "lightAndBlue",
   anubidigital = "anubidigital",
+  pienissimo = "pienissimo",
 }
 
 interface Props {

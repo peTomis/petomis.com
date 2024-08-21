@@ -1,7 +1,10 @@
 // Hooks
 import { useTranslations } from "./useTranslations"
 import Image from "next/image"
-import anubiLogo from "@public/images/anubidigital-logo.svg"
+
+// Organisms
+import WorkExperience from "@/ui/organisms/WorkExperience"
+
 // Molecules
 import ExperienceDescriptionContainer from "@/ui/molecules/ExperienceDescriptionContainer"
 
@@ -9,13 +12,11 @@ import ExperienceDescriptionContainer from "@/ui/molecules/ExperienceDescription
 import Typography, { TypographyColor } from "@/ui/atoms/Typography"
 
 // Icons
-import AnubidigitalIcon from "@/ui/icons/companies/Anubidigital"
 import MobileDeveloperIcon from "@/ui/icons/companies/MobileDeveloper"
-import WorkExperience from "@/ui/organisms/WorkExperience"
 
 export interface WorkExperience {
   job: string
-  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital"
+  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital" | "pienissimo"
   date: string
   programmingLanguages: string[]
   tools: string[]
@@ -29,85 +30,117 @@ export interface WorkExperience {
 export function useJobExperiences(): WorkExperience[] {
   const { t } = useTranslations("jobs")
 
-  const next: WorkExperience = {
+  const pienissimo: WorkExperience = {
     job: "Software Developer",
     date: "2024 - today",
-    programmingLanguages: ["Node,js", "Angular", "Swift", "Flutter"],
+    programmingLanguages: ["Node,js", "Angular", "Swift"],
     tools: ["VSCode", "XCode", "AWS"],
-    variant: "darkAndBlue",
-    color: "defaultTextColor-dark",
-    mainColor: "primary-100",
+    variant: "pienissimo",
+    color: "defaultTextColor",
+    mainColor: "pienissimo",
     image: () => (
       <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
-        SOON
+        <Image
+          src={
+            "https://www.pienissimo.com/wp-content/uploads/2019/08/pienissimo-black-con-payoff.png"
+          }
+          className="object-cover -z-10"
+          alt=""
+          width={200}
+          height={300}
+        />
       </div>
     ),
     description: () => (
       <ExperienceDescriptionContainer
-        job={next.job}
-        date={next.date}
-        programmingLanguages={next.programmingLanguages}
-        tools={next.tools}
-        color={next.color}
+        job={pienissimo.job}
+        date={pienissimo.date}
+        programmingLanguages={pienissimo.programmingLanguages}
+        tools={pienissimo.tools}
       />
     ),
     details: () => (
       <WorkExperience
-        mainColor={next.mainColor}
-        color={next.color}
+        mainColor={pienissimo.mainColor}
+        color={pienissimo.color}
         title={
           <div
             className="h-[260px] items-center flex mx-auto w-full justify-center cursor-pointer"
-            onClick={() => window.open(process.env.NEXT, "_blank")}
+            onClick={() => window.open(process.env.PIENISSIMO, "_blank")}
           >
-            <div className="flex lg:hidden">SOON</div>
-            <div className="hidden lg:flex">SOON</div>
+            <div className="flex lg:hidden">
+              <Image
+                src={
+                  "https://www.pienissimo.com/wp-content/uploads/2019/08/pienissimo-black-con-payoff.png"
+                }
+                className="object-cover -z-10"
+                alt=""
+                width={400}
+                height={80}
+              />
+            </div>
+            <div className="hidden lg:flex">
+              <Image
+                src={
+                  "https://www.pienissimo.com/wp-content/uploads/2019/08/pienissimo-black-con-payoff.png"
+                }
+                className="object-cover -z-10"
+                alt=""
+                width={400}
+                height={100}
+              />
+            </div>
           </div>
         }
-        tasks={[
-          {
-            title: t("next.tasks.project.title"),
-            description: t("next.tasks.project.description"),
-            titleColor: next.mainColor,
-            textColor: next.color,
-          },
-          {
-            title: t("next.tasks.onboarding.title"),
-            description: t("next.tasks.onboarding.description"),
-            titleColor: next.mainColor,
-            textColor: next.color,
-          },
-          {
-            title: t("next.tasks.datawarehouse.title"),
-            description: t("next.tasks.datawarehouse.description"),
-            titleColor: next.mainColor,
-            textColor: next.color,
-          },
-          {
-            title: t("next.tasks.backoffice.title"),
-            description: t("next.tasks.backoffice.description"),
-            titleColor: next.mainColor,
-            textColor: next.color,
-          },
-          {
-            title: t("next.tasks.rnd.title"),
-            description: t("next.tasks.rnd.description"),
-            titleColor: next.mainColor,
-            textColor: next.color,
-          },
+        tasks={
+          [
+            // {
+            //   title: t("pienissimo.tasks.project.title"),
+            //   description: t("pienissimo.tasks.project.description"),
+            //   titleColor: pienissimo.mainColor,
+            //   textColor: pienissimo.color,
+            // },
+            // {
+            //   title: t("pienissimo.tasks.onboarding.title"),
+            //   description: t("pienissimo.tasks.onboarding.description"),
+            //   titleColor: pienissimo.mainColor,
+            //   textColor: pienissimo.color,
+            // },
+            // {
+            //   title: t("pienissimo.tasks.datawarehouse.title"),
+            //   description: t("pienissimo.tasks.datawarehouse.description"),
+            //   titleColor: pienissimo.mainColor,
+            //   textColor: pienissimo.color,
+            // },
+            // {
+            //   title: t("pienissimo.tasks.backoffice.title"),
+            //   description: t("pienissimo.tasks.backoffice.description"),
+            //   titleColor: pienissimo.mainColor,
+            //   textColor: pienissimo.color,
+            // },
+            // {
+            //   title: t("pienissimo.tasks.rnd.title"),
+            //   description: t("pienissimo.tasks.rnd.description"),
+            //   titleColor: pienissimo.mainColor,
+            //   textColor: pienissimo.color,
+            // },
+          ]
+        }
+        sentences={[
+          t("pienissimo.sentences.first"),
+          // t("pienissimo.sentences.second"),
         ]}
-        sentences={[t("next.sentences.first"), t("next.sentences.second")]}
         tools={[
           {
-            list: t("next.tools.other.list"),
+            list: t("pienissimo.tools.other.list"),
           },
           {
-            category: t("next.tools.backend.title") ?? "",
-            list: t("next.tools.backend.list"),
+            category: t("pienissimo.tools.backend.title") ?? "",
+            list: t("pienissimo.tools.backend.list"),
           },
           {
-            category: t("next.tools.frontend.title") ?? "",
-            list: t("next.tools.frontend.list"),
+            category: t("pienissimo.tools.frontend.title") ?? "",
+            list: t("pienissimo.tools.frontend.list"),
           },
         ]}
       />
@@ -125,7 +158,9 @@ export function useJobExperiences(): WorkExperience[] {
     image: () => (
       <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
         <Image
-          src={anubiLogo}
+          src={
+            "https://images.squarespace-cdn.com/content/v1/6660826e20032a00cf58cccd/903a11ac-ec8f-444b-86a7-981c582299d2/Anubi+Digital+Logo+White.png"
+          }
           className="object-cover -z-10"
           alt=""
           width={200}
@@ -152,10 +187,26 @@ export function useJobExperiences(): WorkExperience[] {
             onClick={() => window.open(process.env.ANUBI, "_blank")}
           >
             <div className="flex lg:hidden">
-              <AnubidigitalIcon height={80} />
+              <Image
+                src={
+                  "https://images.squarespace-cdn.com/content/v1/6660826e20032a00cf58cccd/903a11ac-ec8f-444b-86a7-981c582299d2/Anubi+Digital+Logo+White.png"
+                }
+                className="object-cover -z-10"
+                alt=""
+                width={400}
+                height={80}
+              />
             </div>
             <div className="hidden lg:flex">
-              <AnubidigitalIcon height={100} />
+              <Image
+                src={
+                  "https://images.squarespace-cdn.com/content/v1/6660826e20032a00cf58cccd/903a11ac-ec8f-444b-86a7-981c582299d2/Anubi+Digital+Logo+White.png"
+                }
+                className="object-cover -z-10"
+                alt=""
+                width={400}
+                height={100}
+              />
             </div>
           </div>
         }
@@ -297,5 +348,5 @@ export function useJobExperiences(): WorkExperience[] {
     ),
   }
 
-  return [next, anubidigital, freelanceMobileDeveloper]
+  return [pienissimo, anubidigital, freelanceMobileDeveloper]
 }

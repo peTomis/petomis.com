@@ -7,7 +7,7 @@ import ActivityCardExpandedContainer from "@/ui/molecules/ActivityCardExpandedCo
 interface Props {
   onClose: () => void
   content: React.ReactNode
-  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital"
+  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital" | "pienissimo"
 }
 
 const ActivityCardExpanded = ({ content, onClose, variant }: Props) => {

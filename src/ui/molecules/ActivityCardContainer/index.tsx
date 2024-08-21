@@ -4,10 +4,11 @@ enum ActivityCardContainerVariant {
   darkAndBlue = `bg-black`,
   lightAndBlue = `bg-primary-50`,
   anubidigital = `bg-black`,
+  pienissimo = `bg-white`,
 }
 
 interface Props {
-  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital"
+  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital" | "pienissimo"
   children: React.ReactNode
   onClick?: () => void
   visible?: boolean
@@ -25,7 +26,7 @@ const ActivityCardContainer = ({
   return (
     <div
       id={id}
-      className={`cursor-pointer relative mx-auto h-[500px] w-[300px] overflow-hidden select-none ${
+      className={`cursor-pointer relative mx-auto h-[500px] w-[300px] overflow-hidden rounded-lg drop-shadow-2xl select-none ${
         ActivityCardContainerVariant[variant]
       }  ${customTransitionAnimation(visible)}`}
       onClick={onClick}

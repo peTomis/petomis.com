@@ -1,26 +1,28 @@
 import ActivityCardHint from "../ActivityCardHint"
-import { TypographyColor } from "@/ui/atoms/Typography"
 
 export enum ActivityCardExpandedFillVariant {
   darkAndBlue = `fill-primary-50`,
   lightAndBlue = `fill-defaultTextColor`,
   anubidigital = `fill-anubidigital`,
+  pienissimo = `fill-pienissimo`,
 }
 
 enum ActivityCardExpandedBgVariant {
   darkAndBlue = `bg-black  text-primary-50`,
   lightAndBlue = `bg-primary-50 text-defaultTextColor`,
   anubidigital = `bg-black text-anubidigital`,
+  pienissimo = `bg-white text-defaultTextColor`,
 }
 
 enum Color {
   darkAndBlue = "defaultTextColor-dark",
   lightAndBlue = "defaultTextColor",
   anubidigital = "defaultTextColor-dark",
+  pienissimo = "defaultTextColor",
 }
 
 interface Props {
-  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital"
+  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital" | "pienissimo"
   children: React.ReactNode
   onClose: () => void
 }
