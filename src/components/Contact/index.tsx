@@ -11,13 +11,6 @@ import { useTranslations } from "@/hooks/useTranslations"
 // Molecules
 import FormInput from "@/ui/molecules/FormInput"
 import FormContainer from "@/ui/molecules/FormContainer"
-
-// Atoms
-import SectionTitle from "@/ui/atoms/SectionTitle"
-import SectionDescription from "@/ui/atoms/SectionDescription"
-
-// Patterns
-import overlappingCirclesPatternStyle from "@/ui/patterns/overlapping-circles"
 import SectionContainer from "@/ui/atoms/SectionContainer"
 
 type State = {
@@ -97,11 +90,11 @@ const Contact = () => {
         t("contact.description.phrase2"),
       ]}
       bgColor="bg-primary-400"
+      bgOpacity="bg-opacity-50"
       titleColor="primary-100"
       titleDarkColor="primary-100"
       titleFont="bacasimeAntique"
       descriptionColor="defaultTextColor-dark"
-      style={overlappingCirclesPatternStyle}
     >
       <div className="flex items-center justify-center w-full p-2">
         {formState.succeeded ? (

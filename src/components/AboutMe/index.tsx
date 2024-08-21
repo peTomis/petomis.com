@@ -1,7 +1,3 @@
-// External Libraries
-import Image from "next/image"
-import leftSplash from "@public/images/left-splash.png"
-import rightSplash from "@public/images/right-splash.png"
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 
@@ -11,7 +7,6 @@ import SectionTitle from "@/ui/atoms/SectionTitle"
 import Typography from "@/ui/atoms/Typography"
 
 // Patterns
-import circuitBoardPatternStyle from "@/ui/patterns/circuit-board"
 
 const AboutMe = () => {
   const { t } = useTranslations("home")
@@ -19,9 +14,8 @@ const AboutMe = () => {
     <div
       id="about-me-container"
       className={
-        "relative pt-12 pb-24 lg:pt-24 flex flex-col bg-primary-100 bg-opacity-20 px-8 space-y-8 lg:mx-auto w-full justify-center items-center lg:items-center lg:justify-start"
+        "relative pt-12 pb-24 lg:pt-24 flex flex-col bg-primary-100 bg-opacity-10 px-8 space-y-8 lg:mx-auto w-full justify-center items-center lg:items-center lg:justify-start"
       }
-      style={circuitBoardPatternStyle}
     >
       <SectionTitle
         id="about-me-title"
