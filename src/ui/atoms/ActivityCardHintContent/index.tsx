@@ -4,18 +4,21 @@ enum ActivityCardVariant {
   darkAndBlue = "darkAndBlue",
   lightAndBlue = "lightAndBlue",
   anubidigital = "anubidigital",
+  pienissimo = "pienissimo",
 }
 
 const variantClasses = {
   darkAndBlue: " fill-defaultTextColor-dark",
   lightAndBlue: " fill-defaultTextColor",
   anubidigital: " fill-defaultTextColor-dark",
+  pienissimo: " fill-defaultTextColor",
 }
 
 const variantBackgroundClasses = {
   darkAndBlue: "bg-primary-300",
   lightAndBlue: "bg-primary-300",
   anubidigital: "bg-anubidigital",
+  pienissimo: "bg-pienissimo",
 }
 
 interface Props {

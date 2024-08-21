@@ -7,7 +7,7 @@ import React from "react"
 import { TypographyColor } from "@/ui/atoms/Typography"
 
 interface Props {
-  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital"
+  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital" | "pienissimo"
   image: React.ReactNode
   description: React.ReactNode
   onClick?: () => void

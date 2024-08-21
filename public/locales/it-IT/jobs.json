@@ -1,5 +1,23 @@
 {
   "tools": "STRUMENTI",
+  "pienissimo": {
+    "sentences": {
+      "first": "Pienissimo è un'azienda specializzata in soluzioni di marketing a risposta diretta per ristoranti, con l'obiettivo di massimizzare l'occupazione e l'efficienza operativa."
+    },
+    "tools": {
+      "other": {
+        "list": "Typescript, Javascript, AWS"
+      },
+      "backend": {
+        "title": "Backend",
+        "list": "Node.js, PostgreSQL"
+      },
+      "frontend": {
+        "title": "Frontend e Mobile",
+        "list": "Angular, Swift"
+      }
+    }
+  },
   "anubidigital": {
     "tasks": {
       "project": {

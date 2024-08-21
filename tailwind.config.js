@@ -71,6 +71,9 @@ module.exports = {
         anubidigital: {
           DEFAULT: "#B02727",
         },
+        pienissimo: {
+          DEFAULT: "#E30518",
+        },
       },
     },
     fontFamily: {

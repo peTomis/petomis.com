@@ -2,10 +2,11 @@ enum ActivityCardDescriptionVariant {
   darkAndBlue = `bg-primary-300`,
   lightAndBlue = `bg-primary-300`,
   anubidigital = `bg-anubidigital`,
+  pienissimo = `bg-pienissimo`,
 }
 
 interface Props {
-  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital"
+  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital" | "pienissimo"
   description: React.ReactNode
 }
 

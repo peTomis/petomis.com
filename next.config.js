@@ -9,11 +9,17 @@ const env = {
   HEROPATTERNS: "https://www.heropatterns.com",
   HEROICONS: "https://www.heroicons.com",
   METCH_GG: "https://app.metch.gg",
+  PIENISSIMO: "https://www.pienissimo.com",
+}
+
+const images = {
+  domains: ["www.pienissimo.com", "images.squarespace-cdn.com"],
 }
 
 const nextConfig = {
   i18n,
   env,
+  images,
 }
 
 module.exports = nextConfig

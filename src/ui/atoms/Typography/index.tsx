@@ -8,6 +8,7 @@ export type TypographyColor =
   | "primary-400"
   | "white"
   | "anubidigital"
+  | "pienissimo"
 
 enum TypographyColorEnum {
   "black" = "text-black",
@@ -19,6 +20,7 @@ enum TypographyColorEnum {
   "primary-400" = "text-primary-400",
   "white" = "text-white",
   "anubidigital" = "text-anubidigital",
+  "pienissimo" = "text-pienissimo",
 }
 
 enum TypographyDarkColorEnum {
@@ -31,6 +33,7 @@ enum TypographyDarkColorEnum {
   "primary-400" = "dark:text-primary-400",
   "white" = "dark:text-white",
   "anubidigital" = "dark:text-anubidigital",
+  "pienissimo" = "dark:text-pienissimo",
 }
 
 export type TypographyFont = "roboto" | "bacasimeAntique" | "agdasima"
