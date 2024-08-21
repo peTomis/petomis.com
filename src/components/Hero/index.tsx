@@ -16,12 +16,12 @@ const Hero = ({ onRedirect }: Props) => {
   return (
     <div
       id="welcome-container"
-      className="flex items-center justify-center mb-8 lg:h-screen md:mb-12 lg:mb-0"
+      className="flex items-center justify-center pb-8 bg-background dark:bg-background-dark lg:h-screen md:pb-12 lg:pb-0"
     >
-      <div className="absolute top-0 left-0 invisible xl:visible -z-10">
+      <div className="absolute top-0 left-0 invisible xl:visible">
         <Image
           src={heroBg}
-          className="object-cover -z-10"
+          className="object-cover"
           alt=""
           width={1600}
           height={500}
