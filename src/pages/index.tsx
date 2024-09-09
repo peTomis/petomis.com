@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
-
+        <link rel="canonical" href="https://www.petomis.com" />
         {/* Open Graph metadata */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
