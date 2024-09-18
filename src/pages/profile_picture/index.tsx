@@ -1,4 +1,8 @@
 import image from "@public/images/profile_picture.jpg"
+import link from "@public/images/link.png"
+import map from "@public/images/map.png"
+import phone from "@public/images/phone.png"
+import email from "@public/images/mail.png"
 import Image from "next/image"
 
 import { NextPage } from "next"
@@ -6,7 +10,6 @@ import { NextPage } from "next"
 const ProfilePicture: NextPage = () => {
   return (
     <>
-      {" "}
       <Image
         src={image}
         alt="Main image"
@@ -14,6 +17,38 @@ const ProfilePicture: NextPage = () => {
         priority={true}
         width={1000}
         height={1000}
+      />
+      <Image
+        src={link}
+        alt="Main image"
+        loading="eager"
+        priority={true}
+        width={50}
+        height={50}
+      />
+      <Image
+        src={map}
+        alt="Main image"
+        loading="eager"
+        priority={true}
+        width={50}
+        height={50}
+      />
+      <Image
+        src={phone}
+        alt="Main image"
+        loading="eager"
+        priority={true}
+        width={50}
+        height={50}
+      />
+      <Image
+        src={email}
+        alt="Main image"
+        loading="eager"
+        priority={true}
+        width={50}
+        height={50}
       />
     </>
   )
