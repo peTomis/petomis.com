@@ -1,4 +1,4 @@
-import image from "@public/images/profile_picture.jpg"
+import image from "@public/images/profile_picture.png"
 import link from "@public/images/link.png"
 import map from "@public/images/map.png"
 import phone from "@public/images/phone.png"
