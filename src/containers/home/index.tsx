@@ -10,13 +10,13 @@ import scrollToSection from "@/hooks/useScrollToSection"
 import { WebsiteSection } from "@/utils/websiteSections"
 
 // Components
-import Sidebar from "@/components/Sidebar"
+import Sidebar from "@/components/sideba"
 import TopBar from "@/components/TopBar"
 import Hero from "@/components/Hero"
 import Contact from "@/components/Contact"
 import Work from "@/components/Work"
 import Experience from "@/components/Experience"
-import BottomBar from "@/components/BottomBar"
+import Footer from "@/components/footer"
 import Projects from "@/components/Projects"
 import AboutMe from "@/components/AboutMe"
 
@@ -42,7 +42,7 @@ const HomeContainer = () => {
       <Projects />
       <Work />
       <Contact />
-      <BottomBar />
+      <Footer />
       {isMailShortcutVisible && (
         <MailShortcut onClick={handleMailShortcutClick} />
       )}

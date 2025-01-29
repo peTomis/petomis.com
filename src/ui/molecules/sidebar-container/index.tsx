@@ -33,10 +33,8 @@ const SidebarContainer = ({ children, open, onClose }: Props) => {
       <div
         id="sidebar-container"
         ref={ref}
-        className={`fixed z-40 h-screen w-[80vw] lg:w-[40vw] xl:w-[20vw] top-0 right-0 transform ${
-          open
-            ? "bg-primary-100 dark:bg-primary-400 translate-x-0"
-            : "bg-background dark:bg-background-dark translate-x-full"
+        className={`fixed z-40 bg-primary-500 h-screen w-[80vw] lg:w-[40vw] xl:w-[20vw] top-0 right-0 transform ${
+          open ? " translate-x-0" : "translate-x-full"
         } transition-transform duration-500 ease-in-out`}
       >
         {children}

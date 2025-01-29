@@ -1,6 +1,7 @@
 {
-  "bottomBar": {
-    "copyright": " © Giuseppe Tomis. Tutti i diritti riservati.",
+  "footer": {
+    "copyright_1": "Copyright ©",
+    "copyright_2": ". Tutti i diritti riservati.",
     "description": "Ingegnere del software",
     "hashtag": "@peTomis",
     "icons": "Credito icone:",

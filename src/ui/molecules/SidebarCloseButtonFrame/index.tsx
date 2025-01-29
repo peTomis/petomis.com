@@ -1,5 +1,5 @@
 // Icons
-import SidebarOpenIcon from "@/ui/icons/SidebarOpen"
+import BurgherIcon from "@/ui/icons/burgher"
 
 interface Props {
   children: React.ReactNode
@@ -10,12 +10,11 @@ const SidebarCloseButtonFrame = ({ children, onClose }: Props) => {
   return (
     <div id="sidebar-close-button-frame" className="relative w-full h-full">
       <button
-        className="absolute top-0 flex items-center justify-center p-2 cursor-pointer left-5 text-h5 text-background fill-defaultTextColor dark:fill-defaultTextColor-dark"
+        className="absolute top-0 flex items-center justify-center p-2 cursor-pointer left-5 text-h5 fill-defaultTextColor"
         onClick={onClose}
         aria-label="Close sidebar"
-        style={{ transform: "rotate(180deg)" }}
       >
-        <SidebarOpenIcon />
+        <BurgherIcon />
       </button>
       <div className="w-full h-full px-8 py-32">{children}</div>
     </div>

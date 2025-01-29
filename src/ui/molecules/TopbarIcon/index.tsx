@@ -1,5 +1,5 @@
 // Atoms
-import IconContainer from "@/ui/atoms/IconContainer"
+import IconContainer from "@/ui/atoms/icon-container"
 import RoundedButton from "@/ui/atoms/RoundedButton"
 
 interface Props {

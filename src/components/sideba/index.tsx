@@ -2,16 +2,15 @@
 import React from "react"
 
 // Sidebar Components
-import DarkModeToggle from "./components/DarkModeToggle"
-import LanguageSelector from "./components/LanguageSelector"
+import LanguageSelector from "./components/language-selector"
 
 // Organisms
-import SocialButtons from "@/ui/organisms/SocialButtons"
+import SocialButtons from "@/ui/organisms/social-buttons"
 
 // Molecules
 import SidebarItem from "@/ui/molecules/SidebarItem"
 import SidebarCloseButtonFrame from "@/ui/molecules/SidebarCloseButtonFrame"
-import SidebarContainer from "@/ui/molecules/SidebarContainer"
+import SidebarContainer from "@/ui/molecules/sidebar-container"
 
 interface Props {
   onClose: () => void
@@ -29,7 +28,6 @@ const Sidebar = ({ onClose, open }: Props) => {
           <SidebarItem>
             <LanguageSelector />
           </SidebarItem>
-          <DarkModeToggle />
         </div>
         <div
           id="sidebar-social-links"

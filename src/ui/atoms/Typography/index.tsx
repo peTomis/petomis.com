@@ -49,6 +49,7 @@ export type TextSize =
   | "h5"
   | "h6"
   | "base"
+  | "small"
   | "myNameSmall"
   | "myNameMedium"
   | "myNameExtraLarge"
@@ -60,7 +61,8 @@ enum TypographySizeEnum {
   "h4" = "text-h4",
   "h5" = "text-h5",
   "h6" = "text-h6",
-  "base" = "text-base",
+  "base" = "",
+  "small" = "text-small",
   "myNameSmall" = "text-myNameSmall",
   "myNameMedium" = "text-myNameMedium",
   "myNameExtraLarge" = "text-myNameExtraLarge",
@@ -84,6 +86,7 @@ interface Props {
   md?: TextSize
   xl?: TextSize
   xxl?: TextSize
+  opacity?: number
   onClick?: () => void
 }
 
@@ -105,6 +108,7 @@ const Typography = ({
   md,
   xl,
   xxl,
+  opacity,
   onClick,
 }: Props) => {
   const getFont = () => TypographyFontEnum[font]
@@ -123,10 +127,11 @@ const Typography = ({
   const getMDSize = () => (md ? "md:" + TypographySizeEnum[md] : "")
   const getXLSize = () => (xl ? "xl:" + TypographySizeEnum[xl] : "")
   const getXXLSize = () => (xxl ? "xxl:" + TypographySizeEnum[xxl] : "")
+  const getOpacity = () => (opacity ? `opacity-${opacity}` : "")
 
   return (
     <span
-      className={` ${getSize()} ${getFont()} ${getTextColor()} ${getDarkTextColor()} ${getBold()} ${getExtrabold()} ${getLight()} ${getExtralight()} ${getUnderline()} ${getItalic()}  ${getThin()} ${getDSize()} ${getMDSize()} ${getXLSize()} ${getXXLSize()} ${getClickable()}`}
+      className={` ${getSize()} ${getFont()} ${getTextColor()} ${getDarkTextColor()} ${getBold()} ${getExtrabold()} ${getLight()} ${getExtralight()} ${getUnderline()} ${getItalic()}  ${getThin()} ${getDSize()} ${getMDSize()} ${getXLSize()} ${getXXLSize()} ${getClickable()} ${getOpacity()}`}
       onClick={onClick}
     >
       {text}

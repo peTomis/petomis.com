@@ -5,19 +5,19 @@ import useScrolledPastVH from "@/hooks/useScrolledPastVH"
 import { WebsiteSection } from "@/utils/websiteSections"
 
 // Organisms
-import SocialButtons from "@/ui/organisms/SocialButtons"
+import SocialButtons from "@/ui/organisms/social-buttons"
 
 // Molecules
 import TopBarContainer from "@/ui/molecules/TopbarContainer"
 import TopBarButtonContainer from "@/ui/molecules/TopbarButtonContainer"
 
 // Atoms
-import IconContainer from "@/ui/atoms/IconContainer"
+import IconContainer from "@/ui/atoms/icon-container"
 
 // Icons
 import ExperienceIcon from "@/ui/icons/Experience"
 import ProjectIcon from "@/ui/icons/Project"
-import SidebarOpenIcon from "@/ui/icons/SidebarOpen"
+import SidebarOpenIcon from "@/ui/icons/burgher"
 import WorkIcon from "@/ui/icons/Work"
 import TopBarIcon from "@/ui/molecules/TopbarIcon"
 

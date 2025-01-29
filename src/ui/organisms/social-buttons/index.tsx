@@ -1,9 +1,9 @@
 // Atoms
-import IconContainer from "@/ui/atoms/IconContainer"
+import SocialIconContainer from "@/ui/atoms/social-icon-container"
 
 // Icons
-import GitHubIcon from "@/ui/icons/programming/GitHubSmall"
-import LinkedinIcon from "@/ui/icons/companies/Linkedin"
+import GitHubIcon from "@/ui/icons/social/github"
+import LinkedinIcon from "@/ui/icons/social/linkedin"
 
 interface Props {
   dark?: boolean
@@ -15,12 +15,12 @@ const SocialButtons = ({ dark }: Props) => {
 
   return (
     <>
-      <IconContainer onClick={openGitHub} dark={dark}>
+      <SocialIconContainer onClick={openGitHub}>
         <GitHubIcon />
-      </IconContainer>
-      <IconContainer onClick={openLinkedIn} dark={dark}>
+      </SocialIconContainer>
+      <SocialIconContainer onClick={openLinkedIn}>
         <LinkedinIcon />
-      </IconContainer>
+      </SocialIconContainer>
     </>
   )
 }

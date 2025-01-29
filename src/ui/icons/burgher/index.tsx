@@ -2,7 +2,7 @@ interface Props {
   size?: number
 }
 
-const SidebarOpenIcon = ({ size }: Props) => {
+const BurgherIcon = ({ size }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,4 +22,4 @@ const SidebarOpenIcon = ({ size }: Props) => {
   )
 }
 
-export default SidebarOpenIcon
+export default BurgherIcon

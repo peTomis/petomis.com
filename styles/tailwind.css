@@ -5,11 +5,6 @@
 @tailwind utilities;
 
 body {
-  color: rgb(20, 20, 20);
-  background: rgb(240, 240, 240);
-}
-
-.dark body {
   color: rgb(255, 254, 252);
-  background: rgb(32, 32, 32);
+  background: rgb(0, 0, 0);
 }

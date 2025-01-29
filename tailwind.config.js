@@ -40,12 +40,10 @@ module.exports = {
       },
       colors: {
         background: {
-          DEFAULT: "#f0f0f0",
-          dark: "#1f1f1f",
+          DEFAULT: "#1f1f1f",
         },
         defaultTextColor: {
-          DEFAULT: "#000000",
-          dark: "#ffffff",
+          DEFAULT: "#ffffff",
         },
         competitionScreen: {
           DEFAULT: "#3E3E3E",
@@ -94,6 +92,7 @@ module.exports = {
       h5: "24px",
       h6: "20px",
       base: "16px",
+      small: "12px",
     },
     screens: {
       xxs: "380px",
