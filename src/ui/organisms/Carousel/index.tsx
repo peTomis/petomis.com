@@ -1,6 +1,5 @@
 import useSwipeHandler from "@/hooks/useSwipeHandler"
 import useWheelHandler from "@/hooks/useWheelHandler"
-import useArrowsHandler from "@/hooks/useArrowsHandler"
 import CarouselButton from "@/ui/atoms/CarouselButton"
 import CarouselElementSkewed from "@/ui/molecules/CarouselElementSkewed"
 import React, { useEffect } from "react"
@@ -46,16 +45,6 @@ const Carousel = ({ elements }: Props) => {
         setHovered((prevHovered) => Math.max(prevHovered - 1, 0))
       }
     }
-  )
-
-  useArrowsHandler(
-    carouselRef,
-    setHovered,
-    () =>
-      setHovered((prevHovered) =>
-        Math.min(prevHovered + 1, elements.length - 1)
-      ),
-    () => setHovered((prevHovered) => Math.max(prevHovered - 1, 0))
   )
 
   useEffect(() => {

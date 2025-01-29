@@ -10,7 +10,7 @@ import scrollToSection from "@/hooks/useScrollToSection"
 import { WebsiteSection } from "@/utils/websiteSections"
 
 // Components
-import Sidebar from "@/components/sideba"
+import Sidebar from "@/components/sidebar"
 import TopBar from "@/components/TopBar"
 import Hero from "@/components/Hero"
 import Contact from "@/components/Contact"
