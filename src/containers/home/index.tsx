@@ -11,7 +11,7 @@ import { WebsiteSection } from "@/utils/websiteSections"
 
 // Components
 import Sidebar from "@/components/sidebar"
-import TopBar from "@/components/TopBar"
+import TopBar from "@/components/topba"
 import Hero from "@/components/Hero"
 import Contact from "@/components/Contact"
 import Work from "@/components/Work"

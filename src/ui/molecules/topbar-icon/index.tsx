@@ -1,6 +1,5 @@
 // Atoms
 import IconContainer from "@/ui/atoms/icon-container"
-import RoundedButton from "@/ui/atoms/RoundedButton"
 
 interface Props {
   IconComponent: React.ElementType
@@ -9,9 +8,9 @@ interface Props {
 
 const TopBarIcon = ({ IconComponent, onClick }: Props) => (
   <IconContainer onClick={onClick}>
-    <RoundedButton>
+    <div className="w-8 h-8">
       <IconComponent />
-    </RoundedButton>
+    </div>
   </IconContainer>
 )
 

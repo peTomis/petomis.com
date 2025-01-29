@@ -1,5 +1,5 @@
+// Hooks
 import useScrolledPastVH from "@/hooks/useScrolledPastVH"
-import React from "react"
 
 interface Props {
   children?: React.ReactNode
