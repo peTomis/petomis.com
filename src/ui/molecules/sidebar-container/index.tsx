@@ -26,7 +26,7 @@ const SidebarContainer = ({ children, open, onClose }: Props) => {
     <>
       {open && (
         <div
-          className="fixed top-0 left-0 z-30 w-screen h-screen cursor-pointer"
+          className="fixed top-0 left-0 z-30 w-screen h-screen cursor-pointer "
           onClick={onClose}
         />
       )}

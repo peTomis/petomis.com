@@ -28,11 +28,11 @@ const Footer = () => {
     >
       <div
         id="footer-text-container"
-        className="flex flex-col items-start space-y-4 w-full max-w-[800px] md:flex-row md:space-y-0"
+        className="flex flex-col items-start px-8 pt-8 md:px-0 space-y-4 w-full max-w-[800px] md:flex-row md:space-y-0"
       >
         <div
           id="footer-text-column"
-          className="flex flex-col items-center justify-start flex-1 w-full space-y-4 "
+          className="flex flex-col items-center justify-start flex-1 w-full space-y-2 md:space-y-4 "
         >
           <div id="footer-info" className="flex flex-col w-full space-y-4">
             <div
@@ -74,7 +74,7 @@ const Footer = () => {
         </div>
         <div
           id="footer-references"
-          className="flex flex-col space-y-4 md:justify-end d:text-end"
+          className="flex flex-col space-y-2 md:space-y-4 md:justify-end d:text-end"
         >
           <div className="flex space-x-2 cursor-pointer md:justify-end">
             <Typography

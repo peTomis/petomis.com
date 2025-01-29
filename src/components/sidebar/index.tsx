@@ -8,8 +8,7 @@ import LanguageSelector from "./components/language-selector"
 import SocialButtons from "@/ui/organisms/social-buttons"
 
 // Molecules
-import SidebarItem from "@/ui/molecules/SidebarItem"
-import SidebarCloseButtonFrame from "@/ui/molecules/SidebarCloseButtonFrame"
+import SidebarCloseButtonFrame from "@/ui/molecules/sidebar-close-button-frame"
 import SidebarContainer from "@/ui/molecules/sidebar-container"
 
 interface Props {
@@ -25,9 +24,7 @@ const Sidebar = ({ onClose, open }: Props) => {
           id="sidebar-content-container"
           className="relative flex flex-col justify-start h-full space-y-8"
         >
-          <SidebarItem>
-            <LanguageSelector />
-          </SidebarItem>
+          <LanguageSelector />
         </div>
         <div
           id="sidebar-social-links"

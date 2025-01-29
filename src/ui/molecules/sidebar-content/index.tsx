@@ -1,11 +1,11 @@
 // Atoms
-import SidebarDivider from "@/ui/atoms/SidebarDivider"
+import SidebarDivider from "@/ui/atoms/sidebar-divider"
 
 interface Props {
   children: React.ReactNode
 }
 
-const SidebarItem = ({ children }: Props) => {
+const SidebarContent = ({ children }: Props) => {
   return (
     <div id="sidebar-item" className="flex flex-col space-y-2">
       <SidebarDivider />
@@ -15,4 +15,4 @@ const SidebarItem = ({ children }: Props) => {
   )
 }
 
-export default SidebarItem
+export default SidebarContent

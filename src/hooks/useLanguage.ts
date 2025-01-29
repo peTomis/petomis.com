@@ -18,11 +18,11 @@ export type SupportedLanguage = {
 const languages: SupportedLanguage[] = [
   {
     code: "en-US",
-    name: "English",
+    name: "🇬🇧 EN",
   },
   {
     code: "it-IT",
-    name: "Italiano",
+    name: "🇮🇹 IT",
   },
 ]
 

@@ -3,52 +3,24 @@ import React from "react"
 
 // Hooks
 import { useLanguage } from "@/hooks/useLanguage"
+import { useTranslations } from "@/hooks/useTranslations"
 
 // Molecules
-import LanguageSelectorItem from "@/ui/molecules/LanguageSelectorItem"
+import LanguageToggle from "@/ui/atoms/language-switch"
+import Typography from "@/ui/atoms/Typography"
 
 const LanguageSelector = () => {
   const [language, setLanguage, languages] = useLanguage()
-  const [toggle, setToggle] = React.useState(false)
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setToggle(false)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+  const { t } = useTranslations("common")
 
   return (
-    <div className="relative flex flex-col space-y-2">
-      <LanguageSelectorItem
-        label={language.name}
-        onClick={() => {
-          setToggle(!toggle)
-        }}
-        main={true}
+    <div className="flex items-center justify-between">
+      <Typography text={t("sidebar.language")} />
+      <LanguageToggle
+        language={language}
+        setLanguage={setLanguage}
+        languages={languages}
       />
-      {toggle && (
-        <>
-          {languages.map((language, key) => {
-            return (
-              <LanguageSelectorItem
-                key={key}
-                label={language.name}
-                main={false}
-                onClick={() => {
-                  setLanguage(language)
-                  setToggle(!toggle)
-                }}
-              />
-            )
-          })}
-        </>
-      )}
     </div>
   )
 }
