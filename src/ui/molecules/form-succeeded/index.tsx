@@ -6,11 +6,13 @@ const FormSucceeded = () => {
   return (
     <div
       id="contact-form"
-      className="w-full lg:max-w-[800px] space-y-4 pt-16 pb-12 bg-primary-500"
+      className="w-full rounded-2xl h-[563.5px] lg:max-w-[800px] space-y-4 md:pt-16 pb-12 bg-primary-500"
     >
       <div
         id="letter-container"
-        className={"flex justify-center items-center h-[350]"}
+        className={
+          "flex justify-center items-center h-[350] scale-75 md:scale-100"
+        }
       >
         <div
           id="wrapper"

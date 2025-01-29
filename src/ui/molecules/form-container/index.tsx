@@ -6,18 +6,20 @@ interface Props {
   onSubmit: () => void
 }
 
-export const FormContainer = ({ children, onSubmit }: Props) => {
-  const { t } = useTranslations("contact")
+const FormContainer = ({ children, onSubmit }: Props) => {
+  const { t } = useTranslations("home")
 
   return (
     <div
       id="contact-form"
-      className="w-full lg:max-w-[800px] space-y-4 p-8 rounded-lg bg-primary-500"
+      className="w-full rounded-2xl lg:max-w-[800px] space-y-4 p-8 bg-primary-500"
     >
       {children}
-      <div className="flex items-center justify-center w-full my-4">
+      <div className="flex items-center justify-end w-full pr-2 my-4">
         <Button label={t("contact.submit")} onClick={onSubmit} />
       </div>
     </div>
   )
 }
+
+export default FormContainer

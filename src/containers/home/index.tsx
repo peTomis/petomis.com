@@ -1,6 +1,3 @@
-// External libraries
-import React from "react"
-
 // Hooks
 import useIsMailShortcutVisible from "@/hooks/useIsMailShortcutVisible"
 import useSidebarVisibility from "@/hooks/useSidebarVisibility"
@@ -11,9 +8,9 @@ import { WebsiteSection } from "@/utils/websiteSections"
 
 // Components
 import Sidebar from "@/components/sidebar"
-import TopBar from "@/components/topba"
+import TopBar from "@/components/topbar"
 import Hero from "@/components/Hero"
-import Contact from "@/components/Contact"
+import Contact from "@/components/contact"
 import Work from "@/components/Work"
 import Experience from "@/components/Experience"
 import Footer from "@/components/footer"

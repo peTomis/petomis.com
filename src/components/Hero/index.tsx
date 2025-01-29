@@ -3,7 +3,6 @@ import PageRedirects from "./components/PageRedirects"
 import WelcomeImage from "./components/WelcomeImage"
 import WelcomeText from "./components/WelcomeText"
 import Image from "next/image"
-import heroBg from "@public/images/hero-bg.png"
 
 // Utils
 import { WebsiteSection } from "@/utils/websiteSections"
@@ -18,15 +17,6 @@ const Hero = ({ onRedirect }: Props) => {
       id="welcome-container"
       className="flex items-center justify-center mb-8 lg:h-screen md:mb-12 lg:mb-0"
     >
-      <div className="absolute top-0 left-0 invisible xl:visible -z-10">
-        <Image
-          src={heroBg}
-          className="object-cover -z-10"
-          alt=""
-          width={1600}
-          height={500}
-        />
-      </div>
       <div className="flex flex-col items-center justify-center w-screen pt-12 lg:flex-row-reverse lg:space-x-reverse lg:space-x-4 lg:h-screen">
         <div
           className={

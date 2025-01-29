@@ -1,24 +1,19 @@
 // External libraries
-import React from "react"
+import { useReducer } from "react"
 import { useForm } from "@formspree/react"
 
 // Contact components
-import FormSucceeded from "./components/FormSucceeded"
+import FormSucceeded from "../../ui/molecules/form-succeeded"
 
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Molecules
-import FormInput from "@/ui/molecules/FormInput"
-import FormContainer from "@/ui/molecules/FormContainer"
+import FormInput from "@/ui/molecules/form-input"
+import FormContainer from "@/ui/molecules/form-container"
 
 // Atoms
 import SectionTitle from "@/ui/atoms/SectionTitle"
-import SectionDescription from "@/ui/atoms/SectionDescription"
-
-// Patterns
-import overlappingCirclesPatternStyle from "@/ui/patterns/overlapping-circles"
-import SectionContainer from "@/ui/atoms/SectionContainer"
 
 type State = {
   name: string
@@ -70,8 +65,8 @@ const reducer = (state: State, action: Action) => {
   }
 }
 
-const Contact = () => {
-  const [state, dispatch] = React.useReducer(reducer, initialState)
+const GetInTouch = () => {
+  const [state, dispatch] = useReducer(reducer, initialState)
   const { name, email, message, errors } = state
   const { t } = useTranslations("home")
   const [formState, submitEmail] = useForm("mnqkqwja")
@@ -89,20 +84,16 @@ const Contact = () => {
   }
 
   return (
-    <SectionContainer
+    <div
       id="contact-container"
-      title={t("contact.title").toUpperCase()}
-      description={[
-        t("contact.description.phrase1"),
-        t("contact.description.phrase2"),
-      ]}
-      bgColor="bg-primary-400"
-      titleColor="primary-100"
-      titleDarkColor="primary-100"
-      titleFont="bacasimeAntique"
-      descriptionColor="defaultTextColor-dark"
-      style={overlappingCirclesPatternStyle}
+      className={`relative flex flex-col items-center justify-center w-full pt-8 pb-32 mx-auto space-y-8`}
     >
+      <SectionTitle
+        id="work-title"
+        label={t("contact.title").toUpperCase()}
+        color="primary-100"
+        font="bacasimeAntique"
+      />
       <div className="flex items-center justify-center w-full p-2">
         {formState.succeeded ? (
           <FormSucceeded />
@@ -131,8 +122,8 @@ const Contact = () => {
           </FormContainer>
         )}
       </div>
-    </SectionContainer>
+    </div>
   )
 }
 
-export default Contact
+export default GetInTouch
