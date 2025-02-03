@@ -1,4 +1,4 @@
-import Typography from "../Typography"
+import Typography from "../typograph"
 import style from "./style.module.css"
 
 interface Props {

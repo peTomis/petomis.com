@@ -20,7 +20,7 @@ import { ListFilterColor } from "@/ui/molecules/ListFilterElements"
 // Icons
 import FunnelIcon from "@/ui/icons/Funnel"
 import BriefcaseIcon from "@/ui/icons/Briefcase"
-import SectionContainer from "@/ui/atoms/SectionContainer"
+import Typography from "@/ui/atoms/typograph"
 
 const Experience = () => {
   const { t } = useTranslations("home")
@@ -68,11 +68,17 @@ const Experience = () => {
   )
 
   return (
-    <SectionContainer
+    <div
       id="experience-container"
-      title={t("experience.title").toUpperCase()}
-      description={[]}
+      className="relative flex flex-col items-center justify-center w-full pt-16 pb-32 mx-auto space-y-8 overflow-hidden md:pb-16 md:pt-16 bg-gradient-radial from-primary-400 to-primary-500"
     >
+      <div className="z-10 flex flex-col items-center justify-center w-full space-y-8">
+        <Typography
+          extrabold
+          size="h1"
+          text={t("experience.title").toUpperCase()}
+        />
+      </div>
       <div
         id="experience-filter-container"
         className="flex flex-col items-start z-10 justify-start w-full space-y-2 max-w-[600px] md:px-4 md:max-w-[800px]  xl:max-w-[900px]"
@@ -137,7 +143,7 @@ const Experience = () => {
           />
         ))}
       </ExperienceCardContainer>
-    </SectionContainer>
+    </div>
   )
 }
 

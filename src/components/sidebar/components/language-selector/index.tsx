@@ -7,7 +7,7 @@ import { useTranslations } from "@/hooks/useTranslations"
 
 // Molecules
 import LanguageToggle from "@/ui/atoms/language-switch"
-import Typography from "@/ui/atoms/Typography"
+import Typography from "@/ui/atoms/typograph"
 
 const LanguageSelector = () => {
   const [language, setLanguage, languages] = useLanguage()

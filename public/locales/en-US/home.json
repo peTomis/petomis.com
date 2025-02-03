@@ -1,22 +1,8 @@
 {
   "title": "Giuseppe Tomis - Software Engineer",
   "description": "Personal website of Giuseppe Tomis, Software Engineer",
-  "aboutMe": {
-    "text1": "Welcome! I'm ",
-    "text2": "Giuseppe Tomis",
-    "text3": ", an accomplished ",
-    "text4": "Software Engineer",
-    "text5": " and a ",
-    "text6": "Fullstack Developer",
-    "text7": " specializing in blending aesthetics and functionality.",
-    "text8": "My approach to development centers on creating ",
-    "text9": "clean",
-    "text10": ", ",
-    "text11": "tested",
-    "text12": ", and highly ",
-    "text13": "efficient",
-    "text14": " code. With an acute attention to detail, I diligently identify and correct even the smallest issues, resulting in software that excels in performance and user experience.",
-    "title": "About Me"
+  "certifications": {
+    "title": "Certifications"
   },
   "contact": {
     "email": "Email",

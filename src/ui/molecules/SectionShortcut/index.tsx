@@ -1,4 +1,4 @@
-import Typography from "@/ui/atoms/Typography"
+import Typography from "@/ui/atoms/typograph"
 
 interface Props {
   icon: React.ReactNode

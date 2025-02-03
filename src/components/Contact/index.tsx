@@ -13,7 +13,7 @@ import FormInput from "@/ui/molecules/form-input"
 import FormContainer from "@/ui/molecules/form-container"
 
 // Atoms
-import Typography from "@/ui/atoms/Typography"
+import Typography from "@/ui/atoms/typograph"
 import Touch from "@/ui/icons/Touch"
 
 type State = {

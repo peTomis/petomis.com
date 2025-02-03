@@ -1,7 +1,6 @@
 import { useTranslations } from "@/hooks/useTranslations"
 import Carousel from "@/ui/organisms/Carousel"
 import CarouselElement from "@/ui/molecules/CarouselElement"
-import SectionContainer from "@/ui/atoms/SectionContainer"
 import metchImage from "@public/images/metch-bg.png"
 import { CarouselElementColor } from "@/ui/atoms/CarouselElementText"
 import MetchLogo from "@/ui/icons/MetchLogo"
@@ -26,12 +25,12 @@ const Projects = () => {
   const projects = [metch]
 
   return (
-    <SectionContainer
-      id="projects-container"
-      title={t("projects.title").toUpperCase()}
-      description={[t("projects.description")]}
-      bgColor="bg-primary-200"
-      bgOpacity="bg-opacity-50"
+    <div
+    // id="projects-container"
+    // title={t("projects.title").toUpperCase()}
+    // description={[t("projects.description")]}
+    // bgColor="bg-primary-200"
+    // bgOpacity="bg-opacity-50"
     >
       <div className="pt-8">
         <Carousel
@@ -48,7 +47,7 @@ const Projects = () => {
           ))}
         />
       </div>
-    </SectionContainer>
+    </div>
   )
 }
 

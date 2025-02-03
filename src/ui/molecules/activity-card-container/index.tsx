@@ -20,7 +20,7 @@ const ActivityCardContainer = ({
   return (
     <div
       id={id}
-      className={`cursor-pointer relative mx-auto h-[500px] w-[300px] overflow-hidden select-none ${
+      className={`cursor-pointer relative mx-auto z-10 h-[500px] w-[300px] overflow-hidden select-none ${
         ActivityColorSecondaryBg[variant]
       } ${customTransitionAnimation(visible)}`}
       onClick={onClick}

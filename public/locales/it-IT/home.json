@@ -1,22 +1,8 @@
 {
   "title": "Giuseppe Tomis - Ingegnere del software",
   "description": "Sito personale di Giuseppe Tomis, Ingegnere del Software",
-  "aboutMe": {
-    "text1": "Ciao, mi presento! sono ",
-    "text2": "Giuseppe Tomis",
-    "text3": ", ",
-    "text4": "Ingegnere del Software",
-    "text5": " e, attualmente, ",
-    "text6": "Sviluppatore Fullstack",
-    "text7": ".",
-    "text8": "In quanto ingegnere del software è per me fondamentale sviluppare un codice ",
-    "text9": "chiaro",
-    "text10": ", ",
-    "text11": "testato",
-    "text12": " ed estremamente ",
-    "text13": "efficiente",
-    "text14": ". Non manca, inoltre, un'estrema attenzione ai dettagli, che mi porta ad identificare e correggere ogni piccola sbavatura all'interno dei miei progetti.",
-    "title": "Chi sono"
+  "certifications": {
+    "title": "Certificazioni"
   },
   "contact": {
     "email": "Email",

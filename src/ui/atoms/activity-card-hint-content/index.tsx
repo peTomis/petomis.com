@@ -4,7 +4,7 @@ import {
   ActivityColorText,
   ActivityColorVariant,
 } from "@/utils"
-import Typography from "../Typography"
+import Typography from "../typograph"
 
 interface Props {
   variant?: ActivityColorVariant

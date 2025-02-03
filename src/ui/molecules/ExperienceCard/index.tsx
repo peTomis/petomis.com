@@ -1,6 +1,6 @@
 import useIsSectionLoaded from "@/hooks/useIsSectionLoaded"
 import { customTransitionAnimation } from "@/ui/animations/CustomTransitionAnimation"
-import Typography from "@/ui/atoms/Typography"
+import Typography from "@/ui/atoms/typograph"
 import ClockIcon from "@/ui/icons/Clock"
 
 interface Props {

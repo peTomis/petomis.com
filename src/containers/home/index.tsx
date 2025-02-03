@@ -12,10 +12,10 @@ import TopBar from "@/components/topbar"
 import Hero from "@/components/Hero"
 import Contact from "@/components/contact"
 import Work from "@/components/Work"
-import Experience from "@/components/Experience"
+import Experience from "@/components/experienc"
 import Footer from "@/components/footer"
-import Projects from "@/components/Projects"
-import AboutMe from "@/components/AboutMe"
+import Projects from "@/components/project"
+import Certifications from "@/components/certifications"
 
 // Molecules
 import HomePageContainer from "@/ui/molecules/HomePageContainer"
@@ -34,7 +34,7 @@ const HomeContainer = () => {
       />
       <Sidebar open={sidebarVisible} onClose={closeSidebar} />
       <Hero onRedirect={scrollToSection} />
-      <AboutMe />
+      <Certifications />
       <Experience />
       <Projects />
       <Work />
