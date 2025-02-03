@@ -1,13 +1,8 @@
 import { customTransitionAnimation } from "@/ui/animations/CustomTransitionAnimation"
-
-enum ActivityCardContainerVariant {
-  darkAndBlue = `bg-black`,
-  lightAndBlue = `bg-primary-50`,
-  anubidigital = `bg-black`,
-}
+import { ActivityColorSecondaryBg, ActivityColorVariant } from "@/utils"
 
 interface Props {
-  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital"
+  variant?: ActivityColorVariant
   children: React.ReactNode
   onClick?: () => void
   visible?: boolean
@@ -16,7 +11,7 @@ interface Props {
 }
 
 const ActivityCardContainer = ({
-  variant = "darkAndBlue",
+  variant = ActivityColorVariant.MOBILE,
   children,
   onClick,
   visible,
@@ -26,8 +21,8 @@ const ActivityCardContainer = ({
     <div
       id={id}
       className={`cursor-pointer relative mx-auto h-[500px] w-[300px] overflow-hidden select-none ${
-        ActivityCardContainerVariant[variant]
-      }  ${customTransitionAnimation(visible)}`}
+        ActivityColorSecondaryBg[variant]
+      } ${customTransitionAnimation(visible)}`}
       onClick={onClick}
     >
       {children}

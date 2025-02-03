@@ -9,6 +9,7 @@ const env = {
   HEROPATTERNS: "https://www.heropatterns.com",
   HEROICONS: "https://www.heroicons.com",
   METCH_GG: "https://app.metch.gg",
+  PIENISSIMO: "https://pienissimo.com",
 }
 
 const nextConfig = {

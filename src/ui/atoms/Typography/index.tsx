@@ -1,36 +1,22 @@
 export type TypographyColor =
-  | "black"
-  | "defaultTextColor"
-  | "defaultTextColor-dark"
-  | "primary-50"
-  | "primary-100"
-  | "primary-300"
-  | "primary-400"
-  | "white"
-  | "anubidigital"
+  | "BASE"
+  | "BLACK"
+  | "PRIMARY50"
+  | "PRIMARY100"
+  | "PRIMARY300"
+  | "PRIMARY400"
+  | "ANUBIDIGITAL"
+  | "ANUBIDIGITAL-DARK"
 
-enum TypographyColorEnum {
-  "black" = "text-black",
-  "defaultTextColor" = "text-defaultTextColor",
-  "defaultTextColor-dark" = "text-defaultTextColor-dark",
-  "primary-50" = "text-primary-50",
-  "primary-100" = "text-primary-100",
-  "primary-300" = "text-primary-300",
-  "primary-400" = "text-primary-400",
-  "white" = "text-white",
-  "anubidigital" = "text-anubidigital",
-}
-
-enum TypographyDarkColorEnum {
-  "black" = "dark:text-black",
-  "defaultTextColor" = "dark:text-defaultTextColor",
-  "defaultTextColor-dark" = "dark:text-defaultTextColor-dark",
-  "primary-50" = "dark:text-primary-50",
-  "primary-100" = "dark:text-primary-100",
-  "primary-300" = "dark:text-primary-300",
-  "primary-400" = "dark:text-primary-400",
-  "white" = "dark:text-white",
-  "anubidigital" = "dark:text-anubidigital",
+export enum TypographyColorEnum {
+  BLACK = "text-black",
+  BASE = "",
+  PRIMARY50 = "text-primary-50",
+  PRIMARY100 = "text-primary-100",
+  PRIMARY300 = "text-primary-300",
+  PRIMARY400 = "text-primary-400",
+  ANUBIDIGITAL = "text-anubidigital",
+  "ANUBIDIGITAL-DARK" = "text-anubidigital-dark",
 }
 
 export type TypographyFont = "roboto" | "bacasimeAntique" | "agdasima"
@@ -73,7 +59,6 @@ interface Props {
   bold?: boolean
   clickable?: boolean
   color?: TypographyColor
-  darkColor?: TypographyColor
   extrabold?: boolean
   extralight?: boolean
   font?: TypographyFont
@@ -93,9 +78,8 @@ interface Props {
 const Typography = ({
   text,
   bold = false,
-  color = "defaultTextColor",
+  color = "BASE",
   clickable = false,
-  darkColor = "defaultTextColor-dark",
   font = "roboto",
   extrabold = false,
   extralight = false,
@@ -113,7 +97,6 @@ const Typography = ({
 }: Props) => {
   const getFont = () => TypographyFontEnum[font]
   const getTextColor = () => TypographyColorEnum[color]
-  const getDarkTextColor = () => TypographyDarkColorEnum[darkColor]
   const getBold = () => (bold ? "font-bold" : "")
   const getExtrabold = () => (extrabold ? "font-extrabold" : "")
   const getItalic = () => (italic ? "italic" : "")
@@ -131,7 +114,7 @@ const Typography = ({
 
   return (
     <span
-      className={` ${getSize()} ${getFont()} ${getTextColor()} ${getDarkTextColor()} ${getBold()} ${getExtrabold()} ${getLight()} ${getExtralight()} ${getUnderline()} ${getItalic()}  ${getThin()} ${getDSize()} ${getMDSize()} ${getXLSize()} ${getXXLSize()} ${getClickable()} ${getOpacity()}`}
+      className={` ${getSize()} ${getFont()} ${getTextColor()} ${getBold()} ${getExtrabold()} ${getLight()} ${getExtralight()} ${getUnderline()} ${getItalic()}  ${getThin()} ${getDSize()} ${getMDSize()} ${getXLSize()} ${getXXLSize()} ${getClickable()} ${getOpacity()}`}
       onClick={onClick}
     >
       {text}

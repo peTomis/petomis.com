@@ -1,5 +1,25 @@
 {
   "tools": "STRUMENTI",
+  "pienissimo": {
+    "tasks": {},
+    "sentences": {
+      "first": "",
+      "second": ""
+    },
+    "tools": {
+      "other": {
+        "list": "Typescript, Swift, AWS"
+      },
+      "backend": {
+        "title": "Backend",
+        "list": "Node.js, PostgreSQL, AWS, Socket.io"
+      },
+      "frontend-mobile": {
+        "title": "Frontend e Mobile",
+        "list": "Angular, Swift, Flutter"
+      }
+    }
+  },
   "anubidigital": {
     "tasks": {
       "project": {

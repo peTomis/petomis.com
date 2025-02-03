@@ -22,12 +22,12 @@ const SectionContainer = ({
   description,
   id,
   title,
-  bgColor = "bg-background dark:bg-background-dark",
+  bgColor = "bg-background",
   bgOpacity = "bg-opacity-100",
   titleColor = "black",
   titleDarkColor = "white",
   titleFont = "roboto",
-  descriptionColor = "black",
+  descriptionColor = "",
   style,
 }: SectionTopSplashProps) => {
   return (

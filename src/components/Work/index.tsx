@@ -5,8 +5,8 @@ import React from "react"
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Organisms
-import ActivityCardExpanded from "@/ui/organisms/ActivityCardExpanded"
-import ActivityCard from "@/ui/organisms/ActivityCard"
+import ActivityCardExpanded from "@/ui/organisms/activity-card-expanded"
+import ActivityCard from "@/ui/organisms/activity-card"
 
 // Molecules
 import ActivityCardGrid from "@/ui/molecules/ActivityCardGrid"
@@ -23,8 +23,6 @@ const Work = () => {
   return (
     <SectionContainer
       id="work-container"
-      titleColor="primary-100"
-      titleDarkColor="primary-100"
       title={t("work.title").toUpperCase()}
       description={[t("work.description")]}
     >
@@ -44,7 +42,6 @@ const Work = () => {
             image={experience.image()}
             description={experience.description()}
             variant={experience.variant}
-            color={experience.color}
           />
         ))}
       </ActivityCardGrid>

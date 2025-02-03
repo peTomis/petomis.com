@@ -65,7 +65,9 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
         )}
       </div>
       <div
-        className={`flex flex-row ${hasScrolled ? "" : "py-2"} space-x-4`}
+        className={`flex pr-4 md:pr-0 flex-row ${
+          hasScrolled ? "" : "py-2"
+        } space-x-4`}
         id="link-and-settings-container"
         aria-label="Open Sidebar"
       >

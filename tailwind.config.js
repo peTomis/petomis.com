@@ -68,6 +68,7 @@ module.exports = {
         },
         anubidigital: {
           DEFAULT: "#B02727",
+          dark: "#5D0A0AFF",
         },
       },
     },

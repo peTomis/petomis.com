@@ -1,9 +1,15 @@
+// External Libraries
+import Image from "next/image"
+
 // Hooks
 import { useTranslations } from "./useTranslations"
-import Image from "next/image"
+
+// Images
 import anubiLogo from "@public/images/anubidigital-logo.svg"
+import pienissimoLogo from "@public/images/pienissimo-logo.webp"
+
 // Molecules
-import ExperienceDescriptionContainer from "@/ui/molecules/ExperienceDescriptionContainer"
+import ExperienceDescriptionContainer from "@/ui/molecules/experience-description-container"
 
 // Atoms
 import Typography, { TypographyColor } from "@/ui/atoms/Typography"
@@ -11,103 +17,93 @@ import Typography, { TypographyColor } from "@/ui/atoms/Typography"
 // Icons
 import AnubidigitalIcon from "@/ui/icons/companies/Anubidigital"
 import MobileDeveloperIcon from "@/ui/icons/companies/MobileDeveloper"
-import WorkExperience from "@/ui/organisms/WorkExperience"
+import WorkExperience from "@/ui/organisms/work-experience"
+import { ActivityColorText, ActivityColorVariant } from "@/utils"
 
 export interface WorkExperience {
   job: string
-  variant?: "darkAndBlue" | "lightAndBlue" | "anubidigital"
+  variant: ActivityColorVariant
   date: string
   programmingLanguages: string[]
   tools: string[]
   image: () => React.ReactNode
   description: () => React.ReactNode
   details: () => React.ReactNode
-  color: TypographyColor
-  mainColor: TypographyColor
 }
 
 export function useJobExperiences(): WorkExperience[] {
   const { t } = useTranslations("jobs")
 
-  const next: WorkExperience = {
+  const pienissimo: WorkExperience = {
     job: "Software Developer",
     date: "2024 - today",
     programmingLanguages: ["Node,js", "Angular", "Swift", "Flutter"],
     tools: ["VSCode", "XCode", "AWS"],
-    variant: "darkAndBlue",
-    color: "defaultTextColor-dark",
-    mainColor: "primary-100",
+    variant: ActivityColorVariant.PIENISSIMO,
     image: () => (
       <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
-        SOON
+        <Image
+          src={pienissimoLogo}
+          className="object-cover -z-10"
+          alt=""
+          width={200}
+          height={300}
+        />
       </div>
     ),
     description: () => (
       <ExperienceDescriptionContainer
-        job={next.job}
-        date={next.date}
-        programmingLanguages={next.programmingLanguages}
-        tools={next.tools}
-        color={next.color}
+        job={pienissimo.job}
+        date={pienissimo.date}
+        programmingLanguages={pienissimo.programmingLanguages}
+        tools={pienissimo.tools}
+        variant={pienissimo.variant}
       />
     ),
     details: () => (
       <WorkExperience
-        mainColor={next.mainColor}
-        color={next.color}
+        variant={pienissimo.variant}
         title={
           <div
             className="h-[260px] items-center flex mx-auto w-full justify-center cursor-pointer"
-            onClick={() => window.open(process.env.NEXT, "_blank")}
+            onClick={() => window.open(process.env.PIENISSIMO, "_blank")}
           >
-            <div className="flex lg:hidden">SOON</div>
-            <div className="hidden lg:flex">SOON</div>
+            <div className="flex lg:hidden">
+              <Image
+                src={pienissimoLogo}
+                className="object-cover"
+                alt=""
+                width={200}
+                height={300}
+              />
+            </div>
+            <div className="hidden lg:flex">
+              <Image
+                src={pienissimoLogo}
+                className="object-cover"
+                alt=""
+                width={400}
+                height={300}
+              />
+            </div>
           </div>
         }
-        tasks={[
-          {
-            title: t("next.tasks.project.title"),
-            description: t("next.tasks.project.description"),
-            titleColor: next.mainColor,
-            textColor: next.color,
-          },
-          {
-            title: t("next.tasks.onboarding.title"),
-            description: t("next.tasks.onboarding.description"),
-            titleColor: next.mainColor,
-            textColor: next.color,
-          },
-          {
-            title: t("next.tasks.datawarehouse.title"),
-            description: t("next.tasks.datawarehouse.description"),
-            titleColor: next.mainColor,
-            textColor: next.color,
-          },
-          {
-            title: t("next.tasks.backoffice.title"),
-            description: t("next.tasks.backoffice.description"),
-            titleColor: next.mainColor,
-            textColor: next.color,
-          },
-          {
-            title: t("next.tasks.rnd.title"),
-            description: t("next.tasks.rnd.description"),
-            titleColor: next.mainColor,
-            textColor: next.color,
-          },
+        tasks={[]}
+        sentences={[
+          t("pienissimo.sentences.first"),
+          t("pienissimo.sentences.second"),
         ]}
-        sentences={[t("next.sentences.first"), t("next.sentences.second")]}
         tools={[
           {
-            list: t("next.tools.other.list"),
+            list: t("pienissimo.tools.other.list"),
           },
           {
-            category: t("next.tools.backend.title") ?? "",
-            list: t("next.tools.backend.list"),
+            category: t("pienissimo.tools.backend.title") ?? "",
+            list: t("pienissimo.tools.backend.list"),
           },
           {
-            category: t("next.tools.frontend.title") ?? "",
-            list: t("next.tools.frontend.list"),
+            category: t("pienissimo.tools.frontend-mobile.title") ?? "",
+            list: t("pienissimo.tools.frontend-mobile.list"),
           },
         ]}
       />
@@ -119,9 +115,7 @@ export function useJobExperiences(): WorkExperience[] {
     date: "2022 - 2024",
     programmingLanguages: ["Node,js", "React"],
     tools: ["VSCode", "AWS"],
-    variant: "anubidigital",
-    color: "defaultTextColor-dark",
-    mainColor: "anubidigital",
+    variant: ActivityColorVariant.ANUBIDIGITAL,
     image: () => (
       <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
         <Image
@@ -139,13 +133,12 @@ export function useJobExperiences(): WorkExperience[] {
         date={anubidigital.date}
         programmingLanguages={anubidigital.programmingLanguages}
         tools={anubidigital.tools}
-        color={anubidigital.color}
+        variant={anubidigital.variant}
       />
     ),
     details: () => (
       <WorkExperience
-        mainColor={anubidigital.mainColor}
-        color={anubidigital.color}
+        variant={anubidigital.variant}
         title={
           <div
             className="h-[260px] items-center flex mx-auto w-full justify-center cursor-pointer"
@@ -163,32 +156,22 @@ export function useJobExperiences(): WorkExperience[] {
           {
             title: t("anubidigital.tasks.project.title"),
             description: t("anubidigital.tasks.project.description"),
-            titleColor: anubidigital.mainColor,
-            textColor: anubidigital.color,
           },
           {
             title: t("anubidigital.tasks.onboarding.title"),
             description: t("anubidigital.tasks.onboarding.description"),
-            titleColor: anubidigital.mainColor,
-            textColor: anubidigital.color,
           },
           {
             title: t("anubidigital.tasks.datawarehouse.title"),
             description: t("anubidigital.tasks.datawarehouse.description"),
-            titleColor: anubidigital.mainColor,
-            textColor: anubidigital.color,
           },
           {
             title: t("anubidigital.tasks.backoffice.title"),
             description: t("anubidigital.tasks.backoffice.description"),
-            titleColor: anubidigital.mainColor,
-            textColor: anubidigital.color,
           },
           {
             title: t("anubidigital.tasks.rnd.title"),
             description: t("anubidigital.tasks.rnd.description"),
-            titleColor: anubidigital.mainColor,
-            textColor: anubidigital.color,
           },
         ]}
         sentences={[
@@ -217,9 +200,7 @@ export function useJobExperiences(): WorkExperience[] {
     date: "2020 - 2022",
     programmingLanguages: ["Swift", "Kotlin", "Flutter"],
     tools: ["XCode", "Android Studio", "IntelliJ"],
-    variant: "lightAndBlue",
-    color: "defaultTextColor",
-    mainColor: "primary-300",
+    variant: ActivityColorVariant.MOBILE,
     image: () => (
       <div className="h-[300px] items-center flex fill-defaultTextColor mx-auto w-full justify-center">
         <MobileDeveloperIcon />
@@ -235,18 +216,18 @@ export function useJobExperiences(): WorkExperience[] {
     ),
     details: () => (
       <WorkExperience
+        variant={freelanceMobileDeveloper.variant}
         title={
-          <div className="h-[260px] items-center flex flex-col fill-defaultTextColor mx-auto w-full justify-center">
+          <div className="h-[260px] items-center flex flex-col mx-auto w-full justify-center">
             <div>
               <MobileDeveloperIcon />
             </div>
             <div>
               <Typography
                 text={t("mobile.title")}
+                color={ActivityColorText[freelanceMobileDeveloper.variant]}
                 size="h4"
                 xl="h1"
-                color={freelanceMobileDeveloper.color}
-                darkColor={freelanceMobileDeveloper.color}
               />
             </div>
           </div>
@@ -255,31 +236,21 @@ export function useJobExperiences(): WorkExperience[] {
           {
             title: t("mobile.tasks.management.title"),
             description: t("mobile.tasks.management.description"),
-            titleColor: freelanceMobileDeveloper.mainColor,
-            textColor: freelanceMobileDeveloper.color,
           },
           {
             title: t("mobile.tasks.design.title"),
             description: t("mobile.tasks.design.description"),
-            titleColor: freelanceMobileDeveloper.mainColor,
-            textColor: freelanceMobileDeveloper.color,
           },
           {
             title: t("mobile.tasks.integration.title"),
             description: t("mobile.tasks.integration.description"),
-            titleColor: freelanceMobileDeveloper.mainColor,
-            textColor: freelanceMobileDeveloper.color,
           },
           {
             title: t("mobile.tasks.implementation.title"),
             description: t("mobile.tasks.implementation.description"),
-            titleColor: freelanceMobileDeveloper.mainColor,
-            textColor: freelanceMobileDeveloper.color,
           },
         ]}
         sentences={[t("mobile.sentences.first"), t("mobile.sentences.second")]}
-        mainColor={freelanceMobileDeveloper.mainColor}
-        color={freelanceMobileDeveloper.color}
         tools={[
           {
             list: t("mobile.tools.cross.list"),
@@ -297,5 +268,5 @@ export function useJobExperiences(): WorkExperience[] {
     ),
   }
 
-  return [next, anubidigital, freelanceMobileDeveloper]
+  return [pienissimo, anubidigital, freelanceMobileDeveloper]
 }

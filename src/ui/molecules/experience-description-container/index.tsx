@@ -1,12 +1,13 @@
 import { useTranslations } from "@/hooks/useTranslations"
 import Typography, { TypographyColor } from "@/ui/atoms/Typography"
+import { ActivityColorText, ActivityColorVariant } from "@/utils"
 
 interface Props {
   job: string
   date: string
   programmingLanguages: string[]
   tools: string[]
-  color?: TypographyColor
+  variant?: ActivityColorVariant
 }
 
 const ExperienceDescriptionContainer = ({
@@ -14,7 +15,7 @@ const ExperienceDescriptionContainer = ({
   date,
   programmingLanguages,
   tools,
-  color = "defaultTextColor",
+  variant = ActivityColorVariant.MOBILE,
 }: Props) => {
   const { t } = useTranslations("home")
 
@@ -24,16 +25,15 @@ const ExperienceDescriptionContainer = ({
       className="flex flex-col space-y-2"
     >
       <div id="experience-job" className="text-h4">
-        <Typography text={job} color={color} size="h4" darkColor={color} />
+        <Typography text={job} color={ActivityColorText[variant]} size="h4" />
       </div>
 
       <div id="experience-date">
         <Typography
           light={true}
           text={date}
-          color={color}
+          color={ActivityColorText[variant]}
           size="h5"
-          darkColor={color}
         />
       </div>
 
@@ -41,29 +41,29 @@ const ExperienceDescriptionContainer = ({
         <div>
           <Typography
             text={t("work.programmingLanguages")}
-            color={color}
-            darkColor={color}
+            color={ActivityColorText[variant]}
           />
         </div>
 
         <Typography
           extralight={true}
           text={programmingLanguages.join(", ")}
-          color={color}
-          darkColor={color}
+          color={ActivityColorText[variant]}
         />
       </div>
 
       <div id="experience-tools">
         <div>
-          <Typography text={t("work.tools")} color={color} darkColor={color} />
+          <Typography
+            text={t("work.tools")}
+            color={ActivityColorText[variant]}
+          />
         </div>
 
         <Typography
           extralight={true}
           text={tools.join(", ")}
-          color={color}
-          darkColor={color}
+          color={ActivityColorText[variant]}
         />
       </div>
     </div>
