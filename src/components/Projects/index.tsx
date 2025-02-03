@@ -1,12 +1,8 @@
 import { useTranslations } from "@/hooks/useTranslations"
-import splash from "@public/images/splash-right.png"
-import darkSplash from "@public/images/splash-right-dark.png"
 import Carousel from "@/ui/organisms/Carousel"
 import CarouselElement from "@/ui/molecules/CarouselElement"
 import SectionContainer from "@/ui/atoms/SectionContainer"
-import image from "@public/images/me.png"
 import metchImage from "@public/images/metch-bg.png"
-import Typography from "@/ui/atoms/Typography"
 import { CarouselElementColor } from "@/ui/atoms/CarouselElementText"
 import MetchLogo from "@/ui/icons/MetchLogo"
 
@@ -36,8 +32,6 @@ const Projects = () => {
       description={[t("projects.description")]}
       bgColor="bg-primary-200"
       bgOpacity="bg-opacity-50"
-      splashImage={splash}
-      splashDarkImage={darkSplash}
     >
       <div className="pt-8">
         <Carousel

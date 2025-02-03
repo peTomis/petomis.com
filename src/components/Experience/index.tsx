@@ -1,7 +1,5 @@
 // External libraries
 import React from "react"
-import splash from "@public/images/splash-left.png"
-import darkSplash from "@public/images/splash-left-dark.png"
 
 // External data
 import GetExperienceData from "./experiences"
@@ -72,13 +70,10 @@ const Experience = () => {
   return (
     <SectionContainer
       id="experience-container"
-      splashImage={splash}
-      splashDarkImage={darkSplash}
       title={t("experience.title").toUpperCase()}
       titleColor="primary-300"
       titleDarkColor="primary-300"
       description={[]}
-      splashAlign="left"
     >
       <div
         id="experience-filter-container"

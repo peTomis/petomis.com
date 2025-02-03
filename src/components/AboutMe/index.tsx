@@ -19,7 +19,7 @@ const AboutMe = () => {
     <div
       id="about-me-container"
       className={
-        "relative pt-12 pb-24 lg:pt-24 flex flex-col bg-primary-100 bg-opacity-20 px-8 space-y-8 lg:mx-auto w-full justify-center items-center lg:items-center lg:justify-start"
+        "relative pt-12 pb-24 lg:pt-24 flex flex-col bg-primary-100 px-8 space-y-8 lg:mx-auto w-full justify-center items-center lg:items-center lg:justify-start"
       }
       style={circuitBoardPatternStyle}
     >

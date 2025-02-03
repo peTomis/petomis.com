@@ -1,7 +1,5 @@
 // External libraries
 import React from "react"
-import splash from "@public/images/splash-left.png"
-import darkSplash from "@public/images/splash-left-dark.png"
 
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
@@ -25,13 +23,10 @@ const Work = () => {
   return (
     <SectionContainer
       id="work-container"
-      splashImage={splash}
-      splashDarkImage={darkSplash}
       titleColor="primary-100"
       titleDarkColor="primary-100"
       title={t("work.title").toUpperCase()}
       description={[t("work.description")]}
-      splashAlign="left"
     >
       {experience && (
         <ActivityCardExpanded

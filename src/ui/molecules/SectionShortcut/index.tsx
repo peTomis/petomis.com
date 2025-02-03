@@ -16,7 +16,7 @@ const SectionShortcut = ({ icon, label, onClick }: Props) => {
         {icon}
       </div>
 
-      <Typography text={label} light={true} md="h5" xxl="h4" />
+      <Typography text={label.toUpperCase()} bold md="h5" xxl="h4" />
     </div>
   )
 }

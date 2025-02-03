@@ -30,7 +30,7 @@ const WelcomeText = () => {
     <div className="flex flex-col items-center justify-center flex-1 px-4 select-none lg:items-start lg:justify-start lg:text-start">
       <Name />
 
-      <div className="flex  justify-start w-[85vw] lg:ml-8 max-w-[660px] text-jobSmall font-bacasimeAntique text-defaultTextColor dark:text-defaultTextColor-dark sm:text-jobMedium xxl:text-jobExtraLarge">
+      <div className="flex pl-6 md:pl-0 justify-start w-[85vw] lg:ml-8 max-w-[660px] text-jobSmall font-bacasimeAntique sm:text-jobMedium xxl:text-jobExtraLarge">
         <h1 className="relative text-center">
           <span className="relative line-clamp-1 ">{currentWord}</span>
           <div

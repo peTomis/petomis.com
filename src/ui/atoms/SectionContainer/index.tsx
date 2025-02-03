@@ -1,7 +1,5 @@
-import { StaticImageData } from "next/image"
 import SectionDescription from "../SectionDescription"
 import SectionTitle from "../SectionTitle"
-import SectionTopSplash from "../SectionTopSplash"
 import { TypographyColor, TypographyFont } from "../Typography"
 import { CSSProperties } from "react"
 
@@ -16,9 +14,6 @@ interface SectionTopSplashProps {
   titleDarkColor?: TypographyColor
   titleFont?: TypographyFont
   descriptionColor?: TypographyColor
-  splashAlign?: "left" | "right"
-  splashImage?: StaticImageData
-  splashDarkImage?: StaticImageData
   style?: CSSProperties
 }
 
@@ -33,9 +28,6 @@ const SectionContainer = ({
   titleDarkColor = "white",
   titleFont = "roboto",
   descriptionColor = "black",
-  splashAlign = "right",
-  splashImage,
-  splashDarkImage,
   style,
 }: SectionTopSplashProps) => {
   return (
@@ -44,13 +36,6 @@ const SectionContainer = ({
       className={`relative flex flex-col items-center justify-center w-full pt-8 pb-32 mx-auto ${bgOpacity} ${bgColor} space-y-8`}
       style={style}
     >
-      {splashImage && (
-        <SectionTopSplash
-          darkSrc={splashDarkImage ?? splashImage}
-          src={splashImage}
-          align={splashAlign}
-        />
-      )}
       <SectionTitle
         id="work-title"
         label={title}

@@ -8,9 +8,9 @@ import { WebsiteSection } from "@/utils/websiteSections"
 import SectionShortcut from "@/ui/molecules/SectionShortcut"
 
 // Icons
-import ExperienceIcon from "@/ui/icons/Experience"
-import WorkIcon from "@/ui/icons/Work"
-import ProjectIcon from "@/ui/icons/Project"
+import AcademicHat from "@/ui/icons/AcademicHat"
+import Briefcase from "@/ui/icons/Briefcase"
+import ProjectIcon from "@/ui/icons/CodeBlocks"
 
 interface Props {
   onRedirect: (section: WebsiteSection) => void
@@ -19,20 +19,20 @@ interface Props {
 const PageRedirects = ({ onRedirect }: Props) => {
   const { t } = useTranslations("home")
   return (
-    <div className="flex flex-row items-center justify-between w-full h-full overflow-x-hidden">
+    <div className="flex flex-row items-center justify-between w-full h-full space-x-2 overflow-x-hidden">
       <SectionShortcut
         label={t("redirects.experience")}
         onClick={() => {
           onRedirect(WebsiteSection.EXPERIENCE)
         }}
-        icon={<ExperienceIcon />}
+        icon={<AcademicHat />}
       />
       <SectionShortcut
         label={t("redirects.work")}
         onClick={() => {
           onRedirect(WebsiteSection.WORK)
         }}
-        icon={<WorkIcon />}
+        icon={<Briefcase />}
       />
       <SectionShortcut
         label={t("redirects.projects")}

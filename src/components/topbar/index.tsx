@@ -11,13 +11,14 @@ import TopBarContainer from "@/ui/molecules/topbar-container"
 import IconContainer from "@/ui/atoms/icon-container"
 
 // Icons
-import ExperienceIcon from "@/ui/icons/Experience"
-import ProjectIcon from "@/ui/icons/Project"
+import AcademicHat from "@/ui/icons/AcademicHat"
+import CodeBlocks from "@/ui/icons/CodeBlocks"
 import SidebarOpenIcon from "@/ui/icons/burgher"
-import WorkIcon from "@/ui/icons/Work"
+import Briefcase from "@/ui/icons/Briefcase"
 import TopBarIcon from "@/ui/molecules/topbar-icon"
 import LinkedinIcon from "@/ui/icons/social/linkedin"
 import GitHubIcon from "@/ui/icons/social/github"
+import { useTranslations } from "@/hooks/useTranslations"
 
 interface Props {
   setSidebarVisible: () => void
@@ -26,38 +27,45 @@ interface Props {
 
 const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
   const hasScrolled = useScrolledPastVH(0.01)
+  const { t } = useTranslations("home")
 
   const openGitHub = () => window.open(process.env.GITHUB, "_blank")
   const openLinkedIn = () => window.open(process.env.LINKEDIN, "_blank")
 
   return (
     <TopBarContainer>
-      <div id="redirect-container" className="flex flex-row space-x-4 ">
+      <div
+        id="redirect-container"
+        className={`flex flex-row pl-2 space-x-2 md:space-x-4 `}
+      >
         {hasScrolled && (
           <>
             <TopBarIcon
-              IconComponent={ExperienceIcon}
+              IconComponent={AcademicHat}
               onClick={() => {
                 scrollToSelectedDiv(WebsiteSection.EXPERIENCE)
               }}
+              text={t("redirects.experience")}
             />
             <TopBarIcon
-              IconComponent={WorkIcon}
+              IconComponent={Briefcase}
               onClick={() => {
                 scrollToSelectedDiv(WebsiteSection.WORK)
               }}
+              text={t("redirects.work")}
             />
             <TopBarIcon
-              IconComponent={ProjectIcon}
+              IconComponent={CodeBlocks}
               onClick={() => {
                 scrollToSelectedDiv(WebsiteSection.PROJECTS)
               }}
+              text={t("redirects.projects")}
             />
           </>
         )}
       </div>
       <div
-        className="flex flex-row space-x-4 "
+        className={`flex flex-row ${hasScrolled ? "" : "py-2"} space-x-4`}
         id="link-and-settings-container"
         aria-label="Open Sidebar"
       >

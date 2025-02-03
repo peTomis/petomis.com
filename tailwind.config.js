@@ -78,10 +78,10 @@ module.exports = {
       satisfy: ["Satisfy", "cursive"],
     },
     fontSize: {
-      myNameSmall: "64px",
+      myNameSmall: "60px",
       myNameMedium: "82px",
       myNameExtraLarge: "128px",
-      jobSmall: "32px",
+      jobSmall: "28px",
       jobMedium: "48px",
       jobExtraLarge: "64px",
       slogan: "56px",

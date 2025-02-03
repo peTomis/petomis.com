@@ -15,9 +15,9 @@ const Hero = ({ onRedirect }: Props) => {
   return (
     <div
       id="welcome-container"
-      className="flex items-center justify-center mb-8 lg:h-screen md:mb-12 lg:mb-0"
+      className="relative flex items-center justify-center pb-8 bg-gradient-to-br from-black via-black to-[#1f3343]"
     >
-      <div className="flex flex-col items-center justify-center w-screen pt-12 lg:flex-row-reverse lg:space-x-reverse lg:space-x-4 lg:h-screen">
+      <div className="z-10 flex flex-col items-center justify-center w-screen pt-12 lg:flex-row-reverse lg:space-x-reverse lg:space-x-4 lg:h-screen">
         <div
           className={
             "flex flex-col justify-between h-full  lg:w-[500px] lg:h-[500px] xxl:w-[760px] xxl:h-[760px] "
@@ -29,7 +29,7 @@ const Hero = ({ onRedirect }: Props) => {
           </div>
         </div>
         <WelcomeImage />
-        <div className="w-[80vw]  max-w-[600px] pb-8 lg:hidden">
+        <div className="w-full px-4 pb-8 lg:hidden">
           <PageRedirects onRedirect={onRedirect} />
         </div>
       </div>
