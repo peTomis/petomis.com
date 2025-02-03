@@ -18,6 +18,7 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "circuit-pattern": "url('/images/circuit-board.svg')",
       },
       animation: {
         carousel: "carousel 40s linear infinite",

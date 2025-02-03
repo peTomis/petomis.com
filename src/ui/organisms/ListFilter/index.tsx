@@ -21,7 +21,7 @@ const ListFilter = ({
   color,
 }: Props) => {
   return (
-    <div className="flex flex-col items-start justify-start px-8 space-y-2 md:px-0 md:space-y-0 md:space-x-4 md:items-center md:flex-row">
+    <div className="flex flex-col items-start justify-start px-8 space-y-2 fill-white md:px-0 md:space-y-0 md:space-x-4 md:items-center md:flex-row">
       <ListFilterLabel icon={icon} label={label} />
       <ListFilterElements
         activeFilters={activeFilters}

@@ -7,7 +7,7 @@ const env = {
   TWITTER: "https://twitter.com/peTomis",
   ANUBI: "https://www.anubidigital.com",
   HEROPATTERNS: "https://www.heropatterns.com",
-  HEROICONS: "https://www.heroicons.com",
+  MATERIAL: "https://fonts.google.com/icons",
   METCH_GG: "https://app.metch.gg",
   PIENISSIMO: "https://pienissimo.com",
 }

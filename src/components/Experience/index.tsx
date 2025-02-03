@@ -71,8 +71,6 @@ const Experience = () => {
     <SectionContainer
       id="experience-container"
       title={t("experience.title").toUpperCase()}
-      titleColor="primary-300"
-      titleDarkColor="primary-300"
       description={[]}
     >
       <div

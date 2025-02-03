@@ -10,9 +10,6 @@ import PhraseContainer from "@/ui/atoms/PhraseContainer"
 import SectionTitle from "@/ui/atoms/SectionTitle"
 import Typography from "@/ui/atoms/Typography"
 
-// Patterns
-import circuitBoardPatternStyle from "@/ui/patterns/circuit-board"
-
 const AboutMe = () => {
   const { t } = useTranslations("home")
   return (
@@ -21,7 +18,6 @@ const AboutMe = () => {
       className={
         "relative pt-12 pb-24 lg:pt-24 flex flex-col bg-primary-100 px-8 space-y-8 lg:mx-auto w-full justify-center items-center lg:items-center lg:justify-start"
       }
-      style={circuitBoardPatternStyle}
     >
       <SectionTitle
         id="about-me-title"

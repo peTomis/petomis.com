@@ -9,7 +9,7 @@ interface Props {
 const SectionShortcut = ({ icon, label, onClick }: Props) => {
   return (
     <div
-      className="flex flex-col items-center flex-1 rounded-lg cursor-pointer select-none md:text-h5 xxl:text-h4 fill-defaultTextColor dark:fill-defaultTextColor-dark"
+      className="flex flex-col items-center flex-1 rounded-lg cursor-pointer select-none md:text-h5 xxl:text-h4"
       onClick={onClick}
     >
       <div className="w-[48px] h-[48px] lg:w-[64px] lg:h-[64px]  xxl:w-[92px] xxl:h-[92px]">

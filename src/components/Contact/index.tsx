@@ -13,7 +13,8 @@ import FormInput from "@/ui/molecules/form-input"
 import FormContainer from "@/ui/molecules/form-container"
 
 // Atoms
-import SectionTitle from "@/ui/atoms/SectionTitle"
+import Typography from "@/ui/atoms/Typography"
+import Touch from "@/ui/icons/Touch"
 
 type State = {
   name: string
@@ -86,15 +87,22 @@ const GetInTouch = () => {
   return (
     <div
       id="contact-container"
-      className={`relative flex flex-col items-center justify-center w-full pt-8 pb-32 mx-auto space-y-8`}
+      className={`relative flex flex-col items-center justify-center w-full py-8 md:pb-32 mx-auto space-y-8 bg-primary-100 bg-circuit-pattern md:bg-opacity-0 md:bg-none`}
     >
-      <SectionTitle
+      <div
         id="work-title"
-        label={t("contact.title").toUpperCase()}
-        color="primary-100"
-        font="bacasimeAntique"
-      />
-      <div className="flex items-center justify-center w-full p-2">
+        className={`w-full flex flex-col justify-center items-center py-8 text-center text-primary-500 md:text-white`}
+      >
+        <Typography
+          extrabold={true}
+          size="h1"
+          text={t("contact.title").toUpperCase()}
+        />
+        <div className="w-24 h-24 pt-4 fill-primary-500 md:hidden">
+          <Touch />
+        </div>
+      </div>
+      <div className="flex items-center justify-center w-full px-4 md:px-0">
         {formState.succeeded ? (
           <FormSucceeded />
         ) : (

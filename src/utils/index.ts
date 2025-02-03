@@ -37,7 +37,7 @@ export enum ActivityColorSecondaryBg {
 export enum ActivityColorFill {
   MOBILE = `fill-black`,
   PIENISSIMO = `fill-black`,
-  ANUBIDIGITAL = `fill-defaultTextColor`,
+  ANUBIDIGITAL = `fill-white`,
 }
 
 export enum ActivityColorTitleDots {

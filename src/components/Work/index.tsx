@@ -9,7 +9,7 @@ import ActivityCardExpanded from "@/ui/organisms/activity-card-expanded"
 import ActivityCard from "@/ui/organisms/activity-card"
 
 // Molecules
-import ActivityCardGrid from "@/ui/molecules/ActivityCardGrid"
+import ActivityCardGrid from "@/ui/molecules/activity-card-grid"
 
 // Patterns
 import { useJobExperiences } from "@/hooks/useJobExperiences"

@@ -16,7 +16,7 @@ const Footer = () => {
   const { t } = useTranslations("common")
   const currentYear = new Date().getFullYear()
 
-  const openHeroicons = () => window.open(process.env.HEROICONS, "_blank")
+  const openMaterialDesign = () => window.open(process.env.MATERIAL, "_blank")
   const openHeropatterns = () => window.open(process.env.HEROPATTERNS, "_blank")
   const openGitHub = () => window.open(process.env.GITHUB, "_blank")
   const openLinkedIn = () => window.open(process.env.LINKEDIN, "_blank")
@@ -47,27 +47,16 @@ const Footer = () => {
                   height={40}
                 />
               </div>
-              <Typography
-                text={t("footer.name")}
-                bold={true}
-                color="defaultTextColor-dark"
-                size="h5"
-              />
+              <Typography text={t("footer.name")} bold={true} size="h5" />
             </div>
             <div id="footer-hashtag" className="w-full">
-              <Typography
-                text={t("footer.hashtag")}
-                color="defaultTextColor-dark"
-                italic={true}
-                size="h5"
-              />
+              <Typography text={t("footer.hashtag")} italic={true} size="h5" />
             </div>
           </div>
           <div id="footer-description" className="w-full">
             <Typography
               text={t("footer.description")}
               font={"bacasimeAntique"}
-              color="defaultTextColor-dark"
               size={"h5"}
             />
           </div>
@@ -79,23 +68,20 @@ const Footer = () => {
           <div className="flex space-x-2 cursor-pointer md:justify-end">
             <Typography
               text={t("footer.icons")}
-              color="defaultTextColor-dark"
               clickable={true}
-              onClick={openHeroicons}
+              onClick={openMaterialDesign}
             />
             <Typography
               italic={true}
               underline={true}
-              text={"Heroicons"}
+              text={"Material Design"}
               clickable={true}
-              onClick={openHeroicons}
-              color="defaultTextColor-dark"
+              onClick={openMaterialDesign}
             />
           </div>
           <div className="flex space-x-2 cursor-pointer md:justify-end">
             <Typography
               text={t("footer.patterns")}
-              color="defaultTextColor-dark"
               clickable={true}
               onClick={openHeropatterns}
             />
@@ -105,7 +91,6 @@ const Footer = () => {
               text={"Heropatterns"}
               clickable={true}
               onClick={openHeropatterns}
-              color="defaultTextColor-dark"
             />
           </div>
         </div>
@@ -125,20 +110,10 @@ const Footer = () => {
         id="footer-copyright"
         className="w-full py-2 text-center bg-black text-small md:text-base"
       >
-        <Typography
-          text={t("footer.copyright_1")}
-          color="defaultTextColor-dark"
-        />
-        <Typography text={String(currentYear)} color="defaultTextColor-dark" />
-        <Typography
-          text={" Giuseppe Tomis"}
-          color="defaultTextColor-dark"
-          opacity={60}
-        />
-        <Typography
-          text={t("footer.copyright_2")}
-          color="defaultTextColor-dark"
-        />
+        <Typography text={t("footer.copyright_1")} />
+        <Typography text={String(currentYear)} />
+        <Typography text={" Giuseppe Tomis"} opacity={60} />
+        <Typography text={t("footer.copyright_2")} />
       </div>
     </footer>
   )

@@ -19,7 +19,7 @@ interface Props {
 const PageRedirects = ({ onRedirect }: Props) => {
   const { t } = useTranslations("home")
   return (
-    <div className="flex flex-row items-center justify-between w-full h-full space-x-2 overflow-x-hidden">
+    <div className="flex flex-row items-center justify-between w-full h-full space-x-2 overflow-x-hidden fill-white">
       <SectionShortcut
         label={t("redirects.experience")}
         onClick={() => {

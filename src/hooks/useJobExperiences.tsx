@@ -44,7 +44,7 @@ export function useJobExperiences(): WorkExperience[] {
       <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
         <Image
           src={pienissimoLogo}
-          className="object-cover -z-10"
+          className="object-cover"
           alt=""
           width={200}
           height={300}
@@ -120,7 +120,7 @@ export function useJobExperiences(): WorkExperience[] {
       <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
         <Image
           src={anubiLogo}
-          className="object-cover -z-10"
+          className="object-cover"
           alt=""
           width={200}
           height={300}
