@@ -1,5 +1,5 @@
 // Utils
-import { WebsiteSection } from "@/utils/websiteSections"
+import { WebsiteSection } from "@/utils"
 
 /**
  * Smoothly scrolls the page to the specified section.

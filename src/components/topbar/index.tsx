@@ -3,7 +3,7 @@ import useScrolledPastVH from "@/hooks/useScrolledPastVH"
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Utilities
-import { WebsiteSection } from "@/utils/websiteSections"
+import { WebsiteSection } from "@/utils"
 
 // Molecules
 import TopBarContainer from "@/ui/molecules/topbar-container"

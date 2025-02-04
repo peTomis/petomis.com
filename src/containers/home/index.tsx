@@ -4,7 +4,7 @@ import useSidebarVisibility from "@/hooks/useSidebarVisibility"
 import scrollToSection from "@/hooks/useScrollToSection"
 
 // Utilities
-import { WebsiteSection } from "@/utils/websiteSections"
+import { WebsiteSection } from "@/utils"
 
 // Components
 import Sidebar from "@/components/sidebar"

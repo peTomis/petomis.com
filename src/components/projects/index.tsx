@@ -8,33 +8,13 @@ import Carousel from "@/ui/organisms/carousel_"
 import CarouselElement from "@/ui/molecules/carousel-element"
 
 // Atoms
-import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
 import Typography from "@/ui/atoms/typography_"
 
-// Icons
-import MetchLogo from "@/ui/icons/companies/metch"
-
 // Assets
-import metchImage from "@public/images/metch-bg.png"
+import { projects } from "./projects"
 
 const Projects = () => {
   const { t } = useTranslations("home")
-
-  const metch = {
-    src: metchImage,
-    name: "Metch",
-    title: (
-      <div className="w-[200px] lg:w-[300px]">
-        <MetchLogo />
-      </div>
-    ),
-    description:
-      "The game Changer! Match is a platform that aims to make the process of finding talents and teams in the gaming sector simple and efficient.",
-    color: CarouselElementColor.RED,
-    website: process.env.METCH_GG,
-  }
-
-  const projects = [metch, metch, metch]
 
   return (
     <div

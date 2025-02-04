@@ -21,6 +21,7 @@ import Typography from "@/ui/atoms/typography_"
 // Icons
 import Briefcase from "@/ui/icons/briefcase_"
 import Funnel from "@/ui/icons/funnel_"
+import { parseExperienceTime } from "@/utils"
 
 const Experience = () => {
   const { t } = useTranslations("home")
@@ -42,6 +43,16 @@ const Experience = () => {
   const [activeJobs, setActiveJobs] = React.useState<string[]>(jobs)
 
   const [activeFilters, setActiveFilters] = React.useState<string[]>(filters)
+
+  const createDateString = ({
+    unit,
+    number,
+  }: {
+    number: number
+    unit: string
+  }) => {
+    return String(number) + " " + t(unit)
+  }
 
   const onJobChange = (filter: string) => {
     if (activeJobs.includes(filter)) {
@@ -138,7 +149,9 @@ const Experience = () => {
             name={experience.name}
             icon={experience.icon}
             tags={experience.tags.map((t) => t.key)}
-            duration={experience.duration}
+            duration={createDateString(
+              parseExperienceTime(experience.duration)
+            )}
             onClick={() => window.open(experience.url, "_blank")}
           />
         ))}

@@ -57,3 +57,47 @@ export enum ActivityColorText {
   PIENISSIMO = `BLACK`,
   ANUBIDIGITAL = `BASE`,
 }
+
+export enum WebsiteSection {
+  EXPERIENCE = "experience-container",
+  WORK = "work-container",
+  PROJECTS = "projects-container",
+  CONTACT = "contact-title",
+}
+
+export const parseExperienceTime = (
+  time: {
+    from: number
+    to: number
+  }[]
+): {
+  number: number
+  unit: string
+} => {
+  let total = 0
+  time.forEach(({ from, to }) => {
+    total += to - from
+  })
+
+  if (total < 1000 * 60 * 60 * 24 * 365) {
+    const decimal = total / (1000 * 60 * 60 * 24 * 30)
+    const number =
+      decimal - Math.floor(decimal) > 0.5
+        ? Math.ceil(decimal)
+        : Math.floor(decimal)
+    return {
+      number: Math.floor(total / (1000 * 60 * 60 * 24 * 30)),
+      unit: number > 1 ? "experience.months" : "experience.month",
+    }
+  }
+
+  const decimal = total / (1000 * 60 * 60 * 24 * 365)
+  const number =
+    decimal - Math.floor(decimal) > 0.5
+      ? Math.ceil(decimal)
+      : Math.floor(decimal)
+  return {
+    number,
+    unit: number > 1 ? "experience.years" : "experience.year",
+  }
+}

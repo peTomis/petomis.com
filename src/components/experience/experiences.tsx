@@ -27,7 +27,7 @@ interface PersonalExperience {
   name: string
   icon: JSX.Element
   tags: { key: string; value: string }[]
-  duration: string
+  duration: { from: number; to: number }[]
   url: string
 }
 
@@ -43,19 +43,6 @@ enum ExperienceTag {
 
 const GetExperienceData = (): PersonalExperience[] => {
   const { t } = useTranslations("home")
-
-  const from = (year: number): string => {
-    const years = new Date().getFullYear() - year
-    return `${years} ${
-      years > 1 ? t("experience.years") : t("experience.year")
-    }`
-  }
-
-  const staticYears = (years: number): string => {
-    return `${years} ${
-      years > 1 ? t("experience.years") : t("experience.year")
-    }`
-  }
 
   const Tag = {
     FULLSTACK: {
@@ -88,40 +75,59 @@ const GetExperienceData = (): PersonalExperience[] => {
     },
   }
 
+  const getTimestampsFromDate = (
+    fromDate: string,
+    toDate?: string
+  ): {
+    from: number
+    to: number
+  } => {
+    const from = new Date(fromDate).getTime()
+    const to = toDate ? new Date(toDate).getTime() : new Date().getTime()
+
+    return {
+      from,
+      to,
+    }
+  }
+
   const experiences = [
     {
       name: "Java",
       icon: <Java />,
       tags: [Tag.MOBILE, Tag.PROGRAMMING_LANGUAGE],
-      duration: staticYears(2),
+      duration: [getTimestampsFromDate("2020-01-01", "2022-02-28")],
       url: "https://www.oracle.com/java/",
     },
     {
       name: "Javascript",
       icon: <Javascript />,
       tags: [Tag.FULLSTACK, Tag.PROGRAMMING_LANGUAGE],
-      duration: from(2022),
+      duration: [getTimestampsFromDate("2022-03-01")],
       url: "https://www.javascript.com/",
     },
     {
       name: "Kotlin",
       icon: <Kotlin />,
       tags: [Tag.MOBILE, Tag.PROGRAMMING_LANGUAGE],
-      duration: staticYears(2),
+      duration: [getTimestampsFromDate("2020-01-01", "2022-02-28")],
       url: "https://kotlinlang.org/",
     },
     {
       name: "Swift",
       icon: <Swift />,
       tags: [Tag.MOBILE, Tag.PROGRAMMING_LANGUAGE],
-      duration: staticYears(2),
+      duration: [
+        getTimestampsFromDate("2020-01-01", "2022-02-28"),
+        getTimestampsFromDate("2024-04-01"),
+      ],
       url: "https://developer.apple.com/swift/",
     },
     {
       name: "Typescript",
       icon: <Typescript />,
       tags: [Tag.FULLSTACK, Tag.PROGRAMMING_LANGUAGE],
-      duration: from(2022),
+      duration: [getTimestampsFromDate("2022-03-01")],
       url: "https://www.typescriptlang.org/",
     },
 
@@ -129,105 +135,111 @@ const GetExperienceData = (): PersonalExperience[] => {
       name: "Next.js",
       icon: <Nextjs />,
       tags: [Tag.FULLSTACK, Tag.FRAMEWORK],
-      duration: from(2022),
+      duration: [getTimestampsFromDate("2022-03-01")],
       url: "https://nextjs.org/",
     },
     {
       name: "Nest.js",
       icon: <Nestjs />,
       tags: [Tag.FULLSTACK, Tag.FRAMEWORK],
-      duration: from(2022),
+      duration: [getTimestampsFromDate("2022-03-01")],
       url: "https://nestjs.com/",
     },
     {
       name: "Node.js",
       icon: <NodeJs />,
       tags: [Tag.FULLSTACK, Tag.OTHER],
-      duration: from(2022),
+      duration: [getTimestampsFromDate("2022-03-01")],
       url: "https://nodejs.org/en/",
     },
     {
       name: "AWS",
       icon: <Aws />,
       tags: [Tag.FULLSTACK, Tag.OTHER],
-      duration: from(2022),
+      duration: [getTimestampsFromDate("2022-03-01")],
       url: "https://aws.amazon.com/",
     },
     {
       name: "Docker",
       icon: <Docker />,
       tags: [Tag.FULLSTACK, Tag.OTHER],
-      duration: from(2022),
+      duration: [getTimestampsFromDate("2022-03-01", "2024-03-31")],
       url: "https://www.docker.com/",
     },
     {
       name: "Postgre SQL",
       icon: <PostgreSQL />,
       tags: [Tag.FULLSTACK, Tag.DATABASE],
-      duration: from(2022),
+      duration: [getTimestampsFromDate("2022-03-01")],
       url: "https://www.postgresql.org/",
     },
     {
       name: "Jest",
       icon: <Jest />,
       tags: [Tag.FULLSTACK, Tag.FRAMEWORK],
-      duration: from(2022),
+      duration: [getTimestampsFromDate("2022-03-01", "2024-03-31")],
       url: "https://jestjs.io/",
     },
     {
       name: "Android Studio",
       icon: <AndroidStudio />,
       tags: [Tag.MOBILE, Tag.IDE],
-      duration: staticYears(2),
+      duration: [
+        getTimestampsFromDate("2020-01-01", "2022-02-28"),
+        getTimestampsFromDate("2024-04-01"),
+      ],
       url: "https://developer.android.com/studio",
     },
     {
       name: "VS Code",
       icon: <VsCode />,
       tags: [Tag.FULLSTACK, Tag.IDE],
-      duration: from(2022),
+      duration: [getTimestampsFromDate("2022-03-01")],
       url: "https://code.visualstudio.com/",
     },
     {
       name: "Xcode",
       icon: <Xcode />,
       tags: [Tag.MOBILE, Tag.IDE],
-      duration: staticYears(2),
+      duration: [
+        getTimestampsFromDate("2020-01-01", "2022-02-28"),
+        getTimestampsFromDate("2024-04-01"),
+      ],
       url: "https://developer.apple.com/xcode/",
     },
     {
       name: "GitHub",
       icon: <GitHub />,
       tags: [Tag.FULLSTACK, Tag.MOBILE, Tag.OTHER],
-      duration: from(2022),
+      duration: [getTimestampsFromDate("2022-03-01")],
       url: "https://github.com",
     },
     {
       name: "Jira",
       icon: <Jira />,
       tags: [Tag.FULLSTACK, Tag.MOBILE, Tag.OTHER],
-      duration: from(2022),
+      duration: [getTimestampsFromDate("2022-03-01", "2024-03-31")],
       url: "https://www.atlassian.com/software/jira",
     },
     {
       name: "MongoDB",
       icon: <Mongodb />,
       tags: [Tag.FULLSTACK, Tag.DATABASE],
-      duration: from(2023),
+      duration: [getTimestampsFromDate("2022-03-01")],
       url: "https://www.mongodb.com/",
     },
     {
       name: "Kubernetes",
       icon: <Kubernetes />,
       tags: [Tag.FULLSTACK, Tag.OTHER],
-      duration: from(2023),
+      duration: [getTimestampsFromDate("2022-03-01", "2024-03-31")],
       url: "https://kubernetes.io/",
     },
     {
       name: "Firebase",
       icon: <Firebase />,
       tags: [Tag.MOBILE, Tag.OTHER],
-      duration: staticYears(1),
+      duration: [getTimestampsFromDate("2020-01-01", "2022-02-28")],
       url: "https://firebase.google.com/",
     },
   ]

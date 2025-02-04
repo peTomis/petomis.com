@@ -2,7 +2,7 @@
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Utils
-import { WebsiteSection } from "@/utils/websiteSections"
+import { WebsiteSection } from "@/utils"
 
 // Molecules
 import SectionShortcut from "@/ui/molecules/section-shortcut"
@@ -28,18 +28,18 @@ const PageRedirects = ({ onRedirect }: Props) => {
         icon={<AcademicHat />}
       />
       <SectionShortcut
-        label={t("redirects.work")}
-        onClick={() => {
-          onRedirect(WebsiteSection.WORK)
-        }}
-        icon={<Briefcase />}
-      />
-      <SectionShortcut
         label={t("redirects.projects")}
         onClick={() => {
           onRedirect(WebsiteSection.PROJECTS)
         }}
         icon={<CodeBlocks />}
+      />
+      <SectionShortcut
+        label={t("redirects.work")}
+        onClick={() => {
+          onRedirect(WebsiteSection.WORK)
+        }}
+        icon={<Briefcase />}
       />
     </div>
   )
