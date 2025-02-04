@@ -5,7 +5,7 @@ import WelcomeText from "./components/welcome-text"
 import Image from "next/image"
 
 // Utils
-import { WebsiteSection } from "@/utils/websiteSections"
+import { WebsiteSection } from "@/utils"
 
 interface Props {
   onRedirect: (section: WebsiteSection) => void
