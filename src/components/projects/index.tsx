@@ -23,7 +23,7 @@ const Projects = () => {
     website: process.env.METCH_GG,
   }
 
-  const projects = [metch, metch, metch]
+  const projects = [metch]
 
   return (
     <div
