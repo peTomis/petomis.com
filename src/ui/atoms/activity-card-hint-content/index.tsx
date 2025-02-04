@@ -26,7 +26,7 @@ const ActivityCardHintContent = ({
       id={`activity-card-hint-${idSuffix}`}
       className={`${visibility} absolute flex flex-row justify-center items-center space-x-2 top-0 right-0 z-10 py-2 w-[200px] bg-opacity-50 backdrop-blur-sm rounded-bl-3xl  ${ActivityColorBg[variant]} text-center ${ActivityColorFill[variant]}`}
     >
-      {icon}
+      <div className="w-6 h-6">{icon}</div>
       <Typography text={text} color={ActivityColorText[variant]} />
     </div>
   )

@@ -33,7 +33,7 @@ const CarouselElementText = ({
         >
           <div className="flex flex-none">{title}</div>
           <div className="flex flex-col items-center justify-center flex-1 w-full space-y-4 text-center">
-            <Typography text={description} light={true} md="h6" />
+            <Typography text={description} light={true} md="h6" color="BLACK" />
           </div>
         </div>
       ) : (
@@ -42,7 +42,7 @@ const CarouselElementText = ({
         >
           {verticalTitle.map((letter, key) => {
             return (
-              <div key={key} className="flex">
+              <div key={key} className="flex text-black">
                 {letter.toUpperCase()}
               </div>
             )
