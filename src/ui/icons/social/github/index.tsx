@@ -1,4 +1,4 @@
-const GitHubLogo = () => {
+const GitHub = () => {
   return (
     <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
       <path
@@ -12,4 +12,4 @@ const GitHubLogo = () => {
   )
 }
 
-export default GitHubLogo
+export default GitHub

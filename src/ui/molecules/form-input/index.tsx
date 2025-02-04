@@ -1,4 +1,4 @@
-import Typography from "@/ui/atoms/typography"
+import Typography from "@/ui/atoms/typography_"
 import style from "./style.module.css"
 
 interface Props {

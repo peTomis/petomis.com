@@ -1,5 +1,5 @@
 // Icons
-import BurgherIcon from "@/ui/icons/burgher"
+import Burgher from "@/ui/icons/burgher"
 
 interface Props {
   children: React.ReactNode
@@ -14,7 +14,7 @@ const SidebarCloseButtonFrame = ({ children, onClose }: Props) => {
         onClick={onClose}
         aria-label="Close sidebar"
       >
-        <BurgherIcon />
+        <Burgher />
       </button>
       <div className="w-full h-full px-8 py-32">{children}</div>
     </div>

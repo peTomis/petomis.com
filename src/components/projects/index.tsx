@@ -1,10 +1,21 @@
+// Hooks
 import { useTranslations } from "@/hooks/useTranslations"
-import Carousel from "@/ui/organisms/carousel"
+
+// Organisms
+import Carousel from "@/ui/organisms/carousel_"
+
+// Molecules
 import CarouselElement from "@/ui/molecules/carousel-element"
-import metchImage from "@public/images/metch-bg.png"
+
+// Atoms
 import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
-import MetchLogo from "@/ui/icons/MetchLogo"
-import Typography from "@/ui/atoms/typography"
+import Typography from "@/ui/atoms/typography_"
+
+// Icons
+import MetchLogo from "@/ui/icons/companies/metch"
+
+// Assets
+import metchImage from "@public/images/metch-bg.png"
 
 const Projects = () => {
   const { t } = useTranslations("home")
@@ -23,7 +34,7 @@ const Projects = () => {
     website: process.env.METCH_GG,
   }
 
-  const projects = [metch]
+  const projects = [metch, metch, metch]
 
   return (
     <div

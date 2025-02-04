@@ -1,4 +1,4 @@
-import Typography from "../typography"
+import Typography from "../typography_"
 
 interface Props {
   title: React.ReactNode
@@ -29,11 +29,11 @@ const CarouselElementText = ({
     <>
       {selected ? (
         <div
-          className={`flex flex-col flex-1 justify-start w-full items-center px-8 py-8 lg:py-16 `}
+          className={`flex flex-col flex-1 justify-start w-full items-center p-4 lg:px-16 lg:py-16 `}
         >
           <div className="flex flex-none">{title}</div>
-          <div className="flex flex-col items-center justify-center flex-1 w-full space-y-4 text-center">
-            <Typography text={description} light={true} md="h6" color="BLACK" />
+          <div className="flex flex-col items-center justify-start flex-1 w-full pt-8 space-y-4 text-center lg:pt-16">
+            <Typography text={description} light md="h6" color="BLACK" />
           </div>
         </div>
       ) : (

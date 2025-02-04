@@ -1,24 +1,24 @@
 // Hooks
 import useScrolledPastVH from "@/hooks/useScrolledPastVH"
+import { useTranslations } from "@/hooks/useTranslations"
 
 // Utilities
 import { WebsiteSection } from "@/utils/websiteSections"
 
 // Molecules
 import TopBarContainer from "@/ui/molecules/topbar-container"
+import TopBarIcon from "@/ui/molecules/topbar-icon"
 
 // Atoms
 import IconContainer from "@/ui/atoms/icon-container"
 
 // Icons
-import AcademicHat from "@/ui/icons/AcademicHat"
-import CodeBlocks from "@/ui/icons/CodeBlocks"
-import SidebarOpenIcon from "@/ui/icons/burgher"
-import Briefcase from "@/ui/icons/Briefcase"
-import TopBarIcon from "@/ui/molecules/topbar-icon"
-import LinkedinIcon from "@/ui/icons/social/linkedin"
-import GitHubIcon from "@/ui/icons/social/github"
-import { useTranslations } from "@/hooks/useTranslations"
+import AcademicHat from "@/ui/icons/academic-hat"
+import CodeBlocks from "@/ui/icons/code-blocks"
+import Briefcase from "@/ui/icons/briefcase_"
+import GitHub from "@/ui/icons/social/github"
+import Linkedin from "@/ui/icons/social/linkedin"
+import Burgher from "@/ui/icons/burgher"
 
 interface Props {
   setSidebarVisible: () => void
@@ -48,18 +48,18 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
               text={t("redirects.experience")}
             />
             <TopBarIcon
-              IconComponent={Briefcase}
-              onClick={() => {
-                scrollToSelectedDiv(WebsiteSection.WORK)
-              }}
-              text={t("redirects.work")}
-            />
-            <TopBarIcon
               IconComponent={CodeBlocks}
               onClick={() => {
                 scrollToSelectedDiv(WebsiteSection.PROJECTS)
               }}
               text={t("redirects.projects")}
+            />
+            <TopBarIcon
+              IconComponent={Briefcase}
+              onClick={() => {
+                scrollToSelectedDiv(WebsiteSection.WORK)
+              }}
+              text={t("redirects.work")}
             />
           </>
         )}
@@ -73,16 +73,16 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
       >
         <IconContainer onClick={openGitHub}>
           <div className="w-7 h-7 invert">
-            <GitHubIcon />
+            <GitHub />
           </div>
         </IconContainer>
         <IconContainer onClick={openLinkedIn}>
           <div className="w-6 h-6">
-            <LinkedinIcon />
+            <Linkedin />
           </div>
         </IconContainer>
         <IconContainer onClick={setSidebarVisible}>
-          <SidebarOpenIcon />
+          <Burgher />
         </IconContainer>
       </div>
     </TopBarContainer>

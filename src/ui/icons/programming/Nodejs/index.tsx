@@ -1,4 +1,4 @@
-const NodeJsIcon = () => {
+const NodeJs = () => {
   return (
     <svg
       viewBox="0 0 256 282"
@@ -14,4 +14,4 @@ const NodeJsIcon = () => {
   )
 }
 
-export default NodeJsIcon
+export default NodeJs

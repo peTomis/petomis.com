@@ -16,15 +16,15 @@ const useSortedFilters = (
   return React.useMemo(() => {
     // Sort filters based on whether they're active and ensuring "other" is at the end
     return filters.sort((a, b) => {
-      // Move "other" to the end
-      if (a.value === "other") return 1
-      if (b.value === "other") return -1
-
       // Prioritize active filters
       const aActive = activeFilters.includes(a.value)
       const bActive = activeFilters.includes(b.value)
       if (aActive && !bActive) return -1
       if (!aActive && bActive) return 1
+
+      // Move "other" to the end
+      if (a.value === "other") return 1
+      if (b.value === "other") return -1
 
       // If both are active or inactive, sort alphabetically by 'value' for consistency
       return a.value.localeCompare(b.value)

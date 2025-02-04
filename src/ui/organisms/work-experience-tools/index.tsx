@@ -1,5 +1,5 @@
 import { useTranslations } from "@/hooks/useTranslations"
-import Typography from "@/ui/atoms/typography"
+import Typography from "@/ui/atoms/typography_"
 import {
   ActivityColorText,
   ActivityColorTitleText,

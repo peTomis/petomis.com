@@ -2,7 +2,7 @@ interface Props {
   size?: number
 }
 
-const BurgherIcon = ({ size }: Props) => {
+const Burgher = ({ size }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,4 +22,4 @@ const BurgherIcon = ({ size }: Props) => {
   )
 }
 
-export default BurgherIcon
+export default Burgher

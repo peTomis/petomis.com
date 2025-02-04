@@ -1,4 +1,4 @@
-import { TypographyColor } from "@/ui/atoms/typography"
+import { TypographyColor } from "@/ui/atoms/typography_"
 import WorkExperienceTask from "@/ui/molecules/work-experience-task"
 import { ActivityColorDetailAccent, ActivityColorVariant } from "@/utils"
 

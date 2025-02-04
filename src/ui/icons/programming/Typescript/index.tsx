@@ -1,4 +1,4 @@
-const TypescriptIcon = () => {
+const Typescript = () => {
   return (
     <svg
       fill="none"
@@ -19,4 +19,4 @@ const TypescriptIcon = () => {
   )
 }
 
-export default TypescriptIcon
+export default Typescript

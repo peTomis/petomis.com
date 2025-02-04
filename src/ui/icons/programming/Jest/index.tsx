@@ -1,4 +1,4 @@
-const JestIcon = () => {
+const Jest = () => {
   return (
     <svg
       viewBox="-13.5 0 283 283"
@@ -21,4 +21,4 @@ const JestIcon = () => {
   )
 }
 
-export default JestIcon
+export default Jest

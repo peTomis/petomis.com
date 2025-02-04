@@ -4,7 +4,7 @@ import {
   ActivityColorTitleText,
   ActivityColorVariant,
 } from "@/utils"
-import Typography from "../../atoms/typography"
+import Typography from "../../atoms/typography_"
 
 interface Props {
   title: string

@@ -2,8 +2,8 @@
 import SocialIconContainer from "@/ui/atoms/social-icon-container"
 
 // Icons
-import GitHubIcon from "@/ui/icons/social/github"
-import LinkedinIcon from "@/ui/icons/social/linkedin"
+import GitHub from "@/ui/icons/social/github"
+import Linkedin from "@/ui/icons/social/linkedin"
 
 const SocialButtons = () => {
   const openGitHub = () => window.open(process.env.GITHUB, "_blank")
@@ -12,10 +12,10 @@ const SocialButtons = () => {
   return (
     <>
       <SocialIconContainer onClick={openGitHub}>
-        <GitHubIcon />
+        <GitHub />
       </SocialIconContainer>
       <SocialIconContainer onClick={openLinkedIn}>
-        <LinkedinIcon />
+        <Linkedin />
       </SocialIconContainer>
     </>
   )

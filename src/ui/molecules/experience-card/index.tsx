@@ -1,7 +1,7 @@
 import useIsSectionLoaded from "@/hooks/useIsSectionLoaded"
-import { customTransitionAnimation } from "@/ui/animations/CustomTransitionAnimation"
-import Typography from "@/ui/atoms/typography"
-import ClockIcon from "@/ui/icons/Clock"
+import { customTransitionAnimation } from "@/ui/animations/custom-transition-animation"
+import Typography from "@/ui/atoms/typography_"
+import Clock from "@/ui/icons/clock_"
 
 interface Props {
   name: string
@@ -17,22 +17,22 @@ const ExperienceCard = ({ name, icon, tags, duration, onClick }: Props) => {
   return (
     <div
       id={id}
-      className={`relative flex flex-col px-2 py-4 shadow-md cursor-pointer select-none xl:px-4 bg-primary-100 bg-opacity-5 ${customTransitionAnimation(
+      className={`relative flex flex-col py-4 w-full shadow-md cursor-pointer select-none bg-primary-100 bg-opacity-5 lg:w-[120px] ${customTransitionAnimation(
         isSectionLoaded
       )}`}
       onClick={onClick}
     >
       <div className="flex items-center justify-center w-full">
-        <Typography text={name} />
+        <Typography text={name} light />
       </div>
-      <div className="flex items-center justify-center w-full h-[90px]">
+      <div className="flex items-center justify-center w-full h-[80px] md:h-[90px]">
         <div>{icon}</div>
       </div>
-      <div className="flex flex-row items-end justify-center flex-1 w-full mx-auto space-x-1 text-center">
-        <div className="w-6 h-6 fill-white">
-          <ClockIcon />
+      <div className="flex flex-row items-end justify-center flex-1 w-full mx-auto space-x-1 text-center opacity-60">
+        <div className="w-4 h-4 my-auto fill-white">
+          <Clock />
         </div>
-        <Typography text={duration} />
+        <Typography text={duration} extralight />
       </div>
     </div>
   )

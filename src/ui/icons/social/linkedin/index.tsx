@@ -1,4 +1,4 @@
-const LinkedinIcon = () => {
+const Linkedin = () => {
   return (
     <svg
       version="1.1"
@@ -29,4 +29,4 @@ const LinkedinIcon = () => {
   )
 }
 
-export default LinkedinIcon
+export default Linkedin

@@ -1,7 +1,8 @@
-import useSortedFilters from "@/hooks/useSortedFilters"
-import Typography from "@/ui/atoms/typography"
-import CloseButtonIcon from "@/ui/icons/CloseButton"
+// External Libraries
 import { Flipper, Flipped } from "react-flip-toolkit"
+
+// Hooks
+import useSortedFilters from "@/hooks/useSortedFilters"
 
 export enum ListFilterColor {
   PRIMARY200 = "bg-primary-200",
@@ -35,7 +36,7 @@ const ListFilterElements = ({
               className={`flex flex-row  justify-center m-[2px] items-center space-x-2 px-4 py-2 rounded ${
                 isActive(filter.value)
                   ? `${color} text-white-dark`
-                  : "bg-gray-200"
+                  : "bg-white bg-opacity-5"
               }`}
             >
               {filter.key}

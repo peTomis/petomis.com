@@ -1,7 +1,7 @@
 import { useTranslations } from "@/hooks/useTranslations"
 import ActivityCardHintContent from "@/ui/atoms/activity-card-hint-content"
-import FingerTapIcon from "@/ui/icons/FingerTap"
-import PointerClickIcon from "@/ui/icons/PointerClick"
+import FingerTap from "@/ui/icons/finger-tap"
+import PointerClick from "@/ui/icons/pointer-click"
 import { ActivityColorVariant } from "@/utils"
 
 interface Props {
@@ -16,14 +16,14 @@ const ActivityCardHint = ({ variant, action = "open" }: Props) => {
     <>
       <ActivityCardHintContent
         idSuffix="mobile"
-        icon={<FingerTapIcon />}
+        icon={<FingerTap />}
         text={action === "open" ? t("work.mobileClick") : t("work.mobileClose")}
         visibility="md:hidden"
         variant={variant}
       />
       <ActivityCardHintContent
         idSuffix="desktop"
-        icon={<PointerClickIcon />}
+        icon={<PointerClick />}
         text={
           action === "open" ? t("work.desktopClick") : t("work.desktopClose")
         }

@@ -26,7 +26,7 @@ const CarouselElement = ({
 }: Props) => {
   return (
     <div
-      className="relative cursor-pointer text-white-dark flex flex-col h-[320px] w-[320px] md:h-[400px] md:w-[400px] lg:w-[500px] lg:h-[500px]"
+      className="relative cursor-pointer text-white flex flex-col h-[320px] w-[320px] md:h-[400px] md:w-[400px] lg:w-[500px] lg:h-[500px]"
       onClick={selected ? onClick : undefined}
     >
       {selected && <CarouselElementImage src={src} />}

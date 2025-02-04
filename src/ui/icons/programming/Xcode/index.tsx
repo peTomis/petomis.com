@@ -1,4 +1,4 @@
-const XcodeIcon = () => {
+const Xcode = () => {
   return (
     <svg
       viewBox="0 0 256 262"
@@ -819,4 +819,4 @@ const XcodeIcon = () => {
   )
 }
 
-export default XcodeIcon
+export default Xcode

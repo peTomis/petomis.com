@@ -1,4 +1,4 @@
-import { customTransitionAnimation } from "@/ui/animations/CustomTransitionAnimation"
+import { customTransitionAnimation } from "@/ui/animations/custom-transition-animation"
 import { ActivityColorSecondaryBg, ActivityColorVariant } from "@/utils"
 
 interface Props {

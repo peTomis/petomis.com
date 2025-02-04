@@ -2,8 +2,8 @@
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Atoms
-import Typography from "@/ui/atoms/typography"
-import Medal from "@/ui/icons/Medal"
+import Typography from "@/ui/atoms/typography_"
+import Medal from "@/ui/icons/medal_"
 
 const Certifications = () => {
   const { t } = useTranslations("home")
@@ -14,13 +14,18 @@ const Certifications = () => {
         "relative py-24 overflow-hidden flex flex-col bg-gradient-to-bl from-primary-100 via-primary-100 to-primary-200 px-8 lg:mx-auto w-full justify-center items-center lg:items-center lg:justify-start"
       }
     >
-      <div className="absolute -right-10 md:right-0 w-72 md:w-96 h-72 md:h-96 -top-[70px] md:-top-[90px] opacity-50 md:opacity-100 fill-primary-200">
-        <Medal />
+      <div className="absolute flex items-end justify-end -right-10 -top-[70px] w-full">
+        <div className="flex items-end justify-end w-full max-w-[1600px] mr-auto ">
+          <div className=" w-72 h-72 fill-primary-200">
+            <Medal />
+          </div>
+        </div>
       </div>
       <div className="z-10">
         <Typography
           extrabold={true}
-          size="h1"
+          size="h3"
+          md="h1"
           text={t("certifications.title").toUpperCase()}
           color={"PRIMARY400"}
         />

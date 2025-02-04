@@ -1,4 +1,4 @@
-const DockerIcon = () => {
+const Docker = () => {
   return (
     <svg
       version="1.1"
@@ -53,4 +53,4 @@ const DockerIcon = () => {
   )
 }
 
-export default DockerIcon
+export default Docker

@@ -5,12 +5,12 @@ import Image from "next/image"
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Atoms
-import Typography from "@/ui/atoms/typography"
+import Typography from "@/ui/atoms/typography_"
 import SocialIconContainer from "@/ui/atoms/social-icon-container"
 
 // Icons
-import GitHubIcon from "@/ui/icons/social/github"
-import LinkedinIcon from "@/ui/icons/social/linkedin"
+import GitHub from "@/ui/icons/social/github"
+import Linkedin from "@/ui/icons/social/linkedin"
 
 const Footer = () => {
   const { t } = useTranslations("common")
@@ -100,10 +100,10 @@ const Footer = () => {
         className="flex flex-row justify-center w-full py-8 space-x-4"
       >
         <SocialIconContainer onClick={openGitHub}>
-          <GitHubIcon />
+          <GitHub />
         </SocialIconContainer>
         <SocialIconContainer onClick={openLinkedIn}>
-          <LinkedinIcon />
+          <Linkedin />
         </SocialIconContainer>
       </div>
       <div

@@ -1,4 +1,4 @@
-const VsCodeIcon = () => {
+const VsCode = () => {
   return (
     <svg
       viewBox="-0.55 0 235.1 235.1"
@@ -14,4 +14,4 @@ const VsCodeIcon = () => {
   )
 }
 
-export default VsCodeIcon
+export default VsCode

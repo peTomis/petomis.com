@@ -12,15 +12,15 @@ import ListFilter from "@/ui/organisms/list-filter"
 
 // Molecules
 import ExperienceCard from "@/ui/molecules/experience-card"
+import { ListFilterColor } from "@/ui/molecules/list-filter-elements"
 
 // Atoms
 import ExperienceCardContainer from "@/ui/atoms/experience-card-container"
-import { ListFilterColor } from "@/ui/molecules/list-filter-elements"
+import Typography from "@/ui/atoms/typography_"
 
 // Icons
-import FunnelIcon from "@/ui/icons/Funnel"
-import BriefcaseIcon from "@/ui/icons/Briefcase"
-import Typography from "@/ui/atoms/typography"
+import Briefcase from "@/ui/icons/briefcase_"
+import Funnel from "@/ui/icons/funnel_"
 
 const Experience = () => {
   const { t } = useTranslations("home")
@@ -81,10 +81,10 @@ const Experience = () => {
       </div>
       <div
         id="experience-filter-container"
-        className="flex flex-col items-start z-10 justify-start w-full space-y-2 max-w-[600px] md:px-4 md:max-w-[800px]  xl:max-w-[900px]"
+        className="flex flex-col px-4 md:px-0 items-start z-10 justify-start w-full space-y-2 max-w-[498px] xl:px-4 md:max-w-[624px]  lg:max-w-[750px] xl:max-w-[1002px]"
       >
         <ListFilter
-          icon={<BriefcaseIcon />}
+          icon={<Briefcase />}
           label={t("experience.jobs")}
           activeFilters={activeJobs}
           filters={[
@@ -101,7 +101,7 @@ const Experience = () => {
           color={ListFilterColor.PRIMARY300}
         />
         <ListFilter
-          icon={<FunnelIcon />}
+          icon={<Funnel />}
           label={t("experience.filters")}
           activeFilters={activeFilters}
           filters={[

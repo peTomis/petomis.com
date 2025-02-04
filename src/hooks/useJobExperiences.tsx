@@ -4,21 +4,25 @@ import Image from "next/image"
 // Hooks
 import { useTranslations } from "./useTranslations"
 
+// Utils
+import { ActivityColorText, ActivityColorVariant } from "@/utils"
+
 // Images
 import anubiLogo from "@public/images/anubidigital-logo.svg"
 import pienissimoLogo from "@public/images/pienissimo-logo.webp"
+
+// Organisms
+import WorkExperience from "@/ui/organisms/work-experience"
 
 // Molecules
 import ExperienceDescriptionContainer from "@/ui/molecules/experience-description-container"
 
 // Atoms
-import Typography, { TypographyColor } from "@/ui/atoms/typography"
+import Typography, { TypographyColor } from "@/ui/atoms/typography_"
 
 // Icons
-import AnubidigitalIcon from "@/ui/icons/companies/Anubidigital"
-import MobileDeveloperIcon from "@/ui/icons/companies/MobileDeveloper"
-import WorkExperience from "@/ui/organisms/work-experience"
-import { ActivityColorText, ActivityColorVariant } from "@/utils"
+import Anubidigital from "@/ui/icons/companies/anubidigital_"
+import MobileDeveloper from "@/ui/icons/companies/mobile-dev"
 
 export interface WorkExperience {
   job: string
@@ -145,10 +149,10 @@ export function useJobExperiences(): WorkExperience[] {
             onClick={() => window.open(process.env.ANUBI, "_blank")}
           >
             <div className="flex lg:hidden">
-              <AnubidigitalIcon height={80} />
+              <Anubidigital height={80} />
             </div>
             <div className="hidden lg:flex">
-              <AnubidigitalIcon height={100} />
+              <Anubidigital height={100} />
             </div>
           </div>
         }
@@ -203,7 +207,7 @@ export function useJobExperiences(): WorkExperience[] {
     variant: ActivityColorVariant.MOBILE,
     image: () => (
       <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
-        <MobileDeveloperIcon />
+        <MobileDeveloper />
       </div>
     ),
     description: () => (
@@ -220,7 +224,7 @@ export function useJobExperiences(): WorkExperience[] {
         title={
           <div className="h-[260px] items-center flex flex-col mx-auto w-full justify-center">
             <div>
-              <MobileDeveloperIcon />
+              <MobileDeveloper />
             </div>
             <div>
               <Typography

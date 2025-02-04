@@ -2,26 +2,26 @@
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Icons
-import AndroidStudioIcon from "@/ui/icons/programming/AndroidStudio"
-import AwsIcon from "@/ui/icons/programming/Aws"
-import DockerIcon from "@/ui/icons/programming/Docker"
-import FirebaseIcon from "@/ui/icons/programming/Firebase"
-import GitHubIcon from "@/ui/icons/programming/GitHub"
-import JavaIcon from "@/ui/icons/programming/Java"
-import JavascriptIcon from "@/ui/icons/programming/Javascript"
-import JestIcon from "@/ui/icons/programming/Jest"
-import JiraIcon from "@/ui/icons/programming/Jira"
-import KotlinIcon from "@/ui/icons/programming/Kotlin"
-import KubernetesIcon from "@/ui/icons/programming/Kubernetes"
-import MongodbIcon from "@/ui/icons/programming/Mongodb"
-import NestjsIcon from "@/ui/icons/programming/NestJs"
-import NextjsIcon from "@/ui/icons/programming/Nextjs"
-import NodeJsIcon from "@/ui/icons/programming/Nodejs"
-import PostgreSQLIcon from "@/ui/icons/programming/Postgre"
-import SwiftIcon from "@/ui/icons/programming/Swift"
-import TypescriptIcon from "@/ui/icons/programming/Typescript"
-import VsCodeIcon from "@/ui/icons/programming/VsCode"
-import XcodeIcon from "@/ui/icons/programming/Xcode"
+import AndroidStudio from "@/ui/icons/programming/AndroidStudio"
+import Aws from "@/ui/icons/programming/Aws"
+import Docker from "@/ui/icons/programming/Docker"
+import Firebase from "@/ui/icons/programming/Firebase"
+import GitHub from "@/ui/icons/programming/GitHub"
+import Java from "@/ui/icons/programming/Java"
+import Javascript from "@/ui/icons/programming/Javascript"
+import Jest from "@/ui/icons/programming/Jest"
+import Jira from "@/ui/icons/programming/Jira"
+import Kotlin from "@/ui/icons/programming/Kotlin"
+import Kubernetes from "@/ui/icons/programming/Kubernetes"
+import Mongodb from "@/ui/icons/programming/Mongodb"
+import Nestjs from "@/ui/icons/programming/NestJs"
+import Nextjs from "@/ui/icons/programming/Nextjs"
+import NodeJs from "@/ui/icons/programming/Nodejs"
+import PostgreSQL from "@/ui/icons/programming/Postgre"
+import Swift from "@/ui/icons/programming/Swift"
+import Typescript from "@/ui/icons/programming/Typescript"
+import VsCode from "@/ui/icons/programming/VsCode"
+import Xcode from "@/ui/icons/programming/Xcode"
 
 interface PersonalExperience {
   name: string
@@ -91,35 +91,35 @@ const GetExperienceData = (): PersonalExperience[] => {
   const experiences = [
     {
       name: "Java",
-      icon: <JavaIcon />,
+      icon: <Java />,
       tags: [Tag.MOBILE, Tag.PROGRAMMING_LANGUAGE],
       duration: staticYears(2),
       url: "https://www.oracle.com/java/",
     },
     {
       name: "Javascript",
-      icon: <JavascriptIcon />,
+      icon: <Javascript />,
       tags: [Tag.FULLSTACK, Tag.PROGRAMMING_LANGUAGE],
       duration: from(2022),
       url: "https://www.javascript.com/",
     },
     {
       name: "Kotlin",
-      icon: <KotlinIcon />,
+      icon: <Kotlin />,
       tags: [Tag.MOBILE, Tag.PROGRAMMING_LANGUAGE],
       duration: staticYears(2),
       url: "https://kotlinlang.org/",
     },
     {
       name: "Swift",
-      icon: <SwiftIcon />,
+      icon: <Swift />,
       tags: [Tag.MOBILE, Tag.PROGRAMMING_LANGUAGE],
       duration: staticYears(2),
       url: "https://developer.apple.com/swift/",
     },
     {
       name: "Typescript",
-      icon: <TypescriptIcon />,
+      icon: <Typescript />,
       tags: [Tag.FULLSTACK, Tag.PROGRAMMING_LANGUAGE],
       duration: from(2022),
       url: "https://www.typescriptlang.org/",
@@ -127,105 +127,105 @@ const GetExperienceData = (): PersonalExperience[] => {
 
     {
       name: "Next.js",
-      icon: <NextjsIcon />,
+      icon: <Nextjs />,
       tags: [Tag.FULLSTACK, Tag.FRAMEWORK],
       duration: from(2022),
       url: "https://nextjs.org/",
     },
     {
       name: "Nest.js",
-      icon: <NestjsIcon />,
+      icon: <Nestjs />,
       tags: [Tag.FULLSTACK, Tag.FRAMEWORK],
       duration: from(2022),
       url: "https://nestjs.com/",
     },
     {
       name: "Node.js",
-      icon: <NodeJsIcon />,
+      icon: <NodeJs />,
       tags: [Tag.FULLSTACK, Tag.OTHER],
       duration: from(2022),
       url: "https://nodejs.org/en/",
     },
     {
       name: "AWS",
-      icon: <AwsIcon />,
+      icon: <Aws />,
       tags: [Tag.FULLSTACK, Tag.OTHER],
       duration: from(2022),
       url: "https://aws.amazon.com/",
     },
     {
       name: "Docker",
-      icon: <DockerIcon />,
+      icon: <Docker />,
       tags: [Tag.FULLSTACK, Tag.OTHER],
       duration: from(2022),
       url: "https://www.docker.com/",
     },
     {
       name: "Postgre SQL",
-      icon: <PostgreSQLIcon />,
+      icon: <PostgreSQL />,
       tags: [Tag.FULLSTACK, Tag.DATABASE],
       duration: from(2022),
       url: "https://www.postgresql.org/",
     },
     {
       name: "Jest",
-      icon: <JestIcon />,
+      icon: <Jest />,
       tags: [Tag.FULLSTACK, Tag.FRAMEWORK],
       duration: from(2022),
       url: "https://jestjs.io/",
     },
     {
       name: "Android Studio",
-      icon: <AndroidStudioIcon />,
+      icon: <AndroidStudio />,
       tags: [Tag.MOBILE, Tag.IDE],
       duration: staticYears(2),
       url: "https://developer.android.com/studio",
     },
     {
       name: "VS Code",
-      icon: <VsCodeIcon />,
+      icon: <VsCode />,
       tags: [Tag.FULLSTACK, Tag.IDE],
       duration: from(2022),
       url: "https://code.visualstudio.com/",
     },
     {
       name: "Xcode",
-      icon: <XcodeIcon />,
+      icon: <Xcode />,
       tags: [Tag.MOBILE, Tag.IDE],
       duration: staticYears(2),
       url: "https://developer.apple.com/xcode/",
     },
     {
       name: "GitHub",
-      icon: <GitHubIcon />,
+      icon: <GitHub />,
       tags: [Tag.FULLSTACK, Tag.MOBILE, Tag.OTHER],
       duration: from(2022),
       url: "https://github.com",
     },
     {
       name: "Jira",
-      icon: <JiraIcon />,
+      icon: <Jira />,
       tags: [Tag.FULLSTACK, Tag.MOBILE, Tag.OTHER],
       duration: from(2022),
       url: "https://www.atlassian.com/software/jira",
     },
     {
       name: "MongoDB",
-      icon: <MongodbIcon />,
+      icon: <Mongodb />,
       tags: [Tag.FULLSTACK, Tag.DATABASE],
       duration: from(2023),
       url: "https://www.mongodb.com/",
     },
     {
       name: "Kubernetes",
-      icon: <KubernetesIcon />,
+      icon: <Kubernetes />,
       tags: [Tag.FULLSTACK, Tag.OTHER],
       duration: from(2023),
       url: "https://kubernetes.io/",
     },
     {
       name: "Firebase",
-      icon: <FirebaseIcon />,
+      icon: <Firebase />,
       tags: [Tag.MOBILE, Tag.OTHER],
       duration: staticYears(1),
       url: "https://firebase.google.com/",
