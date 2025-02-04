@@ -1,7 +1,7 @@
 import useSwipeHandler from "@/hooks/useSwipeHandler"
 import useWheelHandler from "@/hooks/useWheelHandler"
-import CarouselButton from "@/ui/atoms/CarouselButton"
-import CarouselElementSkewed from "@/ui/molecules/CarouselElementSkewed"
+import CarouselButton from "@/ui/atoms/carousel-button"
+import CarouselElementSkewed from "@/ui/molecules/carousel-element-skewed"
 import React, { useEffect } from "react"
 
 interface Props {

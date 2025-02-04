@@ -10,7 +10,7 @@ import ActivityCardHint from "@/ui/molecules/activity-card-hint"
 
 // Atoms
 import ActivityCardDescription from "@/ui/atoms/activity-card-description/index"
-import ActivityCardImage from "@/ui/atoms/ActivityCardImage"
+import ActivityCardImage from "@/ui/atoms/activity-card-image"
 
 // Utils
 import { ActivityColorVariant } from "@/utils"

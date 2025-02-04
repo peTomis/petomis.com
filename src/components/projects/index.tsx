@@ -1,9 +1,10 @@
 import { useTranslations } from "@/hooks/useTranslations"
-import Carousel from "@/ui/organisms/Carousel"
-import CarouselElement from "@/ui/molecules/CarouselElement"
+import Carousel from "@/ui/organisms/carousel"
+import CarouselElement from "@/ui/molecules/carousel-element"
 import metchImage from "@public/images/metch-bg.png"
-import { CarouselElementColor } from "@/ui/atoms/CarouselElementText"
+import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
 import MetchLogo from "@/ui/icons/MetchLogo"
+import Typography from "@/ui/atoms/typography"
 
 const Projects = () => {
   const { t } = useTranslations("home")
@@ -22,16 +23,28 @@ const Projects = () => {
     website: process.env.METCH_GG,
   }
 
-  const projects = [metch]
+  const projects = [metch, metch, metch]
 
   return (
     <div
-    // id="projects-container"
-    // title={t("projects.title").toUpperCase()}
-    // description={[t("projects.description")]}
-    // bgColor="bg-primary-200"
-    // bgOpacity="bg-opacity-50"
+      id="projects-container"
+      className="relative flex flex-col items-center justify-center w-full pt-16 pb-32 mx-auto space-y-8 overflow-hidden bg-gradient-radial from-primary-50 to-primary-100 md:pb-16 md:pt-16"
     >
+      <div className="z-10 flex flex-col items-center justify-center w-full space-y-8">
+        <Typography
+          extrabold
+          size="h1"
+          text={t("projects.title").toUpperCase()}
+        />
+        <div className="opacity-60">
+          <Typography
+            light
+            size="h6"
+            md="h4"
+            text={t("projects.description")}
+          />
+        </div>
+      </div>
       <div className="pt-8">
         <Carousel
           elements={projects.map((project, key) => (

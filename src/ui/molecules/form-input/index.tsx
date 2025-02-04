@@ -21,7 +21,7 @@ const FormInput = ({ error, label, onChange, placeholder, type }: Props) => {
   return (
     <div id="form-input-container" className="flex flex-col w-full">
       <div id="form-input-label" className="mx-4">
-        <Typography text={label} light={true} color="defaultTextColor-dark" />
+        <Typography text={label} light={true} />
       </div>
 
       {isArea ? (

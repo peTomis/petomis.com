@@ -1,9 +1,9 @@
 import { StaticImageData } from "next/image"
-import CarouselElementImage from "@/ui/atoms/CarouselElementImage"
+import CarouselElementImage from "@/ui/atoms/carousel-element-image"
 import CarouselElementText, {
   CarouselElementColor,
-} from "@/ui/atoms/CarouselElementText"
-import CarouselElementNote from "@/ui/atoms/CarouselElementNote"
+} from "@/ui/atoms/carousel-element-text"
+import CarouselElementNote from "@/ui/atoms/carousel-element-note"
 
 interface Props {
   description: string
@@ -26,7 +26,7 @@ const CarouselElement = ({
 }: Props) => {
   return (
     <div
-      className="relative cursor-pointer text-defaultTextColor-dark w-[90vw] max-w-[400px] flex flex-col h-[400px] sm:w-full sm:max-w-[600px] xl:w-[800px] lg:max-w-[800px] lg:h-[500px]"
+      className="relative cursor-pointer text-white-dark flex flex-col h-[320px] w-[320px] md:h-[400px] md:w-[400px] lg:w-[500px] lg:h-[500px]"
       onClick={selected ? onClick : undefined}
     >
       {selected && <CarouselElementImage src={src} />}

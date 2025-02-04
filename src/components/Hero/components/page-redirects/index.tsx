@@ -5,7 +5,7 @@ import { useTranslations } from "@/hooks/useTranslations"
 import { WebsiteSection } from "@/utils/websiteSections"
 
 // Molecules
-import SectionShortcut from "@/ui/molecules/SectionShortcut"
+import SectionShortcut from "@/ui/molecules/section-shortcut"
 
 // Icons
 import AcademicHat from "@/ui/icons/AcademicHat"

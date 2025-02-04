@@ -8,14 +8,14 @@ import GetExperienceData from "./experiences"
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Organisms
-import ListFilter from "@/ui/organisms/ListFilter"
+import ListFilter from "@/ui/organisms/list-filter"
 
 // Molecules
-import ExperienceCard from "@/ui/molecules/ExperienceCard"
+import ExperienceCard from "@/ui/molecules/experience-card"
 
 // Atoms
-import ExperienceCardContainer from "@/ui/atoms/ExperienceCardContainer"
-import { ListFilterColor } from "@/ui/molecules/ListFilterElements"
+import ExperienceCardContainer from "@/ui/atoms/experience-card-container"
+import { ListFilterColor } from "@/ui/molecules/list-filter-elements"
 
 // Icons
 import FunnelIcon from "@/ui/icons/Funnel"

@@ -34,8 +34,8 @@ const ListFilterElements = ({
               onClick={() => onFilterChange(filter.value)}
               className={`flex flex-row  justify-center m-[2px] items-center space-x-2 px-4 py-2 rounded ${
                 isActive(filter.value)
-                  ? `${color} text-defaultTextColor-dark`
-                  : "bg-gray-200 dark:bg-gray-200 dark:bg-opacity-30"
+                  ? `${color} text-white-dark`
+                  : "bg-gray-200"
               }`}
             >
               {filter.key}

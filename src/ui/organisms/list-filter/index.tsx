@@ -1,7 +1,7 @@
 import ListFilterElements, {
   ListFilterColor,
-} from "@/ui/molecules/ListFilterElements"
-import ListFilterLabel from "@/ui/molecules/ListFilterLabel"
+} from "@/ui/molecules/list-filter-elements"
+import ListFilterLabel from "@/ui/molecules/list-filter-label"
 
 interface Props {
   icon: JSX.Element

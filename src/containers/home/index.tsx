@@ -9,17 +9,17 @@ import { WebsiteSection } from "@/utils/websiteSections"
 // Components
 import Sidebar from "@/components/sidebar"
 import TopBar from "@/components/topbar"
-import Hero from "@/components/Hero"
+import Hero from "@/components/hero"
 import Contact from "@/components/contact"
-import Work from "@/components/Work"
+import Work from "@/components/work"
 import Experience from "@/components/experience"
 import Footer from "@/components/footer"
 import Projects from "@/components/projects"
 import Certifications from "@/components/certifications"
 
 // Molecules
-import HomePageContainer from "@/ui/molecules/HomePageContainer"
-import MailShortcut from "@/ui/molecules/MailShortcut"
+import HomePageContainer from "@/ui/molecules/home-page-container"
+import MailShortcut from "@/ui/molecules/mail-shortcut"
 
 const HomeContainer = () => {
   const { sidebarVisible, toggleSidebar, closeSidebar } = useSidebarVisibility()

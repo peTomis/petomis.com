@@ -5,11 +5,7 @@ import SocialIconContainer from "@/ui/atoms/social-icon-container"
 import GitHubIcon from "@/ui/icons/social/github"
 import LinkedinIcon from "@/ui/icons/social/linkedin"
 
-interface Props {
-  dark?: boolean
-}
-
-const SocialButtons = ({ dark }: Props) => {
+const SocialButtons = () => {
   const openGitHub = () => window.open(process.env.GITHUB, "_blank")
   const openLinkedIn = () => window.open(process.env.LINKEDIN, "_blank")
 

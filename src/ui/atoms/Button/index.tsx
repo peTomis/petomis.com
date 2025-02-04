@@ -1,5 +1,4 @@
 import Typography from "../typography"
-import style from "./style.module.css"
 
 interface Props {
   label: string
@@ -17,7 +16,7 @@ const Button = ({ label, onClick, primary }: Props) => {
       }`}
       onClick={onClick}
     >
-      <Typography text={label} color="defaultTextColor-dark" />
+      <Typography text={label} />
     </div>
   )
 }

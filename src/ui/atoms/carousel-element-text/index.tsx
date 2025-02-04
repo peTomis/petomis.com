@@ -29,16 +29,11 @@ const CarouselElementText = ({
     <>
       {selected ? (
         <div
-          className={`flex flex-col flex-1 justify-start w-full items-center px-8 py-8 lg:py-16 bg-background-dark bg-opacity-50`}
+          className={`flex flex-col flex-1 justify-start w-full items-center px-8 py-8 lg:py-16 `}
         >
           <div className="flex flex-none">{title}</div>
           <div className="flex flex-col items-center justify-center flex-1 w-full space-y-4 text-center">
-            <Typography
-              text={description}
-              light={true}
-              color="defaultTextColor-dark"
-              size="h6"
-            />
+            <Typography text={description} light={true} md="h6" />
           </div>
         </div>
       ) : (

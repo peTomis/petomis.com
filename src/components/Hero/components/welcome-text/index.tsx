@@ -33,11 +33,7 @@ const WelcomeText = () => {
       <div className="flex pl-6 md:pl-0 justify-start w-[85vw] lg:ml-8 max-w-[660px] text-jobSmall font-bacasimeAntique sm:text-jobMedium xxl:text-jobExtraLarge">
         <h1 className="relative text-center">
           <span className="relative line-clamp-1 ">{currentWord}</span>
-          <div
-            className={"bg-primary-100 dark:bg-primary-100 ".concat(
-              style.cursor
-            )}
-          />
+          <div className={"bg-primary-100 ".concat(style.cursor)} />
         </h1>
       </div>
     </div>

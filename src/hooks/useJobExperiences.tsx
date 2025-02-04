@@ -202,7 +202,7 @@ export function useJobExperiences(): WorkExperience[] {
     tools: ["XCode", "Android Studio", "IntelliJ"],
     variant: ActivityColorVariant.MOBILE,
     image: () => (
-      <div className="h-[300px] items-center flex fill-defaultTextColor mx-auto w-full justify-center">
+      <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
         <MobileDeveloperIcon />
       </div>
     ),

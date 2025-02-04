@@ -1,7 +1,7 @@
 // Welcome components
-import PageRedirects from "./components/PageRedirects"
-import WelcomeImage from "./components/WelcomeImage"
-import WelcomeText from "./components/WelcomeText"
+import PageRedirects from "./components/page-redirects"
+import WelcomeImage from "./components/welcome-image"
+import WelcomeText from "./components/welcome-text"
 import Image from "next/image"
 
 // Utils

@@ -29,7 +29,7 @@ const ExperienceCard = ({ name, icon, tags, duration, onClick }: Props) => {
         <div>{icon}</div>
       </div>
       <div className="flex flex-row items-end justify-center flex-1 w-full mx-auto space-x-1 text-center">
-        <div className="w-6 h-6 fill-defaultTextColor">
+        <div className="w-6 h-6 fill-white">
           <ClockIcon />
         </div>
         <Typography text={duration} />

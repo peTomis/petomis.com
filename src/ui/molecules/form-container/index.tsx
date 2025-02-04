@@ -1,5 +1,5 @@
 import { useTranslations } from "@/hooks/useTranslations"
-import Button from "@/ui/atoms/Button"
+import Button from "@/ui/atoms/button"
 
 interface Props {
   children: React.ReactNode

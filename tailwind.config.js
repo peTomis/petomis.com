@@ -43,9 +43,6 @@ module.exports = {
         background: {
           DEFAULT: "#1f1f1f",
         },
-        defaultTextColor: {
-          DEFAULT: "#ffffff",
-        },
         competitionScreen: {
           DEFAULT: "#3E3E3E",
         },
