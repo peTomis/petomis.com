@@ -1,6 +1,6 @@
 // Atoms
 import IconContainer from "@/ui/atoms/icon-container"
-import Typography from "@/ui/atoms/typograph"
+import Typography from "@/ui/atoms/typography"
 
 interface Props {
   IconComponent: React.ElementType

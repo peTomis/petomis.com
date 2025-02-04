@@ -12,9 +12,9 @@ import TopBar from "@/components/topbar"
 import Hero from "@/components/Hero"
 import Contact from "@/components/contact"
 import Work from "@/components/Work"
-import Experience from "@/components/experienc"
+import Experience from "@/components/experience"
 import Footer from "@/components/footer"
-import Projects from "@/components/project"
+import Projects from "@/components/projects"
 import Certifications from "@/components/certifications"
 
 // Molecules

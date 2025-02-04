@@ -13,7 +13,7 @@ import ActivityCardGrid from "@/ui/molecules/activity-card-grid"
 
 // Patterns
 import { useJobExperiences } from "@/hooks/useJobExperiences"
-import Typography from "@/ui/atoms/typograph"
+import Typography from "@/ui/atoms/typography"
 
 const Work = () => {
   const [experience, setExperience] = React.useState<any>(undefined)

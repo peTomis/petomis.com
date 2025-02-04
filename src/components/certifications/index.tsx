@@ -2,7 +2,7 @@
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Atoms
-import Typography from "@/ui/atoms/typograph"
+import Typography from "@/ui/atoms/typography"
 import Medal from "@/ui/icons/Medal"
 
 const Certifications = () => {

@@ -20,7 +20,7 @@ import { ListFilterColor } from "@/ui/molecules/ListFilterElements"
 // Icons
 import FunnelIcon from "@/ui/icons/Funnel"
 import BriefcaseIcon from "@/ui/icons/Briefcase"
-import Typography from "@/ui/atoms/typograph"
+import Typography from "@/ui/atoms/typography"
 
 const Experience = () => {
   const { t } = useTranslations("home")

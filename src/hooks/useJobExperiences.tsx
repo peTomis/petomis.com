@@ -12,7 +12,7 @@ import pienissimoLogo from "@public/images/pienissimo-logo.webp"
 import ExperienceDescriptionContainer from "@/ui/molecules/experience-description-container"
 
 // Atoms
-import Typography, { TypographyColor } from "@/ui/atoms/typograph"
+import Typography, { TypographyColor } from "@/ui/atoms/typography"
 
 // Icons
 import AnubidigitalIcon from "@/ui/icons/companies/Anubidigital"

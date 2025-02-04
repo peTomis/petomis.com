@@ -1,4 +1,4 @@
-import Typography from "@/ui/atoms/typograph"
+import Typography from "@/ui/atoms/typography"
 import { ActivityColorText, ActivityColorVariant } from "@/utils"
 
 interface Props {
