@@ -13,7 +13,6 @@ const LanguageToggle = ({
   language,
   setLanguage,
 }: LanguageToggleProps) => {
-  console.log(languages)
   return (
     <div
       className="inline-flex items-center p-1 bg-black bg-opacity-50 border rounded-md shadow-sm border-primary-400"

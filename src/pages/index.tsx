@@ -2,12 +2,7 @@ import { fetchTranslations } from "@modules/translations/fetch"
 import type { NextPage } from "next"
 import Head from "next/head"
 import { useTranslations } from "@/hooks/useTranslations"
-import dynamic from "next/dynamic"
-
-const ClientSideHome = dynamic(
-  () => import("@/containers/home"), // Replace with the actual path to your component
-  { ssr: false }
-)
+import HomeContainer from "@/containers/home"
 
 const Home: NextPage = () => {
   const { t } = useTranslations("home")
@@ -52,7 +47,7 @@ const Home: NextPage = () => {
         <link rel="mask-icon" href="/favicon.svg" color="#00719C" />
       </Head>
 
-      <ClientSideHome />
+      <HomeContainer />
     </div>
   )
 }
