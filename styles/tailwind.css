@@ -6,6 +6,24 @@
 
 body {
   color: rgb(255, 254, 252);
-  background: rgb(0, 0, 0);
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+  --tw-gradient-from: #000 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from),
+    #000 var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-to: #1f3343 var(--tw-gradient-to-position);
   position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }

@@ -15,7 +15,7 @@ const Hero = ({ onRedirect }: Props) => {
   return (
     <div
       id="welcome-container"
-      className="relative flex items-center justify-center pb-8 bg-gradient-to-br from-black via-black to-[#1f3343]"
+      className="relative flex items-center justify-center pb-8"
     >
       <div className="z-10 flex flex-col items-center justify-center w-screen pt-12 lg:flex-row-reverse lg:space-x-reverse lg:space-x-4 lg:h-screen">
         <div
