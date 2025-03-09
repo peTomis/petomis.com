@@ -11,7 +11,6 @@ import Sidebar from "@/components/sidebar"
 import TopBar from "@/components/topbar"
 import Hero from "@/components/hero"
 import Contact from "@/components/contact"
-import Work from "@/components/work"
 import Experience from "@/components/experience"
 import Footer from "@/components/footer"
 import Projects from "@/components/projects"
@@ -35,9 +34,8 @@ const HomeContainer = () => {
       <Sidebar open={sidebarVisible} onClose={closeSidebar} />
       <Hero onRedirect={scrollToSection} />
       <Certifications />
-      <Experience />
       <Projects />
-      <Work />
+      <Experience />
       <Contact />
       <Footer />
       {isMailShortcutVisible && (

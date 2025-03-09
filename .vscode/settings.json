@@ -18,5 +18,6 @@
   "javascript.preferences.quoteStyle": "double",
   "[xml]": {
     "editor.defaultFormatter": "mikeburgh.xml-format"
-  }
+  },
+  "cSpell.words": ["anubidigital", "backoffice", "datawarehouse", "pienissimo"]
 }

@@ -1,4 +1,4 @@
-import Typography from "../typography_"
+import Typography from "../typography"
 
 interface Props {
   title: React.ReactNode

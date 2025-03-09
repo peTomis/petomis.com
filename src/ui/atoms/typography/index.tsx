@@ -3,20 +3,26 @@ export type TypographyColor =
   | "BLACK"
   | "PRIMARY50"
   | "PRIMARY100"
+  | "PRIMARY200"
   | "PRIMARY300"
   | "PRIMARY400"
+  | "PRIMARY500"
   | "ANUBIDIGITAL"
   | "ANUBIDIGITAL-DARK"
+  | "PIENISSIMO"
 
 export enum TypographyColorEnum {
   BLACK = "text-black",
   BASE = "",
   PRIMARY50 = "text-primary-50",
   PRIMARY100 = "text-primary-100",
+  PRIMARY200 = "text-primary-200",
   PRIMARY300 = "text-primary-300",
   PRIMARY400 = "text-primary-400",
+  PRIMARY500 = "text-primary-500",
   ANUBIDIGITAL = "text-anubidigital",
   "ANUBIDIGITAL-DARK" = "text-anubidigital-dark",
+  PIENISSIMO = "text-red-600",
 }
 
 export type TypographyFont = "roboto" | "bacasimeAntique" | "agdasima"

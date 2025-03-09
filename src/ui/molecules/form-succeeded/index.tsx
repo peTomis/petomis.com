@@ -6,7 +6,7 @@ const FormSucceeded = () => {
   return (
     <div
       id="contact-form"
-      className="w-full rounded-2xl h-[563.5px] lg:max-w-[800px] space-y-4 md:pt-16 pb-12 bg-primary-500"
+      className="w-full h-[563.5px] lg:max-w-[800px] space-y-4 md:pt-16 pb-12 bg-primary-500"
     >
       <div
         id="letter-container"

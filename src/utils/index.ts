@@ -41,19 +41,19 @@ export enum ActivityColorFill {
 }
 
 export enum ActivityColorTitleDots {
-  MOBILE = `bg-primary-400`,
+  MOBILE = `bg-primary-100`,
   PIENISSIMO = `bg-red-600`,
   ANUBIDIGITAL = `bg-anubidigital`,
 }
 
 export enum ActivityColorTitleText {
-  MOBILE = `PRIMARY400`,
-  PIENISSIMO = `BLACK`,
+  MOBILE = `PRIMARY100`,
+  PIENISSIMO = `PIENISSIMO`,
   ANUBIDIGITAL = `ANUBIDIGITAL`,
 }
 
 export enum ActivityColorText {
-  MOBILE = `BLACK`,
+  MOBILE = `BASE`,
   PIENISSIMO = `BLACK`,
   ANUBIDIGITAL = `BASE`,
 }

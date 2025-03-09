@@ -5,34 +5,55 @@ import Image from "next/image"
 import { useTranslations } from "./useTranslations"
 
 // Utils
-import { ActivityColorText, ActivityColorVariant } from "@/utils"
+import { ActivityColorVariant } from "@/utils"
 
 // Images
-import anubiLogo from "@public/images/anubidigital-logo.svg"
+import anubidigitalLogo from "@public/images/anubidigital-logo.svg"
 import pienissimoLogo from "@public/images/pienissimo-logo.webp"
 
 // Organisms
 import WorkExperience from "@/ui/organisms/work-experience"
 
-// Molecules
-import ExperienceDescriptionContainer from "@/ui/molecules/experience-description-container"
-
 // Atoms
-import Typography, { TypographyColor } from "@/ui/atoms/typography_"
+import Typography from "@/ui/atoms/typography"
 
 // Icons
-import Anubidigital from "@/ui/icons/companies/anubidigital_"
-import MobileDeveloper from "@/ui/icons/companies/mobile-dev"
+import { ExperienceBackground } from "@/ui/organisms/experience-element"
+import AndroidStudio from "@/ui/icons/programming/AndroidStudio"
+import Aws from "@/ui/icons/programming/Aws"
+import Docker from "@/ui/icons/programming/Docker"
+import Firebase from "@/ui/icons/programming/Firebase"
+import GitHub from "@/ui/icons/programming/GitHub"
+import Java from "@/ui/icons/programming/Java"
+import Javascript from "@/ui/icons/programming/Javascript"
+import Jest from "@/ui/icons/programming/Jest"
+import Jira from "@/ui/icons/programming/Jira"
+import Kotlin from "@/ui/icons/programming/Kotlin"
+import Kubernetes from "@/ui/icons/programming/Kubernetes"
+import Mongodb from "@/ui/icons/programming/Mongodb"
+import Nestjs from "@/ui/icons/programming/NestJs"
+import Nextjs from "@/ui/icons/programming/Nextjs"
+import NodeJs from "@/ui/icons/programming/Nodejs"
+import PostgreSQL from "@/ui/icons/programming/Postgre"
+import Swift from "@/ui/icons/programming/Swift"
+import Typescript from "@/ui/icons/programming/Typescript"
+import VsCode from "@/ui/icons/programming/VsCode"
+import Xcode from "@/ui/icons/programming/Xcode"
 
 export interface WorkExperience {
   job: string
   variant: ActivityColorVariant
   date: string
-  programmingLanguages: string[]
-  tools: string[]
+  background: ExperienceBackground
   image: () => React.ReactNode
-  description: () => React.ReactNode
   details: () => React.ReactNode
+  experiences: PersonalExperience[]
+}
+
+export interface PersonalExperience {
+  name: string
+  icon: JSX.Element
+  url: string
 }
 
 export function useJobExperiences(): WorkExperience[] {
@@ -41,57 +62,22 @@ export function useJobExperiences(): WorkExperience[] {
   const pienissimo: WorkExperience = {
     job: "Software Developer",
     date: "2024 - today",
-    programmingLanguages: ["Node,js", "Angular", "Swift", "Flutter"],
-    tools: ["VSCode", "XCode", "AWS"],
+    background: "bg-red-300",
     variant: ActivityColorVariant.PIENISSIMO,
     image: () => (
-      <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
+      <div className="h-[36px] items-center flex">
         <Image
           src={pienissimoLogo}
           className="object-cover"
           alt=""
-          width={200}
+          width={140}
           height={300}
         />
       </div>
     ),
-    description: () => (
-      <ExperienceDescriptionContainer
-        job={pienissimo.job}
-        date={pienissimo.date}
-        programmingLanguages={pienissimo.programmingLanguages}
-        tools={pienissimo.tools}
-        variant={pienissimo.variant}
-      />
-    ),
     details: () => (
       <WorkExperience
         variant={pienissimo.variant}
-        title={
-          <div
-            className="h-[260px] items-center flex mx-auto w-full justify-center cursor-pointer"
-            onClick={() => window.open(process.env.PIENISSIMO, "_blank")}
-          >
-            <div className="flex lg:hidden">
-              <Image
-                src={pienissimoLogo}
-                className="object-cover"
-                alt=""
-                width={200}
-                height={300}
-              />
-            </div>
-            <div className="hidden lg:flex">
-              <Image
-                src={pienissimoLogo}
-                className="object-cover"
-                alt=""
-                width={400}
-                height={300}
-              />
-            </div>
-          </div>
-        }
         tasks={[]}
         sentences={[
           t("pienissimo.sentences.first"),
@@ -112,50 +98,69 @@ export function useJobExperiences(): WorkExperience[] {
         ]}
       />
     ),
+    experiences: [
+      {
+        name: "Swift",
+        icon: <Swift />,
+        url: "https://developer.apple.com/swift/",
+      },
+      {
+        name: "Typescript",
+        icon: <Typescript />,
+        url: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "Nest.js",
+        icon: <Nestjs />,
+        url: "https://nestjs.com/",
+      },
+      {
+        name: "Node.js",
+        icon: <NodeJs />,
+        url: "https://nodejs.org/en/",
+      },
+      {
+        name: "AWS",
+        icon: <Aws />,
+        url: "https://aws.amazon.com/",
+      },
+      {
+        name: "Postgre SQL",
+        icon: <PostgreSQL />,
+        url: "https://www.postgresql.org/",
+      },
+      {
+        name: "VS Code",
+        icon: <VsCode />,
+        url: "https://code.visualstudio.com/",
+      },
+      {
+        name: "Xcode",
+        icon: <Xcode />,
+        url: "https://developer.apple.com/xcode/",
+      },
+    ],
   }
 
   const anubidigital: WorkExperience = {
     job: "Fullstack Developer",
     date: "2022 - 2024",
-    programmingLanguages: ["Node,js", "React"],
-    tools: ["VSCode", "AWS"],
+    background: "bg-black",
     variant: ActivityColorVariant.ANUBIDIGITAL,
     image: () => (
-      <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
+      <div className="h-[36px] items-center flex">
         <Image
-          src={anubiLogo}
+          src={anubidigitalLogo}
           className="object-cover"
           alt=""
-          width={200}
+          width={140}
           height={300}
         />
       </div>
     ),
-    description: () => (
-      <ExperienceDescriptionContainer
-        job={anubidigital.job}
-        date={anubidigital.date}
-        programmingLanguages={anubidigital.programmingLanguages}
-        tools={anubidigital.tools}
-        variant={anubidigital.variant}
-      />
-    ),
     details: () => (
       <WorkExperience
         variant={anubidigital.variant}
-        title={
-          <div
-            className="h-[260px] items-center flex mx-auto w-full justify-center cursor-pointer"
-            onClick={() => window.open(process.env.ANUBI, "_blank")}
-          >
-            <div className="flex lg:hidden">
-              <Anubidigital height={80} />
-            </div>
-            <div className="hidden lg:flex">
-              <Anubidigital height={100} />
-            </div>
-          </div>
-        }
         tasks={[
           {
             title: t("anubidigital.tasks.project.title"),
@@ -197,45 +202,98 @@ export function useJobExperiences(): WorkExperience[] {
         ]}
       />
     ),
+    experiences: [
+      {
+        name: "Javascript",
+        icon: <Javascript />,
+        url: "https://www.javascript.com/",
+      },
+      {
+        name: "Typescript",
+        icon: <Typescript />,
+        url: "https://www.typescriptlang.org/",
+      },
+
+      {
+        name: "Next.js",
+        icon: <Nextjs />,
+        url: "https://nextjs.org/",
+      },
+      {
+        name: "Nest.js",
+        icon: <Nestjs />,
+        url: "https://nestjs.com/",
+      },
+      {
+        name: "Node.js",
+        icon: <NodeJs />,
+        url: "https://nodejs.org/en/",
+      },
+      {
+        name: "AWS",
+        icon: <Aws />,
+        url: "https://aws.amazon.com/",
+      },
+      {
+        name: "Docker",
+        icon: <Docker />,
+        url: "https://www.docker.com/",
+      },
+      {
+        name: "Postgre SQL",
+        icon: <PostgreSQL />,
+        url: "https://www.postgresql.org/",
+      },
+      {
+        name: "Jest",
+        icon: <Jest />,
+        url: "https://jestjs.io/",
+      },
+      {
+        name: "VS Code",
+        icon: <VsCode />,
+        url: "https://code.visualstudio.com/",
+      },
+      {
+        name: "GitHub",
+        icon: <GitHub />,
+        url: "https://github.com",
+      },
+      {
+        name: "Jira",
+        icon: <Jira />,
+        url: "https://www.atlassian.com/software/jira",
+      },
+      {
+        name: "MongoDB",
+        icon: <Mongodb />,
+        url: "https://www.mongodb.com/",
+      },
+      {
+        name: "Kubernetes",
+        icon: <Kubernetes />,
+        url: "https://kubernetes.io/",
+      },
+    ],
   }
 
   const freelanceMobileDeveloper: WorkExperience = {
     job: "Mobile Developer",
     date: "2020 - 2022",
-    programmingLanguages: ["Swift", "Kotlin", "Flutter"],
-    tools: ["XCode", "Android Studio", "IntelliJ"],
+    background: "bg-primary-400",
     variant: ActivityColorVariant.MOBILE,
     image: () => (
-      <div className="h-[300px] items-center flex fill-white mx-auto w-full justify-center">
-        <MobileDeveloper />
-      </div>
-    ),
-    description: () => (
-      <ExperienceDescriptionContainer
-        job={freelanceMobileDeveloper.job}
-        date={freelanceMobileDeveloper.date}
-        programmingLanguages={freelanceMobileDeveloper.programmingLanguages}
-        tools={freelanceMobileDeveloper.tools}
+      <Typography
+        extrabold
+        size="h5"
+        md="h4"
+        light
+        text={"Freelance".toUpperCase()}
       />
     ),
     details: () => (
       <WorkExperience
         variant={freelanceMobileDeveloper.variant}
-        title={
-          <div className="h-[260px] items-center flex flex-col mx-auto w-full justify-center">
-            <div>
-              <MobileDeveloper />
-            </div>
-            <div>
-              <Typography
-                text={t("mobile.title")}
-                color={ActivityColorText[freelanceMobileDeveloper.variant]}
-                size="h4"
-                xl="h1"
-              />
-            </div>
-          </div>
-        }
         tasks={[
           {
             title: t("mobile.tasks.management.title"),
@@ -270,6 +328,43 @@ export function useJobExperiences(): WorkExperience[] {
         ]}
       />
     ),
+    experiences: [
+      {
+        name: "Java",
+        icon: <Java />,
+        url: "https://www.oracle.com/java/",
+      },
+      {
+        name: "Kotlin",
+        icon: <Kotlin />,
+        url: "https://kotlinlang.org/",
+      },
+      {
+        name: "Swift",
+        icon: <Swift />,
+        url: "https://developer.apple.com/swift/",
+      },
+      {
+        name: "Android Studio",
+        icon: <AndroidStudio />,
+        url: "https://developer.android.com/studio",
+      },
+      {
+        name: "Xcode",
+        icon: <Xcode />,
+        url: "https://developer.apple.com/xcode/",
+      },
+      {
+        name: "GitHub",
+        icon: <GitHub />,
+        url: "https://github.com",
+      },
+      {
+        name: "Firebase",
+        icon: <Firebase />,
+        url: "https://firebase.google.com/",
+      },
+    ],
   }
 
   return [pienissimo, anubidigital, freelanceMobileDeveloper]

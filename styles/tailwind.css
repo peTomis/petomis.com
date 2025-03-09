@@ -6,6 +6,7 @@
 
 body {
   color: rgb(255, 254, 252);
+  background-color: #000; /* Ensures solid black background */
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
   --tw-gradient-from: #000 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
@@ -25,5 +26,7 @@ body::before {
   width: 100vw;
   height: 100vh;
   z-index: -1;
+  background-color: black; /* Ensures Safari sees black background */
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+  background-blend-mode: normal; /* Ensures the gradient blends properly */
 }

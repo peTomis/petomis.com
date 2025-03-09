@@ -5,7 +5,7 @@ import Image from "next/image"
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Atoms
-import Typography from "@/ui/atoms/typography_"
+import Typography from "@/ui/atoms/typography"
 import SocialIconContainer from "@/ui/atoms/social-icon-container"
 
 // Icons

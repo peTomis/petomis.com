@@ -1,5 +1,5 @@
 import { useTranslations } from "@/hooks/useTranslations"
-import Button from "@/ui/atoms/button_"
+import Button from "@/ui/atoms/button"
 
 interface Props {
   children: React.ReactNode
@@ -12,7 +12,7 @@ const FormContainer = ({ children, onSubmit }: Props) => {
   return (
     <div
       id="contact-form"
-      className="w-full rounded-2xl lg:max-w-[800px] space-y-4 p-8 bg-primary-500"
+      className="w-full lg:max-w-[800px] space-y-4 p-8 bg-white"
     >
       {children}
       <div className="flex items-center justify-end w-full pr-2 my-4">

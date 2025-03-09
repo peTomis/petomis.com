@@ -13,7 +13,7 @@ import FormInput from "@/ui/molecules/form-input"
 import FormContainer from "@/ui/molecules/form-container"
 
 // Atoms
-import Typography from "@/ui/atoms/typography_"
+import Typography from "@/ui/atoms/typography"
 import Touch from "@/ui/icons/touch_"
 
 type State = {
@@ -87,19 +87,20 @@ const GetInTouch = () => {
   return (
     <div
       id="contact-container"
-      className={`relative flex flex-col items-center justify-center w-full py-8 md:pb-32 mx-auto space-y-8 bg-gradient-to-br from-primary-100 via-primary-200 to-primary-300`}
+      className={`relative flex flex-col items-center justify-center w-full py-8 md:pb-32 mx-auto space-y-8`}
     >
-      <div className="absolute top-0 left-0 w-full h-full bg-engine-pattern opacity-5"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-engine-pattern opacity-20"></div>
       <div
         id="work-title"
-        className={`w-full z-10 flex flex-col justify-center items-center py-8 text-center text-primary-500`}
+        className={`w-full z-10 flex flex-col justify-center items-center py-8 text-center`}
       >
         <Typography
           extrabold={true}
           size="h1"
           text={t("contact.title").toUpperCase()}
+          color="PRIMARY100"
         />
-        <div className="w-24 h-24 pt-4 fill-primary-500 md:hidden">
+        <div className="w-24 h-24 pt-4 fill-white md:hidden">
           <Touch />
         </div>
       </div>

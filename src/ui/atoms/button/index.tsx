@@ -1,4 +1,4 @@
-import Typography from "../typography_"
+import Typography from "../typography"
 
 interface Props {
   label: string
@@ -12,11 +12,11 @@ const Button = ({ label, onClick, primary }: Props) => {
       className={`cursor-pointer  flex justify-center items-center w-[150px] h-[50px]  rounded-md ${
         primary === false
           ? "border-[1px] opacity-50"
-          : "bg-primary-300 bg-opacity-80 hover:bg-opacity-100"
+          : "bg-primary-100 text-white hover:bg-opacity-60"
       }`}
       onClick={onClick}
     >
-      <Typography text={label} />
+      <Typography text={label.toUpperCase()} bold />
     </div>
   )
 }
