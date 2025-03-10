@@ -17,6 +17,14 @@ import ChevronIcon from "@/ui/icons/chevron"
 
 // Styles
 import styles from "./experience.module.css"
+import WorkExperienceDescription from "../work-experience-description"
+import { ActivityColorVariant } from "@/utils"
+import WorkExperienceTasks, {
+  WorkExperienceTaskItem,
+} from "../work-experience-tasks"
+import WorkExperienceTools, {
+  WorkExperienceTool,
+} from "../work-experience-tools"
 
 export type ExperienceBackground = "bg-primary-400" | "bg-black" | "bg-red-300"
 type AccordionTextColor = "text-white" | "text-black"
@@ -28,7 +36,10 @@ interface ExperienceElementProps {
   experiences: PersonalExperience[]
   background: ExperienceBackground
   text?: AccordionTextColor
-  children?: React.ReactNode
+  tasks: WorkExperienceTaskItem[]
+  sentences: string[]
+  tools: WorkExperienceTool[]
+  variant: ActivityColorVariant
 }
 
 const ExperienceElement = ({
@@ -38,7 +49,10 @@ const ExperienceElement = ({
   experiences,
   background,
   text = "text-white",
-  children,
+  tasks,
+  sentences,
+  tools,
+  variant,
 }: ExperienceElementProps) => {
   const [open, setOpen] = useState(false)
 
@@ -59,9 +73,14 @@ const ExperienceElement = ({
         />
       </div>
       {open && (
-        <ExperienceDetails experiences={experiences} background={background}>
-          {children}
-        </ExperienceDetails>
+        <ExperienceDetails
+          experiences={experiences}
+          background={background}
+          sentences={sentences}
+          variant={variant}
+          tasks={tasks}
+          tools={tools}
+        />
       )}
     </>
   )
@@ -139,19 +158,30 @@ const ExperienceMainContent = ({
 const ExperienceDetails = ({
   experiences,
   background,
-  children,
+  sentences,
+  variant,
+  tasks,
+  tools,
 }: {
   experiences: PersonalExperience[]
   background: ExperienceBackground
-  children?: React.ReactNode
+  sentences: string[]
+  variant: ActivityColorVariant
+  tasks: WorkExperienceTaskItem[]
+  tools: WorkExperienceTool[]
 }) => {
   return (
-    <div className="relative">
-      <div
-        className={`absolute top-0 left-0 w-full h-full -rotate-2  ${background}`}
-      ></div>
-      <div className="relative flex flex-col md:p-8 space-y-4 overflow-hidden shadow-lg  sm:w-[600px] lg:w-[820px] min-h-[300px] bg-white bg-opacity-20">
-        {children}
+    <>
+      <ExperienceContainer background={background}>
+        <WorkExperienceDescription sentences={sentences} variant={variant} />
+      </ExperienceContainer>
+      <ExperienceContainer background={background}>
+        <WorkExperienceTasks tasks={tasks} variant={variant} />
+      </ExperienceContainer>
+      <ExperienceContainer background={background}>
+        <WorkExperienceTools variant={variant} tools={tools} />
+      </ExperienceContainer>
+      <ExperienceContainer background={background}>
         <ExperienceCardContainer>
           {experiences.map((experience, key) => (
             <ExperienceCard
@@ -162,6 +192,25 @@ const ExperienceDetails = ({
             />
           ))}
         </ExperienceCardContainer>
+      </ExperienceContainer>
+    </>
+  )
+}
+
+const ExperienceContainer = ({
+  background,
+  children,
+}: {
+  background: ExperienceBackground
+  children: React.ReactNode
+}) => {
+  return (
+    <div className="relative mb-2">
+      <div
+        className={`absolute top-0 left-0 w-full h-full -rotate-2  ${background}`}
+      ></div>
+      <div className="relative flex flex-col md:p-8 space-y-4 overflow-hidden shadow-lg  sm:w-[600px] lg:w-[820px] min-h-[300px] bg-white bg-opacity-20">
+        {children}
       </div>
     </div>
   )

@@ -16,7 +16,7 @@ const WorkExperienceTasks = ({
   variant = ActivityColorVariant.MOBILE,
 }: Props) => {
   return (
-    <div className="relative flex flex-col justify-end w-full mx-auto space-y-4">
+    <div className="relative flex flex-col justify-end w-full p-8 mx-auto space-y-4 md:p-0">
       {tasks.map((task, index) => (
         <WorkExperienceTask
           key={index}

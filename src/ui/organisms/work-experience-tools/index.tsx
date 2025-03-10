@@ -6,13 +6,13 @@ import {
   ActivityColorVariant,
 } from "@/utils"
 
-interface WorkExperienceTools {
+export interface WorkExperienceTool {
   category?: string
   list: string
 }
 
 interface Props {
-  tools: WorkExperienceTools[]
+  tools: WorkExperienceTool[]
   variant?: ActivityColorVariant
 }
 
@@ -22,7 +22,7 @@ const WorkExperienceTools = ({
 }: Props) => {
   const { t } = useTranslations("jobs")
   return (
-    <div className="flex flex-col space-y-8">
+    <div className="flex flex-col p-8 space-y-8 md:p-0">
       <div className="flex flex-col space-y-2">
         <Typography
           text={t("tools")}
@@ -33,7 +33,7 @@ const WorkExperienceTools = ({
       </div>
       {tools.map((item, index) =>
         item.category ? (
-          <div className="flex flex-col w-full mx-auto space-y-2" key={index}>
+          <div className="flex flex-col w-full mx-auto space-y-2 " key={index}>
             <Typography
               text={item.category}
               color={ActivityColorTitleText[variant]}

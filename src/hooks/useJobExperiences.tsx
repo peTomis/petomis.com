@@ -11,9 +11,6 @@ import { ActivityColorVariant } from "@/utils"
 import anubidigitalLogo from "@public/images/anubidigital-logo.svg"
 import pienissimoLogo from "@public/images/pienissimo-logo.webp"
 
-// Organisms
-import WorkExperience from "@/ui/organisms/work-experience"
-
 // Atoms
 import Typography from "@/ui/atoms/typography"
 
@@ -39,6 +36,8 @@ import Swift from "@/ui/icons/programming/Swift"
 import Typescript from "@/ui/icons/programming/Typescript"
 import VsCode from "@/ui/icons/programming/VsCode"
 import Xcode from "@/ui/icons/programming/Xcode"
+import { WorkExperienceTaskItem } from "@/ui/organisms/work-experience-tasks"
+import { WorkExperienceTool } from "@/ui/organisms/work-experience-tools"
 
 export interface WorkExperience {
   job: string
@@ -46,8 +45,10 @@ export interface WorkExperience {
   date: string
   background: ExperienceBackground
   image: () => React.ReactNode
-  details: () => React.ReactNode
   experiences: PersonalExperience[]
+  tasks: WorkExperienceTaskItem[]
+  sentences: string[]
+  tools: WorkExperienceTool[]
 }
 
 export interface PersonalExperience {
@@ -75,29 +76,24 @@ export function useJobExperiences(): WorkExperience[] {
         />
       </div>
     ),
-    details: () => (
-      <WorkExperience
-        variant={pienissimo.variant}
-        tasks={[]}
-        sentences={[
-          t("pienissimo.sentences.first"),
-          t("pienissimo.sentences.second"),
-        ]}
-        tools={[
-          {
-            list: t("pienissimo.tools.other.list"),
-          },
-          {
-            category: t("pienissimo.tools.backend.title") ?? "",
-            list: t("pienissimo.tools.backend.list"),
-          },
-          {
-            category: t("pienissimo.tools.frontend-mobile.title") ?? "",
-            list: t("pienissimo.tools.frontend-mobile.list"),
-          },
-        ]}
-      />
-    ),
+    tasks: [],
+    sentences: [
+      t("pienissimo.sentences.first"),
+      t("pienissimo.sentences.second"),
+    ],
+    tools: [
+      {
+        list: t("pienissimo.tools.other.list"),
+      },
+      {
+        category: t("pienissimo.tools.backend.title") ?? "",
+        list: t("pienissimo.tools.backend.list"),
+      },
+      {
+        category: t("pienissimo.tools.frontend-mobile.title") ?? "",
+        list: t("pienissimo.tools.frontend-mobile.list"),
+      },
+    ],
     experiences: [
       {
         name: "Swift",
@@ -158,50 +154,45 @@ export function useJobExperiences(): WorkExperience[] {
         />
       </div>
     ),
-    details: () => (
-      <WorkExperience
-        variant={anubidigital.variant}
-        tasks={[
-          {
-            title: t("anubidigital.tasks.project.title"),
-            description: t("anubidigital.tasks.project.description"),
-          },
-          {
-            title: t("anubidigital.tasks.onboarding.title"),
-            description: t("anubidigital.tasks.onboarding.description"),
-          },
-          {
-            title: t("anubidigital.tasks.datawarehouse.title"),
-            description: t("anubidigital.tasks.datawarehouse.description"),
-          },
-          {
-            title: t("anubidigital.tasks.backoffice.title"),
-            description: t("anubidigital.tasks.backoffice.description"),
-          },
-          {
-            title: t("anubidigital.tasks.rnd.title"),
-            description: t("anubidigital.tasks.rnd.description"),
-          },
-        ]}
-        sentences={[
-          t("anubidigital.sentences.first"),
-          t("anubidigital.sentences.second"),
-        ]}
-        tools={[
-          {
-            list: t("anubidigital.tools.other.list"),
-          },
-          {
-            category: t("anubidigital.tools.backend.title") ?? "",
-            list: t("anubidigital.tools.backend.list"),
-          },
-          {
-            category: t("anubidigital.tools.frontend.title") ?? "",
-            list: t("anubidigital.tools.frontend.list"),
-          },
-        ]}
-      />
-    ),
+    tasks: [
+      {
+        title: t("anubidigital.tasks.project.title"),
+        description: t("anubidigital.tasks.project.description"),
+      },
+      {
+        title: t("anubidigital.tasks.onboarding.title"),
+        description: t("anubidigital.tasks.onboarding.description"),
+      },
+      {
+        title: t("anubidigital.tasks.datawarehouse.title"),
+        description: t("anubidigital.tasks.datawarehouse.description"),
+      },
+      {
+        title: t("anubidigital.tasks.backoffice.title"),
+        description: t("anubidigital.tasks.backoffice.description"),
+      },
+      {
+        title: t("anubidigital.tasks.rnd.title"),
+        description: t("anubidigital.tasks.rnd.description"),
+      },
+    ],
+    sentences: [
+      t("anubidigital.sentences.first"),
+      t("anubidigital.sentences.second"),
+    ],
+    tools: [
+      {
+        list: t("anubidigital.tools.other.list"),
+      },
+      {
+        category: t("anubidigital.tools.backend.title") ?? "",
+        list: t("anubidigital.tools.backend.list"),
+      },
+      {
+        category: t("anubidigital.tools.frontend.title") ?? "",
+        list: t("anubidigital.tools.frontend.list"),
+      },
+    ],
     experiences: [
       {
         name: "Javascript",
@@ -291,43 +282,38 @@ export function useJobExperiences(): WorkExperience[] {
         text={"Freelance".toUpperCase()}
       />
     ),
-    details: () => (
-      <WorkExperience
-        variant={freelanceMobileDeveloper.variant}
-        tasks={[
-          {
-            title: t("mobile.tasks.management.title"),
-            description: t("mobile.tasks.management.description"),
-          },
-          {
-            title: t("mobile.tasks.design.title"),
-            description: t("mobile.tasks.design.description"),
-          },
-          {
-            title: t("mobile.tasks.integration.title"),
-            description: t("mobile.tasks.integration.description"),
-          },
-          {
-            title: t("mobile.tasks.implementation.title"),
-            description: t("mobile.tasks.implementation.description"),
-          },
-        ]}
-        sentences={[t("mobile.sentences.first"), t("mobile.sentences.second")]}
-        tools={[
-          {
-            list: t("mobile.tools.cross.list"),
-          },
-          {
-            category: t("mobile.tools.android.title") ?? "",
-            list: t("mobile.tools.android.list"),
-          },
-          {
-            category: t("mobile.tools.ios.title") ?? "",
-            list: t("mobile.tools.ios.list"),
-          },
-        ]}
-      />
-    ),
+    tasks: [
+      {
+        title: t("mobile.tasks.management.title"),
+        description: t("mobile.tasks.management.description"),
+      },
+      {
+        title: t("mobile.tasks.design.title"),
+        description: t("mobile.tasks.design.description"),
+      },
+      {
+        title: t("mobile.tasks.integration.title"),
+        description: t("mobile.tasks.integration.description"),
+      },
+      {
+        title: t("mobile.tasks.implementation.title"),
+        description: t("mobile.tasks.implementation.description"),
+      },
+    ],
+    sentences: [t("mobile.sentences.first"), t("mobile.sentences.second")],
+    tools: [
+      {
+        list: t("mobile.tools.cross.list"),
+      },
+      {
+        category: t("mobile.tools.android.title") ?? "",
+        list: t("mobile.tools.android.list"),
+      },
+      {
+        category: t("mobile.tools.ios.title") ?? "",
+        list: t("mobile.tools.ios.list"),
+      },
+    ],
     experiences: [
       {
         name: "Java",

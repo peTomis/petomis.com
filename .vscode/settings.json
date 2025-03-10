@@ -19,5 +19,12 @@
   "[xml]": {
     "editor.defaultFormatter": "mikeburgh.xml-format"
   },
-  "cSpell.words": ["anubidigital", "backoffice", "datawarehouse", "pienissimo"]
+  "cSpell.words": [
+    "anubidigital",
+    "backoffice",
+    "collectionmanager",
+    "datawarehouse",
+    "metch",
+    "pienissimo"
+  ]
 }

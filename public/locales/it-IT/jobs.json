@@ -87,7 +87,7 @@
     },
     "tools": {
       "cross": {
-        "list": "Flutter, Github, Kira, Firebase, Material Design, Design Patterns"
+        "list": "Flutter, Github, Jira, Firebase, Material Design, Design Patterns"
       },
       "android": {
         "title": "Android",

@@ -41,17 +41,19 @@ const Projects = () => {
       </div>
       <div className="pt-8">
         <Carousel
-          elements={projects.map((project, key) => (
-            <CarouselElement
-              key={key}
-              src={project.src}
-              name={project.name}
-              title={project.title}
-              description={project.description}
-              color={project.color}
-              onClick={() => window.open(project.website, "_blank")}
-            />
-          ))}
+          elements={[...projects, ...projects, ...projects].map(
+            (project, key) => (
+              <CarouselElement
+                key={key}
+                src={project.src}
+                name={project.name}
+                title={project.title}
+                description={project.description}
+                color={project.color}
+                onClick={() => window.open(project.website, "_blank")}
+              />
+            )
+          )}
         />
       </div>
     </div>

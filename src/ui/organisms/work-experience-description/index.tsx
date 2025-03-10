@@ -11,7 +11,7 @@ const WorkExperienceDescription = ({
   variant = ActivityColorVariant.MOBILE,
 }: Props) => {
   return (
-    <div className="flex flex-col space-y-4">
+    <div className="flex flex-col p-8 space-y-4 md:p-0">
       {sentences.map((sentence, index) => (
         <Typography
           key={index}

@@ -33,27 +33,33 @@ const Experience = () => {
           background={pienissimo.background}
           text={"text-black"}
           experiences={pienissimo.experiences}
-        >
-          {pienissimo.details()}
-        </ExperienceElement>
+          tasks={pienissimo.tasks}
+          sentences={pienissimo.sentences}
+          tools={pienissimo.tools}
+          variant={pienissimo.variant}
+        />
         <ExperienceElement
           title={anubidigital.job}
           company={anubidigital.image()}
           date={anubidigital.date}
           background={anubidigital.background}
           experiences={anubidigital.experiences}
-        >
-          {anubidigital.details()}
-        </ExperienceElement>
+          tasks={anubidigital.tasks}
+          sentences={anubidigital.sentences}
+          tools={anubidigital.tools}
+          variant={anubidigital.variant}
+        />
         <ExperienceElement
           title={freelanceMobileDeveloper.job}
           company={freelanceMobileDeveloper.image()}
           date={freelanceMobileDeveloper.date}
           background={freelanceMobileDeveloper.background}
           experiences={freelanceMobileDeveloper.experiences}
-        >
-          {freelanceMobileDeveloper.details()}
-        </ExperienceElement>
+          tasks={freelanceMobileDeveloper.tasks}
+          sentences={freelanceMobileDeveloper.sentences}
+          tools={freelanceMobileDeveloper.tools}
+          variant={freelanceMobileDeveloper.variant}
+        />
       </div>
     </div>
   )

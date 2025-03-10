@@ -89,7 +89,7 @@
     },
     "tools": {
       "cross": {
-        "list": "Flutter, Github, Kira, Firebase, Material Design, Design Patterns"
+        "list": "Flutter, Github, Jira, Firebase, Material Design, Design Patterns"
       },
       "android": {
         "title": "Android",
@@ -99,6 +99,14 @@
         "title": "iOS",
         "list": "Swift, Xcode"
       }
+    }
+  },
+  "projects": {
+    "metch": {
+      "description": "The game Changer! Match is a platform that aims to make the process of finding talents and teams in the gaming sector simple and efficient."
+    },
+    "collectionmanager": {
+      "description": "The game Changer! Match is a platform that aims to make the process of finding talents and teams in the gaming sector simple and efficient."
     }
   }
 }
