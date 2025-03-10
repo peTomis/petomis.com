@@ -4,9 +4,10 @@ interface Props {
   name?: string
   icon: React.ReactNode
   onClick?: () => void
+  black?: boolean
 }
 
-const ExperienceCard = ({ name, icon, onClick }: Props) => {
+const ExperienceCard = ({ name, icon, onClick, black = false }: Props) => {
   const id = `experience-card-${name}`
   return (
     <div
@@ -20,10 +21,14 @@ const ExperienceCard = ({ name, icon, onClick }: Props) => {
     >
       {name && (
         <div className="flex items-center justify-center w-full">
-          <Typography text={name} light />
+          <Typography text={name} light color={black ? "BLACK" : "BASE"} />
         </div>
       )}
-      <div className="flex items-center justify-center w-full h-[80px] md:h-[90px]">
+      <div
+        className={`flex items-center justify-center ${
+          black ? "fill-black" : "fill-white"
+        } w-full h-[80px] md:h-[90px] `}
+      >
         <div>{icon}</div>
       </div>
     </div>

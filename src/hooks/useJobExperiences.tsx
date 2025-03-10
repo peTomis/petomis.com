@@ -76,7 +76,24 @@ export function useJobExperiences(): WorkExperience[] {
         />
       </div>
     ),
-    tasks: [],
+    tasks: [
+      {
+        title: t("pienissimo.tasks.backend.title"),
+        description: t("pienissimo.tasks.backend.description"),
+      },
+      {
+        title: t("pienissimo.tasks.newApp.title"),
+        description: t("pienissimo.tasks.newApp.description"),
+      },
+      {
+        title: t("pienissimo.tasks.architecture.title"),
+        description: t("pienissimo.tasks.architecture.description"),
+      },
+      {
+        title: t("pienissimo.tasks.devops.title"),
+        description: t("pienissimo.tasks.devops.description"),
+      },
+    ],
     sentences: [
       t("pienissimo.sentences.first"),
       t("pienissimo.sentences.second"),

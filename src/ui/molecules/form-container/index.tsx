@@ -23,7 +23,7 @@ const FormContainer = ({ children, onSubmit }: Props) => {
             <Mail className="w-6 h-6 fill-primary-100" />
           </div>
           <div className="flex flex-row items-center justify-center space-x-2 text-small md:text-base">
-            <Typography text="Mail me at" color="BLACK" />
+            <Typography text={t("contact.mailMe")} color="BLACK" />
             <a
               title="mailto"
               className="font-bold text-primary-100"

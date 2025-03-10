@@ -11,10 +11,11 @@ import CarouselElement from "@/ui/molecules/carousel-element"
 import Typography from "@/ui/atoms/typography"
 
 // Assets
-import { projects } from "./projects"
 import CarouselElementSkewed from "@/ui/molecules/carousel-element-skewed"
+import { useProjects } from "@/hooks/useProjects"
 
 const Projects = () => {
+  const projects = useProjects()
   const { t } = useTranslations("home")
 
   return (

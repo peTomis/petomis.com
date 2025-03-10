@@ -1,10 +1,29 @@
 {
   "tools": "STRUMENTI",
+  "title": "CARRIERA",
+  "details": "Dettagli",
   "pienissimo": {
-    "tasks": {},
+    "tasks": {
+      "backend": {
+        "title": "Ottimizzazione Backend & Performance",
+        "description": "Refactoring e ottimizzazione di moduli esistenti per ridurre il carico sull’infrastruttura, mantenendo al contempo alta disponibilità e reattività."
+      },
+      "newApp": {
+        "title": "Sviluppo della Nuova App per Ristoratori",
+        "description": "Dopo aver reso stabile Pienissimo Pro (sviluppata in Swift), ho co-sviluppato la nuova applicazione di riferimento per i ristoratori utilizzando Flutter, gestendo in autonomia API e connessioni WebSocket."
+      },
+      "architecture": {
+        "title": "Scalabilità & Decisioni Architetturali",
+        "description": "Ho contribuito attivamente alle decisioni architetturali, guidando l’azienda attraverso sfide legate alla scalabilità e all’evoluzione dello stack tecnologico."
+      },
+      "devops": {
+        "title": "DevOps & Best Practices",
+        "description": "Supporto nella gestione delle pipeline CI/CD, nei processi di build e nelle revisioni del codice per mantenere alti standard di sviluppo all'interno del team."
+      }
+    },
     "sentences": {
-      "first": "",
-      "second": ""
+      "first": "Pienissimo è attualmente l'azienda leader in Italia nel Direct Response Marketing per il settore della ristorazione, con migliaia di clienti attivi e un’infrastruttura IT in continua evoluzione.",
+      "second": "In qualità di sviluppatore full-stack senior, ho svolto un ruolo chiave nell'ottimizzazione dei componenti critici, nel miglioramento delle prestazioni e nella garanzia della scalabilità, mantenendo sempre un forte focus sulle best practice, sull’architettura pulita e sulla manutenibilità a lungo termine."
     },
     "tools": {
       "other": {
@@ -97,6 +116,14 @@
         "title": "iOS",
         "list": "Swift, Xcode"
       }
+    }
+  },
+  "projects": {
+    "metch": {
+      "description": "Il game changer! Metch è una piattaforma che mira a rendere il processo di ricerca di talenti e team nel settore gaming semplice ed efficiente."
+    },
+    "collectionmanager": {
+      "description": "Un progetto personale che mi permette di tracciare i prezzi e analizzare i dati dei negozi della mia collezione di carte e altri oggetti da collezione."
     }
   }
 }

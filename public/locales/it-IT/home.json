@@ -15,6 +15,7 @@
     "thankMailTitle": "Grazie!",
     "thankMailText": "Risponderò al più presto.",
     "title": "CONTATTAMI",
+    "mailMe": "Scrivimi a",
     "description": {
       "phrase1": "Se vuoi contattarmi, puoi farlo tramite il form sottostante.",
       "phrase2": "Ti risponderò il prima possibile."
@@ -42,7 +43,7 @@
   },
   "projects": {
     "title": "Progetti",
-    "description": "I migliori progetti su cui ho lavorato.",
+    "description": "I migliori progetti su cui lavoro/ho lavorato.",
     "elementNote": "apri",
     "titlePlaceholder": "PROGETTO ",
     "descriptionPlaceholder": "Placeholder per un progetto di nome Progetto "

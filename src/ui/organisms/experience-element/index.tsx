@@ -80,6 +80,7 @@ const ExperienceElement = ({
           variant={variant}
           tasks={tasks}
           tools={tools}
+          black={text === "text-black"}
         />
       )}
     </>
@@ -125,7 +126,7 @@ const ExperienceMainContent = ({
   setOpen: (open: boolean) => void
   text: AccordionTextColor
 }) => {
-  const { t } = useTranslations("experience")
+  const { t } = useTranslations("jobs")
 
   return (
     <div className="relative flex flex-col w-full p-8 space-y-4 overflow-hidden shadow-lg  sm:w-[600px] lg:w-[820px] bg-white bg-opacity-20">
@@ -162,6 +163,7 @@ const ExperienceDetails = ({
   variant,
   tasks,
   tools,
+  black,
 }: {
   experiences: PersonalExperience[]
   background: ExperienceBackground
@@ -169,6 +171,7 @@ const ExperienceDetails = ({
   variant: ActivityColorVariant
   tasks: WorkExperienceTaskItem[]
   tools: WorkExperienceTool[]
+  black?: boolean
 }) => {
   return (
     <>
@@ -189,6 +192,7 @@ const ExperienceDetails = ({
               name={experience.name}
               icon={experience.icon}
               onClick={() => window.open(experience.url)}
+              black={black}
             />
           ))}
         </ExperienceCardContainer>

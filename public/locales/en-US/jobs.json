@@ -1,11 +1,29 @@
 {
   "title": "CAREER",
   "tools": "TOOLS",
+  "details": "Details",
   "pienissimo": {
-    "tasks": {},
+    "tasks": {
+      "backend": {
+        "title": "Backend & Performance Optimization",
+        "description": "Refactored and optimized existing modules to reduce infrastructure load while maintaining high availability and responsiveness."
+      },
+      "newApp": {
+        "title": "New Restaurateur App Development",
+        "description": "After stabilizing the Swift-based Pienissimo Pro, I co-developed the company's new flagship application for restaurateurs using Flutter, managing the APIs and WebSocket connections entirely independently."
+      },
+      "architecture": {
+        "title": "Scalability & Architectural Decisions",
+        "description": "Actively contributed to architectural discussions, guiding the company through key scalability challenges and technology stack evolution."
+      },
+      "devops": {
+        "title": "DevOps & Best Practices",
+        "description": "Supported CI/CD pipeline management, assisted in build processes, and conducted code reviews to uphold high development standards across the team."
+      }
+    },
     "sentences": {
-      "first": "",
-      "second": ""
+      "first": "Pienissimo is currently the leading company in Italy for Direct Response Marketing in the restaurant industry, serving thousands of active clients with a rapidly evolving IT infrastructure.",
+      "second": "As a senior full-stack developer, I have played a key role in optimizing critical components, improving performance, and ensuring scalability, all while maintaining a keen focus on best practices, clean architecture, and long-term maintainability."
     },
     "tools": {
       "other": {
@@ -106,7 +124,7 @@
       "description": "The game Changer! Match is a platform that aims to make the process of finding talents and teams in the gaming sector simple and efficient."
     },
     "collectionmanager": {
-      "description": "The game Changer! Match is a platform that aims to make the process of finding talents and teams in the gaming sector simple and efficient."
+      "description": "A personal project that allows me to track prices and analyze store data of my collection of cards and other collectibles."
     }
   }
 }

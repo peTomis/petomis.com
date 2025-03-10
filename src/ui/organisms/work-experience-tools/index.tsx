@@ -22,7 +22,7 @@ const WorkExperienceTools = ({
 }: Props) => {
   const { t } = useTranslations("jobs")
   return (
-    <div className="flex flex-col p-8 space-y-8 md:p-0">
+    <div className="flex flex-col p-8 space-y-4 md:p-0">
       <div className="flex flex-col space-y-2">
         <Typography
           text={t("tools")}
@@ -37,13 +37,12 @@ const WorkExperienceTools = ({
             <Typography
               text={item.category}
               color={ActivityColorTitleText[variant]}
-              size="h5"
               bold
             />
             <Typography
               text={item.list}
               color={ActivityColorText[variant]}
-              size="h6"
+              light
             />
           </div>
         ) : (
@@ -51,7 +50,7 @@ const WorkExperienceTools = ({
             <Typography
               text={item.list}
               color={ActivityColorText[variant]}
-              size="h6"
+              light
             />
           </div>
         )
