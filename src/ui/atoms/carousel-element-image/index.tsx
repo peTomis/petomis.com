@@ -6,7 +6,7 @@ interface Props {
 
 const CarouselElementImage = ({ image }: Props) => {
   return (
-    <div className="absolute w-full h-full bg-black opacity-10 -z-10">
+    <div className="absolute w-full h-full bg-white opacity-10 -z-10">
       {image}
     </div>
   )

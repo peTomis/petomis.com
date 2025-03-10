@@ -27,7 +27,7 @@ const CarouselElementSkewed = ({
           <div
             className={`absolute w-full h-full ${
               color ?? "bg-primary"
-            } -z-20 rotate-2 transform ${
+            } -z-20 rotate-[4deg] transform ${
               swipingDirection === undefined && " translate-x-0"
             }  ${swipingDirection === "left" && " translate-x-full"} ${
               swipingDirection === "right" && "-translate-x-full"
