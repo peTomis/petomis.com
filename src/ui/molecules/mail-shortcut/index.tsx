@@ -1,5 +1,5 @@
 // Icons
-import Mail from "@/ui/icons/mail_"
+import Mail from "@/ui/icons/mail"
 
 interface Props {
   onClick: () => void

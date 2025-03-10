@@ -1,5 +1,7 @@
 import { useTranslations } from "@/hooks/useTranslations"
 import Button from "@/ui/atoms/button"
+import Typography from "@/ui/atoms/typography"
+import Mail from "@/ui/icons/mail"
 
 interface Props {
   children: React.ReactNode
@@ -12,11 +14,28 @@ const FormContainer = ({ children, onSubmit }: Props) => {
   return (
     <div
       id="contact-form"
-      className="w-full lg:max-w-[800px] space-y-4 p-8 bg-white"
+      className="w-full max-w-[800px] space-y-4 p-8 bg-white"
     >
       {children}
-      <div className="flex items-center justify-end w-full pr-2 my-4">
-        <Button label={t("contact.submit")} onClick={onSubmit} />
+      <div className="flex flex-col items-center justify-between w-full pr-2 my-4 space-y-8 md:space-y-0 md:items-end md:flex-row">
+        <div className="flex flex-col justify-center w-full sm:flex-row sm:space-x-2 md:pl-2 md:justify-start flex-2">
+          <div className="flex items-center justify-center">
+            <Mail className="w-6 h-6 fill-primary-100" />
+          </div>
+          <div className="flex flex-row items-center justify-center space-x-2">
+            <Typography text="Mail me at" color="BLACK" />
+            <a title="mailto" href="mailto:giuseppe.tomis@protonmail.com">
+              <Typography
+                text="giuseppe.tomis@protonmail.com"
+                bold
+                color="PRIMARY100"
+              />
+            </a>
+          </div>
+        </div>
+        <div className="flex justify-end flex-1 w-full">
+          <Button label={t("contact.submit")} onClick={onSubmit} />
+        </div>
       </div>
     </div>
   )
