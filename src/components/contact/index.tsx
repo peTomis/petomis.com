@@ -87,7 +87,7 @@ const GetInTouch = () => {
   return (
     <div
       id="contact-container"
-      className={`relative flex flex-col items-center justify-center w-full py-8 lg:px-0 md:pb-32 mx-auto space-y-8`}
+      className={`relative flex flex-col items-center pb-16 justify-center w-full pt-8 lg:px-0 md:pb-32 mx-auto space-y-8`}
     >
       <div className="absolute top-0 left-0 w-full h-full bg-engine-pattern opacity-20"></div>
       <div

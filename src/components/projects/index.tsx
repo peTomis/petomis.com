@@ -12,6 +12,7 @@ import Typography from "@/ui/atoms/typography"
 
 // Assets
 import { projects } from "./projects"
+import CarouselElementSkewed from "@/ui/molecules/carousel-element-skewed"
 
 const Projects = () => {
   const { t } = useTranslations("home")
@@ -39,22 +40,43 @@ const Projects = () => {
           />
         </div>
       </div>
-      <div className="pt-8">
+      <div className="pt-8 md:hidden">
         <Carousel
-          elements={[...projects, ...projects, ...projects].map(
-            (project, key) => (
-              <CarouselElement
-                key={key}
-                src={project.src}
-                name={project.name}
-                title={project.title}
-                description={project.description}
-                color={project.color}
-                onClick={() => window.open(project.website, "_blank")}
-              />
-            )
-          )}
+          elements={projects.map((project, key) => (
+            <CarouselElement
+              key={key}
+              image={project.image}
+              name={project.name}
+              title={project.title}
+              description={project.description}
+              color={project.color}
+              onClick={() => window.open(project.website, "_blank")}
+            />
+          ))}
         />
+      </div>
+      {/* <div className="hidden py-8 md:grid md:grid-cols-2 xl:grid-cols-3 sm:gap-8"> */}
+      <div className="hidden py-8 space-x-8 md:flex">
+        {projects.map((project, key) => (
+          <CarouselElementSkewed
+            key={0}
+            hovered={true}
+            onMouseEnter={() => {}}
+            swipingDirection={undefined}
+            color={project.color}
+          >
+            <CarouselElement
+              key={key}
+              image={project.image}
+              name={project.name}
+              title={project.title}
+              description={project.description}
+              color={project.color}
+              onClick={() => window.open(project.website, "_blank")}
+              selected
+            />
+          </CarouselElementSkewed>
+        ))}
       </div>
     </div>
   )

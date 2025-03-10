@@ -9,6 +9,7 @@ const env = {
   HEROPATTERNS: "https://www.heropatterns.com",
   MATERIAL: "https://fonts.google.com/icons",
   METCH_GG: "https://app.metch.gg",
+  COLLECTIONMANAGER: "https://collectionmanager.petomis.com",
   PIENISSIMO: "https://pienissimo.com",
 }
 

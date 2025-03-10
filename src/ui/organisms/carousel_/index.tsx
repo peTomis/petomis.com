@@ -1,11 +1,7 @@
-// External Libraries
-import React from "react"
-
-// Molecules
-import CarouselElementSkewed from "@/ui/molecules/carousel-element-skewed"
-
-// Atoms
+import useSwipeHandler from "@/hooks/useSwipeHandler"
 import CarouselButton from "@/ui/atoms/carousel-button"
+import CarouselElementSkewed from "@/ui/molecules/carousel-element-skewed"
+import React, { useEffect } from "react"
 
 interface Props {
   elements: React.JSX.Element[]
@@ -18,6 +14,32 @@ const Carousel = ({ elements }: Props) => {
     Math.floor(elements.length / 2)
   )
 
+  const [swipingDirection, setSwipingDirection] = React.useState<
+    "left" | "right" | undefined
+  >(undefined)
+
+  useSwipeHandler(
+    carouselRef,
+    () => {
+      if (hovered < elements.length - 1) {
+        setSwipingDirection("left")
+        setHovered((prevHovered) =>
+          Math.min(prevHovered + 1, elements.length - 1)
+        )
+      }
+    },
+    () => {
+      if (hovered > 0) {
+        setSwipingDirection("right")
+        setHovered((prevHovered) => Math.max(prevHovered - 1, 0))
+      }
+    }
+  )
+
+  useEffect(() => {
+    setSwipingDirection(undefined)
+  }, [hovered])
+
   const rendered = elements.map((Element, i) => {
     const ElementWithProps = React.cloneElement(Element, {
       selected: hovered === i,
@@ -29,6 +51,7 @@ const Carousel = ({ elements }: Props) => {
         hovered={hovered === i}
         onMouseEnter={() => setHovered(i)}
         color={Element.props.color}
+        swipingDirection={swipingDirection}
       >
         {ElementWithProps}
       </CarouselElementSkewed>
@@ -47,7 +70,7 @@ const Carousel = ({ elements }: Props) => {
   return (
     <div
       id="carousel-container-background"
-      className="flex flex-col items-center justify-center w-full sm:px-2"
+      className="flex flex-col items-center justify-center w-full"
     >
       <div
         id="carousel-container"
