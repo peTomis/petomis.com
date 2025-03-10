@@ -42,7 +42,7 @@ const Footer = () => {
               <div className="flex items-center justify-center ">
                 <Image
                   src={"/favicon.svg"}
-                  alt={"alt"}
+                  alt={"Logo"}
                   width={40}
                   height={40}
                 />
