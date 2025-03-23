@@ -17,7 +17,7 @@ const AndroidStudio = () => {
       />
       <path
         className="fill-[#FFFFFF]"
-        d="M214.62,231.65a22.78,22.78,0,1,0,21.6"
+        d="M214.62,231.65a22.78,22.78,0,1,0,21.6,12.4"
       />
       <path
         className="fill-[#3870b2]"
