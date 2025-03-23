@@ -23,7 +23,7 @@ const Projects = () => {
       id="projects-container"
       className="relative flex flex-col items-center justify-center w-full pt-16 pb-32 mx-auto space-y-8 overflow-hidden md:pb-16 md:pt-16"
     >
-      <div className="absolute top-0 left-0 w-full h-full bg-engine-pattern opacity-20"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-bricks-pattern opacity-20"></div>
       <div className="z-10 flex flex-col items-center justify-center w-full space-y-8">
         <Typography
           extrabold

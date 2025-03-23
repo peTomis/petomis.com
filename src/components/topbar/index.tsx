@@ -57,7 +57,7 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
             <TopBarIcon
               IconComponent={Briefcase}
               onClick={() => {
-                scrollToSelectedDiv(WebsiteSection.WORK)
+                scrollToSelectedDiv(WebsiteSection.CAREER)
               }}
               text={t("redirects.work")}
             />

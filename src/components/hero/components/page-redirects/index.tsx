@@ -37,7 +37,7 @@ const PageRedirects = ({ onRedirect }: Props) => {
       <SectionShortcut
         label={t("redirects.work")}
         onClick={() => {
-          onRedirect(WebsiteSection.WORK)
+          onRedirect(WebsiteSection.CAREER)
         }}
         icon={<Briefcase />}
       />

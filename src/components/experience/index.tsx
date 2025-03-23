@@ -18,7 +18,7 @@ const Experience = () => {
 
   return (
     <div
-      id="experience-container"
+      id="career-container"
       className="flex flex-col px-4 py-16 bg-primary-500 md:p-16"
     >
       <div className="text-center">

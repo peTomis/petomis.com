@@ -9,7 +9,7 @@ const Certifications = () => {
   const { t } = useTranslations("home")
   return (
     <div
-      id="about-me-container"
+      id="experience-container"
       className={
         "relative py-24 overflow-hidden flex flex-col bg-gradient-to-bl from-primary-100 via-primary-100 to-primary-200 px-8 lg:mx-auto w-full justify-center items-center lg:items-center lg:justify-start"
       }
