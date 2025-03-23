@@ -16,8 +16,9 @@ const WelcomeImage = () => {
         alt="Main image"
         loading="eager"
         priority={true}
-        width={1000}
-        height={1000}
+        width={760}
+        height={760}
+        sizes="(max-width: 1024px) 100vw, 760px"
       />
     </div>
   )

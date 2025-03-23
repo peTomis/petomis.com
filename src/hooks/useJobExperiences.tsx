@@ -70,7 +70,7 @@ export function useJobExperiences(): WorkExperience[] {
         <Image
           src={pienissimoLogo}
           className="object-cover"
-          alt=""
+          alt="Pienissimo Logo"
           width={140}
           height={300}
         />
@@ -165,7 +165,7 @@ export function useJobExperiences(): WorkExperience[] {
         <Image
           src={anubidigitalLogo}
           className="object-cover"
-          alt=""
+          alt="Anubidigital logo"
           width={140}
           height={300}
         />

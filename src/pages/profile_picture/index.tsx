@@ -12,7 +12,7 @@ const ProfilePicture: NextPage = () => {
     <>
       <Image
         src={image}
-        alt="Main image"
+        alt="Profile picture"
         loading="eager"
         priority={true}
         width={1000}
@@ -20,7 +20,7 @@ const ProfilePicture: NextPage = () => {
       />
       <Image
         src={link}
-        alt="Main image"
+        alt="Link icon"
         loading="eager"
         priority={true}
         width={50}
@@ -28,7 +28,7 @@ const ProfilePicture: NextPage = () => {
       />
       <Image
         src={map}
-        alt="Main image"
+        alt="Map icon"
         loading="eager"
         priority={true}
         width={50}
@@ -36,7 +36,7 @@ const ProfilePicture: NextPage = () => {
       />
       <Image
         src={phone}
-        alt="Main image"
+        alt="Phone icon"
         loading="eager"
         priority={true}
         width={50}
@@ -44,7 +44,7 @@ const ProfilePicture: NextPage = () => {
       />
       <Image
         src={email}
-        alt="Main image"
+        alt="Mail icon"
         loading="eager"
         priority={true}
         width={50}

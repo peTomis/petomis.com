@@ -10,12 +10,11 @@ interface Props {
 }
 
 const TopBarIcon = ({ IconComponent, onClick, text, ariaLabel }: Props) => (
-  <button
-    aria-label={ariaLabel}
+  <div
     onClick={onClick}
     className="flex flex-row items-center px-2 py-2 space-x-2 cursor-pointer hover:bg-white md:px-4 hover:bg-opacity-10"
   >
-    <IconContainer>
+    <IconContainer aria-label={ariaLabel}>
       <div className="w-8 h-8 md:w-6 md:h-6">
         <IconComponent />
       </div>
@@ -23,7 +22,7 @@ const TopBarIcon = ({ IconComponent, onClick, text, ariaLabel }: Props) => (
     <div className="hidden lg:flex">
       <Typography bold text={text} />
     </div>
-  </button>
+  </div>
 )
 
 export default TopBarIcon

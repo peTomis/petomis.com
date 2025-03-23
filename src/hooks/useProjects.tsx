@@ -31,9 +31,8 @@ export function useProjects(): Project[] {
       <Image
         src={collectionManagerImage}
         className="-z-10"
-        alt=""
-        width={1000}
-        height={500}
+        alt="Collection Manager Background"
+        width={320}
       />
     ),
     name: "Collection Manager",
@@ -74,9 +73,8 @@ export function useProjects(): Project[] {
       <Image
         src={metchImage}
         className="object-cover -z-10"
-        alt=""
-        width={1000}
-        height={500}
+        alt="Metch Background"
+        width={320}
       />
     ),
     name: "Metch",
