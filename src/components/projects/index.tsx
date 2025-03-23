@@ -60,14 +60,13 @@ const Projects = () => {
       <div className="hidden py-8 space-x-8 md:flex">
         {projects.map((project, key) => (
           <CarouselElementSkewed
-            key={0}
+            key={key}
             hovered={true}
             onMouseEnter={() => {}}
             swipingDirection={undefined}
             color={project.color}
           >
             <CarouselElement
-              key={key}
               image={project.image}
               name={project.name}
               title={project.title}
