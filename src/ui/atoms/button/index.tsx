@@ -12,7 +12,7 @@ const Button = ({ label, onClick, primary }: Props) => {
       className={`cursor-pointer  flex justify-center items-center w-[150px] h-[50px]  rounded-md ${
         primary === false
           ? "border-[1px] opacity-50"
-          : "bg-primary-100 text-white hover:bg-opacity-60"
+          : "bg-primary-300 text-white hover:bg-opacity-60"
       }`}
       onClick={onClick}
     >
