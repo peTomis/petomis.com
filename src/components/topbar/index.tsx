@@ -46,6 +46,7 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
                 scrollToSelectedDiv(WebsiteSection.EXPERIENCE)
               }}
               text={t("redirects.experience")}
+              ariaLabel="Experience"
             />
             <TopBarIcon
               IconComponent={CodeBlocks}
@@ -53,6 +54,7 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
                 scrollToSelectedDiv(WebsiteSection.PROJECTS)
               }}
               text={t("redirects.projects")}
+              ariaLabel="Projects"
             />
             <TopBarIcon
               IconComponent={Briefcase}
@@ -60,6 +62,7 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
                 scrollToSelectedDiv(WebsiteSection.CAREER)
               }}
               text={t("redirects.work")}
+              ariaLabel="Work"
             />
           </>
         )}
@@ -69,19 +72,18 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
           hasScrolled ? "" : "py-2"
         } space-x-4`}
         id="link-and-settings-container"
-        aria-label="Open Sidebar"
       >
-        <IconContainer onClick={openGitHub}>
+        <IconContainer onClick={openGitHub} ariaLabel="Open GitHub">
           <div className="w-7 h-7 invert">
             <GitHub />
           </div>
         </IconContainer>
-        <IconContainer onClick={openLinkedIn}>
+        <IconContainer onClick={openLinkedIn} ariaLabel="Open LinkedIn">
           <div className="w-6 h-6">
             <Linkedin />
           </div>
         </IconContainer>
-        <IconContainer onClick={setSidebarVisible}>
+        <IconContainer onClick={setSidebarVisible} ariaLabel="Open sidebar">
           <Burgher />
         </IconContainer>
       </div>

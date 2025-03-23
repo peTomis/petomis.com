@@ -6,10 +6,12 @@ interface Props {
   IconComponent: React.ElementType
   onClick: () => void
   text: string
+  ariaLabel?: string
 }
 
-const TopBarIcon = ({ IconComponent, onClick, text }: Props) => (
-  <div
+const TopBarIcon = ({ IconComponent, onClick, text, ariaLabel }: Props) => (
+  <button
+    aria-label={ariaLabel}
     onClick={onClick}
     className="flex flex-row items-center px-2 py-2 space-x-2 cursor-pointer hover:bg-white md:px-4 hover:bg-opacity-10"
   >
@@ -21,7 +23,7 @@ const TopBarIcon = ({ IconComponent, onClick, text }: Props) => (
     <div className="hidden lg:flex">
       <Typography bold text={text} />
     </div>
-  </div>
+  </button>
 )
 
 export default TopBarIcon
