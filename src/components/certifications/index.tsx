@@ -1,9 +1,13 @@
+// External Libraries
+import Image from "next/image"
+
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Atoms
 import Typography from "@/ui/atoms/typography"
-import Medal from "@/ui/icons/medal_"
+import Medal from "@/ui/icons/medal"
+import WorkInProgressIcon from "@/ui/icons/work-in-progress"
 
 const Certifications = () => {
   const { t } = useTranslations("home")
@@ -21,6 +25,11 @@ const Certifications = () => {
           </div>
         </div>
       </div>
+      <div className="absolute flex w-full">
+        <div className="flex items-center justify-center w-full pt-40 md:pt-[100px]">
+          <WorkInProgressIcon />
+        </div>
+      </div>
       <div className="z-10">
         <Typography
           extrabold={true}
@@ -29,7 +38,17 @@ const Certifications = () => {
           text={t("certifications.title").toUpperCase()}
           color={"PRIMARY400"}
         />
+        <div className="z-10 w-full text-center">
+          <Typography
+            extrabold={true}
+            size="h6"
+            md="h1"
+            text={t("certifications.soon").toUpperCase()}
+            color={"PRIMARY400"}
+          />
+        </div>
       </div>
+
       <div className="flex flex-row pt-16 space-x-4">
         <div className="flex justify-center items-center w-[100px] h-[100px] rounded-full bg-primary-200">
           <div className="flex justify-center items-center w-[94px] h-[94px] rounded-full bg-primary-100">

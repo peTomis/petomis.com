@@ -95,6 +95,7 @@ const Carousel = ({ elements }: Props) => {
             count={elements.length}
             selectedId={hovered}
             activeColor={elements[hovered].props.color}
+            onClick={(index) => setHovered(index)}
           />
         </div>
       </div>
