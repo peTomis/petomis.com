@@ -2,7 +2,7 @@
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Organisms
-import Carousel from "@/ui/organisms/carousel_"
+import Carousel from "@/ui/organisms/carousel"
 
 // Molecules
 import CarouselElement from "@/ui/molecules/carousel-element"
@@ -56,7 +56,6 @@ const Projects = () => {
           ))}
         />
       </div>
-      {/* <div className="hidden py-8 md:grid md:grid-cols-2 xl:grid-cols-3 sm:gap-8"> */}
       <div className="hidden py-8 space-x-8 md:flex">
         {projects.map((project, key) => (
           <CarouselElementSkewed

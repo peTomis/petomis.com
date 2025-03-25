@@ -1,5 +1,6 @@
 import useSwipeHandler from "@/hooks/useSwipeHandler"
 import CarouselButton from "@/ui/atoms/carousel-button"
+import ScrollIndicator from "@/ui/atoms/scroll-indicator"
 import CarouselElementSkewed from "@/ui/molecules/carousel-element-skewed"
 import React, { useEffect } from "react"
 
@@ -89,11 +90,12 @@ const Carousel = ({ elements }: Props) => {
         >
           {rendered[hovered]}
         </div>
-        <div
-          id="carousel-buttons-container"
-          className="flex flex-row items-center justify-center w-full space-x-4"
-        >
-          {buttons}
+        <div id="carousel-buttons-container" className="z-10 pt-4">
+          <ScrollIndicator
+            count={elements.length}
+            selectedId={hovered}
+            activeColor={elements[hovered].props.color}
+          />
         </div>
       </div>
     </div>
