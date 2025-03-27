@@ -1,5 +1,4 @@
 import useSwipeHandler from "@/hooks/useSwipeHandler"
-import CarouselButton from "@/ui/atoms/carousel-button"
 import ScrollIndicator from "@/ui/atoms/scroll-indicator"
 import CarouselElementSkewed from "@/ui/molecules/carousel-element-skewed"
 import React, { useEffect } from "react"
@@ -59,15 +58,6 @@ const Carousel = ({ elements }: Props) => {
     )
   })
 
-  const buttons: React.JSX.Element[] = elements.map((e, i) => (
-    <CarouselButton
-      key={i}
-      hovered={hovered === i}
-      onMouseEnter={() => setHovered(i)}
-      bg={e.props.color}
-    />
-  ))
-
   return (
     <div
       id="carousel-container-background"
@@ -79,14 +69,8 @@ const Carousel = ({ elements }: Props) => {
         className="flex flex-col items-center justify-center space-y-8 max-w-[1200px]"
       >
         <div
-          id="carousel-descriptions-desktop-container"
-          className="flex-row items-center justify-center hidden space-x-4 overflow-visible sm:flex"
-        >
-          {rendered}
-        </div>
-        <div
           id="carousel-description-mobile-container"
-          className="flex flex-row items-center justify-center w-full space-x-4 overflow-visible sm:hidden"
+          className="flex flex-row items-center justify-center w-full space-x-4 overflow-visible"
         >
           {rendered[hovered]}
         </div>

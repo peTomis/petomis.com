@@ -19,24 +19,25 @@ const CarouselElement = ({
   image,
   title,
   name,
-  selected,
   color,
+  selected,
   onClick,
 }: Props) => {
+  if (!selected) return <></>
+
   return (
     <div
       className="relative cursor-pointer text-white flex flex-col h-[320px] w-[320px]"
-      onClick={selected ? onClick : undefined}
+      onClick={onClick}
     >
-      {selected && <CarouselElementImage image={image} />}
+      <CarouselElementImage image={image} />
       <CarouselElementText
         name={name}
         title={title}
         description={description}
-        selected={selected}
         color={color}
       />
-      {selected && <CarouselElementNote color={color} />}
+      <CarouselElementNote color={color} />
     </div>
   )
 }
