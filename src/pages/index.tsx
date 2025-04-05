@@ -28,7 +28,6 @@ const Home: NextPage = () => {
         <meta property="og:image:alt" content="Petomis" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
-
         {/* Twitter metadata */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@Petomis" />
@@ -41,10 +40,8 @@ const Home: NextPage = () => {
         <meta name="twitter:image:width" content="1200" />
         <meta name="twitter:image:height" content="630" />
         <meta name="twitter:image:alt" content="Petomis" />
-
         {/* Icons */}
         <link rel="icon" href="/favicon.ico" />
-        <link rel="mask-icon" href="/favicon.svg" color="#00719C" />
       </Head>
 
       <HomeContainer />
