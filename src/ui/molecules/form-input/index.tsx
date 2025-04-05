@@ -11,17 +11,18 @@ interface Props {
 
 const FormInput = ({ error, label, onChange, placeholder, type }: Props) => {
   const isArea = type === "area"
-  const inputClass = "bg-primary-200 bg-opacity-10 text-black ".concat(
-    error ? style.inputError : style.input
-  )
-  const areaClass = "bg-primary-200 bg-opacity-10 text-black ".concat(
+  const inputClass =
+    "bg-primary-200 bg-opacity-10 placeholder-gray-600 ".concat(
+      error ? style.inputError : style.input
+    )
+  const areaClass = "bg-primary-200 bg-opacity-10 placeholder-gray-600 ".concat(
     error ? style.areaError : style.area
   )
 
   return (
     <div id="form-input-container" className="flex flex-col w-full">
       <div id="form-input-label">
-        <Typography text={label} light color="BLACK" />
+        <Typography text={label} light />
       </div>
 
       {isArea ? (

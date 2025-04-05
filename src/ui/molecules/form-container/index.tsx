@@ -14,7 +14,7 @@ const FormContainer = ({ children, onSubmit }: Props) => {
   return (
     <div
       id="contact-form"
-      className="w-full p-8 max-w-[800px] space-y-4 bg-white"
+      className="w-full p-8 max-w-[800px] space-y-4 bg-white bg-opacity-5"
     >
       {children}
       <div className="flex flex-col items-center justify-between w-full pr-2 my-4 space-y-8 md:space-y-0 md:items-end md:flex-row">
@@ -23,7 +23,7 @@ const FormContainer = ({ children, onSubmit }: Props) => {
             <Mail className="w-6 h-6 fill-primary-300" />
           </div>
           <div className="flex flex-row items-center justify-center space-x-2 text-small md:text-base">
-            <Typography text={t("contact.mailMe")} color="BLACK" />
+            <Typography text={t("contact.mailMe")} />
             <a
               title="mailto"
               className="font-bold text-primary-300"
