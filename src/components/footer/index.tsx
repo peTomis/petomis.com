@@ -39,9 +39,9 @@ const Footer = () => {
               id="footer-name"
               className="flex flex-row items-center justify-start w-full h-8 space-x-4"
             >
-              <div className="flex items-center justify-center ">
+              <div className="flex items-start">
                 <Image
-                  src={"/favicon.svg"}
+                  src={"/images/logo.svg"}
                   alt={"Logo"}
                   width={40}
                   height={40}
