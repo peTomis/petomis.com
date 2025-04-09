@@ -5,7 +5,7 @@ import style from "./style.module.css"
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Animations
-import { useTypewriterEffect } from "@/ui/animations/typewriter-effect"
+import { useEffect, useMemo, useState } from "react"
 
 const Name = () => {
   const { t } = useTranslations("home")
@@ -17,26 +17,36 @@ const Name = () => {
 }
 
 const WelcomeText = () => {
-  const { t } = useTranslations("home")
-  const words = [
-    t("welcome.firstRole"),
-    t("welcome.secondRole"),
-    t("welcome.thirdRole"),
-  ]
+  const words = useMemo(() => ["backend", "fullstack"], [])
+  const [currentWord, setCurrentWord] = useState<string>(words[0])
 
-  const { currentWord } = useTypewriterEffect(words)
+  // Effect to change the word every 8 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentWord((prevWord) => {
+        const currentIndex = words.indexOf(prevWord)
+
+        const nextIndex = (currentIndex + 1) % words.length
+        return words[nextIndex]
+      })
+    }, 8000)
+
+    // Cleanup the interval on component unmount
+    return () => clearInterval(intervalId)
+  }, [words])
 
   return (
     <div className="flex flex-col items-center justify-center flex-1 px-4 select-none lg:items-start lg:justify-start lg:text-center">
       <Name />
-
-      <div className="relative flex justify-center md:w-full md:justify-start text-jobSmall font-bacasimeAntique sm:text-jobMedium xxl:text-jobExtraLarge">
-        <div className="invisible select-none">{words[1]}</div>
-        <div className="absolute top-0 left-0">
-          <h1 className="relative text-center">
-            <span className="relative line-clamp-1 ">{currentWord}</span>
-            <div className={"bg-primary-100 ".concat(style.cursor)} />
-          </h1>
+      <div className="relative flex justify-center md:w-full md:justify-start text-h3 sm:text-h1 xxl:text-jobTitle">
+        <div className={"relative flex flex-row"}>
+          <div className="opacity-0 select-none -z-10">backend</div>
+          <div className="absolute top-0 left-0 ">
+            <div className={style.glitch} data-text={currentWord}>
+              {currentWord}
+            </div>
+          </div>
+          <div className="pl-2">developer</div>
         </div>
       </div>
     </div>

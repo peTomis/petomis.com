@@ -2,7 +2,6 @@
 import PageRedirects from "./components/page-redirects"
 import WelcomeImage from "./components/welcome-image"
 import WelcomeText from "./components/welcome-text"
-import Image from "next/image"
 
 // Utils
 import { WebsiteSection } from "@/utils"
