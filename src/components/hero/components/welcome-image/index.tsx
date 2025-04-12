@@ -8,7 +8,7 @@ const WelcomeImage = () => {
   return (
     <div
       className={
-        "flex justify-center select-none max-w-[600px] items-center lg:w-[500px] lg:h-[500px] xxl:max-w-[760px] xxl:w-[760px] xxl:h-[760px]"
+        "flex justify-center select-none max-w-[600px] items-center lg:w-[500px] lg:h-[500px] xxl:max-w-[760px] xxl:w-[760px] xxl:h-[760px] py-4"
       }
     >
       <Image

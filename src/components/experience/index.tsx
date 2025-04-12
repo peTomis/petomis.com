@@ -22,7 +22,12 @@ const Experience = () => {
       className="flex flex-col px-4 py-16 bg-primary-500 md:p-16"
     >
       <div className="text-center">
-        <Typography extrabold size="h1" text={t("title").toUpperCase()} />
+        <Typography
+          extrabold
+          size="h1"
+          font="montserrat"
+          text={t("title").toUpperCase()}
+        />
       </div>
       <div className="relative w-4 h-4 mx-auto my-8 bg-white bg-opacity-20" />
       <div className="flex flex-col px-2 py-8 mx-auto space-y-8">

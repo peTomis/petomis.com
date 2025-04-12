@@ -25,7 +25,9 @@
     "backoffice",
     "collectionmanager",
     "datawarehouse",
+    "formspree",
     "metch",
+    "orbitron",
     "pienissimo",
     "Tomis",
     "topbar"

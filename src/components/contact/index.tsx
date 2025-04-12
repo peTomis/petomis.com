@@ -89,18 +89,17 @@ const GetInTouch = () => {
       id="contact-container"
       className={`relative flex flex-col items-center pb-16 justify-center w-full pt-8 lg:px-0 md:pb-32 mx-auto space-y-8`}
     >
-      <div className="absolute top-0 left-0 w-full h-full bg-bricks-pattern opacity-20"></div>
       <div
         id="contact-title"
         className={`w-full z-10 flex flex-col justify-center items-center py-8 text-center`}
       >
         <Typography
-          extrabold={true}
+          font="montserrat"
           size="h1"
           text={t("contact.title").toUpperCase()}
           color="PRIMARY100"
         />
-        <div className="w-24 h-24 pt-4 fill-white md:hidden">
+        <div className="w-24 h-24 pt-4 fill-primary-100 md:hidden">
           <Touch />
         </div>
       </div>

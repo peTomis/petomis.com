@@ -22,7 +22,7 @@ const FormInput = ({ error, label, onChange, placeholder, type }: Props) => {
   return (
     <div id="form-input-container" className="flex flex-col w-full">
       <div id="form-input-label">
-        <Typography text={label} light />
+        <Typography font="montserrat" text={label} light />
       </div>
 
       {isArea ? (

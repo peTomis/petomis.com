@@ -292,10 +292,10 @@ export function useJobExperiences(): WorkExperience[] {
     variant: ActivityColorVariant.MOBILE,
     image: () => (
       <Typography
-        extrabold
+        font="orbitron"
         size="h5"
         md="h4"
-        light
+        color="PRIMARY50"
         text={"Freelance".toUpperCase()}
       />
     ),

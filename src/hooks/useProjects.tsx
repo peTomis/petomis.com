@@ -60,7 +60,9 @@ export function useProjects(): Project[] {
             <path d="M9.375 7.5h3.75" strokeWidth="1"></path>
           </svg>
         </div>
-        <div className="font-bold text-h6">Collection Manager</div>
+        <div className="font-bold font-orbitron text-h6">
+          Collection Manager
+        </div>
       </div>
     ),
     description: t("projects.collectionmanager.description"),

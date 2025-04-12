@@ -25,12 +25,12 @@ export enum TypographyColorEnum {
   PIENISSIMO = "text-red-600",
 }
 
-export type TypographyFont = "roboto" | "bacasimeAntique" | "agdasima"
+export type TypographyFont = "roboto" | "montserrat" | "orbitron"
 
 enum TypographyFontEnum {
-  "agdasima" = "font-agdasima",
+  "orbitron" = "font-orbitron",
   "roboto" = "font-roboto",
-  "bacasimeAntique" = "font-bacasimeAntique",
+  "montserrat" = "font-montserrat",
 }
 
 export type TextSize =

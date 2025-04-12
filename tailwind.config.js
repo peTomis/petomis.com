@@ -24,6 +24,7 @@ module.exports = {
         carousel: "carousel 40s linear infinite",
         smallCarousel: "carousel 80s linear infinite",
         scaleUp: "scale-up 300ms ease-out forwards",
+        fade: "fade 1.5s ease-in-out",
       },
       keyframes: {
         carousel: {
@@ -37,6 +38,12 @@ module.exports = {
         "scale-up": {
           "0%": { transform: "scale(0)" },
           "100%": { transform: "scale(1)" },
+        },
+        fade: {
+          "0%": { opacity: 0 },
+          "30%": { opacity: 1 },
+          "70%": { opacity: 1 },
+          "100%": { opacity: 0 },
         },
       },
       colors: {
@@ -78,16 +85,25 @@ module.exports = {
       },
     },
     fontFamily: {
-      agdasima: ["Agdasima", "sans-serif"],
-      bacasimeAntique: ["Bacasime Antique", "serif"],
+      orbitron: ["Orbitron", "sans-serif"],
+      montserrat: ["Montserrat", "sans-serif"],
       roboto: ["Roboto", "sans-serif"],
-      satisfy: ["Satisfy", "cursive"],
     },
     fontSize: {
-      myNameSmall: "60px",
-      myNameMedium: "82px",
-      myNameExtraLarge: "128px",
-      jobTitle: "64px",
+      name: "36px",
+      nameExtraSmall: "48px",
+      nameSmall: "60px",
+      nameMedium: "72px",
+      nameLarge: "48px",
+      nameExtraLarge: "52px",
+      nameXXL: "82px",
+      job: "28px",
+      jobExtraSmall: "36px",
+      jobSmall: "48px",
+      jobMedium: "56px",
+      jobLarge: "36px",
+      jobExtraLarge: "42px",
+      jobXXL: "64px",
       h1: "48px",
       h2: "42px",
       h3: "36px",

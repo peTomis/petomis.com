@@ -56,7 +56,7 @@ const Footer = () => {
           <div id="footer-description" className="w-full">
             <Typography
               text={t("footer.description")}
-              font={"bacasimeAntique"}
+              font={"orbitron"}
               size={"h5"}
             />
           </div>

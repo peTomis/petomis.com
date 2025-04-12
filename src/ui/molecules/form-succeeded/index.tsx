@@ -28,7 +28,7 @@ const FormSucceeded = () => {
           />
           <div
             id="letter"
-            className="absolute top-[-50px] w-[80%] h-[80%] text-center pt-[1.5rem] font-bacasimeAntique bg-primary-50 text-black rounded-[15px] z-20"
+            className="absolute top-[-50px] w-[80%] h-[80%] text-center pt-[1.5rem] font-montserrat bg-primary-50 text-black rounded-[15px] z-20"
           >
             <div id="thx-message" className="font-bold text-h4">
               {t("contact.thankMailTitle")}

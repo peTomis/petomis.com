@@ -32,17 +32,17 @@ const Certifications = () => {
       </div>
       <div className="z-10">
         <Typography
-          extrabold={true}
-          size="h3"
+          size="h1"
           md="h1"
+          font="montserrat"
           text={t("certifications.title").toUpperCase()}
           color={"PRIMARY400"}
         />
         <div className="z-10 w-full text-center">
           <Typography
-            extrabold={true}
             size="h6"
             md="h1"
+            font="montserrat"
             text={t("certifications.soon").toUpperCase()}
             color={"PRIMARY400"}
           />

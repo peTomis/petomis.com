@@ -132,10 +132,17 @@ const ExperienceMainContent = ({
     <div className="relative flex flex-col w-full p-8 space-y-4 overflow-hidden shadow-lg  sm:w-[600px] lg:w-[820px] bg-white bg-opacity-20">
       <div className="flex flex-row">
         <div className="flex flex-col font-bold text-h5 md:text-h3">
-          <div className="line-clamp-1"></div>
-          <Typography extrabold size="h4" md="h3" text={title.toUpperCase()} />
-          {company}
-          <Typography extrabold size="h6" light text={date} />
+          <div className="pb-4">
+            <Typography
+              font="montserrat"
+              size="h4"
+              md="h3"
+              text={title.toUpperCase()}
+            />
+          </div>
+          <div className="pb-2">{company}</div>
+
+          <Typography light size="h6" text={date} />
         </div>
         <div className="flex flex-1 w-full"></div>
       </div>
@@ -143,7 +150,7 @@ const ExperienceMainContent = ({
         className="flex flex-row items-center space-x-2 cursor-pointer select-none"
         onClick={() => setOpen(!open)}
       >
-        <Typography extrabold size="h6" light text={t("details")} />
+        <Typography size="h6" light text={t("details")} />
         <div
           className={`transform transition-transform duration-300 ${
             open ? "rotate-180" : ""

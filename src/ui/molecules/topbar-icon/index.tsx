@@ -20,7 +20,7 @@ const TopBarIcon = ({ IconComponent, onClick, text, ariaLabel }: Props) => (
       </div>
     </IconContainer>
     <div className="hidden lg:flex">
-      <Typography bold text={text} />
+      <Typography font="montserrat" bold text={text.toUpperCase()} />
     </div>
   </div>
 )
