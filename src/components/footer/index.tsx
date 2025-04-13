@@ -11,6 +11,7 @@ import SocialIconContainer from "@/ui/atoms/social-icon-container"
 // Icons
 import GitHub from "@/ui/icons/social/github"
 import Linkedin from "@/ui/icons/social/linkedin"
+import LogoIcon from "@/ui/logo/logoIcon"
 
 const Footer = () => {
   const { t } = useTranslations("common")
@@ -40,25 +41,23 @@ const Footer = () => {
               className="flex flex-row items-center justify-start w-full h-8 space-x-4"
             >
               <div className="flex items-start">
-                <Image
-                  src={"/images/logo.svg"}
-                  alt={"Logo"}
-                  width={40}
-                  height={40}
-                />
+                <LogoIcon />
               </div>
-              <Typography text={t("footer.name")} bold={true} size="h5" />
+              <Typography
+                font="orbitron"
+                text={t("footer.name")}
+                bold={true}
+                size="h5"
+              />
             </div>
             <div id="footer-hashtag" className="w-full">
-              <Typography text={t("footer.hashtag")} italic={true} size="h5" />
+              <Typography
+                font="montserrat"
+                text={t("footer.hashtag")}
+                italic={true}
+                size="h5"
+              />
             </div>
-          </div>
-          <div id="footer-description" className="w-full">
-            <Typography
-              text={t("footer.description")}
-              font={"orbitron"}
-              size={"h5"}
-            />
           </div>
         </div>
         <div
@@ -77,20 +76,6 @@ const Footer = () => {
               text={"Material Design"}
               clickable={true}
               onClick={openMaterialDesign}
-            />
-          </div>
-          <div className="flex space-x-2 cursor-pointer md:justify-end">
-            <Typography
-              text={t("footer.patterns")}
-              clickable={true}
-              onClick={openHeropatterns}
-            />
-            <Typography
-              italic={true}
-              underline={true}
-              text={"Heropatterns"}
-              clickable={true}
-              onClick={openHeropatterns}
             />
           </div>
         </div>
