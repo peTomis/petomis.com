@@ -1,6 +1,3 @@
-// External libraries
-import Image from "next/image"
-
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 
@@ -18,7 +15,6 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const openMaterialDesign = () => window.open(process.env.MATERIAL, "_blank")
-  const openHeropatterns = () => window.open(process.env.HEROPATTERNS, "_blank")
   const openGitHub = () => window.open(process.env.GITHUB, "_blank")
   const openLinkedIn = () => window.open(process.env.LINKEDIN, "_blank")
 
@@ -29,7 +25,7 @@ const Footer = () => {
     >
       <div
         id="footer-text-container"
-        className="flex flex-col items-start px-8 pt-8 md:px-0 space-y-4 w-full max-w-[800px] md:flex-row md:space-y-0"
+        className="flex flex-col items-start px-8 pt-16 md:px-0 space-y-4 w-full max-w-[800px] md:flex-row md:space-y-0"
       >
         <div
           id="footer-text-column"

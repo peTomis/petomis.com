@@ -48,7 +48,6 @@ const Carousel = ({ elements }: Props) => {
     return (
       <CarouselElementSkewed
         key={i}
-        hovered={hovered === i}
         onMouseEnter={() => setHovered(i)}
         color={Element.props.color}
         swipingDirection={swipingDirection}

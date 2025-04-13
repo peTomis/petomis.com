@@ -56,11 +56,11 @@ const Projects = () => {
           ))}
         />
       </div>
-      <div className="hidden py-8 space-x-8 md:flex">
+      {/* <div className="hidden py-8 md:grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-8 xl:gap-16"> */}
+      <div className="hidden py-8 space-x-16 md:flex">
         {projects.map((project, key) => (
           <CarouselElementSkewed
             key={key}
-            hovered={true}
             onMouseEnter={() => {}}
             swipingDirection={undefined}
             color={project.color}

@@ -26,7 +26,7 @@ import WorkExperienceTools, {
   WorkExperienceTool,
 } from "../work-experience-tools"
 
-export type ExperienceBackground = "bg-primary-400" | "bg-black" | "bg-red-300"
+export type ExperienceBackground = "bg-primary-500" | "bg-black" | "bg-red-300"
 type AccordionTextColor = "text-white" | "text-black"
 
 interface ExperienceElementProps {

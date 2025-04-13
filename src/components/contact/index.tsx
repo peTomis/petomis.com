@@ -11,10 +11,7 @@ import { useTranslations } from "@/hooks/useTranslations"
 // Molecules
 import FormInput from "@/ui/molecules/form-input"
 import FormContainer from "@/ui/molecules/form-container"
-
-// Atoms
-import Typography from "@/ui/atoms/typography"
-import Touch from "@/ui/icons/touch_"
+import FormButton from "./components/FormButton"
 
 type State = {
   name: string
@@ -87,49 +84,43 @@ const GetInTouch = () => {
   return (
     <div
       id="contact-container"
-      className={`relative flex flex-col items-center pb-16 justify-center w-full pt-8 lg:px-0 md:pb-32 mx-auto space-y-8`}
+      className={`relative flex flex-col items-center pt-16 lg:pb-8 justify-center w-full lg:px-0 mx-auto space-y-8`}
     >
-      <div
-        id="contact-title"
-        className={`w-full z-10 flex flex-col justify-center items-center py-8 text-center`}
-      >
-        <Typography
-          font="montserrat"
-          size="h1"
-          text={t("contact.title").toUpperCase()}
-          color="PRIMARY100"
-        />
-        <div className="w-24 h-24 pt-4 fill-primary-100 md:hidden">
-          <Touch />
-        </div>
-      </div>
+      <div className="absolute bottom-0 w-full h-[200px] bg-[#111111]"></div>
       <div className="z-10 flex items-center justify-center w-full px-4 lg:px-0">
-        {formState.succeeded ? (
-          <FormSucceeded />
-        ) : (
-          <FormContainer onSubmit={handleSubmit}>
-            <FormInput
-              error={errors.name}
-              label={t("contact.name")}
-              onChange={(s) => dispatch({ type: "setName", payload: s })}
-              placeholder={t("contact.namePlaceholder") as string}
-            />
-            <FormInput
-              error={errors.email}
-              label={t("contact.email")}
-              onChange={(s) => dispatch({ type: "setEmail", payload: s })}
-              placeholder={t("contact.emailPlaceholder") as string}
-            />
-
-            <FormInput
-              error={errors.message}
-              label={t("contact.message")}
-              onChange={(s) => dispatch({ type: "setMessage", payload: s })}
-              placeholder={t("contact.messagePlaceholder") as string}
-              type="area"
-            />
-          </FormContainer>
-        )}
+        <FormContainer>
+          <div className="relative">
+            <div className="flex flex-col space-y-4">
+              <FormInput
+                error={errors.name}
+                label={t("contact.name")}
+                onChange={(s) => dispatch({ type: "setName", payload: s })}
+                placeholder={t("contact.namePlaceholder") as string}
+                hidden={formState.succeeded}
+              />
+              <FormInput
+                error={errors.email}
+                label={t("contact.email")}
+                onChange={(s) => dispatch({ type: "setEmail", payload: s })}
+                placeholder={t("contact.emailPlaceholder") as string}
+                hidden={formState.succeeded}
+              />
+              <FormInput
+                error={errors.message}
+                label={t("contact.message")}
+                onChange={(s) => dispatch({ type: "setMessage", payload: s })}
+                placeholder={t("contact.messagePlaceholder") as string}
+                type="area"
+                hidden={formState.succeeded}
+              />
+              <FormButton
+                hidden={formState.succeeded}
+                onSubmit={handleSubmit}
+              />
+            </div>
+            {formState.succeeded && <FormSucceeded />}
+          </div>
+        </FormContainer>
       </div>
     </div>
   )

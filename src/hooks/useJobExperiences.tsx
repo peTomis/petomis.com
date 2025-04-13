@@ -288,7 +288,7 @@ export function useJobExperiences(): WorkExperience[] {
   const freelanceMobileDeveloper: WorkExperience = {
     job: "Mobile Developer",
     date: "2020 - 2022",
-    background: "bg-primary-400",
+    background: "bg-primary-500",
     variant: ActivityColorVariant.MOBILE,
     image: () => (
       <Typography
