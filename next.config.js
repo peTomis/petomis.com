@@ -6,7 +6,6 @@ const env = {
   LINKEDIN: "https://www.linkedin.com/in/petomis",
   TWITTER: "https://twitter.com/peTomis",
   ANUBI: "https://www.anubidigital.com",
-  HEROPATTERNS: "https://www.heropatterns.com",
   MATERIAL: "https://fonts.google.com/icons",
   METCH_GG: "https://app.metch.gg",
   COLLECTIONMANAGER: "https://collectionmanager.petomis.com",

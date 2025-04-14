@@ -66,7 +66,10 @@ export function useJobExperiences(): WorkExperience[] {
     background: "bg-red-300",
     variant: ActivityColorVariant.PIENISSIMO,
     image: () => (
-      <div className="h-[36px] items-center flex">
+      <div
+        className="h-[36px] items-center flex"
+        onClick={() => window.open(process.env.PIENISSIMO, "_blank")}
+      >
         <Image
           src={pienissimoLogo}
           className="object-cover"
@@ -161,7 +164,10 @@ export function useJobExperiences(): WorkExperience[] {
     background: "bg-black",
     variant: ActivityColorVariant.ANUBIDIGITAL,
     image: () => (
-      <div className="h-[36px] items-center flex">
+      <div
+        className="h-[36px] items-center flex"
+        onClick={() => window.open(process.env.ANUBI, "_blank")}
+      >
         <Image
           src={anubidigitalLogo}
           className="object-cover"

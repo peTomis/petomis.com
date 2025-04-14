@@ -129,7 +129,10 @@ const ExperienceMainContent = ({
   const { t } = useTranslations("jobs")
 
   return (
-    <div className="relative flex flex-col w-full p-8 space-y-4 overflow-hidden shadow-lg  sm:w-[600px] lg:w-[820px] bg-white bg-opacity-20">
+    <div
+      className="relative flex flex-col w-full p-8 space-y-4 overflow-hidden shadow-lg  sm:w-[600px] lg:w-[820px] bg-white bg-opacity-20 cursor-pointer select-none"
+      onClick={() => setOpen(!open)}
+    >
       <div className="flex flex-row">
         <div className="flex flex-col font-bold text-h5 md:text-h3">
           <div className="pb-4">
@@ -146,10 +149,7 @@ const ExperienceMainContent = ({
         </div>
         <div className="flex flex-1 w-full"></div>
       </div>
-      <div
-        className="flex flex-row items-center space-x-2 cursor-pointer select-none"
-        onClick={() => setOpen(!open)}
-      >
+      <div className="flex flex-row items-center space-x-2 select-none">
         <Typography size="h6" light text={t("details")} />
         <div
           className={`transform transition-transform duration-300 ${
