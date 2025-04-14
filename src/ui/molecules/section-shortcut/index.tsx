@@ -52,7 +52,7 @@ const SectionShortcutBackground = ({ rotation }: BackgroundProps) => {
     <div className="absolute inset-0 items-center justify-center hidden pointer-events-none lg:flex">
       <div
         style={{ transform: `rotate(${rotation}deg)` }}
-        className="w-[48px] h-[48px] lg:w-[64px] lg:h-[64px] xxl:w-[128px] xxl:h-[128px] bg-primary-300 rounded-tr-3xl rounded-bl-3xl transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+        className="w-[48px] h-[48px] lg:w-[92px] lg:h-[92px] xxl:w-[128px] xxl:h-[128px] bg-primary-300 rounded-tr-3xl rounded-bl-3xl transition-opacity duration-300 opacity-0 group-hover:opacity-100"
       />
     </div>
   )
