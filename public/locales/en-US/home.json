@@ -55,10 +55,8 @@
     "work": "Career"
   },
   "welcome": {
-    "firstRole": "> Software Engineer",
-    "name": "Giuseppe Tomis",
-    "secondRole": "> Fullstack Developer",
-    "thirdRole": "> Mobile Developer"
+    "job": "Software Engineer",
+    "name": "Giuseppe Tomis"
   },
   "work": {
     "title": "My Career",
