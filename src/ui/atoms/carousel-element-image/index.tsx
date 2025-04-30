@@ -1,5 +1,3 @@
-import Image, { StaticImageData } from "next/image"
-
 interface Props {
   image: React.ReactNode
   hover?: boolean

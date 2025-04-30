@@ -4,6 +4,7 @@ import CarouselElementText, {
 } from "@/ui/atoms/carousel-element-text"
 import CarouselElementNote from "@/ui/atoms/carousel-element-note"
 import { useState } from "react"
+import { CarouselElementEmployeeTag } from "../carousel-element-skewed"
 
 interface Props {
   description: string
@@ -13,6 +14,8 @@ interface Props {
   selected?: boolean
   color?: CarouselElementColor
   onClick?: () => void
+  employeeTag?: CarouselElementEmployeeTag
+  collaborators: { name: string; url: string }[]
 }
 
 const CarouselElement = ({
@@ -23,6 +26,7 @@ const CarouselElement = ({
   color,
   selected,
   onClick,
+  collaborators,
 }: Props) => {
   const [isChildHovered, setIsChildHovered] = useState(false)
 
@@ -42,7 +46,7 @@ const CarouselElement = ({
         description={description}
         color={color}
       />
-      <CarouselElementNote color={color} />
+      <CarouselElementNote color={color} collaborators={collaborators} />
     </div>
   )
 }

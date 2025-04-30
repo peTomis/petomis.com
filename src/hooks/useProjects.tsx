@@ -13,6 +13,13 @@ import MetchLogo from "@/ui/icons/companies/metch_"
 // Assets
 import metchImage from "@public/images/metch-bg.png"
 import collectionManagerImage from "@public/images/151.jpeg"
+import { CarouselElementEmployeeTag } from "@/ui/molecules/carousel-element-skewed"
+
+// Images
+import anubidigitalBg from "@public/images/anubidigital-bg.webp"
+import anubidigitalLogo from "@public/images/anubidigital-logo.svg"
+import pienissimoBg from "@public/images/pienissimo-bg.webp"
+import pienissimoLogo from "@public/images/pienissimo-logo.webp"
 
 interface Project {
   image: React.ReactNode
@@ -21,6 +28,8 @@ interface Project {
   description: string
   color: CarouselElementColor
   website: string
+  employeeTag?: CarouselElementEmployeeTag
+  collaborators: { name: string; url: string }[]
 }
 
 export function useProjects(): Project[] {
@@ -68,6 +77,34 @@ export function useProjects(): Project[] {
     description: t("projects.collectionmanager.description"),
     color: CarouselElementColor.BLUE,
     website: process.env.COLLECTIONMANAGER ?? "",
+    collaborators: [],
+  }
+
+  const pienissimo: Project = {
+    image: (
+      <Image
+        src={pienissimoBg}
+        className="-z-10"
+        alt="Collection Manager Background"
+        width={320}
+      />
+    ),
+    name: "Pienissimo",
+    title: (
+      <div className="w-[160px]">
+        <Image
+          src={pienissimoLogo}
+          className="object-cover -z-10"
+          alt="Pienissimo Logo"
+          width={160}
+        />
+      </div>
+    ),
+    description: t("projects.pienissimo.description"),
+    color: CarouselElementColor.PIENISSIMO,
+    website: "/pienissimo",
+    employeeTag: CarouselElementEmployeeTag.RED,
+    collaborators: [],
   }
 
   const metch: Project = {
@@ -88,7 +125,40 @@ export function useProjects(): Project[] {
     description: t("projects.metch.description"),
     color: CarouselElementColor.RED,
     website: process.env.METCH_GG ?? "",
+    collaborators: [
+      {
+        name: "D4NNN",
+        url: "https://github.com/D4NNN",
+      },
+    ],
   }
 
-  return [collectionmanager, metch]
+  const anubidigital: Project = {
+    image: (
+      <Image
+        src={anubidigitalBg}
+        className="object-cover -z-10"
+        alt="Anubidigital Logo"
+        width={320}
+      />
+    ),
+    name: "Anubidigital",
+    title: (
+      <div className="w-[160px]">
+        <Image
+          src={anubidigitalLogo}
+          className="object-cover -z-10"
+          alt="Anubidigital Logo"
+          width={160}
+        />
+      </div>
+    ),
+    description: t("projects.anubidigital.description"),
+    color: CarouselElementColor.ANUBIDIGITAL,
+    website: "/anubidigital",
+    employeeTag: CarouselElementEmployeeTag.WHITE,
+    collaborators: [],
+  }
+
+  return [collectionmanager, pienissimo, metch, anubidigital]
 }

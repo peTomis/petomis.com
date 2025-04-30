@@ -80,51 +80,19 @@
       }
     }
   },
-
-  "mobile": {
-    "title": "Mobile Developer",
-    "tasks": {
-      "management": {
-        "title": "Management",
-        "description": "Complete management of the mobile application development cycle, including customer interface and requirement analysis"
-      },
-      "design": {
-        "title": "Design",
-        "description": "Independent design of the app architecture and interfaces, applying design patterns and adhering to UX/UI standards and Material Design"
-      },
-      "integration": {
-        "title": "Integration",
-        "description": "Integration of advanced features: mapping, advertising, Firebase support, and data persistence"
-      },
-      "implementation": {
-        "title": "Implementation",
-        "description": "Implementation of access to specific hardware functions of mobile devices (camera, bluetooth, gyroscope)"
-      }
-    },
-    "sentences": {
-      "first": "As a freelance mobile developer, I orchestrated the entire lifecycle of applications, from conception to delivery, ensuring intuitive and efficient solutions.",
-      "second": "The autonomous management of each project allowed me to refine a holistic understanding of the development process, ensuring applications that shine for usability and user satisfaction."
-    },
-    "tools": {
-      "cross": {
-        "list": "Flutter, Github, Jira, Firebase, Material Design, Design Patterns"
-      },
-      "android": {
-        "title": "Android",
-        "list": "Kotlin, Android Studio"
-      },
-      "ios": {
-        "title": "iOS",
-        "list": "Swift, Xcode"
-      }
-    }
-  },
   "projects": {
-    "metch": {
-      "description": "The game Changer! Match is a platform that aims to make the process of finding talents and teams in the gaming sector simple and efficient."
+    "employeeTag": "Employee",
+    "anubidigital": {
+      "description": "Italian pioneers of the web3 sector. Born as an institutional custody of digital assets and then specialized in the production of B2B software for the fintech and digital asset sector."
     },
     "collectionmanager": {
       "description": "A personal project that allows me to track prices and analyze store data of my collection of cards and other collectibles."
+    },
+    "metch": {
+      "description": "The game Changer! Match is a platform that aims to make the process of finding talents and teams in the gaming sector simple and efficient."
+    },
+    "pienissimo": {
+      "description": "The leading company in Italy for Direct Response Marketing in the restaurant industry, serving thousands of active clients."
     }
   }
 }

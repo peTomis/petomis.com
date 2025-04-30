@@ -51,19 +51,21 @@ const Projects = () => {
               title={project.title}
               description={project.description}
               color={project.color}
+              employeeTag={project.employeeTag}
               onClick={() => window.open(project.website, "_blank")}
+              collaborators={project.collaborators}
             />
           ))}
         />
       </div>
-      {/* <div className="hidden py-8 md:grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-8 xl:gap-16"> */}
-      <div className="hidden py-8 space-x-16 md:flex">
+      <div className="hidden py-8 md:grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-8 xl:gap-16">
         {projects.map((project, key) => (
           <CarouselElementSkewed
             key={key}
             onMouseEnter={() => {}}
             swipingDirection={undefined}
             color={project.color}
+            employeeTag={project.employeeTag}
           >
             <CarouselElement
               image={project.image}
@@ -72,6 +74,7 @@ const Projects = () => {
               description={project.description}
               color={project.color}
               onClick={() => window.open(project.website, "_blank")}
+              collaborators={project.collaborators}
               selected
             />
           </CarouselElementSkewed>

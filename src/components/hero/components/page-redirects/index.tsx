@@ -11,6 +11,7 @@ import SectionShortcut from "@/ui/molecules/section-shortcut"
 import AcademicHat from "@/ui/icons/academic-hat"
 import Briefcase from "@/ui/icons/briefcase_"
 import CodeBlocks from "@/ui/icons/code-blocks"
+import Mail from "@/ui/icons/mail"
 
 interface Props {
   onRedirect: (section: WebsiteSection) => void
@@ -35,11 +36,11 @@ const PageRedirects = ({ onRedirect }: Props) => {
         icon={<CodeBlocks />}
       />
       <SectionShortcut
-        label={t("redirects.work")}
+        label={t("redirects.contact")}
         onClick={() => {
-          onRedirect(WebsiteSection.CAREER)
+          onRedirect(WebsiteSection.CONTACT)
         }}
-        icon={<Briefcase />}
+        icon={<Mail />}
       />
     </div>
   )

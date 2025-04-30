@@ -10,9 +10,7 @@ interface Props {
 const Carousel = ({ elements }: Props) => {
   const carouselRef = React.useRef<HTMLDivElement>(null)
 
-  const [hovered, setHovered] = React.useState<number>(
-    Math.floor(elements.length / 2)
-  )
+  const [hovered, setHovered] = React.useState<number>(Math.floor(0))
 
   const [swipingDirection, setSwipingDirection] = React.useState<
     "left" | "right" | undefined
@@ -51,6 +49,7 @@ const Carousel = ({ elements }: Props) => {
         onMouseEnter={() => setHovered(i)}
         color={Element.props.color}
         swipingDirection={swipingDirection}
+        employeeTag={Element.props.employeeTag}
       >
         {ElementWithProps}
       </CarouselElementSkewed>

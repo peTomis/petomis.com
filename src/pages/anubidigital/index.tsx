@@ -9,17 +9,17 @@ import { WebsiteSection } from "@/utils"
 // Components
 import Sidebar from "@/components/sidebar"
 import TopBar from "@/components/topbar"
-import Hero from "@/components/hero"
 import Contact from "@/components/contact"
+import Experience from "@/components/experience"
 import Footer from "@/components/footer"
-import Projects from "@/components/projects"
-import Certifications from "@/components/certifications"
 
 // Molecules
 import HomePageContainer from "@/ui/molecules/home-page-container"
 import MailShortcut from "@/ui/molecules/mail-shortcut"
+import { NextPage } from "next"
+import { fetchTranslations } from "@/modules/translations/fetch"
 
-const HomeContainer = () => {
+const PienissimoPage: NextPage = () => {
   const { sidebarVisible, toggleSidebar, closeSidebar } = useSidebarVisibility()
   const isMailShortcutVisible = useIsMailShortcutVisible()
   const handleMailShortcutClick = () => scrollToSection(WebsiteSection.CONTACT)
@@ -31,9 +31,7 @@ const HomeContainer = () => {
         scrollToSelectedDiv={scrollToSection}
       />
       <Sidebar open={sidebarVisible} onClose={closeSidebar} />
-      <Hero onRedirect={scrollToSection} />
-      <Certifications />
-      <Projects />
+      <Experience />
       <Contact />
       <Footer />
       {isMailShortcutVisible && (
@@ -43,4 +41,12 @@ const HomeContainer = () => {
   )
 }
 
-export default HomeContainer
+export default PienissimoPage
+
+export async function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      ...(await fetchTranslations(locale, ["common", "home", "jobs"])),
+    },
+  }
+}

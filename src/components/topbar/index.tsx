@@ -15,7 +15,7 @@ import IconContainer from "@/ui/atoms/icon-container"
 // Icons
 import AcademicHat from "@/ui/icons/academic-hat"
 import CodeBlocks from "@/ui/icons/code-blocks"
-import Briefcase from "@/ui/icons/briefcase_"
+import Mail from "@/ui/icons/mail"
 import GitHub from "@/ui/icons/social/github"
 import Linkedin from "@/ui/icons/social/linkedin"
 import Burgher from "@/ui/icons/burgher"
@@ -57,11 +57,11 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
               ariaLabel="Projects"
             />
             <TopBarIcon
-              IconComponent={Briefcase}
+              IconComponent={Mail}
               onClick={() => {
-                scrollToSelectedDiv(WebsiteSection.CAREER)
+                scrollToSelectedDiv(WebsiteSection.CONTACT)
               }}
-              text={t("redirects.work")}
+              text={t("redirects.contact")}
               ariaLabel="Work"
             />
           </>

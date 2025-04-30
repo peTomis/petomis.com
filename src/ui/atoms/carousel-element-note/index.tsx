@@ -2,21 +2,24 @@
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Icons
-import PointerClick from "@/ui/icons/pointer-click"
-import Touch from "@/ui/icons/touch_"
-import { TypographyColor } from "../typography"
 import { CarouselElementColor } from "../carousel-element-text"
+import GitHub from "@/ui/icons/social/github"
 
 interface Props {
   color?: CarouselElementColor
+  collaborators: { name: string; url: string }[]
 }
 
-const CarouselElementNote = ({ color = CarouselElementColor.BLUE }: Props) => {
+const CarouselElementNote = ({
+  color = CarouselElementColor.BLUE,
+  collaborators,
+}: Props) => {
   const { t } = useTranslations("home")
 
   const getTextColor = (): string => {
     switch (color) {
       case CarouselElementColor.BLUE:
+      case CarouselElementColor.ANUBIDIGITAL:
         return "text-white fill-white"
       default:
         return "text-black"
@@ -24,17 +27,30 @@ const CarouselElementNote = ({ color = CarouselElementColor.BLUE }: Props) => {
   }
 
   return (
-    <div
-      className={`absolute flex flex-row items-center justify-center w-full ${getTextColor()} bottom-2`}
-    >
-      <div className="w-8 h-8 md:hidden">
-        <Touch />
+    collaborators.length > 0 && (
+      <div
+        className={`absolute font-light font-montserrat space-x-2 flex flex-row items-center pl-2 justify-center w-full ${getTextColor()} bottom-4`}
+      >
+        <div>Collaborator:</div>
+
+        <div className="flex flex-row">
+          {collaborators.map((collaborator, index) => (
+            <div
+              key={index}
+              onClick={() => {
+                window.open(collaborator.url, "_blank")
+              }}
+              className="flex flex-row items-center"
+            >
+              <div className="w-6 h-6">
+                <GitHub />
+              </div>
+              <div> {collaborator.name}</div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="hidden w-8 h-8 md:inline">
-        <PointerClick />
-      </div>
-      <div>{t("projects.elementNote")}</div>
-    </div>
+    )
   )
 }
 

@@ -62,7 +62,7 @@ export enum WebsiteSection {
   EXPERIENCE = "experience-container",
   CAREER = "career-container",
   PROJECTS = "projects-container",
-  CONTACT = "contact-title",
+  CONTACT = "contact-container",
 }
 
 export const parseExperienceTime = (

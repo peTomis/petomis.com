@@ -75,6 +75,9 @@ module.exports = {
           DEFAULT: "#B02727",
           dark: "#5D0A0AFF",
         },
+        pienissimo: {
+          DEFAULT: "#e30619",
+        },
       },
       dropShadow: {
         "3xl": "0 35px 35px rgba(0, 0, 0, 0.25)",

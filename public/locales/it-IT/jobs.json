@@ -119,11 +119,18 @@
     }
   },
   "projects": {
-    "metch": {
-      "description": "Il game changer! Metch è una piattaforma che mira a rendere il processo di ricerca di talenti e team nel settore gaming semplice ed efficiente."
+    "employeeTag": "Impiegato",
+    "anubidigital": {
+      "description": "Anubidigital è tra i pionieri italiani del settore web3. Nasce come custodia istituzionale di digital asset per poi specializzarsi nel software B2B per il settore fintech."
     },
     "collectionmanager": {
       "description": "Un progetto personale che mi permette di tracciare i prezzi e analizzare i dati dei negozi della mia collezione di carte e altri oggetti da collezione."
+    },
+    "metch": {
+      "description": "Il game changer! Metch è una piattaforma che mira a rendere il processo di ricerca di talenti e team nel settore gaming semplice ed efficiente."
+    },
+    "pienissimo": {
+      "description": "Pienissimo è l'azienda leader in Italia nel Direct Response Marketing per il settore della ristorazione, con migliaia di clienti attivi."
     }
   }
 }
