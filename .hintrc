@@ -8,7 +8,8 @@
       "default",
       {
         "ignore": [
-          "link[sizes]"
+          "link[sizes]",
+          "div[dir]"
         ]
       }
     ],

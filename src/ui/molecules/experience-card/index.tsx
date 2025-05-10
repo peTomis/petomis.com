@@ -1,14 +1,25 @@
 import Typography from "@/ui/atoms/typography"
+import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
 
 interface Props {
   name?: string
   icon: React.ReactNode
   onClick?: () => void
-  black?: boolean
+  color?: CarouselElementColor
 }
 
-const ExperienceCard = ({ name, icon, onClick, black = false }: Props) => {
+const ExperienceCard = ({
+  name,
+  icon,
+  onClick,
+  color = CarouselElementColor.ANUBIDIGITAL,
+}: Props) => {
   const id = `experience-card-${name}`
+  const titleColor =
+    color === CarouselElementColor.ANUBIDIGITAL ? "WHITE" : "BLACK"
+
+  const black = color === CarouselElementColor.ANUBIDIGITAL ? false : true
+
   return (
     <div
       id={id}
@@ -16,12 +27,12 @@ const ExperienceCard = ({ name, icon, onClick, black = false }: Props) => {
         name ? " shadow-md bg-black bg-opacity-5" : ""
       } ${
         onClick ? "cursor-pointer" : ""
-      } select-none  lg:h-[120px] lg:w-[120px]`}
+      } select-none lg:h-[120px] lg:w-[120px]`}
       onClick={onClick}
     >
       {name && (
         <div className="flex items-center justify-center w-full">
-          <Typography text={name} light color={black ? "BLACK" : "BASE"} />
+          <Typography text={name} light color={titleColor} />
         </div>
       )}
       <div

@@ -21,15 +21,43 @@ import anubidigitalLogo from "@public/images/anubidigital-logo.svg"
 import pienissimoBg from "@public/images/pienissimo-bg.webp"
 import pienissimoLogo from "@public/images/pienissimo-logo.webp"
 
-interface Project {
+// Icons
+import Aws from "@/ui/icons/programming/Aws"
+import Docker from "@/ui/icons/programming/Docker"
+import GitHub from "@/ui/icons/programming/GitHub"
+import Javascript from "@/ui/icons/programming/Javascript"
+import Jest from "@/ui/icons/programming/Jest"
+import Jira from "@/ui/icons/programming/Jira"
+import Kubernetes from "@/ui/icons/programming/Kubernetes"
+import Mongodb from "@/ui/icons/programming/Mongodb"
+import Nestjs from "@/ui/icons/programming/NestJs"
+import Nextjs from "@/ui/icons/programming/Nextjs"
+import NodeJs from "@/ui/icons/programming/Nodejs"
+import PostgreSQL from "@/ui/icons/programming/Postgres"
+import Swift from "@/ui/icons/programming/Swift"
+import Typescript from "@/ui/icons/programming/Typescript"
+import VsCode from "@/ui/icons/programming/VsCode"
+import Xcode from "@/ui/icons/programming/Xcode"
+
+export interface Project {
   image: React.ReactNode
   name: string
   title: JSX.Element
   description: string
   color: CarouselElementColor
+  employeeColor?:
+    | CarouselElementColor.ANUBIDIGITAL
+    | CarouselElementColor.PIENISSIMO
+  tasks?: any[]
   website: string
   employeeTag?: CarouselElementEmployeeTag
+  tools?: {
+    name: string
+    icon: React.ReactNode
+    url: string
+  }[]
   collaborators: { name: string; url: string }[]
+  sentences: string[]
 }
 
 export function useProjects(): Project[] {
@@ -78,6 +106,7 @@ export function useProjects(): Project[] {
     color: CarouselElementColor.BLUE,
     website: process.env.COLLECTIONMANAGER ?? "",
     collaborators: [],
+    sentences: [],
   }
 
   const pienissimo: Project = {
@@ -102,9 +131,74 @@ export function useProjects(): Project[] {
     ),
     description: t("projects.pienissimo.description"),
     color: CarouselElementColor.PIENISSIMO,
-    website: "/pienissimo",
+    website: process.env.PIENISSIMO ?? "",
     employeeTag: CarouselElementEmployeeTag.RED,
+    employeeColor: CarouselElementColor.PIENISSIMO,
     collaborators: [],
+    sentences: [
+      t("pienissimo.sentences.first"),
+      t("pienissimo.sentences.second"),
+    ],
+    tasks: [
+      {
+        title: t("pienissimo.tasks.backend.title"),
+        description: t("pienissimo.tasks.backend.description"),
+      },
+      {
+        title: t("pienissimo.tasks.newApp.title"),
+        description: t("pienissimo.tasks.newApp.description"),
+      },
+      {
+        title: t("pienissimo.tasks.architecture.title"),
+        description: t("pienissimo.tasks.architecture.description"),
+      },
+      {
+        title: t("pienissimo.tasks.devops.title"),
+        description: t("pienissimo.tasks.devops.description"),
+      },
+    ],
+    tools: [
+      {
+        name: "Swift",
+        icon: <Swift />,
+        url: "https://developer.apple.com/swift/",
+      },
+      {
+        name: "Typescript",
+        icon: <Typescript />,
+        url: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "Nest.js",
+        icon: <Nestjs />,
+        url: "https://nestjs.com/",
+      },
+      {
+        name: "Node.js",
+        icon: <NodeJs />,
+        url: "https://nodejs.org/en/",
+      },
+      {
+        name: "AWS",
+        icon: <Aws />,
+        url: "https://aws.amazon.com/",
+      },
+      {
+        name: "Postgre SQL",
+        icon: <PostgreSQL />,
+        url: "https://www.postgresql.org/",
+      },
+      {
+        name: "VS Code",
+        icon: <VsCode />,
+        url: "https://code.visualstudio.com/",
+      },
+      {
+        name: "Xcode",
+        icon: <Xcode />,
+        url: "https://developer.apple.com/xcode/",
+      },
+    ],
   }
 
   const metch: Project = {
@@ -131,6 +225,7 @@ export function useProjects(): Project[] {
         url: "https://github.com/D4NNN",
       },
     ],
+    sentences: [],
   }
 
   const anubidigital: Project = {
@@ -155,9 +250,109 @@ export function useProjects(): Project[] {
     ),
     description: t("projects.anubidigital.description"),
     color: CarouselElementColor.ANUBIDIGITAL,
-    website: "/anubidigital",
+    website: process.env.ANUBI ?? "",
     employeeTag: CarouselElementEmployeeTag.WHITE,
+    employeeColor: CarouselElementColor.ANUBIDIGITAL,
     collaborators: [],
+    sentences: [
+      t("anubidigital.sentences.first"),
+      t("anubidigital.sentences.second"),
+    ],
+    tasks: [
+      {
+        title: t("anubidigital.tasks.project.title"),
+        description: t("anubidigital.tasks.project.description"),
+      },
+      {
+        title: t("anubidigital.tasks.onboarding.title"),
+        description: t("anubidigital.tasks.onboarding.description"),
+      },
+      {
+        title: t("anubidigital.tasks.datawarehouse.title"),
+        description: t("anubidigital.tasks.datawarehouse.description"),
+      },
+      {
+        title: t("anubidigital.tasks.backoffice.title"),
+        description: t("anubidigital.tasks.backoffice.description"),
+      },
+      {
+        title: t("anubidigital.tasks.rnd.title"),
+        description: t("anubidigital.tasks.rnd.description"),
+      },
+    ],
+    tools: [
+      {
+        name: "Javascript",
+        icon: <Javascript />,
+        url: "https://www.javascript.com/",
+      },
+      {
+        name: "Typescript",
+        icon: <Typescript />,
+        url: "https://www.typescriptlang.org/",
+      },
+
+      {
+        name: "Next.js",
+        icon: <Nextjs />,
+        url: "https://nextjs.org/",
+      },
+      {
+        name: "Nest.js",
+        icon: <Nestjs />,
+        url: "https://nestjs.com/",
+      },
+      {
+        name: "Node.js",
+        icon: <NodeJs />,
+        url: "https://nodejs.org/en/",
+      },
+      {
+        name: "AWS",
+        icon: <Aws />,
+        url: "https://aws.amazon.com/",
+      },
+      {
+        name: "Docker",
+        icon: <Docker />,
+        url: "https://www.docker.com/",
+      },
+      {
+        name: "Postgre SQL",
+        icon: <PostgreSQL />,
+        url: "https://www.postgresql.org/",
+      },
+      {
+        name: "Jest",
+        icon: <Jest />,
+        url: "https://jestjs.io/",
+      },
+      {
+        name: "VS Code",
+        icon: <VsCode />,
+        url: "https://code.visualstudio.com/",
+      },
+      {
+        name: "GitHub",
+        icon: <GitHub />,
+        url: "https://github.com",
+      },
+      {
+        name: "Jira",
+        icon: <Jira />,
+        url: "https://www.atlassian.com/software/jira",
+      },
+      {
+        name: "MongoDB",
+        icon: <Mongodb />,
+        url: "https://www.mongodb.com/",
+      },
+      {
+        name: "Kubernetes",
+        icon: <Kubernetes />,
+        url: "https://kubernetes.io/",
+      },
+    ],
   }
 
   return [collectionmanager, pienissimo, metch, anubidigital]

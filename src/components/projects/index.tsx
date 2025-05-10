@@ -12,9 +12,14 @@ import Typography from "@/ui/atoms/typography"
 
 // Assets
 import CarouselElementSkewed from "@/ui/molecules/carousel-element-skewed"
-import { useProjects } from "@/hooks/useProjects"
+import { Project, useProjects } from "@/hooks/useProjects"
+import { useState } from "react"
+import EmployeeDetails from "@/ui/organisms/employee-details"
 
 const Projects = () => {
+  const [employeeExperience, setEmployeeExperience] = useState<
+    Project | undefined
+  >(undefined)
   const projects = useProjects()
   const { t } = useTranslations("home")
 
@@ -52,7 +57,11 @@ const Projects = () => {
               description={project.description}
               color={project.color}
               employeeTag={project.employeeTag}
-              onClick={() => window.open(project.website, "_blank")}
+              onClick={() =>
+                project.employeeTag
+                  ? setEmployeeExperience(project)
+                  : window.open(project.website, "_blank")
+              }
               collaborators={project.collaborators}
             />
           ))}
@@ -73,13 +82,23 @@ const Projects = () => {
               title={project.title}
               description={project.description}
               color={project.color}
-              onClick={() => window.open(project.website, "_blank")}
+              onClick={() =>
+                project.employeeTag
+                  ? setEmployeeExperience(project)
+                  : window.open(project.website, "_blank")
+              }
               collaborators={project.collaborators}
               selected
             />
           </CarouselElementSkewed>
         ))}
       </div>
+      {employeeExperience && (
+        <EmployeeDetails
+          onClose={() => setEmployeeExperience(undefined)}
+          experience={employeeExperience}
+        />
+      )}
     </div>
   )
 }

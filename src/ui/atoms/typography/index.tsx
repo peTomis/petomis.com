@@ -10,6 +10,7 @@ export type TypographyColor =
   | "ANUBIDIGITAL"
   | "ANUBIDIGITAL-DARK"
   | "PIENISSIMO"
+  | "WHITE"
 
 export enum TypographyColorEnum {
   BLACK = "text-black",
@@ -23,6 +24,7 @@ export enum TypographyColorEnum {
   ANUBIDIGITAL = "text-anubidigital",
   "ANUBIDIGITAL-DARK" = "text-anubidigital-dark",
   PIENISSIMO = "text-red-600",
+  WHITE = "text-white",
 }
 
 export type TypographyFont = "roboto" | "montserrat" | "orbitron"
