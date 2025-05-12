@@ -8,7 +8,7 @@ import { useTranslations } from "./useTranslations"
 import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
 
 // Icons
-import MetchLogo from "@/ui/icons/companies/metch_"
+import MetchLogo from "@/ui/icons/companies/metch"
 
 // Assets
 import metchImage from "@public/images/metch-bg.png"

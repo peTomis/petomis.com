@@ -1,11 +1,6 @@
 import EmployeeDetailsTask from "@/ui/molecules/employee-details-task"
 import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
 
-export interface WorkExperienceTaskItem {
-  title: string
-  description: string
-}
-
 interface Props {
   tasks: any[]
   color?: CarouselElementColor

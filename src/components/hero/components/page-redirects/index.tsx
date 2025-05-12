@@ -9,7 +9,6 @@ import SectionShortcut from "@/ui/molecules/section-shortcut"
 
 // Icons
 import AcademicHat from "@/ui/icons/academic-hat"
-import Briefcase from "@/ui/icons/briefcase_"
 import CodeBlocks from "@/ui/icons/code-blocks"
 import Mail from "@/ui/icons/mail"
 

@@ -1,6 +1,3 @@
-// External libraries
-import React from "react"
-
 // Hooks
 import { useLanguage } from "@/hooks/useLanguage"
 import { useTranslations } from "@/hooks/useTranslations"

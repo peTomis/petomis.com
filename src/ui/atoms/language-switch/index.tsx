@@ -25,6 +25,7 @@ const LanguageToggle = ({
     >
       {languages.map((current) => (
         <button
+          type="button"
           key={current.code}
           className={`inline-flex items-center justify-center rounded-sm px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
             current.code === language.code

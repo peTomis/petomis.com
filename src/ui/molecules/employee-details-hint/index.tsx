@@ -3,12 +3,12 @@ import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
 import Typography from "@/ui/atoms/typography"
 import CloseButton from "@/ui/icons/close-button"
 
-export enum EmployeeDetailsFillColor {
+enum EmployeeDetailsFillColor {
   "bg-anubidigital-dark" = "fill-white",
   "bg-red-300" = "fill-black",
 }
 
-export enum EmployeeDetailsTextColor {
+enum EmployeeDetailsTextColor {
   "bg-anubidigital-dark" = "WHITE",
   "bg-red-300" = "BLACK",
 }

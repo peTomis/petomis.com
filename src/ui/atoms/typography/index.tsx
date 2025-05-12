@@ -12,7 +12,7 @@ export type TypographyColor =
   | "PIENISSIMO"
   | "WHITE"
 
-export enum TypographyColorEnum {
+enum TypographyColorEnum {
   BLACK = "text-black",
   BASE = "",
   PRIMARY50 = "text-primary-50",
@@ -27,7 +27,7 @@ export enum TypographyColorEnum {
   WHITE = "text-white",
 }
 
-export type TypographyFont = "roboto" | "montserrat" | "orbitron"
+type TypographyFont = "roboto" | "montserrat" | "orbitron"
 
 enum TypographyFontEnum {
   "orbitron" = "font-orbitron",
@@ -35,7 +35,7 @@ enum TypographyFontEnum {
   "montserrat" = "font-montserrat",
 }
 
-export type TextSize =
+type TextSize =
   | "h1"
   | "h2"
   | "h3"

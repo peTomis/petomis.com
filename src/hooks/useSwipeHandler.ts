@@ -1,5 +1,5 @@
 // External libraries
-import React from "react"
+import { useEffect } from "react"
 
 /**
  * Custom React hook for handling swipe gestures on a given element.
@@ -15,7 +15,7 @@ const useSwipeHandler = (
   onSwipeRight: () => void,
   stopPropagation: boolean = false
 ) => {
-  React.useEffect(() => {
+  useEffect(() => {
     // Initial touch positions
     let startX = 0
     let startY = 0

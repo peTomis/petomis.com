@@ -1,6 +1,3 @@
-// External libraries
-import React from "react"
-
 // Sidebar Components
 import LanguageSelector from "./components/language-selector"
 

@@ -1,12 +1,12 @@
 "use client"
 
 // External libraries
-import React from "react"
+import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
 
 // Hooks
 import { useTranslations } from "./useTranslations"
 import { useLocalStorage } from "./useLocalStorage"
-import { useRouter } from "next/router"
 
 // Type definition for supported languages
 export type SupportedLanguage = {
@@ -54,15 +54,13 @@ export function useLanguage(): [
   }
 
   // State to keep track of the current language selection
-  const [language, setLanguage] = React.useState<SupportedLanguage>(
-    l ?? languages[0]
-  )
+  const [language, setLanguage] = useState<SupportedLanguage>(l ?? languages[0])
 
   // Use translations hook for i18n functionality
   const { i18n } = useTranslations("common")
 
   // Effect hook to update the locale in Next.js router and i18n when language changes
-  React.useEffect(() => {
+  useEffect(() => {
     router.push(router.pathname, router.asPath, { locale: language.code })
     i18n.changeLanguage(language.code)
     setStorageValue(language.code)

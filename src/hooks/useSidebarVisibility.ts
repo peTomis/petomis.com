@@ -1,5 +1,5 @@
 // External libraries
-import React from "react"
+import { useState } from "react"
 
 /**
  * A custom React hook for managing the visibility of a sidebar.
@@ -14,7 +14,7 @@ import React from "react"
  */
 const useSidebarVisibility = () => {
   // State to track the visibility of the sidebar
-  const [sidebarVisible, setSidebarVisible] = React.useState(false)
+  const [sidebarVisible, setSidebarVisible] = useState(false)
 
   // Function to toggle the visibility state of the sidebar
   const toggleSidebar = () => setSidebarVisible(!sidebarVisible)

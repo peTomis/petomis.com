@@ -1,10 +1,10 @@
 // Hooks
 import useIsMailShortcutVisible from "@/hooks/useIsMailShortcutVisible"
 import useSidebarVisibility from "@/hooks/useSidebarVisibility"
-import scrollToSection from "@/hooks/useScrollToSection"
 
 // Utilities
 import { WebsiteSection } from "@/utils"
+import scrollToSection from "@/utils/scrollToSection"
 
 // Components
 import Sidebar from "@/components/sidebar"

@@ -2,7 +2,7 @@
   "title": "Giuseppe Tomis - Ingegnere del software",
   "description": "Sito personale di Giuseppe Tomis, Ingegnere del Software",
   "certifications": {
-    "title": "Certificazioni",
+    "title": "Competenze",
     "soon": "(presto disponibili)"
   },
   "contact": {
@@ -62,7 +62,7 @@
     "title": "Carriera",
     "description": "Un breve riassunto della mia carriera lavorativa.",
     "desktopClick": "Clicca per i dettagli",
-    "desktopClose": "Clicca qui per chiudere",
+    "desktopClose": "Chiudi",
     "mobileClick": "Premi per i dettagli",
     "mobileClose": "Premi qui per chiudere",
     "tools": "Tools",

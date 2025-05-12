@@ -1,5 +1,6 @@
 // External libraries
-import React from "react"
+import { WebsiteSection } from "@/utils"
+import { useEffect, useState } from "react"
 
 /**
  * Custom React hook to determine the visibility of a mail shortcut button
@@ -11,14 +12,14 @@ import React from "react"
  */
 const useIsMailShortcutVisible = () => {
   // State to track the visibility of the mail shortcut
-  const [isMailShortcutVisible, setIsMailShortcutVisible] = React.useState(true)
+  const [isMailShortcutVisible, setIsMailShortcutVisible] = useState(true)
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Handler to update the visibility based on scroll position
     const handleScroll = () => {
       // Attempt to find specific DOM elements to base the visibility logic on
-      const firstDiv = document.getElementById("work")
-      const targetDiv = document.getElementById("contact-container")
+      const firstDiv = document.getElementById(WebsiteSection.EXPERIENCE)
+      const targetDiv = document.getElementById(WebsiteSection.CONTACT)
       // Early return if the target div isn't found
       if (!targetDiv) return
 
