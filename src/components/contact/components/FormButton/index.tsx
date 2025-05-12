@@ -1,6 +1,11 @@
-import Button from "@/ui/atoms/button"
-import Mail from "@/ui/icons/mail"
+// Hooks
 import { useTranslations } from "@/hooks/useTranslations"
+
+// Atoms
+import Button from "@/ui/atoms/button"
+
+// Icons
+import Mail from "@/ui/icons/mail"
 
 interface Props {
   onSubmit: () => void

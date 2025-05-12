@@ -1,7 +1,8 @@
-import React from "react"
+// External Imports
+import { useLayoutEffect } from "react"
 
 const useLockScroll = () => {
-  React.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     const originalStyle = window.getComputedStyle(document.body).overflow
     document.body.style.overflow = "hidden"
     return () => {

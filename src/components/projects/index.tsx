@@ -1,20 +1,20 @@
+// External Imports
+import { useState } from "react"
+
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
+import { Project, useProjects } from "@/hooks/useProjects"
 
 // Organisms
 import Carousel from "@/ui/organisms/carousel"
+import EmployeeDetails from "@/ui/organisms/employee-details"
 
 // Molecules
 import CarouselElement from "@/ui/molecules/carousel-element"
+import CarouselElementSkewed from "@/ui/molecules/carousel-element-skewed"
 
 // Atoms
 import Typography from "@/ui/atoms/typography"
-
-// Assets
-import CarouselElementSkewed from "@/ui/molecules/carousel-element-skewed"
-import { Project, useProjects } from "@/hooks/useProjects"
-import { useState } from "react"
-import EmployeeDetails from "@/ui/organisms/employee-details"
 
 const Projects = () => {
   const [employeeExperience, setEmployeeExperience] = useState<

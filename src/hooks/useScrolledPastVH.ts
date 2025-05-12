@@ -1,5 +1,5 @@
 // External libraries
-import React from "react"
+import { useEffect, useState } from "react"
 
 /**
  * Custom hook that checks if the user has scrolled past a certain percentage of the viewport height.
@@ -9,9 +9,9 @@ import React from "react"
  */
 const useScrolledPastVH = (vh: number): boolean => {
   // State to track whether the user has scrolled past the specified VH percentage
-  const [hasScrolledPastVH, setHasScrolledPastVH] = React.useState(false)
+  const [hasScrolledPastVH, setHasScrolledPastVH] = useState(false)
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Function to handle scroll events
     const handleScroll = () => {
       // Calculate the threshold in pixels based on the viewport height and the specified percentage

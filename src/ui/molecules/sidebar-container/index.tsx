@@ -1,5 +1,5 @@
-// External libraries
-import React from "react"
+// External Imports
+import { useRef } from "react"
 
 // Hooks
 import useSwipeHandler from "@/hooks/useSwipeHandler"
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const SidebarContainer = ({ children, open, onClose }: Props) => {
-  const ref = React.useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   useSwipeHandler(
     ref,

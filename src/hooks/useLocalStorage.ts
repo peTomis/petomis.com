@@ -1,5 +1,5 @@
 // External libraries
-import React from "react"
+import { Dispatch, useEffect, useState } from "react"
 
 /**
  * Custom React hook for persisting state to `localStorage`.
@@ -21,8 +21,11 @@ import React from "react"
  * const [name, setName] = useLocalStorage('name', 'Anonymous');
  * setName('Alice'); // The value 'Alice' is now persisted in localStorage under the key 'name'.
  */
-export function useLocalStorage(key: string, defaultValue: string) {
-  const [value, setValue] = React.useState(() => {
+export function useLocalStorage(
+  key: string,
+  defaultValue: string
+): [any, Dispatch<any>] {
+  const [value, setValue] = useState(() => {
     let currentValue
 
     try {
@@ -39,7 +42,7 @@ export function useLocalStorage(key: string, defaultValue: string) {
     return currentValue
   })
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Automatically update localStorage when the value changes.
     localStorage.setItem(key, JSON.stringify(value))
   }, [value, key])

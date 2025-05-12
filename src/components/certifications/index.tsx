@@ -1,11 +1,10 @@
-// External Libraries
-import Image from "next/image"
-
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Atoms
 import Typography from "@/ui/atoms/typography"
+
+// Icons
 import Medal from "@/ui/icons/medal"
 import WorkInProgressIcon from "@/ui/icons/work-in-progress"
 
