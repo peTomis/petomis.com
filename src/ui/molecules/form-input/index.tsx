@@ -20,17 +20,18 @@ const FormInput = ({
 }: Props) => {
   const isArea = type === "area"
   const inputClass =
-    "bg-primary-200 bg-opacity-10 placeholder-gray-600 ".concat(
+    "bg-primary-200 bg-opacity-10 placeholder-gray-600  rounded-tr-lg rounded-bl-xl ".concat(
       error ? style.inputError : style.input
     )
-  const areaClass = "bg-primary-200 bg-opacity-10 placeholder-gray-600 ".concat(
-    error ? style.areaError : style.area
-  )
+  const areaClass =
+    "bg-primary-200 bg-opacity-10 placeholder-gray-600  rounded-tr-lg rounded-bl-xl ".concat(
+      error ? style.areaError : style.area
+    )
 
   return (
     <div
       id="form-input-container"
-      className={`flex flex-col w-full ${
+      className={`flex flex-col w-full  ${
         hidden ? "opacity-0 select-none" : ""
       }`}
     >
@@ -54,8 +55,6 @@ const FormInput = ({
             placeholder={placeholder}
           />
         )}
-        <div className="absolute bottom-0 w-4 h-4 rotate-45 -left-2 bg-primary-500"></div>
-        <div className="absolute top-0 w-4 h-4 rotate-45 -right-2 bg-primary-500"></div>
       </div>
     </div>
   )

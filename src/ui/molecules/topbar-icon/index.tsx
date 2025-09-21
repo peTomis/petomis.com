@@ -12,7 +12,7 @@ interface Props {
 const TopBarIcon = ({ IconComponent, onClick, text, ariaLabel }: Props) => (
   <div
     onClick={onClick}
-    className="flex flex-row items-center px-2 py-2 space-x-2 cursor-pointer hover:bg-white md:px-4 hover:bg-opacity-10"
+    className="flex flex-row items-center px-4 py-1 space-x-2 transition-all duration-500 ease-in-out rounded-full cursor-pointer hover:bg-primary"
   >
     <IconContainer aria-label={ariaLabel}>
       <div className="w-8 h-8 md:w-6 md:h-6">

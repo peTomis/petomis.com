@@ -9,6 +9,7 @@ import SocialIconContainer from "@/ui/atoms/social-icon-container"
 import GitHub from "@/ui/icons/social/github"
 import Linkedin from "@/ui/icons/social/linkedin"
 import LogoIcon from "@/ui/logo/logoIcon"
+import LanguageSelector from "./components/language-selector"
 
 const Footer = () => {
   const { t } = useTranslations("common")
@@ -73,6 +74,9 @@ const Footer = () => {
               clickable={true}
               onClick={openMaterialDesign}
             />
+          </div>
+          <div className="pt-4 lg:pt-0">
+            <LanguageSelector />
           </div>
         </div>
       </div>

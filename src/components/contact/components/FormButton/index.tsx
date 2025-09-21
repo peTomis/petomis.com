@@ -25,14 +25,14 @@ const FormButton = ({ hidden, onSubmit }: Props) => {
         <div className="flex items-center justify-center">
           <Mail className="w-6 h-6 fill-primary-100" />
         </div>
-        <div className="flex flex-row items-center justify-center space-x-2 font-montserrat text-small md:text-base">
-          <div>{t("contact.mailMe")}</div>
+        <div className="flex flex-row items-center justify-center space-x-1 font-montserrat text-small md:text-base">
+          <div className="select-none">{t("contact.mailMe")}</div>
           <a
             title="mailto"
-            className="font-bold text-primary-100"
-            href="mailto:giuseppe.tomis@protonmail.com"
+            className="font-bold cursor-pointer text-primary-100 hover:underline"
+            href="mailto:me@petomis.com"
           >
-            giuseppe.tomis@protonmail.com
+            me@petomis.com
           </a>
         </div>
       </div>

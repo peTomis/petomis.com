@@ -18,14 +18,12 @@ import CodeBlocks from "@/ui/icons/code-blocks"
 import Mail from "@/ui/icons/mail"
 import GitHub from "@/ui/icons/social/github"
 import Linkedin from "@/ui/icons/social/linkedin"
-import Burgher from "@/ui/icons/burgher"
 
 interface Props {
-  setSidebarVisible: () => void
   scrollToSelectedDiv: (section: WebsiteSection) => void
 }
 
-const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
+const TopBar = ({ scrollToSelectedDiv }: Props) => {
   const hasScrolled = useScrolledPastVH(0.01)
   const { t } = useTranslations("home")
 
@@ -34,12 +32,9 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
 
   return (
     <TopBarContainer>
-      <div
-        id="redirect-container"
-        className={`flex flex-row pl-2 space-x-2 md:space-x-4 `}
-      >
-        {hasScrolled && (
-          <>
+      <div className="mx-auto lg:mx-0">
+        <TopBarItemContainer hasScrolled={hasScrolled}>
+          {hasScrolled && (
             <TopBarIcon
               IconComponent={AcademicHat}
               onClick={() => {
@@ -48,6 +43,8 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
               text={t("redirects.experience")}
               ariaLabel="Experience"
             />
+          )}
+          {hasScrolled && (
             <TopBarIcon
               IconComponent={CodeBlocks}
               onClick={() => {
@@ -56,6 +53,8 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
               text={t("redirects.projects")}
               ariaLabel="Projects"
             />
+          )}
+          {hasScrolled && (
             <TopBarIcon
               IconComponent={Mail}
               onClick={() => {
@@ -64,30 +63,97 @@ const TopBar = ({ setSidebarVisible, scrollToSelectedDiv }: Props) => {
               text={t("redirects.contact")}
               ariaLabel="Work"
             />
-          </>
-        )}
+          )}
+          {hasScrolled && (
+            <div className="flex items-center justify-center lg:hidden">
+              <div
+                className="w-1 h-1 rounded-full opacity-60 bg-primary "
+                style={{
+                  boxShadow: "inset 0 0 7px rgba(255, 255, 255, 0.8)",
+                }}
+              ></div>
+            </div>
+          )}
+          <div className="block lg:hidden">
+            <TopbarIconContainer onClick={openGitHub} hasScrolled={hasScrolled}>
+              <div className="w-7 h-7 invert">
+                <GitHub />
+              </div>
+            </TopbarIconContainer>
+          </div>
+          <div className="block lg:hidden">
+            <TopbarIconContainer
+              onClick={openLinkedIn}
+              hasScrolled={hasScrolled}
+            >
+              <div className="w-6 h-6 invert">
+                <Linkedin />
+              </div>
+            </TopbarIconContainer>
+          </div>
+        </TopBarItemContainer>
       </div>
-      <div
-        className={`flex pr-4 md:pr-0 flex-row ${
-          hasScrolled ? "" : "py-2"
-        } space-x-4`}
-        id="link-and-settings-container"
-      >
-        <IconContainer onClick={openGitHub} ariaLabel="Open GitHub">
-          <div className="w-7 h-7 invert">
-            <GitHub />
-          </div>
-        </IconContainer>
-        <IconContainer onClick={openLinkedIn} ariaLabel="Open LinkedIn">
-          <div className="w-6 h-6">
-            <Linkedin />
-          </div>
-        </IconContainer>
-        <IconContainer onClick={setSidebarVisible} ariaLabel="Open sidebar">
-          <Burgher />
-        </IconContainer>
+      <div className="hidden lg:block">
+        <TopBarItemContainer hasScrolled={hasScrolled}>
+          <TopbarIconContainer onClick={openGitHub} hasScrolled={hasScrolled}>
+            <div className="w-7 h-7 invert">
+              <GitHub />
+            </div>
+          </TopbarIconContainer>
+          <TopbarIconContainer onClick={openLinkedIn} hasScrolled={hasScrolled}>
+            <div className="w-6 h-6 invert">
+              <Linkedin />
+            </div>
+          </TopbarIconContainer>
+        </TopBarItemContainer>
       </div>
     </TopBarContainer>
+  )
+}
+
+const TopbarIconContainer = ({
+  children,
+  onClick,
+  hasScrolled,
+}: {
+  children: React.ReactNode
+  onClick?: () => void
+  hasScrolled?: boolean
+}) => {
+  return (
+    <div
+      className={`flex items-center justify-center transition-all duration-500 ease-in-out rounded-full cursor-pointer w-11 h-11 ${
+        hasScrolled ? "hover:bg-primary" : ""
+      }`}
+      onClick={onClick}
+    >
+      {children}
+    </div>
+  )
+}
+
+const TopBarItemContainer = ({
+  hasScrolled,
+  children,
+}: {
+  hasScrolled: boolean
+  children?: React.ReactNode
+}) => {
+  return (
+    <div
+      className={`flex w-full flex-row p-2 border-[0.4px] gap-x-2 rounded-full ease-in-out ${
+        hasScrolled
+          ? " border-primary-100 bg-primary-500 backdrop-blur-sm bg-opacity-60 inset-shadow-sm inset-shadow-indigo-500 transition-all duration-1000 "
+          : " border-transparent transition-none"
+      } `}
+      style={{
+        boxShadow: hasScrolled
+          ? "inset 0 0 10px rgba(0, 113, 156, 0.8)"
+          : "none",
+      }}
+    >
+      {children}
+    </div>
   )
 }
 

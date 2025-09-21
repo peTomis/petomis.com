@@ -12,8 +12,8 @@ const TopBarContainer = ({ children }: Props) => {
     <div
       id="topBar"
       className={`fixed ${
-        hasScrolled ? " bg-background backdrop-blur-md bg-opacity-80" : " "
-      } top-0 z-20 flex items-center justify-between w-full lg:pr-4 `}
+        hasScrolled ? " " : " "
+      } top-4 z-20 flex items-center justify-between w-full px-3 lg:px-4 `}
     >
       {children}
     </div>

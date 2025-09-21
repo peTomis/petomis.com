@@ -20,14 +20,14 @@ const CyberpunkEffect = () => {
 
       setTimeout(() => {
         setSquares((prev) => prev.filter((square) => square.id !== id))
-      }, 2500) // Square disappears after 1.5s
-    }, 50) // New square every 200ms
+      }, 2500) // Square disappears after 2.5 seconds
+    }, 50) // New square every 50ms
 
     return () => clearInterval(interval)
   }, [])
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
+    <div className="relative w-screen h-screen">
       {squares.map((square) => (
         <div
           key={square.id}

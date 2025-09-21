@@ -6,16 +6,24 @@
 
 body {
   color: rgb(255, 254, 252);
-  background-color: #000; /* Ensures solid black background */
-  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
-  --tw-gradient-from: #000 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from),
-    #000 var(--tw-gradient-via-position), var(--tw-gradient-to);
-  --tw-gradient-to: #1f3343 var(--tw-gradient-to-position);
-  position: relative;
+  background-color: #000;
+}
+
+@media (min-width: 769px) {
+  body {
+    background-image: linear-gradient(
+      to bottom right,
+      var(--tw-gradient-stops)
+    );
+    --tw-gradient-from: #000 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from),
+      #000 var(--tw-gradient-via-position), var(--tw-gradient-to);
+    --tw-gradient-to: #1f3343 var(--tw-gradient-to-position);
+    position: relative;
+  }
 }
 
 body::before {
@@ -24,9 +32,9 @@ body::before {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
   z-index: -1;
-  background-color: black; /* Ensures Safari sees black background */
+  background-color: black;
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
-  background-blend-mode: normal; /* Ensures the gradient blends properly */
+  background-blend-mode: normal;
 }
