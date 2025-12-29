@@ -8,7 +8,7 @@ const env = {
   ANUBI: "https://www.anubidigital.com",
   MATERIAL: "https://fonts.google.com/icons",
   METCH_GG: "https://app.metch.gg",
-  COLLECTIONMANAGER: "https://collectionmanager.petomis.com",
+  COLLECTIONMANAGER: "https://collection-manager-lac.vercel.app",
   PIENISSIMO: "https://pienissimo.com",
 }
 
