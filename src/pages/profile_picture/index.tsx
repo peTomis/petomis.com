@@ -8,6 +8,7 @@ import phone from "@public/images/phone.png"
 import phone2 from "@public/images/phone_2.png"
 import email from "@public/images/mail.png"
 import email2 from "@public/images/mail_2.png"
+import logo from "@public/images/logo.png"
 import Image from "next/image"
 
 import { NextPage } from "next"
@@ -94,6 +95,14 @@ const ProfilePicture: NextPage = () => {
         priority={true}
         width={50}
         height={50}
+      />
+      <Image
+        src={logo}
+        alt="Petomis logo"
+        loading="eager"
+        priority={true}
+        width={256}
+        height={64}
       />
     </>
   )
