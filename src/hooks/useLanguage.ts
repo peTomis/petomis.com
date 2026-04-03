@@ -2,7 +2,7 @@
 
 // External libraries
 import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 // Hooks
 import { useTranslations } from "./useTranslations"
@@ -38,34 +38,65 @@ const languages: SupportedLanguage[] = [
  */
 export function useLanguage(): [
   SupportedLanguage,
-  React.Dispatch<React.SetStateAction<SupportedLanguage>>,
-  SupportedLanguage[]
+  (nextLanguage: SupportedLanguage) => void,
+  SupportedLanguage[],
 ] {
   const [storageValue, setStorageValue] = useLocalStorage("lang", "en-US")
   const router = useRouter()
 
-  // Find the language object that matches the stored or default language code
-  const l = languages.find((l) => l.code === storageValue)
-
-  // If the stored language is not found in the supported languages list, reset to default
-  if (!l) {
-    setStorageValue("en-US")
-    languages[0]
-  }
+  const fallbackLanguage = languages[0]
+  const routeLanguage = languages.find((lang) => lang.code === router.locale)
+  const storedLanguage = languages.find((lang) => lang.code === storageValue)
 
   // State to keep track of the current language selection
-  const [language, setLanguage] = useState<SupportedLanguage>(l ?? languages[0])
+  const [language, setLanguageState] = useState<SupportedLanguage>(() => {
+    return routeLanguage ?? storedLanguage ?? fallbackLanguage
+  })
 
   // Use translations hook for i18n functionality
   const { i18n } = useTranslations("common")
 
-  // Effect hook to update the locale in Next.js router and i18n when language changes
+  // Ensure an invalid stored value is corrected outside render.
   useEffect(() => {
-    router.push(router.pathname, router.asPath, { locale: language.code })
-    i18n.changeLanguage(language.code)
-    setStorageValue(language.code)
-  }, [language])
+    if (!storedLanguage) {
+      setStorageValue(fallbackLanguage.code)
+    }
+  }, [storedLanguage, fallbackLanguage.code, setStorageValue])
+
+  // Sync i18n and storage when language changes. Route navigation only happens for user actions.
+  useEffect(() => {
+    if (!router.isReady) {
+      return
+    }
+
+    if (i18n.language !== language.code) {
+      i18n.changeLanguage(language.code)
+    }
+
+    if (storageValue !== language.code) {
+      setStorageValue(language.code)
+    }
+
+    if (router.locale !== language.code) {
+      void router.replace(router.pathname, router.asPath, {
+        scroll: false,
+        locale: language.code,
+      })
+    }
+  }, [
+    i18n,
+    language.code,
+    router,
+    router.isReady,
+    router.locale,
+    storageValue,
+    setStorageValue,
+  ])
+
+  const handleSetLanguage = useCallback((nextLanguage: SupportedLanguage) => {
+    setLanguageState(nextLanguage)
+  }, [])
 
   // Return the current language, the setter function, and the list of supported languages
-  return [language, setLanguage, languages]
+  return [language, handleSetLanguage, languages]
 }

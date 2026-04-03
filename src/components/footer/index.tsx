@@ -82,7 +82,7 @@ const Footer = () => {
       </div>
       <div
         id="footer-social-buttons"
-        className="flex flex-row justify-center w-full py-8 space-x-4"
+        className="flex flex-row justify-center w-full py-8 space-x-4 text-black"
       >
         <SocialIconContainer onClick={openGitHub}>
           <GitHub />

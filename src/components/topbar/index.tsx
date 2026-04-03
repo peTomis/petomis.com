@@ -76,7 +76,7 @@ const TopBar = ({ scrollToSelectedDiv }: Props) => {
           )}
           <div className="block lg:hidden">
             <TopbarIconContainer onClick={openGitHub} hasScrolled={hasScrolled}>
-              <div className="w-7 h-7 invert">
+              <div className="text-white w-7 h-7">
                 <GitHub />
               </div>
             </TopbarIconContainer>
@@ -86,7 +86,7 @@ const TopBar = ({ scrollToSelectedDiv }: Props) => {
               onClick={openLinkedIn}
               hasScrolled={hasScrolled}
             >
-              <div className="w-6 h-6 invert">
+              <div className="w-6 h-6 text-white">
                 <Linkedin />
               </div>
             </TopbarIconContainer>
@@ -96,12 +96,12 @@ const TopBar = ({ scrollToSelectedDiv }: Props) => {
       <div className="hidden lg:block">
         <TopBarItemContainer hasScrolled={hasScrolled}>
           <TopbarIconContainer onClick={openGitHub} hasScrolled={hasScrolled}>
-            <div className="w-7 h-7 invert">
+            <div className="text-white w-7 h-7">
               <GitHub />
             </div>
           </TopbarIconContainer>
           <TopbarIconContainer onClick={openLinkedIn} hasScrolled={hasScrolled}>
-            <div className="w-6 h-6 invert">
+            <div className="w-6 h-6 text-white">
               <Linkedin />
             </div>
           </TopbarIconContainer>

@@ -29,11 +29,22 @@ export function useLocalStorage(
     let currentValue
 
     try {
-      // Attempt to get the existing value from localStorage by key.
-      // Fallback to the defaultValue if the key doesn't exist.
-      currentValue = JSON.parse(
-        localStorage.getItem(key) || String(defaultValue)
-      )
+      const storedValue = localStorage.getItem(key)
+
+      if (storedValue == null) {
+        return defaultValue
+      }
+
+      // Support both JSON-encoded values ("it-IT") and legacy raw strings (it-IT).
+      try {
+        currentValue = JSON.parse(storedValue)
+      } catch {
+        currentValue = storedValue
+      }
+
+      if (typeof currentValue !== "string") {
+        currentValue = defaultValue
+      }
     } catch (error) {
       // If an error occurs (e.g., malformed JSON), use the defaultValue.
       currentValue = defaultValue

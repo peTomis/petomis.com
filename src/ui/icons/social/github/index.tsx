@@ -1,8 +1,13 @@
 const GitHub = () => {
   return (
-    <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <svg
+      viewBox="0 0 192 192"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      aria-hidden="true"
+    >
       <path
-        stroke="#000000"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="12"
