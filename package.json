@@ -31,7 +31,7 @@
     "react-flip-toolkit": "^7.1.0",
     "react-i18next": "^12.3.1",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "typescript": "^6.0.2"
   },
   "browserslist": [
     "defaults and supports es6-module",
