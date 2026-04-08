@@ -1,4 +1,8 @@
-export default function LoreCircles() {
+export default function LoreCircles({
+  children,
+}: {
+  children?: React.ReactNode
+}) {
   const size = 320
   const center = size / 2
   const radius = 156
@@ -49,7 +53,9 @@ export default function LoreCircles() {
   return (
     <div className="relative flex h-[320px] w-[320px] items-center justify-center d:h-[360px] d:w-[360px] lg:h-[500px] lg:w-[500px] xxl:h-[760px] xxl:w-[760px]">
       {/* Full circle */}
-      <div className="absolute inset-0 z-0 m-auto h-[290px] w-[290px] rounded-full border-2 border-white/40 d:h-[330px] d:w-[330px] lg:h-[470px] lg:w-[470px] xxl:h-[620px] xxl:w-[620px]" />
+      <div className="absolute inset-0 z-0 m-auto flex h-[290px] w-[290px] items-center justify-center rounded-full overflow-hidden d:h-[330px] d:w-[330px] lg:h-[470px] lg:w-[470px] xxl:h-[620px] xxl:w-[620px]">
+        {children}
+      </div>
 
       {/* Rotating outer ring */}
       <div className="absolute inset-0 z-10 m-auto h-[320px] w-[320px] animate-spin-slow rounded-full d:h-[360px] d:w-[360px] lg:h-[500px] lg:w-[500px] xxl:h-[760px] xxl:w-[760px]">
@@ -62,7 +68,7 @@ export default function LoreCircles() {
             <path
               key={index}
               d={segment.d}
-              stroke="white"
+              stroke="#00B8FF"
               strokeWidth={strokeWidth}
               strokeLinecap="butt"
               strokeDasharray={segment.isSolid ? undefined : "0.4 20.064"}

@@ -27,16 +27,16 @@ const TopBar = ({ scrollToSelectedDiv }: Props) => {
 
   const sectionActions = [
     {
-      IconComponent: AcademicHat,
-      onClick: () => scrollToSelectedDiv(WebsiteSection.EXPERIENCE),
-      text: t("redirects.experience"),
-      ariaLabel: "Experience",
-    },
-    {
       IconComponent: CodeBlocks,
       onClick: () => scrollToSelectedDiv(WebsiteSection.PROJECTS),
       text: t("redirects.projects"),
       ariaLabel: "Projects",
+    },
+    {
+      IconComponent: AcademicHat,
+      onClick: () => scrollToSelectedDiv(WebsiteSection.EXPERIENCE),
+      text: t("redirects.experience"),
+      ariaLabel: "Experience",
     },
     {
       IconComponent: Mail,

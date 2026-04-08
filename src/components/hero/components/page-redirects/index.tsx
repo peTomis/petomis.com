@@ -21,15 +21,16 @@ const PageRedirects = ({ onRedirect }: Props) => {
 
   const shortcuts = [
     {
-      label: t("redirects.experience"),
-      section: WebsiteSection.EXPERIENCE,
-      icon: <AcademicHat />,
-    },
-    {
       label: t("redirects.projects"),
       section: WebsiteSection.PROJECTS,
       icon: <CodeBlocks />,
     },
+    {
+      label: t("redirects.experience"),
+      section: WebsiteSection.EXPERIENCE,
+      icon: <AcademicHat />,
+    },
+
     {
       label: t("redirects.contact"),
       section: WebsiteSection.CONTACT,

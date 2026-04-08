@@ -25,8 +25,8 @@ const HomeContainer = () => {
     <HomePageContainer>
       <TopBar scrollToSelectedDiv={scrollToSection} />
       <Hero onRedirect={scrollToSection} />
-      <Certifications />
       <Projects />
+      <Certifications />
       <Contact />
       <Footer />
       {isMailShortcutVisible && (
