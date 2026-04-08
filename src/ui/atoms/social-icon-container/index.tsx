@@ -10,7 +10,7 @@ const SocialIconContainer = ({ children, onClick }: Props) => {
     <button
       type="button"
       className={cn(
-        "flex h-9 w-9 cursor-pointer items-center justify-center rounded-tr-md rounded-bl-md bg-white opacity-60"
+        "flex h-9 w-9 cursor-pointer items-center justify-center rounded-tr-md rounded-bl-md bg-white bg-opacity-60"
       )}
       onClick={onClick}
     >

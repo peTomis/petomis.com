@@ -25,6 +25,7 @@ module.exports = {
         smallCarousel: "carousel 80s linear infinite",
         scaleUp: "scale-up 300ms ease-out forwards",
         fade: "fade 1.5s ease-in-out",
+        "spin-slow": "spin 10s linear infinite",
       },
       keyframes: {
         carousel: {

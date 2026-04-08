@@ -2,6 +2,7 @@
 const { i18n } = require("./next-i18next.config")
 
 const env = {
+  CREDLY: "https://www.credly.com/users/petomis",
   GITHUB: "https://github.com/peTomis",
   LINKEDIN: "https://www.linkedin.com/in/petomis",
   TWITTER: "https://twitter.com/peTomis",

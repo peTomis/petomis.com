@@ -15,6 +15,7 @@ import CodeBlocks from "@/ui/icons/code-blocks"
 import Mail from "@/ui/icons/mail"
 import GitHub from "@/ui/icons/social/github"
 import Linkedin from "@/ui/icons/social/linkedin"
+import Credly from "@/ui/icons/social/credly"
 
 interface Props {
   scrollToSelectedDiv: (_section: WebsiteSection) => void
@@ -49,6 +50,11 @@ const TopBar = ({ scrollToSelectedDiv }: Props) => {
     {
       IconComponent: GitHub,
       onClick: () => openExternalLink(process.env.GITHUB),
+      className: "text-white w-7 h-7",
+    },
+    {
+      IconComponent: Credly,
+      onClick: () => openExternalLink(process.env.CREDLY),
       className: "text-white w-7 h-7",
     },
     {

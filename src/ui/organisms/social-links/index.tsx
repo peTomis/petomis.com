@@ -1,5 +1,6 @@
 // Atoms
 import SocialIconContainer from "@/ui/atoms/social-icon-container"
+import Credly from "@/ui/icons/social/credly"
 
 // Icons
 import GitHub from "@/ui/icons/social/github"
@@ -17,6 +18,9 @@ const SocialLinks = ({ className }: Props) => {
     <>
       <SocialIconContainer onClick={() => openExternalLink(process.env.GITHUB)}>
         <GitHub />
+      </SocialIconContainer>
+      <SocialIconContainer onClick={() => openExternalLink(process.env.CREDLY)}>
+        <Credly black />
       </SocialIconContainer>
       <SocialIconContainer
         onClick={() => openExternalLink(process.env.LINKEDIN)}

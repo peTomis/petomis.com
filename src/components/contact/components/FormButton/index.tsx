@@ -30,9 +30,9 @@ const FormButton = ({ hidden, onSubmit }: Props) => {
           <a
             title="mailto"
             className="font-bold cursor-pointer text-primary-100 hover:underline"
-            href="mailto:me@petomis.com"
+            href="mailto:info@petomis.com"
           >
-            me@petomis.com
+            info@petomis.com
           </a>
         </div>
       </div>
