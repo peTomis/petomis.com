@@ -1,23 +1,17 @@
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
+import { openExternalLink } from "@/utils"
 
 // Atoms
 import Typography from "@/ui/atoms/typography"
-import SocialIconContainer from "@/ui/atoms/social-icon-container"
+import SocialLinks from "@/ui/organisms/social-links"
 
-// Icons
-import GitHub from "@/ui/icons/social/github"
-import Linkedin from "@/ui/icons/social/linkedin"
 import LogoIcon from "@/ui/logo/logoIcon"
 import LanguageSelector from "./components/language-selector"
 
 const Footer = () => {
   const { t } = useTranslations("common")
   const currentYear = new Date().getFullYear()
-
-  const openMaterialDesign = () => window.open(process.env.MATERIAL, "_blank")
-  const openGitHub = () => window.open(process.env.GITHUB, "_blank")
-  const openLinkedIn = () => window.open(process.env.LINKEDIN, "_blank")
 
   return (
     <footer
@@ -65,14 +59,14 @@ const Footer = () => {
             <Typography
               text={t("footer.icons")}
               clickable={true}
-              onClick={openMaterialDesign}
+              onClick={() => openExternalLink(process.env.MATERIAL)}
             />
             <Typography
               italic={true}
               underline={true}
               text={"Material Design"}
               clickable={true}
-              onClick={openMaterialDesign}
+              onClick={() => openExternalLink(process.env.MATERIAL)}
             />
           </div>
           <div className="pt-4 lg:pt-0">
@@ -80,17 +74,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div
-        id="footer-social-buttons"
-        className="flex flex-row justify-center w-full py-8 space-x-4 text-black"
-      >
-        <SocialIconContainer onClick={openGitHub}>
-          <GitHub />
-        </SocialIconContainer>
-        <SocialIconContainer onClick={openLinkedIn}>
-          <Linkedin />
-        </SocialIconContainer>
-      </div>
+      <SocialLinks className="flex flex-row justify-center w-full py-8 space-x-4 text-black" />
       <div
         id="footer-copyright"
         className="w-full py-2 text-center bg-black text-small md:text-base"

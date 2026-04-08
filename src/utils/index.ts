@@ -3,3 +3,5 @@ export enum WebsiteSection {
   PROJECTS = "projects-container",
   CONTACT = "contact-container",
 }
+
+export { default as openExternalLink } from "./openExternalLink"

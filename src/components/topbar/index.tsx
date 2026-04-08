@@ -3,14 +3,11 @@ import useScrolledPastVH from "@/hooks/useScrolledPastVH"
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Utilities
-import { WebsiteSection } from "@/utils"
+import { WebsiteSection, openExternalLink } from "@/utils"
 
 // Molecules
 import TopBarContainer from "@/ui/molecules/topbar-container"
 import TopBarIcon from "@/ui/molecules/topbar-icon"
-
-// Atoms
-import IconContainer from "@/ui/atoms/icon-container"
 
 // Icons
 import AcademicHat from "@/ui/icons/academic-hat"
@@ -20,50 +17,55 @@ import GitHub from "@/ui/icons/social/github"
 import Linkedin from "@/ui/icons/social/linkedin"
 
 interface Props {
-  scrollToSelectedDiv: (section: WebsiteSection) => void
+  scrollToSelectedDiv: (_section: WebsiteSection) => void
 }
 
 const TopBar = ({ scrollToSelectedDiv }: Props) => {
   const hasScrolled = useScrolledPastVH(0.01)
   const { t } = useTranslations("home")
 
-  const openGitHub = () => window.open(process.env.GITHUB, "_blank")
-  const openLinkedIn = () => window.open(process.env.LINKEDIN, "_blank")
+  const sectionActions = [
+    {
+      IconComponent: AcademicHat,
+      onClick: () => scrollToSelectedDiv(WebsiteSection.EXPERIENCE),
+      text: t("redirects.experience"),
+      ariaLabel: "Experience",
+    },
+    {
+      IconComponent: CodeBlocks,
+      onClick: () => scrollToSelectedDiv(WebsiteSection.PROJECTS),
+      text: t("redirects.projects"),
+      ariaLabel: "Projects",
+    },
+    {
+      IconComponent: Mail,
+      onClick: () => scrollToSelectedDiv(WebsiteSection.CONTACT),
+      text: t("redirects.contact"),
+      ariaLabel: "Work",
+    },
+  ]
+
+  const socialActions = [
+    {
+      IconComponent: GitHub,
+      onClick: () => openExternalLink(process.env.GITHUB),
+      className: "text-white w-7 h-7",
+    },
+    {
+      IconComponent: Linkedin,
+      onClick: () => openExternalLink(process.env.LINKEDIN),
+      className: "w-6 h-6 text-white",
+    },
+  ]
 
   return (
     <TopBarContainer>
       <div className="mx-auto lg:mx-0">
         <TopBarItemContainer hasScrolled={hasScrolled}>
-          {hasScrolled && (
-            <TopBarIcon
-              IconComponent={AcademicHat}
-              onClick={() => {
-                scrollToSelectedDiv(WebsiteSection.EXPERIENCE)
-              }}
-              text={t("redirects.experience")}
-              ariaLabel="Experience"
-            />
-          )}
-          {hasScrolled && (
-            <TopBarIcon
-              IconComponent={CodeBlocks}
-              onClick={() => {
-                scrollToSelectedDiv(WebsiteSection.PROJECTS)
-              }}
-              text={t("redirects.projects")}
-              ariaLabel="Projects"
-            />
-          )}
-          {hasScrolled && (
-            <TopBarIcon
-              IconComponent={Mail}
-              onClick={() => {
-                scrollToSelectedDiv(WebsiteSection.CONTACT)
-              }}
-              text={t("redirects.contact")}
-              ariaLabel="Work"
-            />
-          )}
+          {hasScrolled &&
+            sectionActions.map((sectionAction) => (
+              <TopBarIcon key={sectionAction.ariaLabel} {...sectionAction} />
+            ))}
           {hasScrolled && (
             <div className="flex items-center justify-center lg:hidden">
               <div
@@ -71,43 +73,54 @@ const TopBar = ({ scrollToSelectedDiv }: Props) => {
                 style={{
                   boxShadow: "inset 0 0 7px rgba(255, 255, 255, 0.8)",
                 }}
-              ></div>
+              />
             </div>
           )}
           <div className="block lg:hidden">
-            <TopbarIconContainer onClick={openGitHub} hasScrolled={hasScrolled}>
-              <div className="text-white w-7 h-7">
-                <GitHub />
-              </div>
-            </TopbarIconContainer>
-          </div>
-          <div className="block lg:hidden">
-            <TopbarIconContainer
-              onClick={openLinkedIn}
+            <TopBarSocialButtons
+              actions={socialActions}
               hasScrolled={hasScrolled}
-            >
-              <div className="w-6 h-6 text-white">
-                <Linkedin />
-              </div>
-            </TopbarIconContainer>
+            />
           </div>
         </TopBarItemContainer>
       </div>
       <div className="hidden lg:block">
         <TopBarItemContainer hasScrolled={hasScrolled}>
-          <TopbarIconContainer onClick={openGitHub} hasScrolled={hasScrolled}>
-            <div className="text-white w-7 h-7">
-              <GitHub />
-            </div>
-          </TopbarIconContainer>
-          <TopbarIconContainer onClick={openLinkedIn} hasScrolled={hasScrolled}>
-            <div className="w-6 h-6 text-white">
-              <Linkedin />
-            </div>
-          </TopbarIconContainer>
+          <TopBarSocialButtons
+            actions={socialActions}
+            hasScrolled={hasScrolled}
+          />
         </TopBarItemContainer>
       </div>
     </TopBarContainer>
+  )
+}
+
+const TopBarSocialButtons = ({
+  actions,
+  hasScrolled,
+}: {
+  actions: Array<{
+    IconComponent: React.ElementType
+    onClick: () => void
+    className: string
+  }>
+  hasScrolled?: boolean
+}) => {
+  return (
+    <>
+      {actions.map(({ IconComponent, onClick, className }) => (
+        <TopbarIconContainer
+          key={className}
+          onClick={onClick}
+          hasScrolled={hasScrolled}
+        >
+          <div className={className}>
+            <IconComponent />
+          </div>
+        </TopbarIconContainer>
+      ))}
+    </>
   )
 }
 
