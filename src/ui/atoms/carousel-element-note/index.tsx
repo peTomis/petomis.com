@@ -1,6 +1,4 @@
 // Hooks
-import { useTranslations } from "@/hooks/useTranslations"
-
 // Icons
 import { CarouselElementColor } from "../carousel-element-text"
 import GitHub from "@/ui/icons/social/github"
@@ -14,8 +12,6 @@ const CarouselElementNote = ({
   color = CarouselElementColor.BLUE,
   collaborators,
 }: Props) => {
-  const { t } = useTranslations("home")
-
   const getTextColor = (): string => {
     switch (color) {
       case CarouselElementColor.BLUE:
@@ -36,10 +32,15 @@ const CarouselElementNote = ({
         {collaborators.map((collaborator, index) => (
           <div
             key={index}
-            onClick={() => {
-              window.open(collaborator.url, "_blank")
+            role="button"
+            tabIndex={0}
+            onClick={() => window.open(collaborator.url, "_blank")}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                window.open(collaborator.url, "_blank")
+              }
             }}
-            className="flex flex-row items-center"
+            className="flex flex-row items-center cursor-pointer"
           >
             <div className="w-6 h-6">
               <GitHub />
@@ -49,9 +50,7 @@ const CarouselElementNote = ({
         ))}
       </div>
     </div>
-  ) : (
-    <></>
-  )
+  ) : null
 }
 
 export default CarouselElementNote

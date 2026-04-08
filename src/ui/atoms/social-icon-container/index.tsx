@@ -1,3 +1,5 @@
+import { cn } from "@/utils/cn"
+
 interface Props {
   children: React.ReactNode
   onClick?: () => void
@@ -5,12 +7,15 @@ interface Props {
 
 const SocialIconContainer = ({ children, onClick }: Props) => {
   return (
-    <div
-      className="flex items-center justify-center bg-white cursor-pointer rounded-tr-md rounded-bl-md opacity-60 w-9 h-9"
+    <button
+      type="button"
+      className={cn(
+        "flex h-9 w-9 cursor-pointer items-center justify-center rounded-tr-md rounded-bl-md bg-white opacity-60"
+      )}
       onClick={onClick}
     >
       <div className="flex w-6 h-6 fill-black">{children}</div>
-    </div>
+    </button>
   )
 }
 

@@ -1,7 +1,7 @@
 import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
 import EmployeeDetailsText from "../employee-details-text"
-import EmployeeDetailsTasks from "../../organisms/employee-details-tasks"
-import EmployeeDetailsTools from "../../organisms/employee-details-tools"
+import EmployeeDetailsTasks from "@/ui/organisms/employee-details-tasks"
+import EmployeeDetailsTools from "@/ui/organisms/employee-details-tools"
 import { Project } from "@/hooks/useProjects"
 
 interface Props {

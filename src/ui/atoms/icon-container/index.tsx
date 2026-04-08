@@ -1,3 +1,5 @@
+import { cn } from "@/utils/cn"
+
 interface Props {
   children: React.ReactNode
   onClick?: () => void
@@ -7,7 +9,10 @@ interface Props {
 const IconContainer = ({ children, onClick, ariaLabel }: Props) => {
   return (
     <button
-      className="flex items-center justify-center cursor-pointer w-9 h-9 fill-white"
+      type="button"
+      className={cn(
+        "flex h-9 w-9 cursor-pointer items-center justify-center fill-white"
+      )}
       onClick={onClick}
       aria-label={ariaLabel}
     >

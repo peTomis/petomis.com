@@ -4,9 +4,6 @@ import style from "./style.module.css"
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 
-// Animations
-import { useEffect, useMemo, useState } from "react"
-
 const WelcomeText = () => {
   const { t } = useTranslations("home")
 

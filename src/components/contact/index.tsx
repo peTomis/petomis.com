@@ -3,7 +3,7 @@ import { useReducer } from "react"
 import { useForm } from "@formspree/react"
 
 // Contact components
-import FormSucceeded from "../../ui/molecules/form-succeeded"
+import FormSucceeded from "@/ui/molecules/form-succeeded"
 
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"

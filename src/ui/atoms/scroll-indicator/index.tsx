@@ -19,11 +19,13 @@ const ScrollIndicator = ({
         const dotStyle = isActive ? `${activeColor} w-16` : "bg-[#444] w-5"
 
         return (
-          <div
+          <button
+            type="button"
             key={index}
+            aria-label={`Go to item ${index + 1}`}
             onClick={() => onClick && onClick(index)}
             className={`${dotStyle} h-5 rounded-full transition-all duration-300`}
-          ></div>
+          />
         )
       })}
     </div>

@@ -103,26 +103,11 @@ const Typography = ({
   opacity,
   onClick,
 }: Props) => {
-  const getFont = () => TypographyFontEnum[font]
-  const getTextColor = () => TypographyColorEnum[color]
-  const getBold = () => (bold ? "font-bold" : "")
-  const getExtrabold = () => (extrabold ? "font-extrabold" : "")
-  const getItalic = () => (italic ? "italic" : "")
-  const getLight = () => (light ? "font-light" : "")
-  const getExtralight = () => (extralight ? "font-extralight" : "")
-  const getThin = () => (thin ? "font-thin" : "")
-  const getUnderline = () => (underline ? "underline" : "")
-  const getClickable = () => (clickable ? "cursor-pointer" : "")
-  const getSize = () => TypographySizeEnum[size]
-  const getDSize = () => (d ? "d:" + TypographySizeEnum[d] : "")
-  const getMDSize = () => (md ? "md:" + TypographySizeEnum[md] : "")
-  const getXLSize = () => (xl ? "xl:" + TypographySizeEnum[xl] : "")
-  const getXXLSize = () => (xxl ? "xxl:" + TypographySizeEnum[xxl] : "")
-  const getOpacity = () => (opacity ? `opacity-${opacity}` : "")
+  const getOpacity = () => (opacity !== undefined ? `opacity-${opacity}` : "")
 
   return (
     <span
-      className={` ${getSize()} ${getFont()} ${getTextColor()} ${getBold()} ${getExtrabold()} ${getLight()} ${getExtralight()} ${getUnderline()} ${getItalic()}  ${getThin()} ${getDSize()} ${getMDSize()} ${getXLSize()} ${getXXLSize()} ${getClickable()} ${getOpacity()}`}
+      className={` ${TypographySizeEnum[size]} ${TypographyFontEnum[font]} ${TypographyColorEnum[color]} ${bold ? "font-bold" : ""} ${extrabold ? "font-extrabold" : ""} ${light ? "font-light" : ""} ${extralight ? "font-extralight" : ""} ${underline ? "underline" : ""} ${italic ? "italic" : ""}  ${thin ? "font-thin" : ""} ${d ? "d:" + TypographySizeEnum[d] : ""} ${md ? "md:" + TypographySizeEnum[md] : ""} ${xl ? "xl:" + TypographySizeEnum[xl] : ""} ${xxl ? "xxl:" + TypographySizeEnum[xxl] : ""} ${clickable ? "cursor-pointer" : ""} ${getOpacity()}`}
       onClick={onClick}
     >
       {text}
