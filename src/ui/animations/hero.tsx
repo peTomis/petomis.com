@@ -53,7 +53,7 @@ export default function LoreCircles({
   return (
     <div className="relative flex h-[320px] w-[320px] items-center justify-center d:h-[360px] d:w-[360px] lg:h-[500px] lg:w-[500px] xxl:h-[760px] xxl:w-[760px]">
       {/* Full circle */}
-      <div className="absolute inset-0 z-0 m-auto flex h-[290px] w-[290px] items-center justify-center rounded-full overflow-hidden d:h-[330px] d:w-[330px] lg:h-[470px] lg:w-[470px] xxl:h-[620px] xxl:w-[620px]">
+      <div className="absolute inset-0 z-0 m-auto flex h-[240px] w-[240px] items-center justify-center rounded-full overflow-hidden d:h-[280px] d:w-[280px] lg:h-[420px] lg:w-[420px] xxl:h-[620px] xxl:w-[620px]">
         {children}
       </div>
 

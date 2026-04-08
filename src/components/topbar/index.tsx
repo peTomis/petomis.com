@@ -68,21 +68,7 @@ const TopBar = ({ scrollToSelectedDiv }: Props) => {
     <TopBarContainer>
       <div className="mx-auto lg:mx-0">
         <TopBarItemContainer hasScrolled={hasScrolled}>
-          {hasScrolled &&
-            sectionActions.map((sectionAction) => (
-              <TopBarIcon key={sectionAction.ariaLabel} {...sectionAction} />
-            ))}
-          {hasScrolled && (
-            <div className="flex items-center justify-center lg:hidden">
-              <div
-                className="w-1 h-1 rounded-full opacity-60 bg-primary "
-                style={{
-                  boxShadow: "inset 0 0 7px rgba(255, 255, 255, 0.8)",
-                }}
-              />
-            </div>
-          )}
-          <div className="block lg:hidden">
+          <div className="flex flex-row lg:hidden">
             <TopBarSocialButtons
               actions={socialActions}
               hasScrolled={hasScrolled}
