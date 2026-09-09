@@ -8,6 +8,7 @@ import Linkedin from "@/ui/icons/social/linkedin"
 
 // Utilities
 import { openExternalLink } from "@/utils"
+import { externalLinks } from "@/config/site"
 
 interface Props {
   className?: string
@@ -16,14 +17,14 @@ interface Props {
 const SocialLinks = ({ className }: Props) => {
   const content = (
     <>
-      <SocialIconContainer onClick={() => openExternalLink(process.env.GITHUB)}>
+      <SocialIconContainer onClick={() => openExternalLink(externalLinks.github)}>
         <GitHub />
       </SocialIconContainer>
-      <SocialIconContainer onClick={() => openExternalLink(process.env.CREDLY)}>
+      <SocialIconContainer onClick={() => openExternalLink(externalLinks.credly)}>
         <Credly black />
       </SocialIconContainer>
       <SocialIconContainer
-        onClick={() => openExternalLink(process.env.LINKEDIN)}
+        onClick={() => openExternalLink(externalLinks.linkedin)}
       >
         <Linkedin />
       </SocialIconContainer>

@@ -9,13 +9,14 @@
     "**/node_modules": true
   },
   "files.trimTrailingWhitespace": true,
-  "tslint.autoFixOnSave": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.singleQuote": false,
-  "prettier.printWidth": 180,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
   "typescript.preferences.quoteStyle": "double",
   "javascript.preferences.quoteStyle": "double",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "[xml]": {
     "editor.defaultFormatter": "mikeburgh.xml-format"
   },

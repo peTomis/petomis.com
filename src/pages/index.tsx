@@ -1,4 +1,4 @@
-import { fetchTranslations } from "@modules/translations/fetch"
+import { fetchTranslations } from "@/modules/translations/fetch"
 import type { NextPage } from "next"
 import Head from "next/head"
 import { useTranslations } from "@/hooks/useTranslations"

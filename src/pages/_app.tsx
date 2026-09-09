@@ -6,4 +6,4 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
 }
 
-export default appWithTranslation(CustomApp as any)
+export default appWithTranslation(CustomApp)

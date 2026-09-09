@@ -3,6 +3,7 @@ import useScrolledPastVH from "@/hooks/useScrolledPastVH"
 
 // Utilities
 import { openExternalLink } from "@/utils"
+import { externalLinks } from "@/config/site"
 
 // Molecules
 import TopBarContainer from "@/ui/molecules/topbar-container"
@@ -18,17 +19,17 @@ const TopBar = () => {
   const socialActions = [
     {
       IconComponent: GitHub,
-      onClick: () => openExternalLink(process.env.GITHUB),
+      onClick: () => openExternalLink(externalLinks.github),
       className: "text-white w-7 h-7",
     },
     {
       IconComponent: Credly,
-      onClick: () => openExternalLink(process.env.CREDLY),
+      onClick: () => openExternalLink(externalLinks.credly),
       className: "text-white w-7 h-7",
     },
     {
       IconComponent: Linkedin,
-      onClick: () => openExternalLink(process.env.LINKEDIN),
+      onClick: () => openExternalLink(externalLinks.linkedin),
       className: "w-6 h-6 text-white",
     },
   ]

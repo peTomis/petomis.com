@@ -4,6 +4,9 @@ import Image from "next/image"
 // Hooks
 import { useTranslations } from "./useTranslations"
 
+// Config
+import { projectWebsites } from "@/config/site"
+
 // Atoms
 import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
 
@@ -104,7 +107,7 @@ export function useProjects(): Project[] {
     ),
     description: t("projects.collectionmanager.description"),
     color: CarouselElementColor.BLUE,
-    website: process.env.COLLECTIONMANAGER ?? "",
+    website: projectWebsites.collectionManager,
     collaborators: [],
     sentences: [],
   }
@@ -131,7 +134,7 @@ export function useProjects(): Project[] {
     ),
     description: t("projects.pienissimo.description"),
     color: CarouselElementColor.PIENISSIMO,
-    website: process.env.PIENISSIMO ?? "",
+    website: projectWebsites.pienissimo,
     employeeTag: CarouselElementEmployeeTag.RED,
     employeeColor: CarouselElementColor.PIENISSIMO,
     collaborators: [],
@@ -218,7 +221,7 @@ export function useProjects(): Project[] {
     ),
     description: t("projects.metch.description"),
     color: CarouselElementColor.RED,
-    website: process.env.METCH_GG ?? "",
+    website: projectWebsites.metch,
     collaborators: [
       {
         name: "D4NNN",
@@ -250,7 +253,7 @@ export function useProjects(): Project[] {
     ),
     description: t("projects.anubidigital.description"),
     color: CarouselElementColor.ANUBIDIGITAL,
-    website: process.env.ANUBI ?? "",
+    website: projectWebsites.anubidigital,
     employeeTag: CarouselElementEmployeeTag.WHITE,
     employeeColor: CarouselElementColor.ANUBIDIGITAL,
     collaborators: [],

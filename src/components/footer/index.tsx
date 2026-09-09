@@ -1,6 +1,7 @@
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 import { openExternalLink } from "@/utils"
+import { externalLinks } from "@/config/site"
 
 // Atoms
 import Typography from "@/ui/atoms/typography"
@@ -59,14 +60,14 @@ const Footer = () => {
             <Typography
               text={t("footer.icons")}
               clickable={true}
-              onClick={() => openExternalLink(process.env.MATERIAL)}
+              onClick={() => openExternalLink(externalLinks.materialIcons)}
             />
             <Typography
               italic={true}
               underline={true}
               text={"Material Design"}
               clickable={true}
-              onClick={() => openExternalLink(process.env.MATERIAL)}
+              onClick={() => openExternalLink(externalLinks.materialIcons)}
             />
           </div>
           <div className="pt-4 lg:pt-0">
