@@ -23,7 +23,7 @@ const HomeContainer = () => {
 
   return (
     <HomePageContainer>
-      <TopBar scrollToSelectedDiv={scrollToSection} />
+      <TopBar />
       <Hero onRedirect={scrollToSection} />
       <Projects />
       <Certifications />

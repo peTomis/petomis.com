@@ -1,50 +1,19 @@
 // Hooks
 import useScrolledPastVH from "@/hooks/useScrolledPastVH"
-import { useTranslations } from "@/hooks/useTranslations"
 
 // Utilities
-import { WebsiteSection, openExternalLink } from "@/utils"
+import { openExternalLink } from "@/utils"
 
 // Molecules
 import TopBarContainer from "@/ui/molecules/topbar-container"
-import TopBarIcon from "@/ui/molecules/topbar-icon"
 
 // Icons
-import AcademicHat from "@/ui/icons/academic-hat"
-import CodeBlocks from "@/ui/icons/code-blocks"
-import Mail from "@/ui/icons/mail"
 import GitHub from "@/ui/icons/social/github"
 import Linkedin from "@/ui/icons/social/linkedin"
 import Credly from "@/ui/icons/social/credly"
 
-interface Props {
-  scrollToSelectedDiv: (_section: WebsiteSection) => void
-}
-
-const TopBar = ({ scrollToSelectedDiv }: Props) => {
+const TopBar = () => {
   const hasScrolled = useScrolledPastVH(0.01)
-  const { t } = useTranslations("home")
-
-  const sectionActions = [
-    {
-      IconComponent: CodeBlocks,
-      onClick: () => scrollToSelectedDiv(WebsiteSection.PROJECTS),
-      text: t("redirects.projects"),
-      ariaLabel: "Projects",
-    },
-    {
-      IconComponent: AcademicHat,
-      onClick: () => scrollToSelectedDiv(WebsiteSection.EXPERIENCE),
-      text: t("redirects.experience"),
-      ariaLabel: "Experience",
-    },
-    {
-      IconComponent: Mail,
-      onClick: () => scrollToSelectedDiv(WebsiteSection.CONTACT),
-      text: t("redirects.contact"),
-      ariaLabel: "Work",
-    },
-  ]
 
   const socialActions = [
     {

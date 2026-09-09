@@ -1,7 +1,2 @@
-export enum WebsiteSection {
-  EXPERIENCE = "experience-container",
-  PROJECTS = "projects-container",
-  CONTACT = "contact-container",
-}
-
+export { WebsiteSection } from "./websiteSection"
 export { default as openExternalLink } from "./openExternalLink"

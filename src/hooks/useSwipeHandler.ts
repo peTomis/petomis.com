@@ -16,6 +16,10 @@ const useSwipeHandler = (
   stopPropagation: boolean = false
 ) => {
   useEffect(() => {
+    // Capture the node once so the same reference is used for binding and cleanup.
+    const node = ref.current
+    if (!node) return
+
     // Initial touch positions
     let startX = 0
     let startY = 0
@@ -30,7 +34,7 @@ const useSwipeHandler = (
     // Function to handle the touch move event
     const handleTouchMove = (e: TouchEvent) => {
       // Ensure touch is within the element
-      if (!ref.current || !ref.current.contains(e.target as Node)) return
+      if (!node.contains(e.target as Node)) return
 
       const touch = e.touches[0]
       const deltaX = touch.clientX - startX
@@ -58,23 +62,15 @@ const useSwipeHandler = (
     }
 
     // Add event listeners to the element
-    if (ref.current) {
-      ref.current.addEventListener("touchstart", handleTouchStart, {
-        passive: false,
-      })
-      ref.current.addEventListener("touchmove", handleTouchMove, {
-        passive: false,
-      })
-      ref.current.addEventListener("touchend", handleTouchEnd)
-    }
+    node.addEventListener("touchstart", handleTouchStart, { passive: false })
+    node.addEventListener("touchmove", handleTouchMove, { passive: false })
+    node.addEventListener("touchend", handleTouchEnd)
 
     // Cleanup function to remove event listeners
     return () => {
-      if (ref.current) {
-        ref.current.removeEventListener("touchstart", handleTouchStart)
-        ref.current.removeEventListener("touchmove", handleTouchMove)
-        ref.current.removeEventListener("touchend", handleTouchEnd)
-      }
+      node.removeEventListener("touchstart", handleTouchStart)
+      node.removeEventListener("touchmove", handleTouchMove)
+      node.removeEventListener("touchend", handleTouchEnd)
     }
     // Include stopPropagation in the dependencies array if its change should rebind the event listeners.
   }, [ref, onSwipeLeft, onSwipeRight, stopPropagation])

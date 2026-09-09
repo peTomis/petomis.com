@@ -38,7 +38,7 @@ const languages: SupportedLanguage[] = [
  */
 export function useLanguage(): [
   SupportedLanguage,
-  (nextLanguage: SupportedLanguage) => void,
+  (_nextLanguage: SupportedLanguage) => void,
   SupportedLanguage[],
 ] {
   const [storageValue, setStorageValue] = useLocalStorage("lang", "en-US")
