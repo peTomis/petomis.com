@@ -1,8 +1,9 @@
 import EmployeeDetailsTask from "@/ui/molecules/employee-details-task"
 import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
+import type { ProjectTask } from "@/hooks/useProjects"
 
 interface Props {
-  tasks: any[]
+  tasks: ProjectTask[]
   color?: CarouselElementColor
 }
 

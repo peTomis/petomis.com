@@ -1,5 +1,5 @@
 import { fetchTranslations } from "@/modules/translations/fetch"
-import type { NextPage } from "next"
+import type { GetStaticProps, NextPage } from "next"
 import Head from "next/head"
 import { useTranslations } from "@/hooks/useTranslations"
 import HomeContainer from "@/containers/home"
@@ -66,10 +66,10 @@ const Home: NextPage = () => {
 
 export default Home
 
-export async function getStaticProps({ locale }: any) {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await fetchTranslations(locale, ["common", "home", "jobs"])),
+      ...(await fetchTranslations(locale ?? "en-US", ["common", "home", "jobs"])),
     },
   }
 }

@@ -1,5 +1,5 @@
 // External libraries
-import { Dispatch, useEffect, useState } from "react"
+import { Dispatch, SetStateAction, useEffect, useState } from "react"
 
 /**
  * Custom React hook for persisting state to `localStorage`.
@@ -24,9 +24,9 @@ import { Dispatch, useEffect, useState } from "react"
 export function useLocalStorage(
   key: string,
   defaultValue: string
-): [any, Dispatch<any>] {
-  const [value, setValue] = useState(() => {
-    let currentValue
+): [string, Dispatch<SetStateAction<string>>] {
+  const [value, setValue] = useState<string>(() => {
+    let currentValue: string
 
     try {
       const storedValue = localStorage.getItem(key)

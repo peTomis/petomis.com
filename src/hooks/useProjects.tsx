@@ -42,6 +42,22 @@ import Typescript from "@/ui/icons/programming/Typescript"
 import VsCode from "@/ui/icons/programming/VsCode"
 import Xcode from "@/ui/icons/programming/Xcode"
 
+export interface ProjectTask {
+  title: string
+  description: string
+}
+
+export interface ProjectTool {
+  name: string
+  icon: React.ReactNode
+  url: string
+}
+
+export interface ProjectCollaborator {
+  name: string
+  url: string
+}
+
 export interface Project {
   image: React.ReactNode
   name: string
@@ -51,15 +67,11 @@ export interface Project {
   employeeColor?:
     | CarouselElementColor.ANUBIDIGITAL
     | CarouselElementColor.PIENISSIMO
-  tasks?: any[]
+  tasks?: ProjectTask[]
   website: string
   employeeTag?: CarouselElementEmployeeTag
-  tools?: {
-    name: string
-    icon: React.ReactNode
-    url: string
-  }[]
-  collaborators: { name: string; url: string }[]
+  tools?: ProjectTool[]
+  collaborators: ProjectCollaborator[]
   sentences: string[]
 }
 

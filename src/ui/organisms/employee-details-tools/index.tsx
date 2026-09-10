@@ -1,13 +1,10 @@
 import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
 import ExperienceCardContainer from "@/ui/atoms/experience-card-container"
 import ExperienceCard from "@/ui/molecules/experience-card"
+import type { ProjectTool } from "@/hooks/useProjects"
 
 interface Props {
-  tools: {
-    name: string
-    icon: React.ReactNode
-    url: string
-  }[]
+  tools: ProjectTool[]
   color?: CarouselElementColor
 }
 
