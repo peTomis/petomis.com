@@ -1,25 +1,28 @@
 import { useTranslations } from "@/hooks/useTranslations"
-import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
-import Typography from "@/ui/atoms/typography"
+import {
+  CarouselElementColor,
+  type EmployeeColor,
+} from "@/ui/atoms/carousel-element-text"
+import Typography, { type TypographyColor } from "@/ui/atoms/typography"
 import CloseButton from "@/ui/icons/close-button"
 
-enum EmployeeDetailsFillColor {
-  "bg-anubidigital-dark" = "fill-white",
-  "bg-red-300" = "fill-black",
+const employeeDetailsFillColor: Record<EmployeeColor, string> = {
+  "bg-anubidigital-dark": "fill-white",
+  "bg-red-300": "fill-black",
 }
 
-enum EmployeeDetailsTextColor {
-  "bg-anubidigital-dark" = "WHITE",
-  "bg-red-300" = "BLACK",
+const employeeDetailsTextColor: Record<EmployeeColor, TypographyColor> = {
+  "bg-anubidigital-dark": "WHITE",
+  "bg-red-300": "BLACK",
 }
 
-enum EmployeeDetailsBgColor {
-  "bg-anubidigital-dark" = "bg-anubidigital",
-  "bg-red-300" = "bg-red-300",
+const employeeDetailsBgColor: Record<EmployeeColor, string> = {
+  "bg-anubidigital-dark": "bg-anubidigital",
+  "bg-red-300": "bg-red-300",
 }
 
 interface Props {
-  color?: CarouselElementColor.ANUBIDIGITAL | CarouselElementColor.PIENISSIMO
+  color?: EmployeeColor
 }
 
 const EmployeeDetailsHint = ({
@@ -29,14 +32,14 @@ const EmployeeDetailsHint = ({
 
   return (
     <div
-      className={`absolute flex flex-row justify-center items-center space-x-2 top-0 right-0 z-10 py-2  w-[120px] backdrop-blur-sm rounded-bl-xl  ${EmployeeDetailsBgColor[color]} text-center`}
+      className={`absolute flex flex-row justify-center items-center space-x-2 top-0 right-0 z-10 py-2  w-[120px] backdrop-blur-sm rounded-bl-xl  ${employeeDetailsBgColor[color]} text-center`}
     >
-      <div className={`w-6 h-6 ${EmployeeDetailsFillColor[color]}`}>
+      <div className={`w-6 h-6 ${employeeDetailsFillColor[color]}`}>
         <CloseButton />
       </div>
       <Typography
         text={t("work.desktopClose")}
-        color={EmployeeDetailsTextColor[color]}
+        color={employeeDetailsTextColor[color]}
         font={"montserrat"}
       />
     </div>

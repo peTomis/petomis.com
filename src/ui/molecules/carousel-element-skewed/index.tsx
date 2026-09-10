@@ -1,10 +1,13 @@
 import { useTranslations } from "@/hooks/useTranslations"
 import { useState } from "react"
 
-export enum CarouselElementEmployeeTag {
-  RED = "red",
-  WHITE = "white",
-}
+export const CarouselElementEmployeeTag = {
+  RED: "red",
+  WHITE: "white",
+} as const
+
+export type CarouselElementEmployeeTag =
+  (typeof CarouselElementEmployeeTag)[keyof typeof CarouselElementEmployeeTag]
 
 interface Props {
   children: JSX.Element

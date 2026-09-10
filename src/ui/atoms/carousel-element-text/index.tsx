@@ -7,17 +7,28 @@ interface Props {
   color?: CarouselElementColor
 }
 
-export enum CarouselElementColor {
-  ANUBIDIGITAL = "bg-anubidigital-dark",
-  PIENISSIMO = "bg-red-300",
-  RED = "bg-[#f10000]",
-  BLACK = "bg-black",
-  BLUE = "bg-primary-300",
-  PURPLE = "bg-purple-800",
-  YELLOW = "bg-yellow-800",
-  GREEN = "bg-green-800",
-  WHITE = "bg-white",
-}
+export const CarouselElementColor = {
+  ANUBIDIGITAL: "bg-anubidigital-dark",
+  PIENISSIMO: "bg-red-300",
+  RED: "bg-[#f10000]",
+  BLACK: "bg-black",
+  BLUE: "bg-primary-300",
+  PURPLE: "bg-purple-800",
+  YELLOW: "bg-yellow-800",
+  GREEN: "bg-green-800",
+  WHITE: "bg-white",
+} as const
+
+export type CarouselElementColor =
+  (typeof CarouselElementColor)[keyof typeof CarouselElementColor]
+
+/**
+ * The subset of colours used for the "employee" (job) projects, which drive the
+ * expanded detail view's theming.
+ */
+export type EmployeeColor =
+  | typeof CarouselElementColor.ANUBIDIGITAL
+  | typeof CarouselElementColor.PIENISSIMO
 
 const CarouselElementText = ({
   title,

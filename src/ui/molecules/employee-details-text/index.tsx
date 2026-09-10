@@ -1,9 +1,12 @@
-import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
+import {
+  CarouselElementColor,
+  type EmployeeColor,
+} from "@/ui/atoms/carousel-element-text"
 import Typography from "@/ui/atoms/typography"
 
 interface Props {
   sentences: string[]
-  color?: CarouselElementColor.ANUBIDIGITAL | CarouselElementColor.PIENISSIMO
+  color?: EmployeeColor
 }
 
 const EmployeeDetailsText = ({

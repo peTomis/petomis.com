@@ -1,13 +1,16 @@
-import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
+import {
+  CarouselElementColor,
+  type EmployeeColor,
+} from "@/ui/atoms/carousel-element-text"
 import EmployeeDetailsHint from "../employee-details-hint"
 
-enum EmployeeDetailsContainerBg {
-  "bg-anubidigital-dark" = `bg-anubidigital-dark  text-primary-50`,
-  "bg-red-300" = `bg-white text-defaultTextColor`,
+const employeeDetailsContainerBg: Record<EmployeeColor, string> = {
+  "bg-anubidigital-dark": "bg-anubidigital-dark  text-primary-50",
+  "bg-red-300": "bg-white text-defaultTextColor",
 }
 
 interface Props {
-  color?: CarouselElementColor.ANUBIDIGITAL | CarouselElementColor.PIENISSIMO
+  color?: EmployeeColor
   children: React.ReactNode
   onClose: () => void
 }
@@ -20,7 +23,7 @@ const EmployeeDetailsContainer = ({
   return (
     <div
       id="activity-card-expanded-container"
-      className={`relative flex w-full m-2 xl:m-4 overflow-x-hidden overflow-y-auto transition  animate-scaleUp ${EmployeeDetailsContainerBg[color]}`}
+      className={`relative flex w-full m-2 xl:m-4 overflow-x-hidden overflow-y-auto transition  animate-scaleUp ${employeeDetailsContainerBg[color]}`}
       onClick={(e) => {
         e.stopPropagation()
       }}

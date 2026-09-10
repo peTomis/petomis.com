@@ -1,4 +1,7 @@
-import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
+import {
+  CarouselElementColor,
+  type EmployeeColor,
+} from "@/ui/atoms/carousel-element-text"
 import EmployeeDetailsText from "../employee-details-text"
 import EmployeeDetailsTasks from "@/ui/organisms/employee-details-tasks"
 import EmployeeDetailsTools from "@/ui/organisms/employee-details-tools"
@@ -8,9 +11,9 @@ interface Props {
   experience: Project
 }
 
-enum EmployeeDetailsBgColor {
-  "bg-anubidigital-dark" = "bg-black",
-  "bg-red-300" = "bg-red-500",
+const employeeDetailsBgColor: Record<EmployeeColor, string> = {
+  "bg-anubidigital-dark": "bg-black",
+  "bg-red-300": "bg-red-500",
 }
 
 const EmployeeDetailsContent = ({ experience }: Props) => {
@@ -18,7 +21,7 @@ const EmployeeDetailsContent = ({ experience }: Props) => {
   return (
     <div className="relative grid w-full grid-cols-1 cursor-default xl:grid-cols-2">
       <div
-        className={`flex flex-col ${EmployeeDetailsBgColor[color]} bg-opacity-20 pt-32 w-full xl:h-full justify-between xl:py-16 xl:space-y-16 `}
+        className={`flex flex-col ${employeeDetailsBgColor[color]} bg-opacity-20 pt-32 w-full xl:h-full justify-between xl:py-16 xl:space-y-16 `}
       >
         <div className="flex items-center justify-center flex-1 w-full h-full">
           <div

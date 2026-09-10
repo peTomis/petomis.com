@@ -8,7 +8,10 @@ import { useTranslations } from "./useTranslations"
 import { projectWebsites } from "@/config/site"
 
 // Atoms
-import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
+import {
+  CarouselElementColor,
+  type EmployeeColor,
+} from "@/ui/atoms/carousel-element-text"
 
 // Icons
 import MetchLogo from "@/ui/icons/companies/metch"
@@ -64,9 +67,7 @@ export interface Project {
   title: JSX.Element
   description: string
   color: CarouselElementColor
-  employeeColor?:
-    | CarouselElementColor.ANUBIDIGITAL
-    | CarouselElementColor.PIENISSIMO
+  employeeColor?: EmployeeColor
   tasks?: ProjectTask[]
   website: string
   employeeTag?: CarouselElementEmployeeTag
