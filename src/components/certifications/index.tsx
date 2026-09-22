@@ -11,8 +11,9 @@ import WorkInProgressIcon from "@/ui/icons/work-in-progress"
 const Certifications = () => {
   const { t } = useTranslations("home")
   return (
-    <div
+    <section
       id="experience-container"
+      aria-labelledby="experience-title"
       className={
         "relative py-24 overflow-hidden flex flex-col bg-gradient-to-bl from-primary-100 via-primary-100 to-primary-200 px-8 lg:mx-auto w-full justify-center items-center lg:items-center lg:justify-start"
       }
@@ -31,6 +32,8 @@ const Certifications = () => {
       </div>
       <div className="z-10">
         <Typography
+          as="h2"
+          id="experience-title"
           size="h1"
           md="h1"
           font="montserrat"
@@ -65,7 +68,7 @@ const Certifications = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

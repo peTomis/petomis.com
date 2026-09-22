@@ -45,28 +45,37 @@ const TopBar = () => {
 
   return (
     <TopBarContainer>
-      <div className="mx-auto lg:mx-0">
-        <TopBarItemContainer hasScrolled={hasScrolled}>
-          <div
-            className="flex flex-row lg:hidden"
-            aria-hidden={isDesktop}
-            inert={isDesktop}
-          >
+      <nav
+        aria-label={t("nav.social")}
+        className="flex items-center justify-between w-full"
+      >
+        <div className="mx-auto lg:mx-0">
+          <TopBarItemContainer hasScrolled={hasScrolled}>
+            <div
+              className="flex flex-row lg:hidden"
+              aria-hidden={isDesktop}
+              inert={isDesktop}
+            >
+              <TopBarSocialButtons
+                actions={socialActions}
+                hasScrolled={hasScrolled}
+              />
+            </div>
+          </TopBarItemContainer>
+        </div>
+        <div
+          className="hidden lg:block"
+          aria-hidden={!isDesktop}
+          inert={!isDesktop}
+        >
+          <TopBarItemContainer hasScrolled={hasScrolled}>
             <TopBarSocialButtons
               actions={socialActions}
               hasScrolled={hasScrolled}
             />
-          </div>
-        </TopBarItemContainer>
-      </div>
-      <div className="hidden lg:block" aria-hidden={!isDesktop} inert={!isDesktop}>
-        <TopBarItemContainer hasScrolled={hasScrolled}>
-          <TopBarSocialButtons
-            actions={socialActions}
-            hasScrolled={hasScrolled}
-          />
-        </TopBarItemContainer>
-      </div>
+          </TopBarItemContainer>
+        </div>
+      </nav>
     </TopBarContainer>
   )
 }

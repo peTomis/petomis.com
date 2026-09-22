@@ -36,12 +36,15 @@ const Projects = () => {
   const gridInert = !isDesktop || isModalOpen
 
   return (
-    <div
+    <section
       id="projects-container"
+      aria-labelledby="projects-title"
       className="relative flex flex-col items-center justify-center w-full pt-16 pb-32 mx-auto space-y-8 overflow-hidden md:pb-16 md:pt-16"
     >
       <div className="z-10 flex flex-col items-center justify-center w-full space-y-8">
         <Typography
+          as="h2"
+          id="projects-title"
           extrabold
           size="h1"
           font="montserrat"
@@ -114,7 +117,7 @@ const Projects = () => {
           experience={employeeExperience}
         />
       )}
-    </div>
+    </section>
   )
 }
 

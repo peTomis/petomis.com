@@ -62,6 +62,8 @@ const typographySizeClass: Record<TextSize, string> = {
   myNameExtraLarge: "text-myNameExtraLarge",
 }
 
+type TypographyTag = "span" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+
 interface Props {
   text: string
   bold?: boolean
@@ -81,6 +83,9 @@ interface Props {
   xxl?: TextSize
   opacity?: number
   onClick?: () => void
+  /** Semantic tag to render, independent of the visual `size`. Defaults to `span`. */
+  as?: TypographyTag
+  id?: string
 }
 
 const Typography = ({
@@ -102,16 +107,19 @@ const Typography = ({
   xxl,
   opacity,
   onClick,
+  as: Tag = "span",
+  id,
 }: Props) => {
   const getOpacity = () => (opacity !== undefined ? `opacity-${opacity}` : "")
 
   return (
-    <span
+    <Tag
+      id={id}
       className={` ${typographySizeClass[size]} ${typographyFontClass[font]} ${typographyColorClass[color]} ${bold ? "font-bold" : ""} ${extrabold ? "font-extrabold" : ""} ${light ? "font-light" : ""} ${extralight ? "font-extralight" : ""} ${underline ? "underline" : ""} ${italic ? "italic" : ""}  ${thin ? "font-thin" : ""} ${d ? "d:" + typographySizeClass[d] : ""} ${md ? "md:" + typographySizeClass[md] : ""} ${xl ? "xl:" + typographySizeClass[xl] : ""} ${xxl ? "xxl:" + typographySizeClass[xxl] : ""} ${clickable ? "cursor-pointer" : ""} ${getOpacity()}`}
       onClick={onClick}
     >
       {text}
-    </span>
+    </Tag>
   )
 }
 

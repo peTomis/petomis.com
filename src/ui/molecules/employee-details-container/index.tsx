@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useId, useRef } from "react"
 import {
   CarouselElementColor,
   type EmployeeColor,
@@ -28,6 +28,7 @@ const EmployeeDetailsContainer = ({
 }: Props) => {
   const dialogRef = useRef<HTMLDivElement>(null)
   const previouslyFocused = useRef<HTMLElement | null>(null)
+  const titleId = `employee-details-title-${useId()}`
 
   useEffect(() => {
     previouslyFocused.current = document.activeElement as HTMLElement | null
@@ -70,7 +71,7 @@ const EmployeeDetailsContainer = ({
       ref={dialogRef}
       role="dialog"
       aria-modal="true"
-      aria-label={label}
+      aria-labelledby={titleId}
       tabIndex={-1}
       id="activity-card-expanded-container"
       className={`relative flex w-full m-2 xl:m-4 overflow-x-hidden overflow-y-auto transition  animate-scaleUp ${employeeDetailsContainerBg[color]}`}
@@ -90,6 +91,9 @@ const EmployeeDetailsContainer = ({
           height: "-webkit-fill-available",
         }}
       >
+        <h2 id={titleId} className="sr-only">
+          {label}
+        </h2>
         <button
           type="button"
           onClick={onClose}

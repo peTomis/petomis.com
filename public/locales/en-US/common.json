@@ -16,5 +16,8 @@
     "github": "GitHub profile",
     "linkedin": "LinkedIn profile",
     "credly": "Credly profile"
+  },
+  "nav": {
+    "social": "Social links"
   }
 }

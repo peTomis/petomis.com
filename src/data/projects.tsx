@@ -211,6 +211,7 @@ const pienissimo: ProjectStatic = {
   ),
   title: (
     <div className="w-[160px]">
+      <span className="sr-only">Pienissimo</span>
       <Image
         src={pienissimoLogo}
         className="object-cover -z-10"
@@ -259,6 +260,7 @@ const metch: ProjectStatic = {
   ),
   title: (
     <div className="w-[160px]">
+      <span className="sr-only">Metch</span>
       <MetchLogo />
     </div>
   ),
@@ -282,6 +284,7 @@ const anubidigital: ProjectStatic = {
   ),
   title: (
     <div className="w-[160px]">
+      <span className="sr-only">Anubidigital</span>
       <Image
         src={anubidigitalLogo}
         className="object-cover -z-10"
