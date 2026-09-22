@@ -5,19 +5,24 @@ interface Props {
   icon: React.ReactNode
   label: string
   href: string
+  initialRotation: number
   onNavigate: () => void
 }
 
-const SectionShortcut = ({ icon, label, href, onNavigate }: Props) => {
-  // Helper function to generate a random degree between 1 and 364.
-  const getRandomRotation = () => Math.floor(Math.random() * 364) + 1
-
-  // Create state to hold the current rotation value.
-  const [rotation, setRotation] = useState(getRandomRotation())
+const SectionShortcut = ({
+  icon,
+  label,
+  href,
+  initialRotation,
+  onNavigate,
+}: Props) => {
+  // Starts from a deterministic value (same on server and client) so hydration
+  // never mismatches; only re-randomizes client-side, after mount, on hover.
+  const [rotation, setRotation] = useState(initialRotation)
 
   // Update the rotation value every time the user hovers.
   const handleMouseEnter = () => {
-    setRotation(getRandomRotation())
+    setRotation(Math.floor(Math.random() * 364) + 1)
   }
 
   // The href lets the link work without JS; when JS is available we

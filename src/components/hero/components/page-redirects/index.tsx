@@ -16,6 +16,15 @@ interface Props {
   onRedirect: (_section: WebsiteSection) => void
 }
 
+// Deterministic per-shortcut rotation for the hover background: must be fixed
+// so server and client render the same markup (Math.random() would mismatch
+// on hydration). Values are otherwise arbitrary, just spread apart visually.
+const SHORTCUT_ROTATIONS: Record<WebsiteSection, number> = {
+  [WebsiteSection.PROJECTS]: 140,
+  [WebsiteSection.EXPERIENCE]: 260,
+  [WebsiteSection.CONTACT]: 40,
+}
+
 const PageRedirects = ({ onRedirect }: Props) => {
   const { t } = useTranslations("home")
 
@@ -45,6 +54,7 @@ const PageRedirects = ({ onRedirect }: Props) => {
           key={section}
           label={label}
           href={`#${section}`}
+          initialRotation={SHORTCUT_ROTATIONS[section]}
           onNavigate={() => onRedirect(section)}
           icon={icon}
         />
