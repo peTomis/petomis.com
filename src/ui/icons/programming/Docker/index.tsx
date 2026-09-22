@@ -2,7 +2,6 @@ const Docker = () => {
   return (
     <svg
       version="1.1"
-      id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1200 309"
       fill="#1D63ED"

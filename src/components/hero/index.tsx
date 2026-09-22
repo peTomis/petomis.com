@@ -3,6 +3,9 @@ import PageRedirects from "./components/page-redirects"
 import WelcomeImage from "./components/welcome-image"
 import WelcomeText from "./components/welcome-text"
 
+// Hooks
+import useMediaQuery from "@/hooks/useMediaQuery"
+
 // Utils
 import { WebsiteSection } from "@/utils"
 
@@ -11,6 +14,11 @@ interface Props {
 }
 
 const Hero = ({ onRedirect }: Props) => {
+  // Both responsive variants below stay mounted at all times (only CSS
+  // display toggles); `inert` keeps the off-screen one out of tab order and
+  // out of the accessibility tree.
+  const isDesktop = useMediaQuery("(min-width: 1024px)")
+
   return (
     <div
       id="welcome-container"
@@ -24,12 +32,20 @@ const Hero = ({ onRedirect }: Props) => {
           }
         >
           <WelcomeText />
-          <div className="hidden lg:flex lg:flex-1">
+          <div
+            className="hidden lg:flex lg:flex-1"
+            aria-hidden={!isDesktop}
+            inert={!isDesktop}
+          >
             <PageRedirects onRedirect={onRedirect} />
           </div>
         </div>
         <WelcomeImage />
-        <div className="w-full px-4 pt-4 lg:hidden">
+        <div
+          className="w-full px-4 pt-4 lg:hidden"
+          aria-hidden={isDesktop}
+          inert={isDesktop}
+        >
           <PageRedirects onRedirect={onRedirect} />
         </div>
       </div>

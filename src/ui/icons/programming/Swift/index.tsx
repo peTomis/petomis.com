@@ -2,7 +2,6 @@ const Swift = () => {
   return (
     <svg
       version="1.1"
-      id="artwork"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 191.1856 59.3911"
       className="h-[25px]"
@@ -43,7 +42,7 @@ const Swift = () => {
           />
         </g>
       </g>
-      <g id="XMLID_1_">
+      <g>
         <g>
           <path
             d="M81.9306,38.5423c0.464,4.1203,4.3938,6.8217,9.8514,6.8217c5.1854,0,8.9239-2.7014,8.9239-6.4393

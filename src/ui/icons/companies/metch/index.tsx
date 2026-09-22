@@ -1,6 +1,5 @@
 const MetchLogo = () => (
   <svg
-    id="MetchLogo"
     data-name="MetchLogo"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 412.22 140.55"

@@ -1,4 +1,8 @@
+import { useId } from "react"
+
 const Jira = () => {
+  const uid = useId()
+
   return (
     <svg
       viewBox="0 3 76 25"
@@ -6,8 +10,8 @@ const Jira = () => {
       xmlns="http://www.w3.org/2000/svg"
       className="h-[20px]"
     >
-      <g id="logo-gradient-blue-jira">
-        <g id="Jira">
+      <g>
+        <g>
           <path
             d="M38.8963 6.13371H41.7283V20.1309C41.7283 23.8217 40.0434 26.3983 36.1359 26.3983C34.6661 26.3983 33.5189 26.1546 32.7302 25.876V23.195C33.5906 23.5432 34.6302 23.7173 35.6698 23.7173C38.0717 23.7173 38.8963 22.3245 38.8963 20.305V6.13371Z"
             className="fill-white"
@@ -25,27 +29,24 @@ const Jira = () => {
             className="fill-white"
           />
         </g>
-        <g id="">
+        <g>
           <path
-            id="Vector"
             d="M24.664 3H12.2603C12.2603 5.99443 14.7697 8.43176 17.8527 8.43176H20.147V10.5557C20.147 13.5501 22.6565 15.9875 25.7395 15.9875V4.04457C25.7395 3.45265 25.2735 3 24.664 3Z"
             fill="#2684FF"
           />
           <path
-            id="Vector_2"
             d="M18.5339 8.98877H6.13013C6.13013 11.9832 8.63956 14.4205 11.7226 14.4205H14.0169V16.5793C14.0169 19.5737 16.5264 22.0111 19.6094 22.0111V10.0333C19.6094 9.47623 19.1433 8.98877 18.5339 8.98877Z"
-            fill="url(#paint0_linear)"
+            fill={`url(#${uid}-paint0_linear)`}
           />
           <path
-            id="Vector_3"
             d="M12.4038 15.0125H0C0 18.0069 2.50943 20.4442 5.59245 20.4442H7.88679V22.5682C7.88679 25.5626 10.3962 27.9999 13.4792 27.9999V16.057C13.4792 15.4651 12.9774 15.0125 12.4038 15.0125Z"
-            fill="url(#paint1_linear)"
+            fill={`url(#${uid}-paint1_linear)`}
           />
         </g>
       </g>
       <defs>
         <linearGradient
-          id="paint0_linear"
+          id={`${uid}-paint0_linear`}
           x1="19.3455"
           y1="9.01882"
           x2="14.2302"
@@ -56,7 +57,7 @@ const Jira = () => {
           <stop offset="1" stopColor="#2684FF" />
         </linearGradient>
         <linearGradient
-          id="paint1_linear"
+          id={`${uid}-paint1_linear`}
           x1="13.5601"
           y1="15.0525"
           x2="7.63562"

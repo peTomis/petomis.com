@@ -4,6 +4,7 @@ import { useState } from "react"
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 import { Project, useProjects } from "@/hooks/useProjects"
+import useMediaQuery from "@/hooks/useMediaQuery"
 
 // Organisms
 import Carousel from "@/ui/organisms/carousel"
@@ -22,6 +23,17 @@ const Projects = () => {
   >(undefined)
   const projects = useProjects()
   const { t } = useTranslations("home")
+  // The mobile carousel and the desktop grid both stay mounted at all times
+  // (Tailwind's `hidden`/`md:*` classes only toggle CSS display); `inert`
+  // additionally keeps the one that's off-screen out of tab order and out of
+  // the accessibility tree, regardless of viewport quirks. Both also go inert
+  // while the details modal is open, since it's a sibling rather than a
+  // replacement and would otherwise leave the covered cards tabbable/readable
+  // behind it.
+  const isDesktop = useMediaQuery("(min-width: 768px)")
+  const isModalOpen = employeeExperience !== undefined
+  const carouselInert = isDesktop || isModalOpen
+  const gridInert = !isDesktop || isModalOpen
 
   return (
     <div
@@ -46,7 +58,11 @@ const Projects = () => {
           />
         </div>
       </div>
-      <div className="pt-8 md:hidden">
+      <div
+        className="pt-8 md:hidden"
+        aria-hidden={carouselInert}
+        inert={carouselInert}
+      >
         <Carousel
           elements={projects.map((project, key) => (
             <CarouselElement
@@ -64,7 +80,11 @@ const Projects = () => {
           ))}
         />
       </div>
-      <div className="hidden py-8 md:grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-8 xl:gap-16">
+      <div
+        className="hidden py-8 md:grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-8 xl:gap-16"
+        aria-hidden={gridInert}
+        inert={gridInert}
+      >
         {projects.map((project, key) => (
           <CarouselElementSkewed
             key={key}

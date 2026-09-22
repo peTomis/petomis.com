@@ -2,7 +2,6 @@ const GitHub = () => {
   return (
     <svg
       version="1.1"
-      id="layer"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="20 246 602 149"
       className="h-[18px]"

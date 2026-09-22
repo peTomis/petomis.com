@@ -1,5 +1,6 @@
 // Hooks
 import useScrolledPastVH from "@/hooks/useScrolledPastVH"
+import useMediaQuery from "@/hooks/useMediaQuery"
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Utilities
@@ -16,6 +17,10 @@ import Credly from "@/ui/icons/social/credly"
 const TopBar = () => {
   const hasScrolled = useScrolledPastVH(0.01)
   const { t } = useTranslations("common")
+  // Both responsive variants below stay mounted at all times (only CSS
+  // display toggles); `inert` keeps the off-screen one out of tab order and
+  // out of the accessibility tree, and avoids duplicate ids being reachable.
+  const isDesktop = useMediaQuery("(min-width: 1024px)")
 
   const socialActions = [
     {
@@ -42,7 +47,11 @@ const TopBar = () => {
     <TopBarContainer>
       <div className="mx-auto lg:mx-0">
         <TopBarItemContainer hasScrolled={hasScrolled}>
-          <div className="flex flex-row lg:hidden">
+          <div
+            className="flex flex-row lg:hidden"
+            aria-hidden={isDesktop}
+            inert={isDesktop}
+          >
             <TopBarSocialButtons
               actions={socialActions}
               hasScrolled={hasScrolled}
@@ -50,7 +59,7 @@ const TopBar = () => {
           </div>
         </TopBarItemContainer>
       </div>
-      <div className="hidden lg:block">
+      <div className="hidden lg:block" aria-hidden={!isDesktop} inert={!isDesktop}>
         <TopBarItemContainer hasScrolled={hasScrolled}>
           <TopBarSocialButtons
             actions={socialActions}
