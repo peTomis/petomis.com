@@ -13,9 +13,6 @@ import FormInput from "@/ui/molecules/form-input"
 import FormContainer from "@/ui/molecules/form-container"
 import FormButton from "./components/FormButton"
 
-// Atoms
-import Typography from "@/ui/atoms/typography"
-
 type State = {
   name: string
   email: string
@@ -108,17 +105,6 @@ const GetInTouch = () => {
       className={`relative flex flex-col items-center pt-16 lg:pb-8 justify-center w-full lg:px-0 mx-auto space-y-8 scroll-mt-24`}
     >
       <div className="absolute bottom-0 w-full h-[200px] bg-[#111111]"></div>
-      <div className="z-10 flex flex-col items-center justify-center w-full space-y-8">
-        <Typography
-          as="h2"
-          id="contact-title"
-          extrabold
-          size="h1"
-          font="montserrat"
-          text={t("contact.title").toUpperCase()}
-          color="PRIMARY100"
-        />
-      </div>
       <div className="z-10 flex items-center justify-center w-full px-4 lg:px-0">
         <FormContainer onSubmit={handleSubmit}>
           <div className="relative">

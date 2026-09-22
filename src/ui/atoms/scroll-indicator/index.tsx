@@ -23,6 +23,7 @@ const ScrollIndicator = ({
             type="button"
             key={index}
             aria-label={`Go to item ${index + 1}`}
+            aria-current={isActive ? "true" : undefined}
             onClick={() => onClick && onClick(index)}
             className={`${dotStyle} h-5 rounded-full transition-all duration-300`}
           />

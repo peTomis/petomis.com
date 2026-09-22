@@ -15,9 +15,12 @@ const FormContainer = ({ children, onSubmit }: Props) => {
       noValidate
       className="w-full p-8 max-w-[800px] space-y-4 bg-primary-500"
     >
-      <div className="py-2 text-center font-orbitron text-h3 md:h1 text-primary-100">
+      <h2
+        id="contact-title"
+        className="py-2 text-center font-orbitron text-h3 md:h1 text-primary-100"
+      >
         {t("contact.title").toUpperCase()}
-      </div>
+      </h2>
       {children}
     </form>
   )
