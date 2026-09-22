@@ -39,7 +39,7 @@ const Projects = () => {
     <section
       id="projects-container"
       aria-labelledby="projects-title"
-      className="relative flex flex-col items-center justify-center w-full pt-16 pb-32 mx-auto space-y-8 overflow-hidden md:pb-16 md:pt-16"
+      className="relative flex flex-col items-center justify-center w-full pt-16 pb-32 mx-auto space-y-8 overflow-hidden scroll-mt-24 md:pb-16 md:pt-16"
     >
       <div className="z-10 flex flex-col items-center justify-center w-full space-y-8">
         <Typography

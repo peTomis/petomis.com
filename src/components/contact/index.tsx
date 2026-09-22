@@ -105,7 +105,7 @@ const GetInTouch = () => {
     <section
       id="contact-container"
       aria-labelledby="contact-title"
-      className={`relative flex flex-col items-center pt-16 lg:pb-8 justify-center w-full lg:px-0 mx-auto space-y-8`}
+      className={`relative flex flex-col items-center pt-16 lg:pb-8 justify-center w-full lg:px-0 mx-auto space-y-8 scroll-mt-24`}
     >
       <div className="absolute bottom-0 w-full h-[200px] bg-[#111111]"></div>
       <div className="z-10 flex flex-col items-center justify-center w-full space-y-8">

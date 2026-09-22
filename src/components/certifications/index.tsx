@@ -15,7 +15,7 @@ const Certifications = () => {
       id="experience-container"
       aria-labelledby="experience-title"
       className={
-        "relative py-24 overflow-hidden flex flex-col bg-gradient-to-bl from-primary-100 via-primary-100 to-primary-200 px-8 lg:mx-auto w-full justify-center items-center lg:items-center lg:justify-start"
+        "relative py-24 overflow-hidden flex flex-col bg-gradient-to-bl from-primary-100 via-primary-100 to-primary-200 px-8 lg:mx-auto w-full justify-center items-center lg:items-center lg:justify-start scroll-mt-24"
       }
     >
       <div className="absolute flex items-end justify-end -right-10 -top-[70px] w-full">
