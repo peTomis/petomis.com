@@ -13,6 +13,8 @@
     "name": "Nome",
     "namePlaceholder": "Inserisci il tuo nome",
     "submit": "Conferma",
+    "sending": "Invio in corso…",
+    "submitError": "Qualcosa è andato storto. Riprova o scrivimi direttamente via email.",
     "thankMailTitle": "Grazie!",
     "thankMailText": "Risponderò al più presto.",
     "title": "CONTATTAMI",
@@ -20,6 +22,11 @@
     "description": {
       "phrase1": "Se vuoi contattarmi, puoi farlo tramite il form sottostante.",
       "phrase2": "Ti risponderò il prima possibile."
+    },
+    "errors": {
+      "name": "Inserisci il tuo nome.",
+      "email": "Inserisci un indirizzo email valido.",
+      "message": "Scrivi un messaggio."
     }
   },
   "experience": {

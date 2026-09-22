@@ -4,7 +4,11 @@ const FormSucceeded = () => {
   const { t } = useTranslations("home")
 
   return (
-    <div className="absolute top-0 left-0 z-20 flex items-center justify-center w-full h-full">
+    <div
+      role="status"
+      aria-live="polite"
+      className="absolute top-0 left-0 z-20 flex items-center justify-center w-full h-full"
+    >
       <div id="contact-form-succeed" className="space-y-4">
         <div
           id="letter-container"

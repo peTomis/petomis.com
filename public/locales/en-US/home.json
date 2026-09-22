@@ -13,6 +13,8 @@
     "name": "Name",
     "namePlaceholder": "Enter your name",
     "submit": "Submit",
+    "sending": "Sending…",
+    "submitError": "Something went wrong. Please try again or email me directly.",
     "thankMailTitle": "Thank you!",
     "thankMailText": "Will reply soon",
     "title": "GET IN TOUCH",
@@ -20,6 +22,11 @@
     "description": {
       "phrase1": "Fill the contact form below to get in touch with me.",
       "phrase2": "I will reply as soon as possible."
+    },
+    "errors": {
+      "name": "Please enter your name.",
+      "email": "Please enter a valid email address.",
+      "message": "Please enter a message."
     }
   },
   "experience": {

@@ -8,11 +8,12 @@ import Button from "@/ui/atoms/button"
 import Mail from "@/ui/icons/mail"
 
 interface Props {
-  onSubmit: () => void
+  submitting: boolean
+  hasError: boolean
   hidden?: boolean
 }
 
-const FormButton = ({ hidden, onSubmit }: Props) => {
+const FormButton = ({ hidden, submitting, hasError }: Props) => {
   const { t } = useTranslations("home")
 
   return (
@@ -36,8 +37,19 @@ const FormButton = ({ hidden, onSubmit }: Props) => {
           </a>
         </div>
       </div>
-      <div className="flex justify-end flex-1 w-full">
-        <Button label={t("contact.submit")} onClick={onSubmit} />
+      <div className="flex flex-col items-end justify-end flex-1 w-full space-y-2">
+        <div role="status" aria-live="polite" className="text-small">
+          {submitting
+            ? t("contact.sending")
+            : hasError
+              ? t("contact.submitError")
+              : ""}
+        </div>
+        <Button
+          type="submit"
+          label={t("contact.submit")}
+          disabled={submitting}
+        />
       </div>
     </div>
   )
