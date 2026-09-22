@@ -2,20 +2,23 @@ import { cn } from "@/utils/cn"
 
 interface Props {
   children: React.ReactNode
-  onClick?: () => void
+  href: string
+  label: string
 }
 
-const SocialIconContainer = ({ children, onClick }: Props) => {
+const SocialIconContainer = ({ children, href, label }: Props) => {
   return (
-    <button
-      type="button"
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
       className={cn(
-        "flex h-9 w-9 cursor-pointer items-center justify-center rounded-tr-md rounded-bl-md bg-white bg-opacity-60"
+        "flex h-9 w-9 items-center justify-center rounded-tr-md rounded-bl-md bg-white bg-opacity-60"
       )}
-      onClick={onClick}
     >
       <div className="flex w-6 h-6 fill-black">{children}</div>
-    </button>
+    </a>
   )
 }
 

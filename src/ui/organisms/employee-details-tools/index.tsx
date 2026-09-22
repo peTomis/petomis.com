@@ -21,7 +21,7 @@ const WorkExperienceTools = ({
               key={key}
               name={tool.name}
               icon={tool.icon}
-              onClick={() => window.open(tool.url)}
+              url={tool.url}
               color={color}
             />
           ))}

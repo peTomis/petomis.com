@@ -13,7 +13,8 @@ interface Props {
   title: React.ReactNode
   selected?: boolean
   color?: CarouselElementColor
-  onClick?: () => void
+  website: string
+  onOpenDetails?: () => void
   employeeTag?: CarouselElementEmployeeTag
   collaborators: { name: string; url: string }[]
 }
@@ -25,7 +26,9 @@ const CarouselElement = ({
   name,
   color,
   selected,
-  onClick,
+  website,
+  onOpenDetails,
+  employeeTag,
   collaborators,
 }: Props) => {
   const [isChildHovered, setIsChildHovered] = useState(false)
@@ -34,8 +37,7 @@ const CarouselElement = ({
 
   return (
     <div
-      className="relative cursor-pointer text-white flex flex-col h-[320px] w-[320px]"
-      onClick={onClick}
+      className="relative text-white flex flex-col h-[320px] w-[320px]"
       onMouseEnter={() => setIsChildHovered(true)}
       onMouseLeave={() => setIsChildHovered(false)}
     >
@@ -46,6 +48,22 @@ const CarouselElement = ({
         description={description}
         color={color}
       />
+      {employeeTag ? (
+        <button
+          type="button"
+          onClick={onOpenDetails}
+          aria-label={name}
+          className="absolute inset-0"
+        />
+      ) : (
+        <a
+          href={website}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={name}
+          className="absolute inset-0"
+        />
+      )}
       <CarouselElementNote color={color} collaborators={collaborators} />
     </div>
   )

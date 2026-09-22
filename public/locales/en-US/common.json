@@ -11,5 +11,10 @@
   "common": {
     "wip": "Work in progress",
     "clickToClose": "Click to close"
+  },
+  "social": {
+    "github": "GitHub profile",
+    "linkedin": "LinkedIn profile",
+    "credly": "Credly profile"
   }
 }

@@ -1,6 +1,5 @@
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
-import { openExternalLink } from "@/utils"
 import { externalLinks } from "@/config/site"
 
 // Atoms
@@ -56,20 +55,15 @@ const Footer = () => {
           id="footer-references"
           className="flex flex-col space-y-2 md:space-y-4 md:justify-end d:text-end"
         >
-          <div className="flex space-x-2 cursor-pointer md:justify-end">
-            <Typography
-              text={t("footer.icons")}
-              clickable={true}
-              onClick={() => openExternalLink(externalLinks.materialIcons)}
-            />
-            <Typography
-              italic={true}
-              underline={true}
-              text={"Material Design"}
-              clickable={true}
-              onClick={() => openExternalLink(externalLinks.materialIcons)}
-            />
-          </div>
+          <a
+            href={externalLinks.materialIcons}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex space-x-2 md:justify-end"
+          >
+            <Typography text={t("footer.icons")} />
+            <Typography italic={true} underline={true} text={"Material Design"} />
+          </a>
           <div className="pt-4 lg:pt-0">
             <LanguageSelector />
           </div>

@@ -1,8 +1,8 @@
 // Hooks
 import useScrolledPastVH from "@/hooks/useScrolledPastVH"
+import { useTranslations } from "@/hooks/useTranslations"
 
 // Utilities
-import { openExternalLink } from "@/utils"
 import { externalLinks } from "@/config/site"
 
 // Molecules
@@ -15,21 +15,25 @@ import Credly from "@/ui/icons/social/credly"
 
 const TopBar = () => {
   const hasScrolled = useScrolledPastVH(0.01)
+  const { t } = useTranslations("common")
 
   const socialActions = [
     {
       IconComponent: GitHub,
-      onClick: () => openExternalLink(externalLinks.github),
+      href: externalLinks.github,
+      label: t("social.github"),
       className: "text-white w-7 h-7",
     },
     {
       IconComponent: Credly,
-      onClick: () => openExternalLink(externalLinks.credly),
+      href: externalLinks.credly,
+      label: t("social.credly"),
       className: "text-white w-7 h-7",
     },
     {
       IconComponent: Linkedin,
-      onClick: () => openExternalLink(externalLinks.linkedin),
+      href: externalLinks.linkedin,
+      label: t("social.linkedin"),
       className: "w-6 h-6 text-white",
     },
   ]
@@ -64,17 +68,19 @@ const TopBarSocialButtons = ({
 }: {
   actions: Array<{
     IconComponent: React.ElementType
-    onClick: () => void
+    href: string
+    label: string
     className: string
   }>
   hasScrolled?: boolean
 }) => {
   return (
     <>
-      {actions.map(({ IconComponent, onClick, className }) => (
+      {actions.map(({ IconComponent, href, label, className }) => (
         <TopbarIconContainer
-          key={className}
-          onClick={onClick}
+          key={href}
+          href={href}
+          label={label}
           hasScrolled={hasScrolled}
         >
           <div className={className}>
@@ -88,22 +94,27 @@ const TopBarSocialButtons = ({
 
 const TopbarIconContainer = ({
   children,
-  onClick,
+  href,
+  label,
   hasScrolled,
 }: {
   children: React.ReactNode
-  onClick?: () => void
+  href: string
+  label: string
   hasScrolled?: boolean
 }) => {
   return (
-    <div
-      className={`flex items-center justify-center transition-all duration-500 ease-in-out rounded-full cursor-pointer w-11 h-11 ${
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className={`flex items-center justify-center transition-all duration-500 ease-in-out rounded-full w-11 h-11 ${
         hasScrolled ? "hover:bg-primary" : ""
       }`}
-      onClick={onClick}
     >
       {children}
-    </div>
+    </a>
   )
 }
 

@@ -57,11 +57,8 @@ const Projects = () => {
               description={project.description}
               color={project.color}
               employeeTag={project.employeeTag}
-              onClick={() =>
-                project.employeeTag
-                  ? setEmployeeExperience(project)
-                  : window.open(project.website, "_blank")
-              }
+              website={project.website}
+              onOpenDetails={() => setEmployeeExperience(project)}
               collaborators={project.collaborators}
             />
           ))}
@@ -82,11 +79,9 @@ const Projects = () => {
               title={project.title}
               description={project.description}
               color={project.color}
-              onClick={() =>
-                project.employeeTag
-                  ? setEmployeeExperience(project)
-                  : window.open(project.website, "_blank")
-              }
+              employeeTag={project.employeeTag}
+              website={project.website}
+              onOpenDetails={() => setEmployeeExperience(project)}
               collaborators={project.collaborators}
               selected
             />

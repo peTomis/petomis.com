@@ -23,6 +23,7 @@ const EmployeeDetails = ({ onClose, experience }: Props) => {
       <EmployeeDetailsContainer
         onClose={onClose}
         color={experience.employeeColor}
+        label={experience.name}
       >
         <EmployeeDetailsContent experience={experience} />
       </EmployeeDetailsContainer>

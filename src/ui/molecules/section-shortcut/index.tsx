@@ -4,10 +4,11 @@ import Typography from "@/ui/atoms/typography"
 interface Props {
   icon: React.ReactNode
   label: string
-  onClick: () => void
+  href: string
+  onNavigate: () => void
 }
 
-const SectionShortcut = ({ icon, label, onClick }: Props) => {
+const SectionShortcut = ({ icon, label, href, onNavigate }: Props) => {
   // Helper function to generate a random degree between 1 and 364.
   const getRandomRotation = () => Math.floor(Math.random() * 364) + 1
 
@@ -19,11 +20,19 @@ const SectionShortcut = ({ icon, label, onClick }: Props) => {
     setRotation(getRandomRotation())
   }
 
+  // The href lets the link work without JS; when JS is available we
+  // intercept the click to keep the existing smooth-scroll behaviour.
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+    onNavigate()
+  }
+
   return (
-    <div
+    <a
+      href={href}
       onMouseEnter={handleMouseEnter}
-      onClick={onClick}
-      className="relative flex flex-col items-center flex-1 rounded-lg cursor-pointer select-none group"
+      onClick={handleClick}
+      className="relative flex flex-col items-center flex-1 rounded-lg select-none group"
     >
       <SectionShortcutBackground rotation={rotation} />
 
@@ -39,7 +48,7 @@ const SectionShortcut = ({ icon, label, onClick }: Props) => {
           xxl="h4"
         />
       </div>
-    </div>
+    </a>
   )
 }
 

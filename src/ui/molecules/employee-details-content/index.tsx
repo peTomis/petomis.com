@@ -24,12 +24,15 @@ const EmployeeDetailsContent = ({ experience }: Props) => {
         className={`flex flex-col ${employeeDetailsBgColor[color]} bg-opacity-20 pt-32 w-full xl:h-full justify-between xl:py-16 xl:space-y-16 `}
       >
         <div className="flex items-center justify-center flex-1 w-full h-full">
-          <div
-            className="scale-[1.6] cursor-pointer"
-            onClick={() => window.open(experience.website, "_blank")}
+          <a
+            href={experience.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={experience.name}
+            className="scale-[1.6]"
           >
             {experience.title}
-          </div>
+          </a>
         </div>
         <EmployeeDetailsText sentences={experience.sentences} color={color} />
       </div>

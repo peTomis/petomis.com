@@ -1,3 +1,6 @@
+// Hooks
+import { useTranslations } from "@/hooks/useTranslations"
+
 // Atoms
 import SocialIconContainer from "@/ui/atoms/social-icon-container"
 import Credly from "@/ui/icons/social/credly"
@@ -7,7 +10,6 @@ import GitHub from "@/ui/icons/social/github"
 import Linkedin from "@/ui/icons/social/linkedin"
 
 // Utilities
-import { openExternalLink } from "@/utils"
 import { externalLinks } from "@/config/site"
 
 interface Props {
@@ -15,16 +17,19 @@ interface Props {
 }
 
 const SocialLinks = ({ className }: Props) => {
+  const { t } = useTranslations("common")
+
   const content = (
     <>
-      <SocialIconContainer onClick={() => openExternalLink(externalLinks.github)}>
+      <SocialIconContainer href={externalLinks.github} label={t("social.github")}>
         <GitHub />
       </SocialIconContainer>
-      <SocialIconContainer onClick={() => openExternalLink(externalLinks.credly)}>
+      <SocialIconContainer href={externalLinks.credly} label={t("social.credly")}>
         <Credly black />
       </SocialIconContainer>
       <SocialIconContainer
-        onClick={() => openExternalLink(externalLinks.linkedin)}
+        href={externalLinks.linkedin}
+        label={t("social.linkedin")}
       >
         <Linkedin />
       </SocialIconContainer>

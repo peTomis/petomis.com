@@ -4,14 +4,14 @@ import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
 interface Props {
   name?: string
   icon: React.ReactNode
-  onClick?: () => void
+  url?: string
   color?: CarouselElementColor
 }
 
 const ExperienceCard = ({
   name,
   icon,
-  onClick,
+  url,
   color = CarouselElementColor.ANUBIDIGITAL,
 }: Props) => {
   const id = `experience-card-${name}`
@@ -20,16 +20,12 @@ const ExperienceCard = ({
 
   const black = color === CarouselElementColor.ANUBIDIGITAL ? false : true
 
-  return (
-    <div
-      id={id}
-      className={`relative flex flex-col py-4 w-full ${
-        name ? " shadow-md bg-black bg-opacity-5" : ""
-      } ${
-        onClick ? "cursor-pointer" : ""
-      } select-none lg:h-[120px] lg:w-[120px]`}
-      onClick={onClick}
-    >
+  const className = `relative flex flex-col py-4 w-full ${
+    name ? " shadow-md bg-black bg-opacity-5" : ""
+  } select-none lg:h-[120px] lg:w-[120px]`
+
+  const content = (
+    <>
       {name && (
         <div className="flex items-center justify-center w-full">
           <Typography text={name} light color={titleColor} />
@@ -42,6 +38,27 @@ const ExperienceCard = ({
       >
         <div>{icon}</div>
       </div>
+    </>
+  )
+
+  if (url) {
+    return (
+      <a
+        id={id}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={name}
+        className={className}
+      >
+        {content}
+      </a>
+    )
+  }
+
+  return (
+    <div id={id} className={className}>
+      {content}
     </div>
   )
 }

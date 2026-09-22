@@ -44,7 +44,8 @@ const PageRedirects = ({ onRedirect }: Props) => {
         <SectionShortcut
           key={section}
           label={label}
-          onClick={() => onRedirect(section)}
+          href={`#${section}`}
+          onNavigate={() => onRedirect(section)}
           icon={icon}
         />
       ))}
