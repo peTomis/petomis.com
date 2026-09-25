@@ -1,11 +1,4 @@
 const Mongodb = () => {
-  const strokeWidth = {
-    strokeWidth: "1.369",
-  }
-  const stroke = {
-    stroke: "#fff",
-  }
-
   return (
     <svg
       viewBox="0 -183 512 512"

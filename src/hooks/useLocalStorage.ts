@@ -54,8 +54,11 @@ export function useLocalStorage(
   })
 
   useEffect(() => {
-    // Automatically update localStorage when the value changes.
-    localStorage.setItem(key, JSON.stringify(value))
+    try {
+      localStorage.setItem(key, JSON.stringify(value))
+    } catch {
+      // Keep the in-memory preference usable when storage is blocked or full.
+    }
   }, [value, key])
 
   return [value, setValue]

@@ -23,15 +23,11 @@
       "infrastructure": {
         "title": "Infrastructure and monitoring",
         "description": "Run services on AWS ECS and Kubernetes, with Grafana monitoring and CloudWatch logging."
-      },
-      "conventions": {
-        "title": "Technical specifications and Git",
-        "description": "Brought the first technical specifications and Git conventions into a team that had none."
       }
     },
     "sentences": {
       "first": "Restaurant SaaS for thousands of restaurateurs, part of the Zucchetti group.",
-      "second": "I'm the only in-house backend developer on a technical team of eight, and I own the systems behind booking, ordering and promotions."
+      "second": "In-house backend developer on a technical team of eight, and I own the systems behind booking, ordering and promotions."
     },
     "tools": {
       "other": {

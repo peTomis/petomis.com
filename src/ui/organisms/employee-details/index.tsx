@@ -62,15 +62,31 @@ const EmployeeDetails = ({ onClose, experience }: Props) => {
 
       const focusable = Array.from(
         dialogRef.current.querySelectorAll<HTMLElement>(focusableSelector)
+      ).filter(
+        (element) =>
+          element.tabIndex >= 0 &&
+          !element.matches(":disabled") &&
+          !element.closest("[inert]") &&
+          element.getClientRects().length > 0 &&
+          window.getComputedStyle(element).visibility === "visible"
       )
-      if (focusable.length === 0) return
+      if (focusable.length === 0) {
+        event.preventDefault()
+        dialogRef.current.focus()
+        return
+      }
       const first = focusable[0]
       const last = focusable[focusable.length - 1]
 
-      if (event.shiftKey && document.activeElement === first) {
+      const activeElement = document.activeElement
+      if (!focusable.includes(activeElement as HTMLElement)) {
+        event.preventDefault()
+        const target = event.shiftKey ? last : first
+        target.focus()
+      } else if (event.shiftKey && activeElement === first) {
         event.preventDefault()
         last.focus()
-      } else if (!event.shiftKey && document.activeElement === last) {
+      } else if (!event.shiftKey && activeElement === last) {
         event.preventDefault()
         first.focus()
       }
@@ -119,8 +135,14 @@ const EmployeeDetails = ({ onClose, experience }: Props) => {
                 <path d="M2 2l6 6M8 2 2 8" />
               </svg>
             </span>
-            <span aria-hidden="true" className="h-3.5 w-3.5 rounded-full bg-[#febc2e]" />
-            <span aria-hidden="true" className="h-3.5 w-3.5 rounded-full bg-[#28c840]" />
+            <span
+              aria-hidden="true"
+              className="h-3.5 w-3.5 rounded-full bg-[#febc2e]"
+            />
+            <span
+              aria-hidden="true"
+              className="h-3.5 w-3.5 rounded-full bg-[#28c840]"
+            />
           </button>
           <div className="hidden items-center gap-2 min-[561px]:flex">
             <button
@@ -142,8 +164,14 @@ const EmployeeDetails = ({ onClose, experience }: Props) => {
                 <path d="M2 2l6 6M8 2 2 8" />
               </svg>
             </button>
-            <span aria-hidden="true" className="h-3 w-3 rounded-full bg-[#febc2e]" />
-            <span aria-hidden="true" className="h-3 w-3 rounded-full bg-[#28c840]" />
+            <span
+              aria-hidden="true"
+              className="h-3 w-3 rounded-full bg-[#febc2e]"
+            />
+            <span
+              aria-hidden="true"
+              className="h-3 w-3 rounded-full bg-[#28c840]"
+            />
           </div>
           <span
             aria-hidden="true"
@@ -151,7 +179,10 @@ const EmployeeDetails = ({ onClose, experience }: Props) => {
           >
             giuseppe@petomis — ~/work/{name.toLowerCase().replace(/\s+/g, "-")}
           </span>
-          <span aria-hidden="true" className="w-[74px] flex-none min-[561px]:w-[52px]" />
+          <span
+            aria-hidden="true"
+            className="w-[74px] flex-none min-[561px]:w-[52px]"
+          />
         </div>
 
         {/* Content */}
@@ -167,8 +198,8 @@ const EmployeeDetails = ({ onClose, experience }: Props) => {
                 src={background}
                 alt=""
                 fill
-                sizes="(max-width: 900px) 100vw, 500px"
-                className="object-cover opacity-25"
+                sizes="(max-width: 400px) 100vw, 500px"
+                className="object-cover object-top opacity-25"
               />
               <div className="relative px-8">{logo ?? title}</div>
             </div>
@@ -186,7 +217,10 @@ const EmployeeDetails = ({ onClose, experience }: Props) => {
               <p className="mb-3 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-[13px] leading-relaxed text-ink-label">
                 <span className="font-semibold">{experience.role}</span>
                 {experience.period && (
-                  <span><span aria-hidden="true">· </span>{experience.period}</span>
+                  <span>
+                    <span aria-hidden="true">· </span>
+                    {experience.period}
+                  </span>
                 )}
               </p>
             )}

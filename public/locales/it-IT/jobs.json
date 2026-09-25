@@ -23,10 +23,6 @@
       "infrastructure": {
         "title": "Infrastruttura e monitoraggio",
         "description": "Gestisco i servizi su AWS ECS e Kubernetes, con monitoraggio su Grafana e log su CloudWatch."
-      },
-      "conventions": {
-        "title": "Specifiche tecniche e Git",
-        "description": "Portato i primi documenti di specifica tecnica e le convenzioni Git in un team che non ne aveva."
       }
     },
     "sentences": {

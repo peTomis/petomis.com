@@ -2,10 +2,9 @@
 
 // External libraries
 import { useRouter } from "next/router"
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useRef } from "react"
 
 // Hooks
-import { useTranslations } from "./useTranslations"
 import { useLocalStorage } from "./useLocalStorage"
 
 // Type definition for supported languages
@@ -30,16 +29,7 @@ const languages: SupportedLanguage[] = [
   },
 ]
 
-/**
- * Custom hook to manage the application's language state.
- *
- * This hook reads the initial language setting from local storage or defaults to English.
- * It provides functionality to change the language, which updates the local storage,
- * Next.js router locale, and internal state to reflect the new language choice.
- *
- * @returns A tuple containing the current language, a setter function for the language,
- *          and the list of supported languages.
- */
+/** Restore the saved preference once; thereafter the route owns the locale. */
 export function useLanguage(): [
   SupportedLanguage,
   (_nextLanguage: SupportedLanguage) => void,
@@ -47,60 +37,37 @@ export function useLanguage(): [
 ] {
   const [storageValue, setStorageValue] = useLocalStorage("lang", "en-US")
   const router = useRouter()
+  const restored = useRef(false)
+  const language = languages.find((item) => item.code === router.locale) ?? languages[0]
 
-  const fallbackLanguage = languages[0]
-  const routeLanguage = languages.find((lang) => lang.code === router.locale)
-  const storedLanguage = languages.find((lang) => lang.code === storageValue)
-
-  // State to keep track of the current language selection
-  const [language, setLanguageState] = useState<SupportedLanguage>(() => {
-    return routeLanguage ?? storedLanguage ?? fallbackLanguage
-  })
-
-  // Use translations hook for i18n functionality
-  const { i18n } = useTranslations("common")
-
-  // Ensure an invalid stored value is corrected outside render.
   useEffect(() => {
-    if (!storedLanguage) {
-      setStorageValue(fallbackLanguage.code)
-    }
-  }, [storedLanguage, fallbackLanguage.code, setStorageValue])
+    if (!router.isReady || restored.current) return
+    restored.current = true
 
-  // Sync i18n and storage when language changes. Route navigation only happens for user actions.
-  useEffect(() => {
-    if (!router.isReady) {
-      return
-    }
-
-    if (i18n.language !== language.code) {
-      i18n.changeLanguage(language.code)
-    }
-
-    if (storageValue !== language.code) {
-      setStorageValue(language.code)
-    }
-
-    if (router.locale !== language.code) {
+    const saved = languages.find((item) => item.code === storageValue)
+    // An explicit Italian URL wins over storage. An unprefixed entry restores
+    // the visitor's choice without changing the server-rendered initial state.
+    if (router.locale === router.defaultLocale && saved && saved.code !== router.locale) {
       void router.replace(router.pathname, router.asPath, {
         scroll: false,
-        locale: language.code,
-      })
+        locale: saved.code,
+      }).catch((error: unknown) => console.error("Could not restore language", error))
+    } else {
+      setStorageValue(language.code)
     }
-  }, [
-    i18n,
-    language.code,
-    router,
-    router.isReady,
-    router.locale,
-    storageValue,
-    setStorageValue,
-  ])
+  }, [router, storageValue, setStorageValue, language.code])
 
   const handleSetLanguage = useCallback((nextLanguage: SupportedLanguage) => {
-    setLanguageState(nextLanguage)
-  }, [])
+    if (!languages.some((item) => item.code === nextLanguage.code)) return
+    // Persist only after successful navigation; failed navigation must not
+    // leave the picker, translated content and URL in different languages.
+    void router.replace(router.pathname, router.asPath, {
+      scroll: false,
+      locale: nextLanguage.code,
+    }).then((changed) => {
+      if (changed) setStorageValue(nextLanguage.code)
+    }).catch((error: unknown) => console.error("Could not change language", error))
+  }, [router, setStorageValue])
 
-  // Return the current language, the setter function, and the list of supported languages
   return [language, handleSetLanguage, languages]
 }

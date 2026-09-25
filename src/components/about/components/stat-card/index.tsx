@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 // Hooks
+import { useTranslations } from "@/hooks/useTranslations"
 import useRevealOnScroll from "@/hooks/useRevealOnScroll"
 
 const COUNT_DURATION = 1400
@@ -16,10 +17,13 @@ interface Props {
  * scrolls into view. Renders the final value when there's nothing to animate.
  */
 const StatCard = ({ value, suffix, label }: Props) => {
+  const { t } = useTranslations("home")
+  const isComingSoon = value === 0
   const { ref, state } = useRevealOnScroll<HTMLDivElement>()
   const [count, setCount] = useState(value)
 
   useEffect(() => {
+    if (value === 0) return
     if (state === "waiting") setCount(0)
     if (state !== "revealed") return
 
@@ -41,13 +45,16 @@ const StatCard = ({ value, suffix, label }: Props) => {
     >
       {/* The animated number is decorative; screen readers get the final value. */}
       <p className="sr-only">
-        {value}
-        {suffix} {label}
+        {isComingSoon ? t("about.soon") : `${value}${suffix}`} {label}
       </p>
       <div aria-hidden="true">
-        <div className="flex items-baseline gap-[3px] font-grotesk font-bold text-electric">
-          <span className="text-[38px] leading-none">{count}</span>
-          <span className="text-[24px]">{suffix}</span>
+        <div className="flex items-center gap-[3px] font-grotesk font-bold text-electric">
+          <span className="text-[38px] leading-none">
+            {isComingSoon ? t("about.soon") : count}
+          </span>
+          {!isComingSoon && suffix && (
+            <span className="text-[24px] leading-none">{suffix}</span>
+          )}
         </div>
         <div className="mt-[10px] font-manrope text-[13px] leading-[1.4] text-ink-muted">
           {label}

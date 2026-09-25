@@ -11,11 +11,12 @@
     "titleStart": "Ingegneria che trasforma la complessità in qualcosa di",
     "titleAccent": "affidabile",
     "p1": "Sono un software engineer che lavora end to end: progetto l'infrastruttura cloud, sviluppo i servizi che ci girano sopra e realizzo i front-end che li completano. Tengo a sistemi che restano stabili sotto carico e a codice che il prossimo sviluppatore riesce davvero a leggere.",
-    "p2": "Il mio lavoro ruota attorno ad AWS, Kubernetes e agli stack web moderni, con certificazioni che mantengono aggiornata la mia pratica. Che si tratti di un prodotto nuovo o di sbrogliare un'infrastruttura legacy, porto chiarezza, responsabilità e una forte spinta a rilasciare.",
+    "p2": "Il mio lavoro ruota attorno ad AWS, Kubernetes e agli stack web moderni. Che si tratti di un prodotto nuovo o di sbrogliare un'infrastruttura legacy, porto chiarezza, responsabilità e una forte spinta a rilasciare.",
+    "soon": "Presto",
     "stats": {
       "years": "Anni di sviluppo software",
       "projects": "Progetti rilasciati",
-      "certifications": "Certificazioni attive",
+      "certifications": "Certificazioni",
       "uptime": "Mentalità da uptime"
     }
   },

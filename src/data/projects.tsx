@@ -31,7 +31,7 @@ import Xcode from "@/ui/icons/programming/Xcode"
 // Images
 import metchImage from "@public/images/metch-bg.png"
 import collectionManagerImage from "@public/images/151.jpeg"
-import anubidigitalBg from "@public/images/anubidigital-bg.webp"
+import anubidigitalBg from "@public/images/anubidigital-bg.png"
 import anubidigitalLogo from "@public/images/anubidigital-logo.svg"
 import anubidigitalLogoBlack from "@public/images/anubidigital-logo-black.svg"
 import pienissimoBg from "@public/images/pienissimo-bg.webp"
@@ -205,17 +205,13 @@ const pienissimo: ProjectStatic = {
   roleKey: "pienissimo.role",
   periodKey: "pienissimo.period",
   descriptionKey: "projects.pienissimo.description",
-  sentenceKeys: [
-    "pienissimo.sentences.first",
-    "pienissimo.sentences.second",
-  ],
+  sentenceKeys: ["pienissimo.sentences.first", "pienissimo.sentences.second"],
   taskKeys: [
     "pienissimo.tasks.booking",
     "pienissimo.tasks.api",
     "pienissimo.tasks.cache",
     "pienissimo.tasks.validation",
     "pienissimo.tasks.infrastructure",
-    "pienissimo.tasks.conventions",
   ],
   tools: [
     tools.typescript,

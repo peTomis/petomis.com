@@ -85,8 +85,8 @@ const nameRegex = /^[\p{L}\s'-]*$/u
 
 const isValidEmail = (value: string) =>
   emailRegex.test(value) && value.length > 0
-const isValidName = (value: string) => nameRegex.test(value) && value.length > 0
-const isValidMessage = (value: string) => value.length > 0
+const isValidName = (value: string) => nameRegex.test(value.trim()) && value.trim().length > 0
+const isValidMessage = (value: string) => value.trim().length > 0
 
 const initialState = {
   name: "",

@@ -12,7 +12,7 @@ import { cn } from "@/utils/cn"
 interface LanguageToggleProps {
   languages: SupportedLanguage[]
   language: SupportedLanguage
-  setLanguage: (language: SupportedLanguage) => void
+  setLanguage: (_language: SupportedLanguage) => void
 }
 
 /**

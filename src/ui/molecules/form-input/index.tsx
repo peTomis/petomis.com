@@ -6,7 +6,7 @@ interface Props {
   error?: boolean
   errorMessage?: string
   label: string
-  onChange: (value: string) => void
+  onChange: (_value: string) => void
   placeholder?: string
   type?: "text" | "email" | "area"
   autoComplete?: string

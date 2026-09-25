@@ -45,7 +45,6 @@ const Projects = () => {
         label={t("sections.projects")}
         title={t("projects.title")}
         titleId="projects-title"
-        description={t("projects.description")}
       />
       <ul
         className="grid grid-cols-[repeat(auto-fit,minmax(min(330px,100%),1fr))] auto-rows-fr gap-7"

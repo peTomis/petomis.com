@@ -12,7 +12,7 @@ interface CommonProps {
 
 interface LinkProps extends CommonProps {
   href: string
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
+  onClick?: (_event: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
 interface NativeButtonProps extends CommonProps {

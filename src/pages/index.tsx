@@ -1,11 +1,15 @@
 import { fetchTranslations } from "@/modules/translations/fetch"
 import type { GetStaticProps, NextPage } from "next"
 import Head from "next/head"
+import { useRouter } from "next/router"
 import { useTranslations } from "@/hooks/useTranslations"
 import HomeContainer from "@/containers/home"
 
 const Home: NextPage = () => {
   const { t } = useTranslations("home")
+  const { locale } = useRouter()
+  const isItalian = locale === "it-IT"
+  const canonicalUrl = `https://www.petomis.com${isItalian ? "/it-IT" : "/"}`
   const title = t("title")
   const description = t("description")
   return (
@@ -13,11 +17,14 @@ const Home: NextPage = () => {
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <link rel="canonical" href="https://www.petomis.com" />
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hrefLang="en-US" href="https://www.petomis.com/" />
+        <link rel="alternate" hrefLang="it-IT" href="https://www.petomis.com/it-IT" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.petomis.com/" />
         {/* Open Graph metadata */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:url" content="https://www.petomis.com/" />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="Petomis" />
         <meta
           property="og:image"
@@ -26,7 +33,8 @@ const Home: NextPage = () => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Petomis" />
-        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale" content={isItalian ? "it_IT" : "en_US"} />
+        <meta property="og:locale:alternate" content={isItalian ? "en_US" : "it_IT"} />
         <meta property="og:type" content="website" />
         {/* Twitter metadata */}
         <meta name="twitter:card" content="summary_large_image" />
