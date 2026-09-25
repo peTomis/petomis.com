@@ -11,6 +11,8 @@ import { useLocalStorage } from "./useLocalStorage"
 // Type definition for supported languages
 export type SupportedLanguage = {
   code: string
+  flag: string
+  /** Language name in its own language ("English", "Italiano"). */
   name: string
 }
 
@@ -18,11 +20,13 @@ export type SupportedLanguage = {
 const languages: SupportedLanguage[] = [
   {
     code: "en-US",
-    name: "🇬🇧 EN",
+    flag: "🇬🇧",
+    name: "English",
   },
   {
     code: "it-IT",
-    name: "🇮🇹 IT",
+    flag: "🇮🇹",
+    name: "Italiano",
   },
 ]
 

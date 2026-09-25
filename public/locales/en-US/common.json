@@ -1,12 +1,6 @@
 {
   "footer": {
-    "copyright_1": "Copyright ©",
-    "copyright_2": ". All rights reserved.",
-    "description": "Software Engineer",
-    "hashtag": "@peTomis",
-    "icons": "Icons credits:",
-    "name": "GIUSEPPE TOMIS",
-    "patterns": "Pattern credits: "
+    "builtWith": "built with care."
   },
   "common": {
     "wip": "Work in progress",
@@ -19,5 +13,8 @@
   },
   "nav": {
     "social": "Social links"
+  },
+  "language": {
+    "current": "Language: {{name}}"
   }
 }

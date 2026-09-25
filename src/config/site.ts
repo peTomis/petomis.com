@@ -13,7 +13,6 @@ export const externalLinks = {
   credly: "https://www.credly.com/users/petomis",
   linkedin: "https://www.linkedin.com/in/petomis",
   twitter: "https://twitter.com/peTomis",
-  materialIcons: "https://fonts.google.com/icons",
 } as const
 
 export const projectWebsites = {
