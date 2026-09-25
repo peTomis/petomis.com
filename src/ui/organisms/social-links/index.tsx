@@ -2,7 +2,6 @@
 import { useTranslations } from "@/hooks/useTranslations"
 
 // Icons
-import Credly from "@/ui/icons/social/credly"
 import GitHub from "@/ui/icons/social/github"
 import Linkedin from "@/ui/icons/social/linkedin"
 
@@ -18,7 +17,7 @@ interface Props {
   className?: string
 }
 
-/** Round social icon links (GitHub, Credly, LinkedIn), in a glass pill unless `bare`. */
+/** Round social icon links (GitHub, LinkedIn), in a glass pill unless `bare`. */
 const SocialLinks = ({ label, bare, className }: Props) => {
   const { t } = useTranslations("common")
 
@@ -28,12 +27,6 @@ const SocialLinks = ({ label, bare, className }: Props) => {
       label: t("social.github"),
       icon: <GitHub />,
       size: "w-[17px] h-[17px]",
-    },
-    {
-      href: externalLinks.credly,
-      label: t("social.credly"),
-      icon: <Credly />,
-      size: "w-[19px] h-[19px]",
     },
     {
       href: externalLinks.linkedin,

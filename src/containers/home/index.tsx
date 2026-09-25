@@ -12,7 +12,6 @@ import About from "@/components/about"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import Projects from "@/components/projects"
-import Certifications from "@/components/certifications"
 
 // Molecules
 import HomePageContainer from "@/ui/molecules/home-page-container"
@@ -27,7 +26,6 @@ const HomeContainer = () => {
       <TopBar />
       <Hero onRedirect={scrollToSection} />
       <About />
-      <Certifications />
       <Projects />
       <Contact />
       <Footer />

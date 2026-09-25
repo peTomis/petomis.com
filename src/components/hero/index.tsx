@@ -39,7 +39,7 @@ const Hero = ({ onRedirect }: Props) => {
       id="welcome-container"
       className="relative flex items-center w-full max-w-[1200px] mx-auto min-h-screen px-[22px] pt-[118px] pb-16 font-manrope min-[561px]:px-6 min-[561px]:pt-[150px] min-[561px]:pb-[90px] min-[901px]:px-8"
     >
-      <div className="grid items-center w-full grid-cols-1 gap-16 min-[561px]:gap-12 min-[901px]:grid-cols-[0.9fr_1.1fr] min-[901px]:gap-[60px]">
+      <div className="grid items-center w-full grid-cols-1 gap-[72px] min-[561px]:gap-12 min-[901px]:grid-cols-[0.9fr_1.1fr] min-[901px]:gap-[60px]">
         <div
           className={cn(
             reveal,
@@ -53,7 +53,7 @@ const Hero = ({ onRedirect }: Props) => {
           <div
             className={cn(
               reveal,
-              "inline-flex items-center gap-[10px] px-[14px] py-[7px] mb-8 min-[561px]:mb-[26px] border border-electric/25 rounded-full bg-electric/5"
+              "inline-flex items-center gap-[10px] px-[14px] py-[7px] mb-10 min-[561px]:mb-[26px] border border-electric/25 rounded-full bg-electric/5"
             )}
             style={revealDelay(0.05)}
           >

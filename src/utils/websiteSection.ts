@@ -17,7 +17,6 @@ export type WebsiteSection = (typeof WebsiteSection)[keyof typeof WebsiteSection
  */
 export const NUMBERED_SECTIONS: WebsiteSection[] = [
   WebsiteSection.ABOUT,
-  WebsiteSection.EXPERIENCE,
   WebsiteSection.PROJECTS,
   WebsiteSection.CONTACT,
 ]
