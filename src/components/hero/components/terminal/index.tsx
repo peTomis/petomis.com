@@ -105,10 +105,10 @@ const Terminal = () => {
             "radial-gradient(circle at 30% 20%, rgba(30,167,255,.22), transparent 65%)",
         }}
       />
-      <div className="relative rounded-[14px] overflow-hidden bg-night-terminal border border-white/[.09] shadow-[0_34px_80px_rgba(0,0,0,.55),0_0_0_1px_rgba(30,167,255,.06)]">
+      <div className="relative rounded-[20px] overflow-hidden glass bg-[rgba(8,14,24,.35)]">
         <div
           aria-hidden="true"
-          className="flex items-center gap-2 px-4 py-[13px] bg-white/[.025] border-b border-white/[.07]"
+          className="flex items-center gap-2 px-4 py-[13px] bg-white/[.035] border-b border-white/[.08]"
         >
           <span className="w-[11px] h-[11px] rounded-full bg-[#ff5f57]" />
           <span className="w-[11px] h-[11px] rounded-full bg-[#febc2e]" />

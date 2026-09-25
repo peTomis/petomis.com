@@ -1,9 +1,27 @@
 {
   "title": "Giuseppe Tomis - Software Engineer",
   "description": "Giuseppe Tomis, software architect and software engineer specialized in AWS cloud and Kubernetes (K8s). Contact me for consulting and new software projects.",
+  "sections": {
+    "about": "about",
+    "projects": "projects",
+    "skills": "skills",
+    "contact": "contact"
+  },
+  "about": {
+    "titleStart": "Engineering that turns complexity into something",
+    "titleAccent": "dependable",
+    "p1": "I'm a software engineer who works end to end — architecting cloud infrastructure, building the services that run on it, and crafting the front-ends that sit on top. I care about systems that stay calm under load and code that the next engineer can actually read.",
+    "p2": "My toolkit centers on AWS, Kubernetes, and modern web stacks, backed by certifications that keep my practice sharp. Whether it's a greenfield product or untangling legacy infrastructure, I bring clarity, ownership, and a bias toward shipping.",
+    "stats": {
+      "years": "Years building software",
+      "projects": "Projects shipped",
+      "certifications": "Active certifications",
+      "uptime": "Uptime mindset"
+    }
+  },
   "certifications": {
-    "title": "Skills",
-    "soon": "(coming soon)"
+    "title": "Certifications",
+    "description": "Verified credentials, coming soon."
   },
   "contact": {
     "email": "Email",
@@ -17,7 +35,9 @@
     "submitError": "Something went wrong. Please try again or email me directly.",
     "thankMailTitle": "Thank you!",
     "thankMailText": "Will reply soon",
-    "title": "GET IN TOUCH",
+    "title": "Let's build something",
+    "titleAccent": "solid",
+    "subtitle": "Have a project, a role, or an idea worth shipping? Drop me a line — I read everything and reply fast.",
     "mailMe": "Or, email me at",
     "description": {
       "phrase1": "Fill the contact form below to get in touch with me.",
@@ -50,7 +70,7 @@
     "year": "year"
   },
   "projects": {
-    "title": "Projects",
+    "title": "Selected work",
     "description": "The best projects I work/have worked on.",
     "elementNote": "click to open",
     "titlePlaceholder": "PROJECT ",

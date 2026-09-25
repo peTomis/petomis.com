@@ -68,7 +68,6 @@ module.exports = {
         },
         night: {
           DEFAULT: "#060a12",
-          terminal: "#0a1119",
         },
         electric: {
           DEFAULT: "#1ea7ff",

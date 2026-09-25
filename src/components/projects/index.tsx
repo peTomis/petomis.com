@@ -13,9 +13,10 @@ import EmployeeDetails from "@/ui/organisms/employee-details"
 // Molecules
 import CarouselElement from "@/ui/molecules/carousel-element"
 import CarouselElementSkewed from "@/ui/molecules/carousel-element-skewed"
+import SectionHeader from "@/ui/molecules/section-header"
 
-// Atoms
-import Typography from "@/ui/atoms/typography"
+// Utils
+import { WebsiteSection, sectionContainer, sectionNumber } from "@/utils"
 
 const Projects = () => {
   const [employeeExperience, setEmployeeExperience] = useState<
@@ -41,26 +42,14 @@ const Projects = () => {
       aria-labelledby="projects-title"
       className="relative flex flex-col items-center justify-center w-full pt-16 pb-32 mx-auto space-y-8 overflow-hidden scroll-mt-24 md:pb-16 md:pt-16"
     >
-      <div className="z-10 flex flex-col items-center justify-center w-full space-y-8">
-        <Typography
-          as="h2"
-          id="projects-title"
-          extrabold
-          size="h1"
-          font="montserrat"
-          text={t("projects.title").toUpperCase()}
-          color="PRIMARY100"
-        />
-        <div className="opacity-60">
-          <Typography
-            light
-            size="h6"
-            md="h4"
-            text={t("projects.description")}
-            color={"PRIMARY100"}
-          />
-        </div>
-      </div>
+      <SectionHeader
+        index={sectionNumber(WebsiteSection.PROJECTS)}
+        label={t("sections.projects")}
+        title={t("projects.title")}
+        titleId="projects-title"
+        description={t("projects.description")}
+        className={`z-10 ${sectionContainer}`}
+      />
       <div
         className="pt-8 md:hidden"
         aria-hidden={carouselInert}

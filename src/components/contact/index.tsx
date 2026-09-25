@@ -8,7 +8,11 @@ import FormSucceeded from "@/ui/molecules/form-succeeded"
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 
+// Utils
+import { WebsiteSection, sectionNumber } from "@/utils"
+
 // Molecules
+import SectionHeader from "@/ui/molecules/section-header"
 import FormInput from "@/ui/molecules/form-input"
 import FormContainer from "@/ui/molecules/form-container"
 import FormButton from "./components/FormButton"
@@ -100,11 +104,24 @@ const GetInTouch = () => {
 
   return (
     <section
-      id="contact-container"
+      id={WebsiteSection.CONTACT}
       aria-labelledby="contact-title"
       className={`relative flex flex-col items-center pt-16 lg:pb-8 justify-center w-full lg:px-0 mx-auto space-y-8 scroll-mt-24`}
     >
       <div className="absolute bottom-0 w-full h-[200px] bg-[#111111]"></div>
+      <SectionHeader
+        index={sectionNumber(WebsiteSection.CONTACT)}
+        label={t("sections.contact")}
+        title={
+          <>
+            {t("contact.title")}{" "}
+            <span className="text-electric">{t("contact.titleAccent")}</span>.
+          </>
+        }
+        titleId="contact-title"
+        description={t("contact.subtitle")}
+        className="z-10 w-full max-w-[800px] px-4 lg:px-0 !mt-0"
+      />
       <div className="z-10 flex items-center justify-center w-full px-4 lg:px-0">
         <FormContainer onSubmit={handleSubmit}>
           <div className="relative">

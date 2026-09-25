@@ -1,8 +1,11 @@
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 
-// Atoms
-import Typography from "@/ui/atoms/typography"
+// Molecules
+import SectionHeader from "@/ui/molecules/section-header"
+
+// Utils
+import { WebsiteSection, sectionContainer, sectionNumber } from "@/utils"
 
 // Icons
 import Medal from "@/ui/icons/medal"
@@ -12,10 +15,10 @@ const Certifications = () => {
   const { t } = useTranslations("home")
   return (
     <section
-      id="experience-container"
+      id={WebsiteSection.EXPERIENCE}
       aria-labelledby="experience-title"
       className={
-        "relative py-24 overflow-hidden flex flex-col bg-gradient-to-bl from-primary-100 via-primary-100 to-primary-200 px-8 lg:mx-auto w-full justify-center items-center lg:items-center lg:justify-start scroll-mt-24"
+        "relative py-24 overflow-hidden flex flex-col bg-gradient-to-bl from-primary-100 via-primary-100 to-primary-200 lg:mx-auto w-full justify-center items-center lg:items-center lg:justify-start scroll-mt-24"
       }
     >
       <div className="absolute flex items-end justify-end -right-10 -top-[70px] w-full">
@@ -30,26 +33,15 @@ const Certifications = () => {
           <WorkInProgressIcon />
         </div>
       </div>
-      <div className="z-10">
-        <Typography
-          as="h2"
-          id="experience-title"
-          size="h1"
-          md="h1"
-          font="montserrat"
-          text={t("certifications.title").toUpperCase()}
-          color={"PRIMARY400"}
-        />
-        <div className="z-10 w-full text-center">
-          <Typography
-            size="h6"
-            md="h1"
-            font="montserrat"
-            text={t("certifications.soon").toUpperCase()}
-            color={"PRIMARY400"}
-          />
-        </div>
-      </div>
+      <SectionHeader
+        index={sectionNumber(WebsiteSection.EXPERIENCE)}
+        label={t("sections.skills")}
+        title={t("certifications.title")}
+        titleId="experience-title"
+        description={t("certifications.description")}
+        tone="onAccent"
+        className={`z-10 ${sectionContainer}`}
+      />
 
       <div className="flex flex-row pt-16 space-x-4">
         <div className="flex justify-center items-center w-[100px] h-[100px] rounded-full bg-primary-200">

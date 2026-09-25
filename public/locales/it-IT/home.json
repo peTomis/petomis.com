@@ -1,9 +1,27 @@
 {
   "title": "Giuseppe Tomis - Ingegnere del software",
   "description": "Giuseppe Tomis, software architect e software engineer specializzato in cloud AWS e Kubernetes (K8s). Contattami per consulenze e nuovi progetti software.",
+  "sections": {
+    "about": "chi sono",
+    "projects": "progetti",
+    "skills": "competenze",
+    "contact": "contatti"
+  },
+  "about": {
+    "titleStart": "Ingegneria che trasforma la complessità in qualcosa di",
+    "titleAccent": "affidabile",
+    "p1": "Sono un software engineer che lavora end to end: progetto l'infrastruttura cloud, sviluppo i servizi che ci girano sopra e realizzo i front-end che li completano. Tengo a sistemi che restano stabili sotto carico e a codice che il prossimo sviluppatore riesce davvero a leggere.",
+    "p2": "Il mio lavoro ruota attorno ad AWS, Kubernetes e agli stack web moderni, con certificazioni che mantengono aggiornata la mia pratica. Che si tratti di un prodotto nuovo o di sbrogliare un'infrastruttura legacy, porto chiarezza, responsabilità e una forte spinta a rilasciare.",
+    "stats": {
+      "years": "Anni di sviluppo software",
+      "projects": "Progetti rilasciati",
+      "certifications": "Certificazioni attive",
+      "uptime": "Mentalità da uptime"
+    }
+  },
   "certifications": {
-    "title": "Competenze",
-    "soon": "(presto disponibili)"
+    "title": "Certificazioni",
+    "description": "Credenziali verificate, in arrivo."
   },
   "contact": {
     "email": "Email",
@@ -17,7 +35,9 @@
     "submitError": "Qualcosa è andato storto. Riprova o scrivimi direttamente via email.",
     "thankMailTitle": "Grazie!",
     "thankMailText": "Risponderò al più presto.",
-    "title": "CONTATTAMI",
+    "title": "Costruiamo qualcosa di",
+    "titleAccent": "solido",
+    "subtitle": "Hai un progetto, un ruolo o un'idea da realizzare? Scrivimi: leggo tutto e rispondo in fretta.",
     "mailMe": "Oppure, scrivimi a",
     "description": {
       "phrase1": "Se vuoi contattarmi, puoi farlo tramite il form sottostante.",
@@ -50,7 +70,7 @@
     "year": "anno"
   },
   "projects": {
-    "title": "Progetti",
+    "title": "Lavori selezionati",
     "description": "I migliori progetti su cui lavoro/ho lavorato.",
     "elementNote": "apri",
     "titlePlaceholder": "PROGETTO ",

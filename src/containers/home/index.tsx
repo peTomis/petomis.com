@@ -8,6 +8,7 @@ import scrollToSection from "@/utils/scrollToSection"
 // Components
 import TopBar from "@/components/topbar"
 import Hero from "@/components/hero"
+import About from "@/components/about"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import Projects from "@/components/projects"
@@ -25,8 +26,9 @@ const HomeContainer = () => {
     <HomePageContainer>
       <TopBar />
       <Hero onRedirect={scrollToSection} />
-      <Projects />
+      <About />
       <Certifications />
+      <Projects />
       <Contact />
       <Footer />
       <MailShortcut

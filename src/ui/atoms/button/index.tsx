@@ -23,13 +23,12 @@ interface NativeButtonProps extends CommonProps {
 type Props = LinkProps | NativeButtonProps
 
 const base =
-  "inline-flex items-center justify-center gap-[9px] px-[26px] py-[14px] rounded-lg font-manrope text-[15px] transition-[background-color,border-color,box-shadow] duration-[250ms] disabled:cursor-not-allowed disabled:opacity-50"
+  "inline-flex items-center justify-center gap-[9px] px-[26px] py-[14px] rounded-full font-manrope text-[15px] disabled:cursor-not-allowed disabled:opacity-50"
 
+// Liquid glass styles live in styles/tailwind.css (`.glass*`).
 const variants: Record<Variant, string> = {
-  solid:
-    "bg-electric text-electric-ink font-bold shadow-[0_8px_30px_rgba(30,167,255,.3)] hover:shadow-[0_14px_40px_rgba(30,167,255,.45)] disabled:hover:shadow-[0_8px_30px_rgba(30,167,255,.3)]",
-  outline:
-    "border border-white/[.14] text-ink font-semibold hover:border-electric/60 hover:bg-electric/[.06]",
+  solid: "glass-accent text-electric-ink font-bold",
+  outline: "glass glass-interactive text-ink font-semibold",
 }
 
 /**
