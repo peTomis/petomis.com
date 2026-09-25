@@ -4,26 +4,34 @@
   "details": "Dettagli",
   "pienissimo": {
     "tasks": {
-      "backend": {
-        "title": "Ottimizzazione Backend & Performance",
-        "description": "Refactoring e ottimizzazione di moduli esistenti per ridurre il carico sull’infrastruttura, mantenendo al contempo alta disponibilità e reattività."
+      "booking": {
+        "title": "Motore di prenotazione multi-tenant",
+        "description": "Owner del motore di prenotazione multi-tenant usato da tutti i tenant: form configurabili per singolo ristorante, regole automatiche di chiusura, assegnazione di sala e tavolo con vincoli di capienza."
       },
-      "newApp": {
-        "title": "Sviluppo della Nuova App per Ristoratori",
-        "description": "Dopo aver reso stabile Pienissimo Pro (sviluppata in Swift), ho co-sviluppato la nuova applicazione di riferimento per i ristoratori utilizzando Flutter, gestendo in autonomia API e connessioni WebSocket."
+      "api": {
+        "title": "API app ristoratori",
+        "description": "Riscritta da zero l'API dell'app ristoratori invece di adattare quella esistente, riprogettando query, struttura di progetto e contratto."
       },
-      "architecture": {
-        "title": "Scalabilità & Decisioni Architetturali",
-        "description": "Ho contribuito attivamente alle decisioni architetturali, guidando l’azienda attraverso sfide legate alla scalabilità e all’evoluzione dello stack tecnologico."
+      "cache": {
+        "title": "Cache su due livelli",
+        "description": "Progettato un sistema di cache su due livelli (S3 per i menù, grandi e annidati; DynamoDB per le impostazioni di prenotazione, piccole e da leggere in fretta) con invalidazione su evento, per togliere al database le letture delle ore di punta."
       },
-      "devops": {
-        "title": "DevOps & Best Practices",
-        "description": "Supporto nella gestione delle pipeline CI/CD, nei processi di build e nelle revisioni del codice per mantenere alti standard di sviluppo all'interno del team."
+      "validation": {
+        "title": "Tipi e validazione",
+        "description": "Introdotto un livello di tipi TypeScript e la validazione al bordo delle API su configurazioni JSONB profondamente annidate, prima non tipizzate."
+      },
+      "infrastructure": {
+        "title": "Infrastruttura e monitoraggio",
+        "description": "Gestisco i servizi su AWS ECS e Kubernetes, con monitoraggio su Grafana e log su CloudWatch."
+      },
+      "conventions": {
+        "title": "Specifiche tecniche e Git",
+        "description": "Portato i primi documenti di specifica tecnica e le convenzioni Git in un team che non ne aveva."
       }
     },
     "sentences": {
-      "first": "Pienissimo è attualmente l'azienda leader in Italia nel Direct Response Marketing per il settore della ristorazione, con migliaia di clienti attivi e un’infrastruttura IT in continua evoluzione.",
-      "second": "In qualità di sviluppatore full-stack senior, ho svolto un ruolo chiave nell'ottimizzazione dei componenti critici, nel miglioramento delle prestazioni e nella garanzia della scalabilità, mantenendo sempre un forte focus sulle best practice, sull’architettura pulita e sulla manutenibilità a lungo termine."
+      "first": "SaaS per la ristorazione, al servizio di migliaia di ristoratori, del gruppo Zucchetti.",
+      "second": "Sono l'unico backend developer interno in un team tecnico di otto, e mi occupo dei sistemi dietro prenotazioni, ordini e promozioni."
     },
     "tools": {
       "other": {
@@ -37,34 +45,36 @@
         "title": "Frontend e Mobile",
         "list": "Angular, Swift, Flutter"
       }
-    }
+    },
+    "role": "Full-Stack Developer",
+    "period": "aprile 2024 – oggi"
   },
   "anubidigital": {
     "tasks": {
-      "project": {
-        "title": "Progettazione e realizzazione dell`architettura web",
-        "description": "Ideazione dell'architettura web interna e per i clienti, inclusi backoffice e processi di onboarding"
+      "architecture": {
+        "title": "Architettura full-stack",
+        "description": "Progettata e realizzata l'architettura full-stack dei portali clienti e del backoffice."
       },
-      "onboarding": {
-        "title": "Onboarding",
-        "description": "Sviluppo del processo di onboarding per i clienti, con particolare attenzione alla sicurezza e alla compliance"
+      "frontend": {
+        "title": "Frontend",
+        "description": "Costruito il frontend con Next.js, React, Redux Toolkit e Tailwind CSS, dai flussi di onboarding all'interfaccia utente."
+      },
+      "api": {
+        "title": "API REST",
+        "description": "Progettate le API REST dietro quei portali con NestJS e TypeORM, su PostgreSQL e MongoDB."
       },
       "datawarehouse": {
-        "title": "Datawarehouse",
-        "description": "Realizzazione di un datawarehouse per la gestione di dati sensibili, secondo le normative vigenti nel settore"
-      },
-      "backoffice": {
-        "title": "Backoffice",
-        "description": "Sviluppo di un backoffice per la gestione dei clienti"
+        "title": "Data warehouse",
+        "description": "Realizzato il data warehouse aziendale: processi ETL, modellazione dei dati e allineamento alle normative di settore."
       },
       "rnd": {
-        "title": "R&D",
-        "description": "Partecipazione al team di ricerca e sviluppo, con focus su progetti su digital asset e fintech"
+        "title": "R&D e performance",
+        "description": "In R&D, ottimizzato un servizio di calcolo in tempo reale spostando il lavoro CPU-bound su worker thread, eliminando il blocco dell'event loop di Node.js."
       }
     },
     "sentences": {
-      "first": "Anubidigital è tra i pionieri italiani del settore web3. Nasce come custodia istituzionale di digital asset per poi specializzarsi nella produzione di software B2B per il settore fintech e digital asset.",
-      "second": "In questa realtà ho avuto un ruolo fondamentale nello sviluppo iniziale dell'infrastruttura IT per la custodia, gestendo in autonomia molte aree di progetto. Una volta completato lo sviluppo della piattaforma mi sono unito al team di ricerca e sviluppo, fornendo il mio contributo da ingegnere del software alla realizzazione di idee e progetti che hanno successivamente portato l`azienda in un modello di business B2B."
+      "first": "Pionieri italiani del settore web3, nati come custodia istituzionale di asset digitali e poi specializzati in software B2B per il fintech.",
+      "second": "Sono entrato nelle fasi iniziali di costruzione dell'infrastruttura IT e poi passato alla divisione R&D."
     },
     "tools": {
       "other": {
@@ -78,7 +88,9 @@
         "title": "Frontend",
         "list": "React, Next.js, TailwindCSS, Redux Toolkit"
       }
-    }
+    },
+    "role": "Full-Stack Developer",
+    "period": "marzo 2022 – marzo 2024"
   },
   "mobile": {
     "title": "Mobile Developer",
@@ -121,7 +133,7 @@
   "projects": {
     "employeeTag": "Impiegato",
     "anubidigital": {
-      "description": "Anubidigital è tra i pionieri italiani del settore web3. Nasce come custodia istituzionale di digital asset per poi specializzarsi nel software B2B per il settore fintech."
+      "description": "Pionieri italiani del settore web3, nati come custodia istituzionale di asset digitali e poi specializzati in software B2B per il fintech."
     },
     "collectionmanager": {
       "description": "Un progetto personale che mi permette di tracciare i prezzi e analizzare i dati dei negozi della mia collezione di carte e altri oggetti da collezione."
@@ -130,7 +142,7 @@
       "description": "Il game changer! Metch è una piattaforma che mira a rendere il processo di ricerca di talenti e team nel settore gaming semplice ed efficiente."
     },
     "pienissimo": {
-      "description": "Pienissimo è l'azienda leader in Italia nel Direct Response Marketing per il settore della ristorazione, con migliaia di clienti attivi."
+      "description": "SaaS per la ristorazione, al servizio di migliaia di ristoratori, del gruppo Zucchetti."
     }
   }
 }

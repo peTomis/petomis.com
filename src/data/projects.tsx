@@ -5,12 +5,13 @@ import Image, { type StaticImageData } from "next/image"
 import { projectWebsites } from "@/config/site"
 
 // Data
-import { ProjectColor, type EmployeeColor } from "@/data/projectColors"
+import { ProjectColor } from "@/data/projectColors"
 
 // Company / tech icons
 import MetchLogo from "@/ui/icons/companies/metch"
 import Inventory2 from "@/ui/icons/inventory-2"
 import Aws from "@/ui/icons/programming/Aws"
+import Flutter from "@/ui/icons/programming/Flutter"
 import Docker from "@/ui/icons/programming/Docker"
 import GitHub from "@/ui/icons/programming/GitHub"
 import Javascript from "@/ui/icons/programming/Javascript"
@@ -65,8 +66,9 @@ export interface Project {
   /** Card-only logo, when the card background needs a different variant. */
   logo?: JSX.Element
   description: string
+  role?: string
+  period?: string
   color: ProjectColor
-  employeeColor?: EmployeeColor
   tasks?: ProjectTask[]
   website: string
   /** A job (vs a personal project): the card opens the details modal. */
@@ -89,6 +91,8 @@ export interface ProjectStatic {
   website: string
   collaborators: ProjectCollaborator[]
   /** i18n key (namespace: "jobs") for the short card description. */
+  roleKey?: string
+  periodKey?: string
   descriptionKey: string
   /** i18n keys for the sentences shown in the expanded detail view. */
   sentenceKeys: string[]
@@ -99,11 +103,12 @@ export interface ProjectStatic {
   taskKeys: string[]
   tools?: ProjectTool[]
   employee?: boolean
-  employeeColor?: EmployeeColor
 }
 
 /** Shared registry of tech tools, so repeated entries are declared once. */
 const tools = {
+  flutter: { name: "Flutter", icon: <Flutter />, url: "https://flutter.dev/" },
+  react: { name: "React", icon: null, url: "https://react.dev/" },
   aws: { name: "AWS", icon: <Aws />, url: "https://aws.amazon.com/" },
   docker: { name: "Docker", icon: <Docker />, url: "https://www.docker.com/" },
   github: { name: "GitHub", icon: <GitHub />, url: "https://github.com" },
@@ -128,11 +133,11 @@ const tools = {
     icon: <Mongodb />,
     url: "https://www.mongodb.com/",
   },
-  nestjs: { name: "Nest.js", icon: <Nestjs />, url: "https://nestjs.com/" },
+  nestjs: { name: "NestJS", icon: <Nestjs />, url: "https://nestjs.com/" },
   nextjs: { name: "Next.js", icon: <Nextjs />, url: "https://nextjs.org/" },
   nodejs: { name: "Node.js", icon: <NodeJs />, url: "https://nodejs.org/en/" },
   postgres: {
-    name: "Postgre SQL",
+    name: "PostgreSQL",
     icon: <PostgreSQL />,
     url: "https://www.postgresql.org/",
   },
@@ -142,7 +147,7 @@ const tools = {
     url: "https://developer.apple.com/swift/",
   },
   typescript: {
-    name: "Typescript",
+    name: "TypeScript",
     icon: <Typescript />,
     url: "https://www.typescriptlang.org/",
   },
@@ -197,27 +202,29 @@ const pienissimo: ProjectStatic = {
   website: projectWebsites.pienissimo,
   collaborators: [],
   employee: true,
-  employeeColor: ProjectColor.PIENISSIMO,
+  roleKey: "pienissimo.role",
+  periodKey: "pienissimo.period",
   descriptionKey: "projects.pienissimo.description",
   sentenceKeys: [
     "pienissimo.sentences.first",
     "pienissimo.sentences.second",
   ],
   taskKeys: [
-    "pienissimo.tasks.backend",
-    "pienissimo.tasks.newApp",
-    "pienissimo.tasks.architecture",
-    "pienissimo.tasks.devops",
+    "pienissimo.tasks.booking",
+    "pienissimo.tasks.api",
+    "pienissimo.tasks.cache",
+    "pienissimo.tasks.validation",
+    "pienissimo.tasks.infrastructure",
+    "pienissimo.tasks.conventions",
   ],
   tools: [
-    tools.swift,
     tools.typescript,
     tools.nestjs,
     tools.nodejs,
-    tools.aws,
     tools.postgres,
-    tools.vscode,
-    tools.xcode,
+    tools.aws,
+    tools.kubernetes,
+    tools.flutter,
   ],
 }
 
@@ -239,15 +246,15 @@ const metch: ProjectStatic = {
 }
 
 const anubidigital: ProjectStatic = {
-  name: "Anubidigital",
+  name: "Anubi Digital",
   background: anubidigitalBg,
   title: (
     <div className="w-[160px]">
-      <span className="sr-only">Anubidigital</span>
+      <span className="sr-only">Anubi Digital</span>
       <Image
         src={anubidigitalLogo}
         className="object-cover -z-10"
-        alt="Anubidigital Logo"
+        alt="Anubi Digital Logo"
         width={160}
       />
     </div>
@@ -256,11 +263,11 @@ const anubidigital: ProjectStatic = {
   // red keeps the original red wordmark (`title`).
   logo: (
     <div className="w-[160px]">
-      <span className="sr-only">Anubidigital</span>
+      <span className="sr-only">Anubi Digital</span>
       <Image
         src={anubidigitalLogoBlack}
         className="object-cover"
-        alt="Anubidigital Logo"
+        alt="Anubi Digital Logo"
         width={160}
       />
     </div>
@@ -269,34 +276,28 @@ const anubidigital: ProjectStatic = {
   website: projectWebsites.anubidigital,
   collaborators: [],
   employee: true,
-  employeeColor: ProjectColor.ANUBIDIGITAL,
+  roleKey: "anubidigital.role",
+  periodKey: "anubidigital.period",
   descriptionKey: "projects.anubidigital.description",
   sentenceKeys: [
     "anubidigital.sentences.first",
     "anubidigital.sentences.second",
   ],
   taskKeys: [
-    "anubidigital.tasks.project",
-    "anubidigital.tasks.onboarding",
+    "anubidigital.tasks.architecture",
+    "anubidigital.tasks.frontend",
+    "anubidigital.tasks.api",
     "anubidigital.tasks.datawarehouse",
-    "anubidigital.tasks.backoffice",
     "anubidigital.tasks.rnd",
   ],
   tools: [
-    tools.javascript,
-    tools.typescript,
     tools.nextjs,
+    tools.react,
     tools.nestjs,
-    tools.nodejs,
-    tools.aws,
-    tools.docker,
+    tools.typescript,
     tools.postgres,
-    tools.jest,
-    tools.vscode,
-    tools.github,
-    tools.jira,
     tools.mongodb,
-    tools.kubernetes,
+    tools.aws,
   ],
 }
 

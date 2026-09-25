@@ -4,26 +4,34 @@
   "details": "Details",
   "pienissimo": {
     "tasks": {
-      "backend": {
-        "title": "Backend & Performance Optimization",
-        "description": "Refactored and optimized existing modules to reduce infrastructure load while maintaining high availability and responsiveness."
+      "booking": {
+        "title": "Multi-tenant booking engine",
+        "description": "Own the multi-tenant booking engine used across tenants: per-restaurant configurable forms, automated closing rules, room and table assignment with capacity constraints."
       },
-      "newApp": {
-        "title": "New Restaurateur App Development",
-        "description": "After stabilizing the Swift-based Pienissimo Pro, I co-developed the company's new flagship application for restaurateurs using Flutter, managing the APIs and WebSocket connections entirely independently."
+      "api": {
+        "title": "Restaurateur app API",
+        "description": "Rebuilt the restaurateur app API from scratch instead of adapting the old one, redesigning queries, project structure and the API contract."
       },
-      "architecture": {
-        "title": "Scalability & Architectural Decisions",
-        "description": "Actively contributed to architectural discussions, guiding the company through key scalability challenges and technology stack evolution."
+      "cache": {
+        "title": "Two-tier cache",
+        "description": "Designed a two-tier cache (S3 for large nested menu data, DynamoDB for low-latency booking settings) with event-driven invalidation, to take peak-hour reads off the database."
       },
-      "devops": {
-        "title": "DevOps & Best Practices",
-        "description": "Supported CI/CD pipeline management, assisted in build processes, and conducted code reviews to uphold high development standards across the team."
+      "validation": {
+        "title": "Types and validation",
+        "description": "Introduced a TypeScript type layer and API-boundary validation over deeply nested JSONB configuration that was previously untyped."
+      },
+      "infrastructure": {
+        "title": "Infrastructure and monitoring",
+        "description": "Run services on AWS ECS and Kubernetes, with Grafana monitoring and CloudWatch logging."
+      },
+      "conventions": {
+        "title": "Technical specifications and Git",
+        "description": "Brought the first technical specifications and Git conventions into a team that had none."
       }
     },
     "sentences": {
-      "first": "Pienissimo is currently the leading company in Italy for Direct Response Marketing in the restaurant industry, serving thousands of active clients with a rapidly evolving IT infrastructure.",
-      "second": "As a senior full-stack developer, I have played a key role in optimizing critical components, improving performance, and ensuring scalability, all while maintaining a keen focus on best practices, clean architecture, and long-term maintainability."
+      "first": "Restaurant SaaS for thousands of restaurateurs, part of the Zucchetti group.",
+      "second": "I'm the only in-house backend developer on a technical team of eight, and I own the systems behind booking, ordering and promotions."
     },
     "tools": {
       "other": {
@@ -37,34 +45,36 @@
         "title": "Frontend and Mobile",
         "list": "Angular, Swift, Flutter"
       }
-    }
+    },
+    "role": "Full-Stack Developer",
+    "period": "April 2024 – present"
   },
   "anubidigital": {
     "tasks": {
-      "project": {
-        "title": "Design and implementation of the web architecture",
-        "description": "Creation of the internal web architecture and for clients, including backoffice and onboarding processes"
+      "architecture": {
+        "title": "Full-stack architecture",
+        "description": "Designed and built the full-stack architecture of the client-facing portals and the back office."
       },
-      "onboarding": {
-        "title": "Onboarding",
-        "description": "Development of the onboarding process for clients, with special attention to security and compliance"
+      "frontend": {
+        "title": "Frontend",
+        "description": "Built the front end with Next.js, React, Redux Toolkit and Tailwind CSS, from onboarding flows to the user interface."
+      },
+      "api": {
+        "title": "REST APIs",
+        "description": "Designed the REST APIs behind them with NestJS and TypeORM, on PostgreSQL and MongoDB."
       },
       "datawarehouse": {
         "title": "Data warehouse",
-        "description": "Establishment of a data warehouse for the management of sensitive data, according to the regulations in the sector"
-      },
-      "backoffice": {
-        "title": "Backoffice",
-        "description": "Development of a backoffice for client management"
+        "description": "Built the company data warehouse: ETL pipelines, data modelling and compliance with sector regulations."
       },
       "rnd": {
-        "title": "R&D",
-        "description": "Participation in the research and development team, with a focus on projects on digital assets and fintech"
+        "title": "R&D and performance",
+        "description": "In R&D, optimised a real-time computation service by moving CPU-bound work onto worker threads, removing event-loop blocking in Node.js."
       }
     },
     "sentences": {
-      "first": "Anubidigital is among the Italian pioneers of the web3 sector. It was born as an institutional custody of digital assets and then specialized in the production of B2B software for the fintech and digital asset sector.",
-      "second": "In this company, I played a fundamental role in the initial development of the IT infrastructure for custody, independently managing many project areas. Once the platform development was completed, I joined the research and development team, providing my contribution as a software engineer to the realization of ideas and projects that subsequently led the company to a B2B business model."
+      "first": "Italian pioneers of the web3 sector, born as institutional custody of digital assets and later specialised in B2B software for fintech.",
+      "second": "I joined during the early build-out of the IT infrastructure and later moved to the R&D division."
     },
     "tools": {
       "other": {
@@ -78,12 +88,14 @@
         "title": "Frontend",
         "list": "React, Next.js, TailwindCSS, Redux Toolkit"
       }
-    }
+    },
+    "role": "Full-Stack Developer",
+    "period": "March 2022 – March 2024"
   },
   "projects": {
     "employeeTag": "Employee",
     "anubidigital": {
-      "description": "Italian pioneers of the web3 sector. Born as an institutional custody of digital assets and then specialized in the production of B2B software for the fintech and digital asset sector."
+      "description": "Italian pioneers of the web3 sector, born as institutional custody of digital assets and later specialised in B2B software for fintech."
     },
     "collectionmanager": {
       "description": "A personal project that allows me to track prices and analyze store data of my collection of cards and other collectibles."
@@ -92,7 +104,7 @@
       "description": "The game Changer! Match is a platform that aims to make the process of finding talents and teams in the gaming sector simple and efficient."
     },
     "pienissimo": {
-      "description": "The leading company in Italy for Direct Response Marketing in the restaurant industry, serving thousands of active clients."
+      "description": "Restaurant SaaS for thousands of restaurateurs, part of the Zucchetti group."
     }
   }
 }

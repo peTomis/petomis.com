@@ -21,19 +21,16 @@ module.exports = {
         "bricks-pattern": "url('/images/bricks.svg')",
       },
       animation: {
-        scaleUp: "scale-up 300ms ease-out forwards",
         fade: "fade 1.5s ease-in-out",
         "float-y": "float-y 8s ease-in-out infinite",
         "pulse-glow": "pulse-glow 2.4s infinite",
         "scroll-cue": "scroll-cue 1.8s infinite",
         blink: "blink 1.1s steps(1) infinite",
         reveal: "reveal 0.8s cubic-bezier(.2,.7,.2,1) both",
+        "window-in": "window-in 0.35s cubic-bezier(.2,.9,.3,1.1) both",
+        "fade-in": "fade-in 0.25s ease-out both",
       },
       keyframes: {
-        "scale-up": {
-          "0%": { transform: "scale(0)" },
-          "100%": { transform: "scale(1)" },
-        },
         fade: {
           "0%": { opacity: 0 },
           "30%": { opacity: 1 },
@@ -60,6 +57,14 @@ module.exports = {
         reveal: {
           "0%": { opacity: 0, transform: "translateY(28px)" },
           "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+        "window-in": {
+          "0%": { opacity: 0, transform: "translateY(12px) scale(.96)" },
+          "100%": { opacity: 1, transform: "translateY(0) scale(1)" },
+        },
+        "fade-in": {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
         },
       },
       colors: {

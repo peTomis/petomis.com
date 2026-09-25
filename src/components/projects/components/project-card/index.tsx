@@ -92,6 +92,14 @@ const ProjectCard = ({ project, index, onOpenDetails }: Props) => {
         <h3 className="mb-2.5 font-grotesk font-semibold text-[20px] text-ink">
           {name}
         </h3>
+        {project.role && (
+          <p className="mb-3 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-[13px] leading-relaxed text-ink-label">
+            <span className="font-semibold">{project.role}</span>
+            {project.period && (
+              <span><span aria-hidden="true">· </span>{project.period}</span>
+            )}
+          </p>
+        )}
         <p className="mb-[18px] text-[14px] leading-[1.65] text-ink-muted">
           {description}
         </p>

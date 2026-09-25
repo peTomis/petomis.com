@@ -92,13 +92,8 @@
     "scroll": "SCORRI"
   },
   "work": {
-    "title": "Carriera",
-    "description": "Un breve riassunto della mia carriera lavorativa.",
-    "desktopClick": "Clicca per i dettagli",
-    "desktopClose": "Chiudi",
-    "mobileClick": "Premi per i dettagli",
-    "mobileClose": "Premi qui per chiudere",
-    "tools": "Tools",
-    "programmingLanguages": "Linguaggi"
+    "close": "Chiudi",
+    "tasks": "Cosa ho fatto",
+    "stack": "Stack"
   }
 }

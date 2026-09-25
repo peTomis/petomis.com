@@ -8,10 +8,3 @@ export const ProjectColor = {
 
 export type ProjectColor = (typeof ProjectColor)[keyof typeof ProjectColor]
 
-/**
- * The subset of colours used for the "employee" (job) projects, which drive the
- * expanded detail view's theming.
- */
-export type EmployeeColor =
-  | typeof ProjectColor.ANUBIDIGITAL
-  | typeof ProjectColor.PIENISSIMO
