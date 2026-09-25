@@ -29,9 +29,10 @@ const HomeContainer = () => {
       <Certifications />
       <Contact />
       <Footer />
-      {isMailShortcutVisible && (
-        <MailShortcut onClick={handleMailShortcutClick} />
-      )}
+      <MailShortcut
+        visible={isMailShortcutVisible}
+        onClick={handleMailShortcutClick}
+      />
     </HomePageContainer>
   )
 }

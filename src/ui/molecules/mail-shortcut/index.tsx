@@ -1,11 +1,17 @@
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 
+// Utils
+import { cn } from "@/utils/cn"
+
 interface Props {
+  visible: boolean
   onClick: () => void
 }
 
-const MailShortcut = ({ onClick }: Props) => {
+// Stays mounted so it can fade in/out; `inert` keeps it out of tab order and
+// the accessibility tree while hidden.
+const MailShortcut = ({ visible, onClick }: Props) => {
   const { t } = useTranslations("home")
 
   return (
@@ -13,7 +19,14 @@ const MailShortcut = ({ onClick }: Props) => {
       type="button"
       onClick={onClick}
       aria-label={t("redirects.contact")}
-      className="fixed z-[55] bottom-[18px] right-[18px] min-[561px]:bottom-[26px] min-[561px]:right-[26px] inline-flex items-center justify-center w-[54px] h-[54px] rounded-[14px] bg-electric text-electric-ink shadow-[0_10px_34px_rgba(30,167,255,.45)] transition-transform duration-[250ms] hover:-translate-y-[3px] hover:scale-[1.04]"
+      aria-hidden={!visible}
+      inert={!visible}
+      className={cn(
+        "fixed z-[55] bottom-[18px] right-[18px] min-[561px]:bottom-[26px] min-[561px]:right-[26px] inline-flex items-center justify-center w-[54px] h-[54px] rounded-[14px] bg-electric text-electric-ink shadow-[0_10px_34px_rgba(30,167,255,.45)] transition-[opacity,transform] duration-300",
+        visible
+          ? "opacity-100 hover:-translate-y-[3px] hover:scale-[1.04]"
+          : "opacity-0 translate-y-3 scale-90 pointer-events-none"
+      )}
     >
       <svg
         aria-hidden="true"
