@@ -1,8 +1,8 @@
 import { useEffect, useId, useRef } from "react"
 import {
-  CarouselElementColor,
+  ProjectColor,
   type EmployeeColor,
-} from "@/ui/atoms/carousel-element-text"
+} from "@/data/projectColors"
 import EmployeeDetailsHint from "../employee-details-hint"
 
 const employeeDetailsContainerBg: Record<EmployeeColor, string> = {
@@ -23,7 +23,7 @@ const focusableSelector =
 const EmployeeDetailsContainer = ({
   children,
   onClose,
-  color = CarouselElementColor.ANUBIDIGITAL,
+  color = ProjectColor.ANUBIDIGITAL,
   label,
 }: Props) => {
   const dialogRef = useRef<HTMLDivElement>(null)

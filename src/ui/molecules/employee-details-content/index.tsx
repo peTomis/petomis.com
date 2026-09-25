@@ -1,7 +1,7 @@
 import {
-  CarouselElementColor,
+  ProjectColor,
   type EmployeeColor,
-} from "@/ui/atoms/carousel-element-text"
+} from "@/data/projectColors"
 import EmployeeDetailsText from "../employee-details-text"
 import EmployeeDetailsTasks from "@/ui/organisms/employee-details-tasks"
 import EmployeeDetailsTools from "@/ui/organisms/employee-details-tools"
@@ -17,7 +17,7 @@ const employeeDetailsBgColor: Record<EmployeeColor, string> = {
 }
 
 const EmployeeDetailsContent = ({ experience }: Props) => {
-  const color = experience.employeeColor ?? CarouselElementColor.ANUBIDIGITAL
+  const color = experience.employeeColor ?? ProjectColor.ANUBIDIGITAL
   return (
     <div className="relative grid w-full grid-cols-1 cursor-default xl:grid-cols-2">
       <div

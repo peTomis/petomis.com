@@ -1,15 +1,11 @@
 // External Libraries
-import Image from "next/image"
+import Image, { type StaticImageData } from "next/image"
 
 // Config
 import { projectWebsites } from "@/config/site"
 
-// Atoms / molecules
-import {
-  CarouselElementColor,
-  type EmployeeColor,
-} from "@/ui/atoms/carousel-element-text"
-import { CarouselElementEmployeeTag } from "@/ui/molecules/carousel-element-skewed"
+// Data
+import { ProjectColor, type EmployeeColor } from "@/data/projectColors"
 
 // Company / tech icons
 import MetchLogo from "@/ui/icons/companies/metch"
@@ -36,6 +32,7 @@ import metchImage from "@public/images/metch-bg.png"
 import collectionManagerImage from "@public/images/151.jpeg"
 import anubidigitalBg from "@public/images/anubidigital-bg.webp"
 import anubidigitalLogo from "@public/images/anubidigital-logo.svg"
+import anubidigitalLogoBlack from "@public/images/anubidigital-logo-black.svg"
 import pienissimoBg from "@public/images/pienissimo-bg.webp"
 import pienissimoLogo from "@public/images/pienissimo-logo.webp"
 
@@ -60,15 +57,20 @@ export interface ProjectCollaborator {
  * This is what {@link useProjects} returns and what the carousel renders.
  */
 export interface Project {
-  image: React.ReactNode
+  /** Card background image, shown over the brand `color`. */
+  background: StaticImageData
   name: string
+  /** Project logo (details modal, and the card unless `logo` is set). */
   title: JSX.Element
+  /** Card-only logo, when the card background needs a different variant. */
+  logo?: JSX.Element
   description: string
-  color: CarouselElementColor
+  color: ProjectColor
   employeeColor?: EmployeeColor
   tasks?: ProjectTask[]
   website: string
-  employeeTag?: CarouselElementEmployeeTag
+  /** A job (vs a personal project): the card opens the details modal. */
+  employee?: boolean
   tools?: ProjectTool[]
   collaborators: ProjectCollaborator[]
   sentences: string[]
@@ -80,9 +82,10 @@ export interface Project {
  */
 export interface ProjectStatic {
   name: string
-  image: React.ReactNode
+  background: StaticImageData
   title: JSX.Element
-  color: CarouselElementColor
+  logo?: JSX.Element
+  color: ProjectColor
   website: string
   collaborators: ProjectCollaborator[]
   /** i18n key (namespace: "jobs") for the short card description. */
@@ -95,7 +98,7 @@ export interface ProjectStatic {
    */
   taskKeys: string[]
   tools?: ProjectTool[]
-  employeeTag?: CarouselElementEmployeeTag
+  employee?: boolean
   employeeColor?: EmployeeColor
 }
 
@@ -157,23 +160,18 @@ const tools = {
 
 const collectionManager: ProjectStatic = {
   name: "Collection Manager",
-  image: (
-    <Image
-      src={collectionManagerImage}
-      className="-z-10"
-      alt=""
-      width={320}
-    />
-  ),
+  background: collectionManagerImage,
   title: (
     <div className="flex flex-col w-full">
       <div className="flex justify-center">
         <Inventory2 />
       </div>
-      <div className="font-bold font-orbitron text-h6">Collection Manager</div>
+      <div className="font-bold text-center font-orbitron text-h6">
+        Collection Manager
+      </div>
     </div>
   ),
-  color: CarouselElementColor.BLUE,
+  color: ProjectColor.BLUE,
   website: projectWebsites.collectionManager,
   collaborators: [],
   descriptionKey: "projects.collectionmanager.description",
@@ -183,14 +181,7 @@ const collectionManager: ProjectStatic = {
 
 const pienissimo: ProjectStatic = {
   name: "Pienissimo",
-  image: (
-    <Image
-      src={pienissimoBg}
-      className="-z-10"
-      alt=""
-      width={320}
-    />
-  ),
+  background: pienissimoBg,
   title: (
     <div className="w-[160px]">
       <span className="sr-only">Pienissimo</span>
@@ -202,11 +193,11 @@ const pienissimo: ProjectStatic = {
       />
     </div>
   ),
-  color: CarouselElementColor.PIENISSIMO,
+  color: ProjectColor.PIENISSIMO,
   website: projectWebsites.pienissimo,
   collaborators: [],
-  employeeTag: CarouselElementEmployeeTag.RED,
-  employeeColor: CarouselElementColor.PIENISSIMO,
+  employee: true,
+  employeeColor: ProjectColor.PIENISSIMO,
   descriptionKey: "projects.pienissimo.description",
   sentenceKeys: [
     "pienissimo.sentences.first",
@@ -232,21 +223,14 @@ const pienissimo: ProjectStatic = {
 
 const metch: ProjectStatic = {
   name: "Metch",
-  image: (
-    <Image
-      src={metchImage}
-      className="object-cover -z-10"
-      alt=""
-      width={320}
-    />
-  ),
+  background: metchImage,
   title: (
     <div className="w-[160px]">
       <span className="sr-only">Metch</span>
       <MetchLogo />
     </div>
   ),
-  color: CarouselElementColor.RED,
+  color: ProjectColor.RED,
   website: projectWebsites.metch,
   collaborators: [{ name: "D4NNN", url: "https://github.com/D4NNN" }],
   descriptionKey: "projects.metch.description",
@@ -256,14 +240,7 @@ const metch: ProjectStatic = {
 
 const anubidigital: ProjectStatic = {
   name: "Anubidigital",
-  image: (
-    <Image
-      src={anubidigitalBg}
-      className="object-cover -z-10"
-      alt=""
-      width={320}
-    />
-  ),
+  background: anubidigitalBg,
   title: (
     <div className="w-[160px]">
       <span className="sr-only">Anubidigital</span>
@@ -275,11 +252,24 @@ const anubidigital: ProjectStatic = {
       />
     </div>
   ),
-  color: CarouselElementColor.ANUBIDIGITAL,
+  // "digital" in black on the card's lighter background; the modal's darker
+  // red keeps the original red wordmark (`title`).
+  logo: (
+    <div className="w-[160px]">
+      <span className="sr-only">Anubidigital</span>
+      <Image
+        src={anubidigitalLogoBlack}
+        className="object-cover"
+        alt="Anubidigital Logo"
+        width={160}
+      />
+    </div>
+  ),
+  color: ProjectColor.ANUBIDIGITAL,
   website: projectWebsites.anubidigital,
   collaborators: [],
-  employeeTag: CarouselElementEmployeeTag.WHITE,
-  employeeColor: CarouselElementColor.ANUBIDIGITAL,
+  employee: true,
+  employeeColor: ProjectColor.ANUBIDIGITAL,
   descriptionKey: "projects.anubidigital.description",
   sentenceKeys: [
     "anubidigital.sentences.first",
@@ -310,7 +300,7 @@ const anubidigital: ProjectStatic = {
   ],
 }
 
-/** Projects in carousel display order. */
+/** Projects in display order. */
 export const projectsData: ProjectStatic[] = [
   pienissimo,
   anubidigital,

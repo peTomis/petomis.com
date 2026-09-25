@@ -1,8 +1,8 @@
 import { useTranslations } from "@/hooks/useTranslations"
 import {
-  CarouselElementColor,
+  ProjectColor,
   type EmployeeColor,
-} from "@/ui/atoms/carousel-element-text"
+} from "@/data/projectColors"
 import Typography, { type TypographyColor } from "@/ui/atoms/typography"
 import CloseButton from "@/ui/icons/close-button"
 
@@ -26,7 +26,7 @@ interface Props {
 }
 
 const EmployeeDetailsHint = ({
-  color = CarouselElementColor.ANUBIDIGITAL,
+  color = ProjectColor.ANUBIDIGITAL,
 }: Props) => {
   const { t } = useTranslations("home")
 

@@ -1,25 +1,25 @@
 import Typography from "@/ui/atoms/typography"
-import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
+import { ProjectColor } from "@/data/projectColors"
 
 interface Props {
   title: string
   description: string
-  color?: CarouselElementColor
+  color?: ProjectColor
 }
 
 const EmployeeDetailsTask = ({
   title,
   description,
-  color = CarouselElementColor.ANUBIDIGITAL,
+  color = ProjectColor.ANUBIDIGITAL,
 }: Props) => {
   const dotColor =
-    color === CarouselElementColor.ANUBIDIGITAL
+    color === ProjectColor.ANUBIDIGITAL
       ? "bg-anubidigital"
       : "bg-pienissimo"
   const titleColor =
-    color === CarouselElementColor.ANUBIDIGITAL ? "ANUBIDIGITAL" : "PIENISSIMO"
+    color === ProjectColor.ANUBIDIGITAL ? "ANUBIDIGITAL" : "PIENISSIMO"
   const descriptionColor =
-    color === CarouselElementColor.ANUBIDIGITAL ? "WHITE" : "BLACK"
+    color === ProjectColor.ANUBIDIGITAL ? "WHITE" : "BLACK"
   return (
     <div className="flex flex-col space-y-2">
       <div className="flex flex-row items-center space-x-4">

@@ -76,9 +76,12 @@
   "projects": {
     "title": "Selected work",
     "description": "The best projects I work/have worked on.",
-    "elementNote": "click to open",
-    "titlePlaceholder": "PROJECT ",
-    "descriptionPlaceholder": "Placeholder for a project named Project "
+    "visit": "Visit site",
+    "details": "Details",
+    "detailsLabel": "Show details about {{name}}",
+    "visitLabel": "Visit the {{name}} website",
+    "with": "with",
+    "moreTools": "+{{count}} more"
   },
   "redirects": {
     "contact": "Contact"

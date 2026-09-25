@@ -76,9 +76,12 @@
   "projects": {
     "title": "Lavori selezionati",
     "description": "I migliori progetti su cui lavoro/ho lavorato.",
-    "elementNote": "apri",
-    "titlePlaceholder": "PROGETTO ",
-    "descriptionPlaceholder": "Placeholder per un progetto di nome Progetto "
+    "visit": "Visita il sito",
+    "details": "Dettagli",
+    "detailsLabel": "Mostra i dettagli su {{name}}",
+    "visitLabel": "Visita il sito di {{name}}",
+    "with": "con",
+    "moreTools": "+{{count}} altri"
   },
   "redirects": {
     "contact": "Contattami"

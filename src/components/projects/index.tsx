@@ -1,22 +1,25 @@
 // External Imports
 import { useState } from "react"
 
+// Components
+import ProjectCard from "./components/project-card"
+
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 import { Project, useProjects } from "@/hooks/useProjects"
-import useMediaQuery from "@/hooks/useMediaQuery"
 
 // Organisms
-import Carousel from "@/ui/organisms/carousel"
 import EmployeeDetails from "@/ui/organisms/employee-details"
 
+// Atoms
+import Reveal from "@/ui/atoms/reveal"
+
 // Molecules
-import CarouselElement from "@/ui/molecules/carousel-element"
-import CarouselElementSkewed from "@/ui/molecules/carousel-element-skewed"
 import SectionHeader from "@/ui/molecules/section-header"
 
 // Utils
 import { WebsiteSection, sectionContainer, sectionNumber } from "@/utils"
+import { cn } from "@/utils/cn"
 
 const Projects = () => {
   const [employeeExperience, setEmployeeExperience] = useState<
@@ -24,23 +27,18 @@ const Projects = () => {
   >(undefined)
   const projects = useProjects()
   const { t } = useTranslations("home")
-  // The mobile carousel and the desktop grid both stay mounted at all times
-  // (Tailwind's `hidden`/`md:*` classes only toggle CSS display); `inert`
-  // additionally keeps the one that's off-screen out of tab order and out of
-  // the accessibility tree, regardless of viewport quirks. Both also go inert
-  // while the details modal is open, since it's a sibling rather than a
-  // replacement and would otherwise leave the covered cards tabbable/readable
-  // behind it.
-  const isDesktop = useMediaQuery("(min-width: 768px)")
+  // The details modal is a sibling rather than a replacement, so the cards
+  // go inert while it's open to keep them out of tab order behind it.
   const isModalOpen = employeeExperience !== undefined
-  const carouselInert = isDesktop || isModalOpen
-  const gridInert = !isDesktop || isModalOpen
 
   return (
     <section
-      id="projects-container"
+      id={WebsiteSection.PROJECTS}
       aria-labelledby="projects-title"
-      className="relative flex flex-col items-center justify-center w-full pt-16 pb-32 mx-auto space-y-8 overflow-hidden scroll-mt-24 md:pb-16 md:pt-16"
+      className={cn(
+        sectionContainer,
+        "relative py-16 min-[561px]:py-[90px] scroll-mt-24"
+      )}
     >
       <SectionHeader
         index={sectionNumber(WebsiteSection.PROJECTS)}
@@ -48,58 +46,24 @@ const Projects = () => {
         title={t("projects.title")}
         titleId="projects-title"
         description={t("projects.description")}
-        className={`z-10 ${sectionContainer}`}
       />
-      <div
-        className="pt-8 md:hidden"
-        aria-hidden={carouselInert}
-        inert={carouselInert}
+      <ul
+        className="grid grid-cols-[repeat(auto-fit,minmax(min(330px,100%),1fr))] auto-rows-fr gap-7"
+        aria-hidden={isModalOpen}
+        inert={isModalOpen}
       >
-        <Carousel
-          elements={projects.map((project, key) => (
-            <CarouselElement
-              key={key}
-              image={project.image}
-              name={project.name}
-              title={project.title}
-              description={project.description}
-              color={project.color}
-              employeeTag={project.employeeTag}
-              website={project.website}
-              onOpenDetails={() => setEmployeeExperience(project)}
-              collaborators={project.collaborators}
-            />
-          ))}
-        />
-      </div>
-      <div
-        className="hidden py-8 md:grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 md:gap-8 xl:gap-16"
-        aria-hidden={gridInert}
-        inert={gridInert}
-      >
-        {projects.map((project, key) => (
-          <CarouselElementSkewed
-            key={key}
-            onMouseEnter={() => {}}
-            swipingDirection={undefined}
-            color={project.color}
-            employeeTag={project.employeeTag}
-          >
-            <CarouselElement
-              image={project.image}
-              name={project.name}
-              title={project.title}
-              description={project.description}
-              color={project.color}
-              employeeTag={project.employeeTag}
-              website={project.website}
-              onOpenDetails={() => setEmployeeExperience(project)}
-              collaborators={project.collaborators}
-              selected
-            />
-          </CarouselElementSkewed>
+        {projects.map((project, index) => (
+          <li key={project.name}>
+            <Reveal delay={(index % 3) * 0.08} className="h-full">
+              <ProjectCard
+                project={project}
+                index={index + 1}
+                onOpenDetails={() => setEmployeeExperience(project)}
+              />
+            </Reveal>
+          </li>
         ))}
-      </div>
+      </ul>
       {employeeExperience && (
         <EmployeeDetails
           onClose={() => setEmployeeExperience(undefined)}

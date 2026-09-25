@@ -12,7 +12,7 @@ export type {
 } from "@/data/projects"
 
 /**
- * Returns the projects shown in the carousel, with every user-facing string
+ * Returns the projects shown in the projects section, with every user-facing string
  * resolved for the active locale. The static (translation-independent) part
  * lives in `@/data/projects`.
  */
@@ -26,14 +26,15 @@ export function useProjects(): Project[] {
     }))
 
     return {
-      image: project.image,
+      background: project.background,
       name: project.name,
       title: project.title,
+      logo: project.logo,
       color: project.color,
       website: project.website,
       collaborators: project.collaborators,
       tools: project.tools,
-      employeeTag: project.employeeTag,
+      employee: project.employee,
       employeeColor: project.employeeColor,
       description: t(project.descriptionKey),
       sentences: project.sentenceKeys.map((key) => t(key)),

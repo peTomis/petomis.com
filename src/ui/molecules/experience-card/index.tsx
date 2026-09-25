@@ -1,24 +1,24 @@
 import Typography from "@/ui/atoms/typography"
-import { CarouselElementColor } from "@/ui/atoms/carousel-element-text"
+import { ProjectColor } from "@/data/projectColors"
 
 interface Props {
   name?: string
   icon: React.ReactNode
   url?: string
-  color?: CarouselElementColor
+  color?: ProjectColor
 }
 
 const ExperienceCard = ({
   name,
   icon,
   url,
-  color = CarouselElementColor.ANUBIDIGITAL,
+  color = ProjectColor.ANUBIDIGITAL,
 }: Props) => {
   const id = `experience-card-${name}`
   const titleColor =
-    color === CarouselElementColor.ANUBIDIGITAL ? "WHITE" : "BLACK"
+    color === ProjectColor.ANUBIDIGITAL ? "WHITE" : "BLACK"
 
-  const black = color === CarouselElementColor.ANUBIDIGITAL ? false : true
+  const black = color === ProjectColor.ANUBIDIGITAL ? false : true
 
   const className = `relative flex flex-col py-4 w-full ${
     name ? " shadow-md bg-black bg-opacity-5" : ""

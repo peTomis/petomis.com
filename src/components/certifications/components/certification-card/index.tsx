@@ -4,15 +4,10 @@ import { useTranslations } from "@/hooks/useTranslations"
 // Data
 import type { Certification } from "@/data/certifications"
 
-const HEXAGON = "polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)"
+// Utils
+import trackSpotlight from "@/utils/trackSpotlight"
 
-// Moves the radial spotlight (`--mx`/`--my`) to follow the pointer.
-const trackSpotlight = (event: React.MouseEvent<HTMLElement>) => {
-  const card = event.currentTarget
-  const rect = card.getBoundingClientRect()
-  card.style.setProperty("--mx", `${((event.clientX - rect.left) / rect.width) * 100}%`)
-  card.style.setProperty("--my", `${((event.clientY - rect.top) / rect.height) * 100}%`)
-}
+const HEXAGON = "polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)"
 
 /**
  * Light glass card (for the section's bright electric-blue background):
