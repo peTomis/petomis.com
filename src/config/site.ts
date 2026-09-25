@@ -6,6 +6,8 @@
  * Keeping them here as typed constants gives autocomplete and type-safety.
  */
 
+export const contactEmail = "info@petomis.com"
+
 export const externalLinks = {
   github: "https://github.com/peTomis",
   credly: "https://www.credly.com/users/petomis",

@@ -1,5 +1,5 @@
-import Typography from "@/ui/atoms/typography"
-import style from "./style.module.css"
+// Utils
+import { cn } from "@/utils/cn"
 
 interface Props {
   name: string
@@ -11,77 +11,67 @@ interface Props {
   type?: "text" | "email" | "area"
   autoComplete?: string
   maxLength?: number
-  hidden?: boolean
 }
 
+/** Labelled glass text field (or textarea) with an inline error message. */
 const FormInput = ({
   name,
   error,
   errorMessage,
   label,
-  hidden,
   onChange,
   placeholder,
   type,
   autoComplete,
   maxLength,
 }: Props) => {
-  const isArea = type === "area"
   const id = `contact-${name}`
   const errorId = `${id}-error`
-  const inputClass =
-    "bg-primary-200 bg-opacity-10 placeholder-gray-600  rounded-tr-lg rounded-bl-xl ".concat(
-      error ? style.inputError : style.input
-    )
-  const areaClass =
-    "bg-primary-200 bg-opacity-10 placeholder-gray-600  rounded-tr-lg rounded-bl-xl ".concat(
-      error ? style.areaError : style.area
-    )
+  const fieldProps = {
+    id,
+    name,
+    placeholder,
+    maxLength,
+    required: true,
+    "aria-invalid": error || undefined,
+    "aria-describedby": error ? errorId : undefined,
+    className: cn(
+      "w-full px-[15px] py-[13px] rounded-xl bg-white/[.045] border text-[15px] text-ink placeholder:text-ink-faint shadow-[inset_0_1px_2px_rgba(0,0,0,.25)] outline-none transition-colors duration-[250ms] focus:border-electric/60",
+      error ? "border-red-400/70" : "border-white/[.12]"
+    ),
+  }
 
   return (
-    <div
-      id={`form-input-container-${name}`}
-      className={`flex flex-col w-full  ${
-        hidden ? "opacity-0 select-none" : ""
-      }`}
-    >
-      <label htmlFor={id} id={`form-input-label-${name}`}>
-        <Typography font="montserrat" text={label} light />
+    <div className="flex flex-col w-full">
+      <label
+        htmlFor={id}
+        className="block mb-2 font-mono text-[11px] tracking-[.5px] uppercase text-ink-label"
+      >
+        {label}
       </label>
-      <div className="relative flex w-full w-100%">
-        {isArea ? (
-          <textarea
-            id={id}
-            name={name}
-            className={areaClass}
-            onChange={(e) => onChange(e.target.value)}
-            placeholder={placeholder}
-            required
-            maxLength={maxLength}
-            autoComplete={autoComplete}
-            aria-invalid={error || undefined}
-            aria-describedby={error ? errorId : undefined}
-          />
-        ) : (
-          <input
-            id={id}
-            name={name}
-            className={inputClass}
-            type={type ?? "text"}
-            onChange={(e) => onChange(e.target.value)}
-            placeholder={placeholder}
-            required
-            maxLength={maxLength}
-            autoComplete={autoComplete}
-            aria-invalid={error || undefined}
-            aria-describedby={error ? errorId : undefined}
-          />
-        )}
-      </div>
+      {type === "area" ? (
+        <textarea
+          {...fieldProps}
+          rows={4}
+          className={cn(fieldProps.className, "resize-y")}
+          onChange={(e) => onChange(e.target.value)}
+        />
+      ) : (
+        <input
+          {...fieldProps}
+          type={type ?? "text"}
+          autoComplete={autoComplete}
+          onChange={(e) => onChange(e.target.value)}
+        />
+      )}
       {error && errorMessage && (
-        <div id={errorId} role="alert" className="pt-1 text-small text-red-400">
+        <p
+          id={errorId}
+          role="alert"
+          className="mt-1.5 text-[13px] text-red-400"
+        >
           {errorMessage}
-        </div>
+        </p>
       )}
     </div>
   )

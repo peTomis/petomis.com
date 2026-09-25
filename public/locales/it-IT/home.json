@@ -29,29 +29,25 @@
   },
   "contact": {
     "email": "Email",
-    "emailPlaceholder": "Inserisci la tua email",
+    "emailPlaceholder": "tu@azienda.com",
     "message": "Messaggio",
-    "messagePlaceholder": "Scrivi il tuo messaggio",
+    "messagePlaceholder": "Raccontami il tuo progetto…",
     "name": "Nome",
-    "namePlaceholder": "Inserisci il tuo nome",
-    "submit": "Invia",
+    "namePlaceholder": "Il tuo nome",
+    "submit": "Invia messaggio",
     "sending": "Invio in corso…",
     "submitError": "Qualcosa è andato storto. Riprova o scrivimi direttamente via email.",
-    "thankMailTitle": "Grazie!",
-    "thankMailText": "Risponderò al più presto.",
+    "thankMailTitle": "Messaggio inviato",
+    "thankMailText": "Grazie per avermi scritto: ti risponderò a breve.",
     "title": "Costruiamo qualcosa di",
     "titleAccent": "solido",
     "subtitle": "Hai un progetto, un ruolo o un'idea da realizzare? Scrivimi: leggo tutto e rispondo in fretta.",
-    "mailMe": "Oppure, scrivimi a",
-    "description": {
-      "phrase1": "Se vuoi contattarmi, puoi farlo tramite il form sottostante.",
-      "phrase2": "Ti risponderò il prima possibile."
-    },
     "errors": {
       "name": "Inserisci il tuo nome.",
       "email": "Inserisci un indirizzo email valido.",
       "message": "Scrivi un messaggio."
-    }
+    },
+    "linksLabel": "Altri modi per contattarmi"
   },
   "experience": {
     "tag": {

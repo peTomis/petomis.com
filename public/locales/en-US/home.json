@@ -29,29 +29,25 @@
   },
   "contact": {
     "email": "Email",
-    "emailPlaceholder": "Enter your email",
+    "emailPlaceholder": "you@company.com",
     "message": "Message",
-    "messagePlaceholder": "Enter your message",
+    "messagePlaceholder": "Tell me about your project…",
     "name": "Name",
-    "namePlaceholder": "Enter your name",
-    "submit": "Submit",
+    "namePlaceholder": "Your name",
+    "submit": "Send message",
     "sending": "Sending…",
     "submitError": "Something went wrong. Please try again or email me directly.",
-    "thankMailTitle": "Thank you!",
-    "thankMailText": "Will reply soon",
+    "thankMailTitle": "Message sent",
+    "thankMailText": "Thanks for reaching out — I'll get back to you shortly.",
     "title": "Let's build something",
     "titleAccent": "solid",
     "subtitle": "Have a project, a role, or an idea worth shipping? Drop me a line — I read everything and reply fast.",
-    "mailMe": "Or, email me at",
-    "description": {
-      "phrase1": "Fill the contact form below to get in touch with me.",
-      "phrase2": "I will reply as soon as possible."
-    },
     "errors": {
       "name": "Please enter your name.",
       "email": "Please enter a valid email address.",
       "message": "Please enter a message."
-    }
+    },
+    "linksLabel": "Other ways to reach me"
   },
   "experience": {
     "tag": {

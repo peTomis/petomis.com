@@ -2,20 +2,66 @@
 import React, { useReducer, useState } from "react"
 import { useForm } from "@formspree/react"
 
-// Contact components
-import FormSucceeded from "@/ui/molecules/form-succeeded"
-
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 
+// Config
+import { contactEmail, externalLinks } from "@/config/site"
+
 // Utils
-import { WebsiteSection, sectionNumber } from "@/utils"
+import { WebsiteSection, sectionContainer, sectionNumber } from "@/utils"
+
+// Atoms
+import Button from "@/ui/atoms/button"
+import Reveal from "@/ui/atoms/reveal"
 
 // Molecules
 import SectionHeader from "@/ui/molecules/section-header"
 import FormInput from "@/ui/molecules/form-input"
-import FormContainer from "@/ui/molecules/form-container"
-import FormButton from "./components/FormButton"
+
+// Shows a URL without its scheme ("github.com/peTomis").
+const displayUrl = (url: string) => url.replace(/^https?:\/\/(www\.)?/, "")
+
+const contactLinks = [
+  {
+    href: `mailto:${contactEmail}`,
+    label: contactEmail,
+    external: false,
+    icon: (
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="m3 7 9 6 9-6" />
+      </svg>
+    ),
+  },
+  {
+    href: externalLinks.github,
+    label: displayUrl(externalLinks.github),
+    external: true,
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 .5C5.7.5.6 5.6.6 12c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 .1.8 1.3 2.5 1.7.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.5-1.5 7.8-5.8 7.8-10.8C23.4 5.6 18.3.5 12 .5z" />
+      </svg>
+    ),
+  },
+  {
+    href: externalLinks.linkedin,
+    label: displayUrl(externalLinks.linkedin),
+    external: true,
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z" />
+      </svg>
+    ),
+  },
+]
 
 type State = {
   name: string
@@ -106,80 +152,154 @@ const GetInTouch = () => {
     <section
       id={WebsiteSection.CONTACT}
       aria-labelledby="contact-title"
-      className={`relative flex flex-col items-center pt-16 lg:pb-8 justify-center w-full lg:px-0 mx-auto space-y-8 scroll-mt-24`}
+      className="relative w-full py-16 min-[561px]:py-[90px] font-manrope bg-primary-500 scroll-mt-24"
     >
-      <div className="absolute bottom-0 w-full h-[200px] bg-[#111111]"></div>
-      <SectionHeader
-        index={sectionNumber(WebsiteSection.CONTACT)}
-        label={t("sections.contact")}
-        title={
-          <>
-            {t("contact.title")}{" "}
-            <span className="text-electric">{t("contact.titleAccent")}</span>.
-          </>
-        }
-        titleId="contact-title"
-        description={t("contact.subtitle")}
-        className="z-10 w-full max-w-[800px] px-4 lg:px-0 !mt-0"
-      />
-      <div className="z-10 flex items-center justify-center w-full px-4 lg:px-0">
-        <FormContainer onSubmit={handleSubmit}>
-          <div className="relative">
-            <div className="flex flex-col space-y-4">
-              <input
-                id="contact-company"
-                name="company"
-                type="text"
-                value={honeypot}
-                onChange={(e) => setHoneypot(e.target.value)}
-                tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
-                className="absolute h-px w-px overflow-hidden -left-[9999px]"
-              />
-              <FormInput
-                name="name"
-                error={errors.name}
-                errorMessage={t("contact.errors.name") as string}
-                label={t("contact.name")}
-                onChange={(s) => dispatch({ type: "setName", payload: s })}
-                placeholder={t("contact.namePlaceholder") as string}
-                autoComplete="name"
-                maxLength={100}
-                hidden={formState.succeeded}
-              />
-              <FormInput
-                name="email"
-                error={errors.email}
-                errorMessage={t("contact.errors.email") as string}
-                label={t("contact.email")}
-                onChange={(s) => dispatch({ type: "setEmail", payload: s })}
-                placeholder={t("contact.emailPlaceholder") as string}
-                type="email"
-                autoComplete="email"
-                maxLength={254}
-                hidden={formState.succeeded}
-              />
-              <FormInput
-                name="message"
-                error={errors.message}
-                errorMessage={t("contact.errors.message") as string}
-                label={t("contact.message")}
-                onChange={(s) => dispatch({ type: "setMessage", payload: s })}
-                placeholder={t("contact.messagePlaceholder") as string}
-                type="area"
-                maxLength={2000}
-                hidden={formState.succeeded}
-              />
-              <FormButton
-                hidden={formState.succeeded}
-                submitting={formState.submitting}
-                hasError={formState.errors.length > 0 || submitError}
-              />
-            </div>
-            {formState.succeeded && <FormSucceeded />}
-          </div>
-        </FormContainer>
+      <div className={sectionContainer}>
+        <SectionHeader
+          index={sectionNumber(WebsiteSection.CONTACT)}
+          label={t("sections.contact")}
+        />
+        <div className="grid items-start grid-cols-1 gap-11 min-[901px]:grid-cols-2 min-[901px]:gap-[60px]">
+          <Reveal delay={0.08}>
+            <h2
+              id="contact-title"
+              className="mb-5 font-grotesk font-semibold text-ink text-[length:clamp(30px,4vw,52px)] leading-[1.1] tracking-[-1.5px]"
+            >
+              {t("contact.title")}{" "}
+              <span className="text-electric">{t("contact.titleAccent")}</span>.
+            </h2>
+            <p className="max-w-[380px] mb-[34px] text-[16px] leading-[1.7] text-ink-muted">
+              {t("contact.subtitle")}
+            </p>
+            <ul
+              aria-label={t("contact.linksLabel") as string}
+              className="flex flex-col gap-4"
+            >
+              {contactLinks.map(({ href, label, icon, external }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    {...(external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                    className="inline-flex items-center gap-3.5 text-[16px] text-ink transition-colors duration-[250ms] hover:text-electric"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="inline-flex items-center justify-center w-[42px] h-[42px] rounded-[13px] glass text-electric"
+                    >
+                      {icon}
+                    </span>
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+
+          <Reveal delay={0.16}>
+            <form
+              id="contact-form"
+              onSubmit={handleSubmit}
+              noValidate
+              className="relative p-8 rounded-[26px] glass"
+            >
+              {formState.succeeded ? (
+                <div
+                  role="status"
+                  aria-live="polite"
+                  className="flex flex-col items-center justify-center gap-4 min-h-[300px] text-center"
+                >
+                  <span className="inline-flex items-center justify-center w-[60px] h-[60px] rounded-full bg-electric/[.12] text-electric">
+                    <svg
+                      aria-hidden="true"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                    >
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                  </span>
+                  <h3 className="font-grotesk font-semibold text-[22px] text-ink">
+                    {t("contact.thankMailTitle")}
+                  </h3>
+                  <p className="max-w-[240px] text-[14px] leading-[1.6] text-ink-muted">
+                    {t("contact.thankMailText")}
+                  </p>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-[18px]">
+                  <input
+                    id="contact-company"
+                    name="company"
+                    type="text"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="absolute h-px w-px overflow-hidden -left-[9999px]"
+                  />
+                  <FormInput
+                    name="name"
+                    error={errors.name}
+                    errorMessage={t("contact.errors.name") as string}
+                    label={t("contact.name")}
+                    onChange={(s) => dispatch({ type: "setName", payload: s })}
+                    placeholder={t("contact.namePlaceholder") as string}
+                    autoComplete="name"
+                    maxLength={100}
+                  />
+                  <FormInput
+                    name="email"
+                    error={errors.email}
+                    errorMessage={t("contact.errors.email") as string}
+                    label={t("contact.email")}
+                    onChange={(s) => dispatch({ type: "setEmail", payload: s })}
+                    placeholder={t("contact.emailPlaceholder") as string}
+                    type="email"
+                    autoComplete="email"
+                    maxLength={254}
+                  />
+                  <FormInput
+                    name="message"
+                    error={errors.message}
+                    errorMessage={t("contact.errors.message") as string}
+                    label={t("contact.message")}
+                    onChange={(s) =>
+                      dispatch({ type: "setMessage", payload: s })
+                    }
+                    placeholder={t("contact.messagePlaceholder") as string}
+                    type="area"
+                    maxLength={2000}
+                  />
+                  <Button
+                    type="submit"
+                    disabled={formState.submitting}
+                    size="sm"
+                    className="self-end mt-2"
+                  >
+                    {t("contact.submit")}
+                  </Button>
+                  <p
+                    role="status"
+                    aria-live="polite"
+                    className="empty:hidden -mt-1 text-right text-[13px] text-ink-muted"
+                  >
+                    {formState.submitting
+                      ? t("contact.sending")
+                      : formState.errors.length > 0 || submitError
+                        ? t("contact.submitError")
+                        : ""}
+                  </p>
+                </div>
+              )}
+            </form>
+          </Reveal>
+        </div>
       </div>
     </section>
   )
