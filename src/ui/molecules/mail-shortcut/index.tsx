@@ -1,9 +1,6 @@
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
 
-// Icons
-import Mail from "@/ui/icons/mail"
-
 interface Props {
   onClick: () => void
 }
@@ -16,14 +13,20 @@ const MailShortcut = ({ onClick }: Props) => {
       type="button"
       onClick={onClick}
       aria-label={t("redirects.contact")}
-      className="fixed border-[0.4px] border-primary-100 flex justify-center items-center z-10 bottom-[16px] right-[16px] w-[64px] h-[64px] rounded-tr-3xl rounded-bl-3xl bg-primary-500 xl:backdrop-blur-sm  bg-opacity-60 hover:bg-primary text-white"
-      style={{
-        boxShadow: "inset 0 0 10px rgba(0, 113, 156, 0.8)",
-      }}
+      className="fixed z-[55] bottom-[18px] right-[18px] min-[561px]:bottom-[26px] min-[561px]:right-[26px] inline-flex items-center justify-center w-[54px] h-[54px] rounded-[14px] bg-electric text-electric-ink shadow-[0_10px_34px_rgba(30,167,255,.45)] transition-transform duration-[250ms] hover:-translate-y-[3px] hover:scale-[1.04]"
     >
-      <div className="flex w-10 h-10 fill-white">
-        <Mail />
-      </div>
+      <svg
+        aria-hidden="true"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="m3 7 9 6 9-6" />
+      </svg>
     </button>
   )
 }

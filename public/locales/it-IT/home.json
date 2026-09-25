@@ -57,13 +57,16 @@
     "descriptionPlaceholder": "Placeholder per un progetto di nome Progetto "
   },
   "redirects": {
-    "experience": "Competenze",
-    "projects": "Progetti",
     "contact": "Contattami"
   },
   "welcome": {
     "job": "Software Engineer",
-    "name": "Giuseppe Tomis"
+    "name": "Giuseppe Tomis",
+    "status": "disponibile per nuovi progetti",
+    "bio": "Progetto e sviluppo sistemi cloud-native affidabili — dall'infrastruttura e le API fino alle interfacce che le persone usano davvero. Certificato AWS e Kubernetes, concentrato su software che scala.",
+    "viewWork": "Guarda i miei lavori",
+    "getInTouch": "Contattami",
+    "scroll": "SCORRI"
   },
   "work": {
     "title": "Carriera",

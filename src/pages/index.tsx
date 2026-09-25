@@ -55,6 +55,7 @@ const Home: NextPage = () => {
           sizes="180x180"
           href="/apple-touch-icon.png"
         />
+        <meta name="theme-color" content="#060a12" />
         <meta name="apple-mobile-web-app-title" content="peTomis" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>

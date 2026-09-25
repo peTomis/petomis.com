@@ -21,21 +21,15 @@ module.exports = {
         "bricks-pattern": "url('/images/bricks.svg')",
       },
       animation: {
-        carousel: "carousel 40s linear infinite",
-        smallCarousel: "carousel 80s linear infinite",
         scaleUp: "scale-up 300ms ease-out forwards",
         fade: "fade 1.5s ease-in-out",
-        "spin-slow": "spin 10s linear infinite",
+        "float-y": "float-y 8s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 2.4s infinite",
+        "scroll-cue": "scroll-cue 1.8s infinite",
+        blink: "blink 1.1s steps(1) infinite",
+        reveal: "reveal 0.8s cubic-bezier(.2,.7,.2,1) both",
       },
       keyframes: {
-        carousel: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(calc(-250px * 8))" },
-        },
-        smallCarousel: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(calc(-180px * 8))" },
-        },
         "scale-up": {
           "0%": { transform: "scale(0)" },
           "100%": { transform: "scale(1)" },
@@ -46,10 +40,49 @@ module.exports = {
           "70%": { opacity: 1 },
           "100%": { opacity: 0 },
         },
+        "float-y": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-14px)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(30,167,255,.5)" },
+          "70%": { boxShadow: "0 0 0 18px rgba(30,167,255,0)" },
+        },
+        "scroll-cue": {
+          "0%": { transform: "translateY(0)", opacity: 0 },
+          "30%, 60%": { opacity: 1 },
+          "100%": { transform: "translateY(10px)", opacity: 0 },
+        },
+        blink: {
+          "0%, 49%": { opacity: 1 },
+          "50%, 100%": { opacity: 0 },
+        },
+        reveal: {
+          "0%": { opacity: 0, transform: "translateY(28px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
       },
       colors: {
         background: {
           DEFAULT: "#1f1f1f",
+        },
+        night: {
+          DEFAULT: "#060a12",
+          terminal: "#0a1119",
+        },
+        electric: {
+          DEFAULT: "#1ea7ff",
+          light: "#7fd1ff",
+          deep: "#0a4f80",
+          ink: "#04111d",
+        },
+        ink: {
+          DEFAULT: "#eaf1fb",
+          secondary: "#c4d2e6",
+          label: "#9fb2cc",
+          muted: "#8b9bb4",
+          faint: "#647a98",
+          fainter: "#3f536e",
         },
         competitionScreen: {
           DEFAULT: "#3E3E3E",
@@ -92,6 +125,9 @@ module.exports = {
       orbitron: ["Orbitron", "sans-serif"],
       montserrat: ["Montserrat", "sans-serif"],
       roboto: ["Roboto", "sans-serif"],
+      grotesk: ["Space Grotesk", "sans-serif"],
+      manrope: ["Manrope", "system-ui", "sans-serif"],
+      mono: ["JetBrains Mono", "monospace"],
     },
     fontSize: {
       name: "36px",

@@ -45,11 +45,9 @@ const FormButton = ({ hidden, submitting, hasError }: Props) => {
               ? t("contact.submitError")
               : ""}
         </div>
-        <Button
-          type="submit"
-          label={t("contact.submit")}
-          disabled={submitting}
-        />
+        <Button type="submit" disabled={submitting}>
+          {t("contact.submit")}
+        </Button>
       </div>
     </div>
   )

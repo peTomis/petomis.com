@@ -1,42 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Orbitron:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Orbitron:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* The page background lives on <html> only: a background on <body> as well
+   would paint over the fixed z-index:-1 background layers. */
+html {
+  background-color: #060a12;
+}
+
 body {
-  color: rgb(255, 254, 252);
-  background-color: #000;
+  color: #eaf1fb;
+  -webkit-font-smoothing: antialiased;
 }
 
-@media (min-width: 769px) {
-  body {
-    background-image: linear-gradient(
-      to bottom right,
-      var(--tw-gradient-stops)
-    );
-    --tw-gradient-from: #000 var(--tw-gradient-from-position);
-    --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-    --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from),
-      #000 var(--tw-gradient-via-position), var(--tw-gradient-to);
-    --tw-gradient-to: #1f3343 var(--tw-gradient-to-position);
-    position: relative;
-  }
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 120vh;
-  z-index: -1;
-  background-color: black;
-  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
-  background-blend-mode: normal;
+::selection {
+  background: rgba(30, 167, 255, 0.3);
+  color: #fff;
 }
 
 @layer base {
@@ -44,5 +25,15 @@ body::before {
     outline: 2px solid #00b8ff;
     outline-offset: 2px;
     border-radius: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
