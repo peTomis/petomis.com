@@ -11,8 +11,11 @@ export const WebsiteSection = {
 
 export type WebsiteSection = (typeof WebsiteSection)[keyof typeof WebsiteSection]
 
-/** Numbered sections in page order; drives the "01 / about" section labels. */
-const NUMBERED_SECTIONS: WebsiteSection[] = [
+/**
+ * Numbered sections in page order; drives the "01 / about" section labels
+ * and the top bar's section links.
+ */
+export const NUMBERED_SECTIONS: WebsiteSection[] = [
   WebsiteSection.ABOUT,
   WebsiteSection.EXPERIENCE,
   WebsiteSection.PROJECTS,

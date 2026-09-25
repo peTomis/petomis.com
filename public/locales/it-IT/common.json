@@ -12,7 +12,8 @@
     "credly": "Profilo Credly"
   },
   "nav": {
-    "social": "Collegamenti social"
+    "social": "Collegamenti social",
+    "sections": "Sezioni"
   },
   "language": {
     "current": "Lingua: {{name}}"
