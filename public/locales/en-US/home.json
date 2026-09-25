@@ -21,7 +21,11 @@
   },
   "certifications": {
     "title": "Certifications",
-    "description": "Verified credentials, coming soon."
+    "description": "Verified, current, and earned the hard way. Each badge links to its public credential.",
+    "verified": "VERIFIED",
+    "issued": "Issued {{year}}",
+    "verify": "Verify",
+    "verifyLabel": "Verify {{name}} credential"
   },
   "contact": {
     "email": "Email",

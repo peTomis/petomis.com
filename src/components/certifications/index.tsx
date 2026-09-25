@@ -1,5 +1,14 @@
+// Components
+import CertificationCard from "./components/certification-card"
+
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
+
+// Data
+import { certifications } from "@/data/certifications"
+
+// Atoms
+import Reveal from "@/ui/atoms/reveal"
 
 // Molecules
 import SectionHeader from "@/ui/molecules/section-header"
@@ -7,58 +16,33 @@ import SectionHeader from "@/ui/molecules/section-header"
 // Utils
 import { WebsiteSection, sectionContainer, sectionNumber } from "@/utils"
 
-// Icons
-import Medal from "@/ui/icons/medal"
-import WorkInProgressIcon from "@/ui/icons/work-in-progress"
-
 const Certifications = () => {
   const { t } = useTranslations("home")
+
   return (
     <section
       id={WebsiteSection.EXPERIENCE}
       aria-labelledby="experience-title"
-      className={
-        "relative py-24 overflow-hidden flex flex-col bg-gradient-to-bl from-primary-100 via-primary-100 to-primary-200 lg:mx-auto w-full justify-center items-center lg:items-center lg:justify-start scroll-mt-24"
-      }
+      className="relative w-full my-12 min-[561px]:my-20 py-16 min-[561px]:py-[90px] font-manrope scroll-mt-24 bg-gradient-to-bl from-primary-100 via-primary-100 to-primary-200"
     >
-      <div className="absolute flex items-end justify-end -right-10 -top-[70px] w-full">
-        <div className="flex items-end justify-end w-full max-w-[1600px] mr-auto ">
-          <div className=" w-72 h-72 fill-primary-200">
-            <Medal />
-          </div>
-        </div>
-      </div>
-      <div className="absolute flex w-full">
-        <div className="flex items-center justify-center w-full pt-40 md:pt-[100px]">
-          <WorkInProgressIcon />
-        </div>
-      </div>
-      <SectionHeader
-        index={sectionNumber(WebsiteSection.EXPERIENCE)}
-        label={t("sections.skills")}
-        title={t("certifications.title")}
-        titleId="experience-title"
-        description={t("certifications.description")}
-        tone="onAccent"
-        className={`z-10 ${sectionContainer}`}
-      />
-
-      <div className="flex flex-row pt-16 space-x-4">
-        <div className="flex justify-center items-center w-[100px] h-[100px] rounded-full bg-primary-200">
-          <div className="flex justify-center items-center w-[94px] h-[94px] rounded-full bg-primary-100">
-            <div className="flex justify-center items-center w-[90px] h-[90px] rounded-full bg-primary-200"></div>
-          </div>
-        </div>
-        <div className="flex justify-center items-center w-[100px] h-[100px] rounded-full bg-primary-200">
-          <div className="flex justify-center items-center w-[94px] h-[94px] rounded-full bg-primary-100">
-            <div className="flex justify-center items-center w-[90px] h-[90px] rounded-full bg-primary-200"></div>
-          </div>
-        </div>
-        <div className="flex justify-center items-center w-[100px] h-[100px] rounded-full bg-primary-200">
-          <div className="flex justify-center items-center w-[94px] h-[94px] rounded-full bg-primary-100">
-            <div className="flex justify-center items-center w-[90px] h-[90px] rounded-full bg-primary-200"></div>
-          </div>
-        </div>
+      <div className={sectionContainer}>
+        <SectionHeader
+          index={sectionNumber(WebsiteSection.EXPERIENCE)}
+          label={t("sections.skills")}
+          title={t("certifications.title")}
+          titleId="experience-title"
+          description={t("certifications.description")}
+          tone="onAccent"
+        />
+        <ul className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-7">
+          {certifications.map((certification, index) => (
+            <li key={certification.code}>
+              <Reveal delay={index * 0.08} className="h-full">
+                <CertificationCard {...certification} />
+              </Reveal>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )

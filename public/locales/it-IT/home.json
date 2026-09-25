@@ -21,7 +21,11 @@
   },
   "certifications": {
     "title": "Certificazioni",
-    "description": "Credenziali verificate, in arrivo."
+    "description": "Verificate, aggiornate e guadagnate sul campo. Ogni badge rimanda alla sua credenziale pubblica.",
+    "verified": "VERIFICATA",
+    "issued": "Rilasciata nel {{year}}",
+    "verify": "Verifica",
+    "verifyLabel": "Verifica la credenziale {{name}}"
   },
   "contact": {
     "email": "Email",
