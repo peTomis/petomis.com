@@ -69,7 +69,7 @@ const ProjectCard = ({ project, index, onOpenDetails }: Props) => {
           alt=""
           fill
           sizes="(max-width: 900px) 100vw, 400px"
-          className="object-cover opacity-25 transition-transform duration-500 group-hover:scale-105"
+          className="object-cover transition-transform duration-500 opacity-25 group-hover:scale-105"
         />
         {/* Brand colour under the logo, fading to near-black behind the text */}
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0,transparent_125px,rgba(6,10,18,.82)_210px,rgba(6,10,18,.92)_100%)]" />
@@ -96,7 +96,10 @@ const ProjectCard = ({ project, index, onOpenDetails }: Props) => {
           <p className="mb-3 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-[13px] leading-relaxed text-ink-label">
             <span className="font-semibold">{project.role}</span>
             {project.period && (
-              <span><span aria-hidden="true">· </span>{project.period}</span>
+              <span>
+                <span aria-hidden="true">· </span>
+                {project.period}
+              </span>
             )}
           </p>
         )}
@@ -145,7 +148,7 @@ const ProjectCard = ({ project, index, onOpenDetails }: Props) => {
             </p>
           )}
 
-          <div className="relative z-[1] flex gap-[18px]">
+          <div className="relative z-[1] flex flex-wrap gap-[18px]">
             {employee && (
               <button
                 type="button"
@@ -171,6 +174,20 @@ const ProjectCard = ({ project, index, onOpenDetails }: Props) => {
                   <path d="M12 5v14M5 12h14" />
                 </svg>
               </button>
+            )}
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${name} — GitHub`}
+                className="inline-flex items-center gap-[7px] text-[13px] font-semibold text-ink transition-colors duration-[250ms] hover:text-electric"
+              >
+                <span aria-hidden="true" className="w-4 h-4 fill-current">
+                  <GitHub />
+                </span>
+                GitHub
+              </a>
             )}
             <a
               href={website}

@@ -9,7 +9,7 @@ import { ProjectColor } from "@/data/projectColors"
 
 // Company / tech icons
 import MetchLogo from "@/ui/icons/companies/metch"
-import Inventory2 from "@/ui/icons/inventory-2"
+import CollectionManagerLogo from "@/ui/icons/companies/collection-manager"
 import Aws from "@/ui/icons/programming/Aws"
 import Flutter from "@/ui/icons/programming/Flutter"
 import Docker from "@/ui/icons/programming/Docker"
@@ -30,7 +30,7 @@ import Xcode from "@/ui/icons/programming/Xcode"
 
 // Images
 import metchImage from "@public/images/metch-bg.png"
-import collectionManagerImage from "@public/images/151.jpeg"
+import collectionManagerImage from "@public/images/collection-manager-bg.jpg"
 import anubidigitalBg from "@public/images/anubidigital-bg.png"
 import anubidigitalLogo from "@public/images/anubidigital-logo.svg"
 import anubidigitalLogoBlack from "@public/images/anubidigital-logo-black.svg"
@@ -71,6 +71,7 @@ export interface Project {
   color: ProjectColor
   tasks?: ProjectTask[]
   website: string
+  github?: string
   /** A job (vs a personal project): the card opens the details modal. */
   employee?: boolean
   tools?: ProjectTool[]
@@ -89,6 +90,7 @@ export interface ProjectStatic {
   logo?: JSX.Element
   color: ProjectColor
   website: string
+  github?: string
   collaborators: ProjectCollaborator[]
   /** i18n key (namespace: "jobs") for the short card description. */
   roleKey?: string
@@ -166,18 +168,10 @@ const tools = {
 const collectionManager: ProjectStatic = {
   name: "Collection Manager",
   background: collectionManagerImage,
-  title: (
-    <div className="flex flex-col w-full">
-      <div className="flex justify-center">
-        <Inventory2 />
-      </div>
-      <div className="font-bold text-center font-orbitron text-h6">
-        Collection Manager
-      </div>
-    </div>
-  ),
-  color: ProjectColor.BLUE,
+  title: <CollectionManagerLogo size={48} tone="dark" />,
+  color: ProjectColor.COLLECTION_MANAGER,
   website: projectWebsites.collectionManager,
+  github: "https://github.com/peTomis/collection-manager",
   collaborators: [],
   descriptionKey: "projects.collectionmanager.description",
   sentenceKeys: [],

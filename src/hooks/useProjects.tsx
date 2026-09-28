@@ -32,6 +32,7 @@ export function useProjects(): Project[] {
       logo: project.logo,
       color: project.color,
       website: project.website,
+      github: project.github,
       collaborators: project.collaborators,
       tools: project.tools,
       employee: project.employee,
