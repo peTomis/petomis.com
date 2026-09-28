@@ -16,12 +16,16 @@ import emailBlu from "@public/images/mail_blu.png"
 import logo from "@public/images/logo.png"
 import pienissimoLogoBlu from "@public/images/pienissimo_logo_blu.png"
 import Image from "next/image"
+import Head from "next/head"
 
 import { NextPage } from "next"
 
 const ProfilePicture: NextPage = () => {
   return (
     <>
+      <Head>
+        <meta name="robots" content="noindex" />
+      </Head>
       <Image
         src={image}
         alt="Profile picture"
