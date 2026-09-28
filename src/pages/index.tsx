@@ -4,6 +4,9 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import { useTranslations } from "@/hooks/useTranslations"
 import HomeContainer from "@/containers/home"
+import { contactEmail, externalLinks } from "@/config/site"
+
+const siteUrl = "https://www.petomis.com/"
 
 const Home: NextPage = () => {
   const { t } = useTranslations("home")
@@ -12,6 +15,31 @@ const Home: NextPage = () => {
   const canonicalUrl = `https://www.petomis.com${isItalian ? "/it-IT" : "/"}`
   const title = t("title")
   const description = t("description")
+  // Structured data so search engines can tie the name to the site and profiles
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${siteUrl}#person`,
+        name: t("welcome.name"),
+        jobTitle: t("welcome.job"),
+        description,
+        url: siteUrl,
+        image: `${siteUrl}images/me.png`,
+        email: `mailto:${contactEmail}`,
+        sameAs: Object.values(externalLinks),
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}#website`,
+        name: "Petomis",
+        url: siteUrl,
+        inLanguage: locale ?? "en-US",
+        publisher: { "@id": `${siteUrl}#person` },
+      },
+    ],
+  }
   return (
     <div>
       <Head>
@@ -66,6 +94,10 @@ const Home: NextPage = () => {
         <meta name="theme-color" content="#060a12" />
         <meta name="apple-mobile-web-app-title" content="peTomis" />
         <link rel="manifest" href="/site.webmanifest" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </Head>
 
       <HomeContainer />
