@@ -46,8 +46,9 @@ const Home: NextPage = () => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={canonicalUrl} />
-        <link rel="alternate" hrefLang="en-US" href="https://www.petomis.com/" />
-        <link rel="alternate" hrefLang="it-IT" href="https://www.petomis.com/it-IT" />
+        {/* Language-only codes: "it-IT" would target Italy, so English searches from Italy got the Italian page */}
+        <link rel="alternate" hrefLang="en" href="https://www.petomis.com/" />
+        <link rel="alternate" hrefLang="it" href="https://www.petomis.com/it-IT" />
         <link rel="alternate" hrefLang="x-default" href="https://www.petomis.com/" />
         {/* Open Graph metadata */}
         <meta property="og:title" content={title} />
