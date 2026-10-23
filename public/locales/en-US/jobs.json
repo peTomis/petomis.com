@@ -93,8 +93,8 @@
     "anubidigital": {
       "description": "Italian pioneers of the web3 sector, born as institutional custody of digital assets and later specialised in B2B software for fintech."
     },
-    "collectionmanager": {
-      "description": "A personal project that allows me to track prices and analyze store data of my collection of cards and other collectibles."
+    "binderly": {
+      "description": "A web app for tracking the value of Pokémon card collections at European market prices. Prices refresh daily under a capped request budget, prioritized by card value, and an offline mode keeps collection and prices available at card fairs where mobile data fails."
     },
     "metch": {
       "description": "The game Changer! Match is a platform that aims to make the process of finding talents and teams in the gaming sector simple and efficient."

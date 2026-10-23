@@ -18,6 +18,6 @@ export const externalLinks = {
 export const projectWebsites = {
   anubidigital: "https://www.anubidigital.com",
   metch: "https://app.metch.gg",
-  collectionManager: "https://collection-manager-lac.vercel.app",
+  binderly: "https://binderly.petomis.com",
   pienissimo: "https://pienissimo.com",
 } as const

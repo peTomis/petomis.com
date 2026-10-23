@@ -9,7 +9,7 @@ import { ProjectColor } from "@/data/projectColors"
 
 // Company / tech icons
 import MetchLogo from "@/ui/icons/companies/metch"
-import CollectionManagerLogo from "@/ui/icons/companies/collection-manager"
+import BinderlyLogo from "@/ui/icons/companies/binderly"
 import Aws from "@/ui/icons/programming/Aws"
 import Flutter from "@/ui/icons/programming/Flutter"
 import Docker from "@/ui/icons/programming/Docker"
@@ -30,7 +30,7 @@ import Xcode from "@/ui/icons/programming/Xcode"
 
 // Images
 import metchImage from "@public/images/metch-bg.png"
-import collectionManagerImage from "@public/images/collection-manager-bg.jpg"
+import binderlyImage from "@public/images/binderly-bg.jpg"
 import anubidigitalBg from "@public/images/anubidigital-bg.png"
 import anubidigitalLogo from "@public/images/anubidigital-logo.svg"
 import anubidigitalLogoBlack from "@public/images/anubidigital-logo-black.svg"
@@ -165,17 +165,18 @@ const tools = {
   },
 } satisfies Record<string, ProjectTool>
 
-const collectionManager: ProjectStatic = {
-  name: "Collection Manager",
-  background: collectionManagerImage,
-  title: <CollectionManagerLogo size={48} tone="dark" />,
-  color: ProjectColor.COLLECTION_MANAGER,
-  website: projectWebsites.collectionManager,
+const binderly: ProjectStatic = {
+  name: "Binderly",
+  background: binderlyImage,
+  title: <BinderlyLogo size={48} tone="dark" />,
+  color: ProjectColor.BINDERLY,
+  website: projectWebsites.binderly,
   github: "https://github.com/peTomis/collection-manager",
   collaborators: [],
-  descriptionKey: "projects.collectionmanager.description",
+  descriptionKey: "projects.binderly.description",
   sentenceKeys: [],
   taskKeys: [],
+  tools: [tools.nextjs, tools.mongodb],
 }
 
 const pienissimo: ProjectStatic = {
@@ -233,6 +234,7 @@ const metch: ProjectStatic = {
   descriptionKey: "projects.metch.description",
   sentenceKeys: [],
   taskKeys: [],
+  tools: [tools.nextjs, tools.react],
 }
 
 const anubidigital: ProjectStatic = {
@@ -296,5 +298,5 @@ export const projectsData: ProjectStatic[] = [
   pienissimo,
   anubidigital,
   metch,
-  collectionManager,
+  binderly,
 ]
