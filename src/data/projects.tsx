@@ -297,6 +297,6 @@ const anubidigital: ProjectStatic = {
 export const projectsData: ProjectStatic[] = [
   pienissimo,
   anubidigital,
-  metch,
   binderly,
+  metch,
 ]
