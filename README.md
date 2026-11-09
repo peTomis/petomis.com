@@ -43,3 +43,16 @@ For production, use `yarn build` followed by `yarn start`.
 - `src/config/site.ts`: contact address, profile links, and project URLs.
 - `src/components/contact/index.tsx`: contact form and Formspree integration.
 - `src/pages/index.tsx`: homepage metadata and static translation loading.
+
+## Contact form spam protection
+
+The form forwards its hidden `_gotcha` field to Formspree, which silently ignores
+submissions when this field is filled. Browser validation and length limits are
+usability checks; direct requests can bypass them, and a honeypot alone does not
+stop bots that omit the field.
+
+Before deployment, verify the settings for form `xbjvjwln` in the Formspree
+dashboard: keep server-verified CAPTCHA/spam protection enabled and configure
+the allowed production domain. These account settings cannot be verified from
+this repository. Domain restrictions are an additional filter, not authentication.
+See the [Formspree honeypot documentation](https://help.formspree.io/articles/building-your-form/honeypot-spam-filtering/).

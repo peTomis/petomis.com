@@ -121,11 +121,6 @@ const GetInTouch = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    // Honeypot: real users never fill this hidden field, bots often do.
-    if (honeypot) {
-      return
-    }
-
     const newErrors = {
       name: !isValidName(name),
       email: !isValidEmail(email),
@@ -138,7 +133,12 @@ const GetInTouch = () => {
 
     setSubmitError(false)
     try {
-      await submitEmail({ email, message: "[" + name + "]" + message })
+      // Forward the honeypot so Formspree can filter submissions server-side.
+      await submitEmail({
+        email,
+        message: "[" + name + "]" + message,
+        _gotcha: honeypot,
+      })
     } catch {
       setSubmitError(true)
     }
@@ -230,7 +230,7 @@ const GetInTouch = () => {
                 <div className="flex flex-col gap-[18px]">
                   <input
                     id="contact-company"
-                    name="company"
+                    name="_gotcha"
                     type="text"
                     value={honeypot}
                     onChange={(e) => setHoneypot(e.target.value)}
