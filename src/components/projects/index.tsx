@@ -27,9 +27,6 @@ const Projects = () => {
   >(undefined)
   const projects = useProjects()
   const { t } = useTranslations("home")
-  // The details modal is a sibling rather than a replacement, so the cards
-  // go inert while it's open to keep them out of tab order behind it.
-  const isModalOpen = employeeExperience !== undefined
 
   return (
     <section
@@ -48,8 +45,6 @@ const Projects = () => {
       />
       <ul
         className="grid grid-cols-[repeat(auto-fit,minmax(min(330px,100%),1fr))] auto-rows-fr gap-7"
-        aria-hidden={isModalOpen}
-        inert={isModalOpen}
       >
         {projects.map((project, index) => (
           <li key={project.name}>

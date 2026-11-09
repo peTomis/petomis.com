@@ -34,6 +34,12 @@ Available checks: `yarn type-check`, `yarn lint`, `yarn test`, and `yarn ts-prun
 
 For production, use `yarn build` followed by `yarn start`.
 
+Browser regression tests for the project details dialog run with
+`yarn test:browser` after a production build. Install the test browser once with
+`yarn playwright install chromium`. The tests start their own server on port 3100
+and cover keyboard focus, background isolation, dismissal and scroll restoration
+at desktop and mobile viewport sizes.
+
 ## Content and configuration
 
 - `src/containers/home/index.tsx`: homepage sections and their order.
