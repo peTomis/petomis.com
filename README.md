@@ -56,3 +56,17 @@ dashboard: keep server-verified CAPTCHA/spam protection enabled and configure
 the allowed production domain. These account settings cannot be verified from
 this repository. Domain restrictions are an additional filter, not authentication.
 See the [Formspree honeypot documentation](https://help.formspree.io/articles/building-your-form/honeypot-spam-filtering/).
+
+## Security headers
+
+`customHttp.yml` applies security headers at the Amplify CDN; `next.config.mjs`
+applies the same production values when running Next.js directly. Keep them aligned.
+The CSP permits same-origin scripts, Google Fonts and AJAX requests to Formspree.
+Inline styles are allowed for animations, but inline executable scripts and framing
+are blocked. If an embedded CAPTCHA is added, explicitly allow its required
+script, frame and connection origins before enabling it.
+
+HSTS applies for one year to this host only (no `includeSubDomains` or preload).
+Development omits HSTS/HTTPS upgrades and permits the tooling's eval and WebSocket
+connections. After deployment, verify response headers on `/`, `/it-IT`, a 404
+and static assets, and check the browser console and contact form for CSP errors.

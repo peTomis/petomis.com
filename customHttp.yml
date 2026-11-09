@@ -3,6 +3,19 @@
 # assets and optimized images have content-hashed URLs, so they can be cached
 # for a year; a new build produces new URLs.
 customHeaders:
+  # Keep these values aligned with next.config.mjs for non-Amplify hosting.
+  - pattern: '**'
+    headers:
+      - key: 'Content-Security-Policy'
+        value: "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+      - key: 'X-Frame-Options'
+        value: 'DENY'
+      - key: 'X-Content-Type-Options'
+        value: 'nosniff'
+      - key: 'Strict-Transport-Security'
+        value: 'max-age=31536000'
+      - key: 'Referrer-Policy'
+        value: 'strict-origin-when-cross-origin'
   - pattern: '/_next/static/**/*'
     headers:
       - key: 'Cache-Control'
