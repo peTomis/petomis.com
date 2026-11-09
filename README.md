@@ -1,25 +1,45 @@
-# My personal website
+# petomis.com
 
-This is the repository for my personal website built with [Next.js](https://nextjs.org/).
+Giuseppe Tomis’s personal portfolio, built with Next.js, React, TypeScript, and Tailwind CSS.
+Features a responsive project grid, work experience details, and an animated terminal interface.
+Available in English and Italian, with a Formspree contact form and links to professional profiles.
 
-## Table of Contents
+## Features
 
-1. [About the Project](#about-the-project)
-   - [Built With](#built-with)
+- **Introduction and background:** a hero with an animated terminal, a short professional introduction, and an About section with summary statistics.
+- **Selected work:** a responsive grid of project cards with descriptions, technology tags, collaborators, and website or GitHub links where available. The current selection includes Binderly, Pienissimo, Metch, and Anubi Digital.
+- **Work experience details:** employment cards open a modal with the role, period, responsibilities, and technology stack. The dialog supports keyboard navigation, Escape to close, and focus restoration.
+- **English and Italian:** translated page content and project descriptions, a language switch, localized routes, and a language preference saved in the browser.
+- **Contact:** a Formspree form with name, email, and message validation, a spam honeypot, and submission feedback, alongside email, GitHub, and LinkedIn links.
+- **Visual design:** a dark interface with glass effects, blue accents, a canvas particle background, animated terminal typing, text effects, and scroll reveals. The terminal, particle field, and scrambled text account for reduced-motion preferences.
+- **Search and sharing metadata:** localized titles and descriptions, canonical and alternate language links, Open Graph and Twitter cards, and Person/WebSite structured data.
 
-## About The Project
+The homepage renders Hero, About, Projects, and Contact sections. Certification components and placeholder data exist in the repository but are not currently rendered on the homepage.
 
-The website is a single-page application that provides an overview of my skills, experience, and projects. It's designed to be simple, fast, and provide a snapshot of my work and capabilities in a clean, easy-to-understand format.
+## Stack
 
-The main features of the website include:
+- Next.js (Pages Router), React, and TypeScript
+- Tailwind CSS
+- i18next and react-i18next for translations
+- Formspree for contact form submissions
 
-- **Portfolio Carousel**: A carousel showcasing my best work. Each slide includes a brief description of the project and a link to either a live version or the project's source code (when available).
+## Development
 
-- **Contact Form**: A simple contact form that allows visitors to send me a message directly from the website. It includes fields for their name, email address, and their message. Upon submission, the form data is sent to my email.
+```bash
+yarn install
+yarn dev
+```
 
-- **Responsive Design**: The website is designed to work across a range of devices, from mobile phones to desktop computers, ensuring all visitors have a high-quality experience.
+Available checks: `yarn type-check`, `yarn lint`, `yarn test`, and `yarn ts-prune`. `yarn ci` runs them in sequence.
 
-### Built With
+For production, use `yarn build` followed by `yarn start`.
 
-- [Next.js](https://nextjs.org/)
-- [React](https://reactjs.org/)
+## Content and configuration
+
+- `src/containers/home/index.tsx`: homepage sections and their order.
+- `src/data/projects.tsx`: projects, technologies, collaborators, and translation keys.
+- `src/data/about.ts`: About section statistics.
+- `public/locales/en-US/` and `public/locales/it-IT/`: translated interface text and project descriptions.
+- `src/config/site.ts`: contact address, profile links, and project URLs.
+- `src/components/contact/index.tsx`: contact form and Formspree integration.
+- `src/pages/index.tsx`: homepage metadata and static translation loading.
