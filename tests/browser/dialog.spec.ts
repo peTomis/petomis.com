@@ -69,3 +69,31 @@ test("parent updates do not reset focus in the open dialog", async ({ page }) =>
   await expect(link).toBeFocused()
   await expect(dialog).toBeVisible()
 })
+
+test("open project details follow locale changes without losing selection", async ({ page }) => {
+  await page.goto("/")
+  await page.getByRole("button", { name: "Show details about Pienissimo", exact: true }).click()
+  const dialog = page.getByRole("dialog", { name: "Pienissimo", exact: true })
+  await expect(dialog.getByRole("heading", { name: "Multi-tenant booking engine", exact: true })).toBeVisible()
+
+  // The language picker is correctly inert while a modal is open. Simulate
+  // a client-side locale navigation using the existing Next.js router instead.
+  await page.evaluate(async () => {
+    const { next } = window as unknown as {
+      next: { router: { replace: (
+        _url: string, _as: string, _options: { locale: string; scroll: boolean }
+      ) => Promise<boolean> } }
+    }
+    await next.router.replace("/", "/", { locale: "it-IT", scroll: false })
+  })
+
+  await expect(page).toHaveURL(/\/it-IT$/)
+  await expect(dialog).toBeVisible()
+  await expect(dialog.getByRole("heading", { name: "Motore di prenotazione multi-tenant", exact: true })).toBeVisible()
+  await expect(dialog.getByRole("heading", { name: "Multi-tenant booking engine", exact: true })).toHaveCount(0)
+  await page.keyboard.press("Escape")
+  await expect(dialog).toHaveCount(0)
+  // Closing clears the ID, so a subsequent selection opens a different project.
+  await page.getByRole("button", { name: /Anubi Digital/ }).click()
+  await expect(page.getByRole("dialog", { name: "Anubi Digital", exact: true })).toBeVisible()
+})

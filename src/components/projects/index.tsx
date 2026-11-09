@@ -6,7 +6,7 @@ import ProjectCard from "./components/project-card"
 
 // Hooks
 import { useTranslations } from "@/hooks/useTranslations"
-import { Project, useProjects } from "@/hooks/useProjects"
+import { type Project, useProjects } from "@/hooks/useProjects"
 
 // Organisms
 import EmployeeDetails from "@/ui/organisms/employee-details"
@@ -22,10 +22,12 @@ import { WebsiteSection, sectionContainer, sectionNumber } from "@/utils"
 import { cn } from "@/utils/cn"
 
 const Projects = () => {
-  const [employeeExperience, setEmployeeExperience] = useState<
-    Project | undefined
+  const [selectedProjectId, setSelectedProjectId] = useState<
+    Project["id"] | undefined
   >(undefined)
   const projects = useProjects()
+  // Resolve from current translations instead of retaining an old snapshot.
+  const selectedProject = projects.find(project => project.id === selectedProjectId)
   const { t } = useTranslations("home")
 
   return (
@@ -47,21 +49,21 @@ const Projects = () => {
         className="grid grid-cols-[repeat(auto-fit,minmax(min(330px,100%),1fr))] auto-rows-fr gap-7"
       >
         {projects.map((project, index) => (
-          <li key={project.name}>
+          <li key={project.id}>
             <Reveal delay={(index % 3) * 0.08} className="h-full">
               <ProjectCard
                 project={project}
                 index={index + 1}
-                onOpenDetails={() => setEmployeeExperience(project)}
+                onOpenDetails={() => setSelectedProjectId(project.id)}
               />
             </Reveal>
           </li>
         ))}
       </ul>
-      {employeeExperience && (
+      {selectedProject && (
         <EmployeeDetails
-          onClose={() => setEmployeeExperience(undefined)}
-          experience={employeeExperience}
+          onClose={() => setSelectedProjectId(undefined)}
+          experience={selectedProject}
         />
       )}
     </section>

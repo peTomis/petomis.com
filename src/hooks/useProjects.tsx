@@ -26,6 +26,7 @@ export function useProjects(): Project[] {
     }))
 
     return {
+      id: project.id,
       background: project.background,
       name: project.name,
       title: project.title,

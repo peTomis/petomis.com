@@ -55,9 +55,11 @@ export interface ProjectCollaborator {
 
 /**
  * Fully resolved project, with every user-facing string already translated.
- * This is what {@link useProjects} returns and what the carousel renders.
+ * This is what {@link useProjects} returns and what the project grid renders.
  */
 export interface Project {
+  /** Stable identity, independent of display name, translation and order. */
+  id: string
   /** Card background image, shown over the brand `color`. */
   background: StaticImageData
   name: string
@@ -84,6 +86,7 @@ export interface Project {
  * overlays the translated `description`, `sentences` and `tasks` on top of this.
  */
 export interface ProjectStatic {
+  id: Project["id"]
   name: string
   background: StaticImageData
   title: JSX.Element
@@ -166,6 +169,7 @@ const tools = {
 } satisfies Record<string, ProjectTool>
 
 const binderly: ProjectStatic = {
+  id: "binderly",
   name: "Binderly",
   background: binderlyImage,
   title: <BinderlyLogo size={48} tone="dark" />,
@@ -180,6 +184,7 @@ const binderly: ProjectStatic = {
 }
 
 const pienissimo: ProjectStatic = {
+  id: "pienissimo",
   name: "Pienissimo",
   background: pienissimoBg,
   title: (
@@ -220,6 +225,7 @@ const pienissimo: ProjectStatic = {
 }
 
 const metch: ProjectStatic = {
+  id: "metch",
   name: "Metch",
   background: metchImage,
   title: (
@@ -238,6 +244,7 @@ const metch: ProjectStatic = {
 }
 
 const anubidigital: ProjectStatic = {
+  id: "anubidigital",
   name: "Anubi Digital",
   background: anubidigitalBg,
   title: (
